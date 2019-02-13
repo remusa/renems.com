@@ -27,3 +27,8 @@ a {
   color: var(--dark-primary-color);
   font-weight: 600;
 }
+
+footer {
+  display: flex;
+  flex-align: column;
+}
