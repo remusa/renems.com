@@ -7,6 +7,7 @@ const AboutPage = () => (
         <SEO title='About' keywords={[`gatsby`, `application`, `react`]} />
 
         <h1>About Us</h1>
+
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
             adipisci, voluptatum, nisi velit praesentium error quia explicabo

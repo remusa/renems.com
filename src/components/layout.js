@@ -19,11 +19,12 @@ const Layout = ({ children }) => (
         `}
         render={data => (
             <>
-                <Header siteTitle={data.site.siteMetadata.title} />
-
                 <Menu />
 
+                <Header siteTitle={data.site.siteMetadata.title} />
+
                 <div
+                    className='container-main'
                     style={{
                         margin: `0 auto`,
                         maxWidth: 960,

@@ -7,6 +7,7 @@ const ProjectsPage = () => (
         <SEO title='Projects' keywords={[`gatsby`, `application`, `react`]} />
 
         <h1>Projects</h1>
+
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
             adipisci, voluptatum, nisi velit praesentium error quia explicabo

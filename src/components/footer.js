@@ -1,10 +1,17 @@
 import React from 'react'
 
+const footerStyle = {
+    display: `flex`,
+    flexAlign: `column`,
+    justifyContent: `space-around`,
+    alignContent: `center`,
+}
+
 const Footer = () => (
-    <footer>
+    <footer style={footerStyle}>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href='https://www.gatsbyjs.org'>Gatsby</a>
+        <a href='https://github.com/remusa'>GitHub</a>
     </footer>
 )
 
