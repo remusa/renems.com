@@ -1,21 +1,43 @@
-import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+// import { Link } from 'gatsby'
+// import React from 'react'
 
-const BlogPage = () => (
-    <Layout>
-        <SEO title='Blog' keywords={[`gatsby`, `application`, `react`]} />
+// const BlogPage = ({ data }) => (
+//     <div>
+//         <h1>Latest Posts</h1>
+//         {data.allMarkdownRemark.edges.map(post => (
+//             <div key={post.node.id}>
+//                 <h3>{post.node.frontmatter.title}</h3>
+//                 <small>
+//                     Posted by {post.node.frontmatter.author} on{' '}
+//                     {post.node.frontmatter.date}
+//                 </small>
+//                 <br />
+//                 <br />
+//                 <Link to={post.node.frontmatter.path}>Read More</Link>
+//                 <br />
+//                 <br />
+//                 <hr />
+//             </div>
+//         ))}
+//     </div>
+// )
 
-        <h1>Latest Posts</h1>
+// export const pageQuery = graphql`
+//     query BlogIndexQuery {
+//         allMarkdownRemark {
+//             edges {
+//                 node {
+//                     id
+//                     frontmatter {
+//                         path
+//                         title
+//                         date
+//                         author
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `
 
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            adipisci, voluptatum, nisi velit praesentium error quia explicabo
-            voluptas ad recusandae enim. Recusandae sequi non vel voluptas.
-            Labore omnis provident ex, perferendis esse, voluptate atque alias
-            officiis dolor eligendi itaque qui?
-        </p>
-    </Layout>
-)
-
-export default BlogPage
+// export default BlogPage

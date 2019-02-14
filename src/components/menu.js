@@ -22,13 +22,13 @@ const Menu = () => (
             }>
             About
         </Link>
-        <Link
+        {/* <Link
             to='/blog'
             getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent ? { className: 'active' } : null
             }>
             Blog
-        </Link>
+        </Link> */}
         <Link
             to='/projects'
             getProps={({ isPartiallyCurrent }) =>
