@@ -1,17 +1,21 @@
 :root {
-  --color-background: #fffdfd;
+  --color-background: #f4f4f4;
   --color-primary: rgb(0, 188, 212);
   --color-primary-dark: rgb(0, 122, 204);
   --color-selection: rgb(3, 212, 191);
+  --color-white: #f3f3f3;
+  --color-font: rgb(65, 65, 65);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  // font-family: 'Merriweather', 'Georgia', serif;
+  background-color: var(--color-background);
+  color: var(--color-font);
   // height: 100vh;
   // width: 100vw;
-  background-color: var(--color-background);
 }
 
 a {
@@ -21,7 +25,7 @@ a {
 
 ::selection {
   background: var(--color-selection);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .active {
@@ -55,9 +59,14 @@ a {
 
 /* Project list component */
 
+.container-projects {
+  border-radius: 4px;
+  text-align: center;
+  padding: 8px;
+}
+
 .project-list {
   list-style: none;
-  border: 1px solid grey;
   display: flex;
   flex: 1 0 150px;
   flex-wrap: wrap;
@@ -66,13 +75,11 @@ a {
 }
 
 .project-list__card {
-  text-align: center;
-  /* padding: 8px; */
-  display: block;
-  margin-top: 40px;
   width: 250px;
   height: 300px;
-  /* card.surge */
+  display: block;
+  text-align: center;
+  margin-top: 40px;
   border-width: 0px 0px 0px 0px;
   border-color: rgba(188, 188, 188, 1);
   border-radius: 5;

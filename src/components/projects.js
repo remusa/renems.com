@@ -3,7 +3,7 @@ import projectList from '../data/projects.json'
 import socialLinks from '../data/social.json'
 
 const initialState = {
-    projectType: 'front-end',
+    projectType: '',
 }
 
 class Projects extends React.Component {
@@ -38,13 +38,7 @@ class Projects extends React.Component {
         }
 
         return (
-            <div
-                style={{
-                    border: `1px solid grey`,
-                    borderRadius: `4px`,
-                    textAlign: `center`,
-                    padding: `8px`,
-                }}>
+            <div className='container-projects'>
                 <h2>Projects</h2>
 
                 <formset>
