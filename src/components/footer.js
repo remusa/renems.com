@@ -11,7 +11,7 @@ const footerStyle = {
     textAlign: `center`,
     bottom: `0`,
     left: `0`,
-    backgroundColor: `var(--color-primary)`,
+    backgroundColor: `var(--color-white)`,
 }
 
 const Footer = () => (

@@ -46,13 +46,14 @@ class Projects extends React.Component {
                         <label
                             style={{ marginRight: `8px` }}
                             for='project-select'>
-                            Projects
+                            Filter projects
                         </label>
+
                         <select
                             id='project-select'
                             defaultValue={projectType}
                             onChange={this.handleSelectChange}>
-                            <option value=''>All projects</option>
+                            <option value=''>All</option>
                             <option value='react'>React</option>
                             <option value='front-end'>Front-end</option>
                             <option value='back-end'>Back-end</option>

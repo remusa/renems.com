@@ -23,7 +23,8 @@ const Header = ({ siteTitle }) => (
                         color: `white`,
                         textDecoration: `none`,
                     }}>
-                    {siteTitle}
+                    {/* {siteTitle} */}
+                    _R
                 </Link>
             </h1>
         </div>

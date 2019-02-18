@@ -9,22 +9,21 @@ import '../components/styles.scss'
 const IndexPage = ({ data }) => (
     <Layout>
         <SEO
-            title={data.title}
+            title='index'
             description={data.description}
             keywords={[`gatsby`, `application`, `react`]}
         />
 
         <section>
             <h1>
-                Hello, I'm René.
+                Hello, I'm René Sánchez.
                 <br />
                 Developer, student, engineer.
             </h1>
+
             <p>
-                Passionate in the creation of meaningful digital experiences
-                with a focus on user centric design. Interesting in the design
-                of engaging and meaningful products based on users needs and
-                data driven research.{' '}
+                I'm a passionate developer that enjoys building useful things
+                and learning new technologies.{' '}
             </p>
 
             <div
