@@ -1,7 +1,7 @@
 // import { graphql, Link } from 'gatsby'
 // import React from 'react'
 
-// export default function Template({ data }) {
+// const Template = ({ data }) => {
 //     const post = data.markdownRemark
 
 //     return (
@@ -16,6 +16,8 @@
 //         </div>
 //     )
 // }
+
+// export default Template
 
 // export const postQuery = graphql`
 //     query BlogPostByPath($path: String!) {

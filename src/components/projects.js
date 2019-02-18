@@ -29,11 +29,13 @@ class Projects extends React.Component {
         const { projectType } = this.state
         let renderProjectList
 
-        projectType === ''
-            ? (renderProjectList = projectList)
-            : (renderProjectList = projectList.filter(
-                  project => projectType === project.type
-              ))
+        if (projectType === '') {
+            renderProjectList = projectList
+        } else {
+            renderProjectList = projectList.filter(
+                project => projectType === project.type
+            )
+        }
 
         return (
             <div
