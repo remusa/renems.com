@@ -36,8 +36,6 @@ const IndexPage = ({ data }) => (
             </div>
 
             <Projects />
-
-            {/* <Footer /> */}
         </section>
     </Layout>
 )

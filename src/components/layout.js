@@ -4,7 +4,6 @@ import React from 'react'
 import Footer from './footer'
 import Header from './header'
 import './layout.css'
-import Menu from './menu'
 
 const Layout = ({ children }) => (
     <StaticQuery
@@ -19,7 +18,7 @@ const Layout = ({ children }) => (
         `}
         render={data => (
             <>
-                <Menu />
+                {/* <Menu /> */}
 
                 <Header siteTitle={data.site.siteMetadata.title} />
 
