@@ -32,9 +32,9 @@ const Layout = ({ children }) => (
                         paddingTop: 0,
                     }}>
                     <main>{children}</main>
-
-                    <Footer />
                 </div>
+
+                <Footer />
             </>
         )}
     />

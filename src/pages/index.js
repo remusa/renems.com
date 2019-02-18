@@ -1,25 +1,57 @@
-import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
-import Image from '../components/image'
 import Layout from '../components/layout'
+// import Footer from '../components/footer'
+import Projects from '../components/projects'
 import SEO from '../components/seo'
-import '../components/styles.css'
+import Social from '../components/social'
+import '../components/styles.scss'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
     <Layout>
-        <SEO title='Home' keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+            title={data.title}
+            description={data.description}
+            keywords={[`gatsby`, `application`, `react`]}
+        />
 
-        <h1>Hi people</h1>
+        <section>
+            <h1>
+                Hello, I'm René.
+                <br />
+                Developer, student, engineer.
+            </h1>
+            <p>
+                Passionate in the creation of meaningful digital experiences
+                with a focus on user centric design. Interesting in the design
+                of engaging and meaningful products based on users needs and
+                data driven research.{' '}
+            </p>
 
-        <p>Welcome to your new Gatsby site.</p>
+            <div
+                style={{
+                    width: `250px`,
+                    textAlign: `center`,
+                }}>
+                <Social />
+            </div>
 
-        <p>Now go build something great.</p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-            <Image />
-        </div>
+            <Projects />
 
-        <Link to='/page-2/'>Go to page 2</Link>
+            {/* <Footer /> */}
+        </section>
     </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+    query allDataQuery {
+        site {
+            siteMetadata {
+                title
+                description
+            }
+        }
+    }
+`

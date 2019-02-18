@@ -2,7 +2,7 @@ import Link from 'gatsby-link'
 import React from 'react'
 
 const containerMenu = {
-    background: `#f4f4f4`,
+    // background: `#f4f4f4`,
     padding: `10px`,
     display: `flex`,
     justifyContent: `space-evenly`,
@@ -11,10 +11,11 @@ const containerMenu = {
 }
 
 const Menu = () => (
-    <div className='container-menu' style={containerMenu}>
+    <nav className='container-menu' style={containerMenu}>
         <Link to='/' activeClassName='active'>
             Home
         </Link>
+
         <Link
             to='/about'
             getProps={({ isPartiallyCurrent }) =>
@@ -22,13 +23,15 @@ const Menu = () => (
             }>
             About
         </Link>
-        {/* <Link
+
+        <Link
             to='/blog'
             getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent ? { className: 'active' } : null
             }>
             Blog
-        </Link> */}
+        </Link>
+
         <Link
             to='/projects'
             getProps={({ isPartiallyCurrent }) =>
@@ -36,7 +39,7 @@ const Menu = () => (
             }>
             Projects
         </Link>
-    </div>
+    </nav>
 )
 
 export default Menu

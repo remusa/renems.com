@@ -1,17 +1,25 @@
 import React from 'react'
+import Social from './social'
 
 const footerStyle = {
     display: `flex`,
-    flexAlign: `column`,
+    flexAlign: `row`,
     justifyContent: `space-around`,
-    alignContent: `center`,
+    alignItems: `center`,
+    width: `100%`,
+    padding: `8px`,
+    textAlign: `center`,
+    bottom: `0`,
+    left: `0`,
+    color: `#2D3539`,
+    backgroundColor: `var(--color-primary)`,
 }
 
 const Footer = () => (
     <footer style={footerStyle}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href='https://github.com/remusa'>GitHub</a>
+        <Social />
+
+        © {new Date().getFullYear()} RMS
     </footer>
 )
 
