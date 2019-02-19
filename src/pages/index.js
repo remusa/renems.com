@@ -31,8 +31,8 @@ const IndexPage = ({ data }) => {
 
                 <div
                     style={{
-                        width: `250px`,
-                        textAlign: `center`,
+                        display: `flex`,
+                        justifyContent: `center`,
                     }}>
                     <Social />
                 </div>

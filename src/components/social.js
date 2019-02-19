@@ -2,7 +2,7 @@ import React from 'react'
 import socialLinks from '../data/social.json'
 
 const Social = () => (
-    <div className='social'>
+    <div className='social-container'>
         <a target='blank' href={socialLinks[0].url} title={socialLinks[0].name}>
             <svg
                 className='social-icon'
