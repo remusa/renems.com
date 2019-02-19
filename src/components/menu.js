@@ -2,7 +2,6 @@ import Link from 'gatsby-link'
 import React from 'react'
 
 const containerMenu = {
-    // background: `#f4f4f4`,
     padding: `10px`,
     display: `flex`,
     justifyContent: `space-evenly`,
