@@ -56,7 +56,7 @@ export const query = graphql`
 
         ProjectImgs: allFile(
             sort: { order: ASC, fields: [absolutePath] }
-            filter: { relativePath: { regex: "images/projects/.*.png/" } }
+            filter: { relativePath: { regex: "/projects/.*.png/" } }
         ) {
             edges {
                 node {

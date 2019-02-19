@@ -3,7 +3,7 @@
         "type": "react",
         "description": "",
         "tech": ["React"],
-        "image": "pomodoro-clock.png",
+        "img": "pomodoro-clock.png",
         "url": "https://apomodoroclock.netlify.com/",
         "github": "https://github.com/remusa/pomodoro-clock"
     },
@@ -12,7 +12,7 @@
         "type": "react",
         "description": "",
         "tech": ["React"],
-        "image": "random-quote-generator.png",
+        "img": "javascript-calculator.png",
         "url": "https://ajavascriptcalculator.netlify.com/",
         "github": "https://github.com/remusa/javascript-calculator"
     },
@@ -21,7 +21,7 @@
         "type": "react",
         "description": "",
         "tech": ["React"],
-        "image": "drum-machine.png",
+        "img": "drum-machine.png",
         "url": "https://adrummachine.netlify.com",
         "github": "https://github.com/remusa/drum-machine"
     },
@@ -30,7 +30,7 @@
         "type": "react",
         "description": "",
         "tech": ["React"],
-        "image": "markdown-previewer.png",
+        "img": "markdown-previewer.png",
         "url": "https://amarkdownpreviewer.netlify.com/",
         "github": "https://github.com/remusa/markdown-previewer"
     },
@@ -38,7 +38,7 @@
         "name": "Random Quote Generator",
         "type": "react",
         "tech": ["React"],
-        "image": "random-quote-generator.png",
+        "img": "random-quote-generator.png",
         "url": "https://myrandomquotes.netlify.com/",
         "github": "https://github.com/remusa/random-quote-machine"
     },
@@ -47,7 +47,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["D3.js"],
-        "image": "data-visualization.png",
+        "img": "data-visualization.png",
         "url": "https://datavisualization.netlify.com",
         "github": "https://github.com/remusa/fcc-data-visualization-projects"
     },
@@ -56,7 +56,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js"],
-        "image": "timestamp-microservice.png",
+        "img": "timestamp-microservice.png",
         "url": "https://fcc-project-timestamp-rms.glitch.me/",
         "github": "https://github.com/remusa/boilerplate-project-timestamp"
     },
@@ -65,7 +65,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js"],
-        "image": "request-header-parser.png",
+        "img": "request-header-parser.png",
         "url": "https://fcc-project-headerparser-rms.glitch.me",
         "github": "https://github.com/remusa/boilerplate-project-headerparser"
     },
@@ -74,7 +74,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js"],
-        "image": "url-shortener.png",
+        "img": "url-shortener.png",
         "url": "https://fcc-project-urlshortener-rms.glitch.me/",
         "github": "https://github.com/remusa/boilerplate-project-urlshortener"
     },
@@ -83,7 +83,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js"],
-        "image": "exercise-tracker.png",
+        "img": "exercise-tracker.png",
         "url": "https://fcc-project-exercisetracker-rms.glitch.me/",
         "github": "https://github.com/remusa/boilerplate-project-exercisetracker"
     },
@@ -92,7 +92,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js"],
-        "image": "file-metadata.png",
+        "img": "file-metadata.png",
         "url": "https://fcc-project-filemetadata-rms.glitch.me/",
         "github": "https://github.com/remusa/boilerplate-project-filemetadata"
     },
@@ -101,7 +101,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
-        "image": "metric-imperial-converter.png",
+        "img": "metric-imperial-converter.png",
         "url": "https://fcc-metricimpconverter.glitch.me/",
         "github": "https://github.com/remusa/project-metricimpconverter"
     },
@@ -110,7 +110,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
-        "image": "issue-tracker.png",
+        "img": "issue-tracker.png",
         "url": "https://fcc-issuetracker-rms.glitch.me/",
         "github": "https://github.com/remusa/project-issuetracker"
     },
@@ -119,7 +119,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
-        "image": "personal-library.png",
+        "img": "personal-library.png",
         "url": "https://fcc-library-rms.glitch.me/",
         "github": "https://github.com/remusa/project-library"
     },
@@ -128,7 +128,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
-        "image": "stock-checker.png",
+        "img": "stock-checker.png",
         "url": "https://fcc-stockpricechecker.glitch.me/",
         "github": "https://github.com/remusa/project-stockchecker"
     },
@@ -137,7 +137,7 @@
         "type": "back-end",
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
-        "image": "message-board.png",
+        "img": "message-board.png",
         "url": "https://fcc-messageboard.glitch.me/",
         "github": "https://github.com/remusa/project-messageboard"
     },
@@ -146,7 +146,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
-        "image": "tribute-page.png",
+        "img": "tribute-page.png",
         "url": "https://tributepage.netlify.com/",
         "github": "https://github.com/remusa/tribute-page"
     },
@@ -155,7 +155,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
-        "image": "survey-form.png",
+        "img": "survey-form.png",
         "url": "https://asurveyform.netlify.com",
         "github": "https://github.com/remusa/survey-form"
     },
@@ -164,7 +164,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
-        "image": "product-landing-page.png",
+        "img": "product-landing-page.png",
         "url": "https://product-landing.netlify.com/",
         "github": "https://github.com/remusa/product-landing-page"
     },
@@ -173,7 +173,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid", "JavaScript"],
-        "image": "technical-documentation-page.png",
+        "img": "technical-documentation-page.png",
         "url": "https://technical-documentation.netlify.com/",
         "github": "https://github.com/remusa/technical-documentation-page"
     },
@@ -182,7 +182,7 @@
         "type": "front-end",
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
-        "image": "personal-portfolio.png",
+        "img": "personal-portfolio.png",
         "url": "https://apersonalportfolio.netlify.com/",
         "github": "https://github.com/remusa/personal-portfolio"
     }
