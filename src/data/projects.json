@@ -1,56 +1,189 @@
-[
-    {
-        "name": "Test 1",
-        "type": "front-end",
-        "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
+[{
+        "name": "Random Quote Generator",
+        "type": "react",
+        "tech": ["React"],
+        "image": "../images/projects/random-quote-generator.png",
+        "url": "https://myrandomquotes.netlify.com/",
+        "github": "https://github.com/remusa/random-quote-machine"
     },
     {
-        "name": "Test 2",
-        "type": "back-end",
-        "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
-    },
-    {
-        "name": "Test 3",
+        "name": "Markdown Previewer",
         "type": "react",
         "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
+        "tech": ["React"],
+        "image": "../images/projects/markdown-previewer.png",
+        "url": "https://amarkdownpreviewer.netlify.com/",
+        "github": "https://github.com/remusa/markdown-previewer"
     },
     {
-        "name": "Test 4",
-        "type": "front-end",
-        "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
-    },
-    {
-        "name": "Test 5",
-        "type": "back-end",
-        "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
-    },
-    {
-        "name": "Test 6",
+        "name": "Drum Machine",
         "type": "react",
         "description": "",
-        "tech": ["React", "Python"],
-        "image": "https://via.placeholder.com/150x150",
-        "url": "https://netlify.com",
-        "github": "https://github.com/remusa"
+        "tech": ["React"],
+        "image": "../images/projects/drum-machine.png",
+        "url": "https://adrummachine.netlify.com",
+        "github": "https://github.com/remusa/drum-machine"
+    },
+    {
+        "name": "JavaScript Calculator",
+        "type": "react",
+        "description": "",
+        "tech": ["React"],
+        "image": "../images/projects/random-quote-generator.png",
+        "url": "https://ajavascriptcalculator.netlify.com/",
+        "github": "https://github.com/remusa/javascript-calculator"
+    },
+    {
+        "name": "Pomodoro Clock",
+        "type": "react",
+        "description": "",
+        "tech": ["React"],
+        "image": "../images/projects/pomodoro-clock.png",
+        "url": "https://apomodoroclock.netlify.com/",
+        "github": "https://github.com/remusa/pomodoro-clock"
+    },
+    {
+        "name": "Charts made with D3.js",
+        "type": "front-end",
+        "description": "",
+        "tech": ["D3.js"],
+        "image": "../images/projects/data-visualization.png",
+        "url": "https://datavisualization.netlify.com",
+        "github": "https://github.com/remusa/fcc-data-visualization-projects"
+    },
+    {
+        "name": "Timestamp Microservice",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js"],
+        "image": "../images/projects/timestamp-microservice.png",
+        "url": "https://fcc-project-timestamp-rms.glitch.me/",
+        "github": "https://github.com/remusa/boilerplate-project-timestamp"
+    },
+    {
+        "name": "Request Header Parser Microservice",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js"],
+        "image": "../images/projects/request-header-parser.png",
+        "url": "https://fcc-project-headerparser-rms.glitch.me",
+        "github": "https://github.com/remusa/boilerplate-project-headerparser"
+    },
+    {
+        "name": "URL Shortener Microservice",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js"],
+        "image": "../images/projects/url-shortener.png",
+        "url": "https://fcc-project-urlshortener-rms.glitch.me/",
+        "github": "https://github.com/remusa/boilerplate-project-urlshortener"
+    },
+    {
+        "name": "Exercise Tracker",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js"],
+        "image": "../images/projects/exercise-tracker.png",
+        "url": "https://fcc-project-exercisetracker-rms.glitch.me/",
+        "github": "https://github.com/remusa/boilerplate-project-exercisetracker"
+    },
+    {
+        "name": "File Metadata Microservice",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js"],
+        "image": "../images/projects/file-metadata.png",
+        "url": "https://fcc-project-filemetadata-rms.glitch.me/",
+        "github": "https://github.com/remusa/boilerplate-project-filemetadata"
+    },
+    {
+        "name": "Metric Imperial Converter",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+        "image": "../images/projects/metric-imperial-converter.png",
+        "url": "https://fcc-metricimpconverter.glitch.me/",
+        "github": "https://github.com/remusa/project-metricimpconverter"
+    },
+    {
+        "name": "Issue Tracker",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+        "image": "../images/projects/issue-tracker.png",
+        "url": "https://fcc-issuetracker-rms.glitch.me/",
+        "github": "https://github.com/remusa/project-issuetracker"
+    },
+    {
+        "name": "Personal Library",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+        "image": "../images/projects/personal-library.png",
+        "url": "https://fcc-library-rms.glitch.me/",
+        "github": "https://github.com/remusa/project-library"
+    },
+    {
+        "name": "Stock Price Checker",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+        "image": "../images/projects/stock-checker.png",
+        "url": "https://fcc-stockpricechecker.glitch.me/",
+        "github": "https://github.com/remusa/project-stockchecker"
+    },
+    {
+        "name": "Anonymous Message Board",
+        "type": "back-end",
+        "description": "",
+        "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+        "image": "../images/projects/message-board.png",
+        "url": "https://fcc-messageboard.glitch.me/",
+        "github": "https://github.com/remusa/project-messageboard"
+    },
+    {
+        "name": "Tribute Page",
+        "type": "front-end",
+        "description": "",
+        "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+        "image": "../images/projects/tribute-page.jpg",
+        "url": "https://tributepage.netlify.com/",
+        "github": "https://github.com/remusa/tribute-page"
+    },
+    {
+        "name": "Survey Form",
+        "type": "front-end",
+        "description": "",
+        "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+        "image": "../images/projects/survey-form.png",
+        "url": "https://asurveyform.netlify.com",
+        "github": "https://github.com/remusa/survey-form"
+    },
+    {
+        "name": "Product Landing Page",
+        "type": "front-end",
+        "description": "",
+        "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+        "image": "../images/projects/product-landing-page.png",
+        "url": "https://product-landing.netlify.com/",
+        "github": "https://github.com/remusa/product-landing-page"
+    },
+    {
+        "name": "Technical Documentation Page",
+        "type": "front-end",
+        "description": "",
+        "tech": ["HTML5", "CSS Flexbox", "CSS Grid", "JavaScript"],
+        "image": "../images/projects/technical-documentation-page.png",
+        "url": "https://technical-documentation.netlify.com/",
+        "github": "https://github.com/remusa/technical-documentation-page"
+    },
+    {
+        "name": "Personal Portfolio Webpage",
+        "type": "front-end",
+        "description": "",
+        "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+        "image": "../images/projects/personal-portfolio.png",
+        "url": "https://apersonalportfolio.netlify.com/",
+        "github": "https://github.com/remusa/personal-portfolio"
     }
 ]
