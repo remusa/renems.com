@@ -70,16 +70,11 @@ class Projects extends React.Component {
 
                 <div className='project-list'>
                     {renderProjectList.map(project => {
-                        const image = projectImgs.find(n => {
-                            if (typeof n === 'undefined') {
-                                return
-                            }
-
-                            return (
+                        const image = projectImgs.find(
+                            n =>
                                 n.node.relativePath ===
                                 `projects/${project.img}`
-                            )
-                        })
+                        )
                         const imageSizes = image.node.childImageSharp.sizes
 
                         return (
