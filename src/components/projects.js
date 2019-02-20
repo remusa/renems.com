@@ -1,9 +1,42 @@
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
 import React from 'react'
 import projectList from '../data/projects.json'
 
 const initialState = {
     selectType: 'react',
+}
+
+const ProjectCard = ({ project, imageSizes }) => (
+    <a
+        className='project-list__card'
+        href={project.url}
+        target='_blank'
+        rel='noopener noreferrer'>
+        <div className='project-list__card__image'>
+            <Img
+                title={project.name}
+                alt='project screenshot'
+                sizes={imageSizes}
+                className='project-list__card__image__src'
+            />
+        </div>
+
+        <div className='project-list__card__divider' />
+
+        <div className='project-list__card__info'>
+            <h4 className='project-list__card__info__name'>{project.name}</h4>
+
+            <h5>Technologies: {project.tech.join(', ')}</h5>
+
+            <p>{project.description}</p>
+        </div>
+    </a>
+)
+
+ProjectCard.propTypes = {
+    project: PropTypes.object.isRequired,
+    imageSizes: PropTypes.object.isRequired,
 }
 
 class Projects extends React.Component {
@@ -26,12 +59,10 @@ class Projects extends React.Component {
         const { selectType } = this.state
         const projectImgs = this.props.projectImgs
 
-        let renderProjectList = projectList
-        if (selectType !== '') {
-            renderProjectList = projectList.filter(
-                project => selectType === project.type
-            )
-        }
+        const renderProjectList =
+            selectType === ''
+                ? projectList
+                : projectList.filter(project => selectType === project.type)
 
         return (
             <div className='projects-container'>
@@ -78,41 +109,21 @@ class Projects extends React.Component {
                         const imageSizes = image.node.childImageSharp.sizes
 
                         return (
-                            <a
-                                className='project-list__card'
-                                href={project.url}
+                            <ProjectCard
                                 key={project.url}
-                                target='_blank'
-                                rel='noopener noreferrer'>
-                                <div className='project-list__card__image'>
-                                    <Img
-                                        title={project.name}
-                                        alt='project screenshot'
-                                        sizes={imageSizes}
-                                        className='project-list__card__image__src'
-                                    />
-                                </div>
-
-                                <div className='project-list__card__divider' />
-
-                                <div className='project-list__card__info'>
-                                    <h4 className='project-list__card__info__name'>
-                                        {project.name}
-                                    </h4>
-
-                                    <h5>
-                                        Technologies: {project.tech.join(', ')}
-                                    </h5>
-
-                                    <p>{project.description}</p>
-                                </div>
-                            </a>
+                                project={project}
+                                imageSizes={imageSizes}
+                            />
                         )
                     })}
                 </div>
             </div>
         )
     }
+}
+
+Projects.propTypes = {
+    projectImgs: PropTypes.array.isRequired,
 }
 
 export default Projects
