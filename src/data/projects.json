@@ -1,4 +1,13 @@
 [{
+        "name": "Portfolio (this site)",
+        "type": "react",
+        "description": "",
+        "tech": ["React", "Gatsby", "GraphQL"],
+        "img": "gatsby-portfolio.png",
+        "url": "https://renems.com",
+        "github": "https://github.com/remusa/portfolio"
+    },
+    {
         "name": "Pomodoro Clock",
         "type": "react",
         "description": "",

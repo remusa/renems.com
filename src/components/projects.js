@@ -3,7 +3,7 @@ import React from 'react'
 import projectList from '../data/projects.json'
 
 const initialState = {
-    selectType: '',
+    selectType: 'react',
 }
 
 class Projects extends React.Component {
@@ -32,9 +32,6 @@ class Projects extends React.Component {
                 project => selectType === project.type
             )
         }
-
-        // console.log('renderProjectList: ', renderProjectList)
-        // console.log('projectImgs: ', projectImgs)
 
         return (
             <div className='projects-container'>
@@ -73,11 +70,16 @@ class Projects extends React.Component {
 
                 <div className='project-list'>
                     {renderProjectList.map(project => {
-                        const image = projectImgs.find(
-                            n =>
+                        const image = projectImgs.find(n => {
+                            if (typeof n === 'undefined') {
+                                return
+                            }
+
+                            return (
                                 n.node.relativePath ===
                                 `projects/${project.img}`
-                        )
+                            )
+                        })
                         const imageSizes = image.node.childImageSharp.sizes
 
                         return (
