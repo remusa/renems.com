@@ -1,9 +1,9 @@
 import Img from 'gatsby-image'
 import React from 'react'
-import projectsList from '../data/projects.json'
+import projectList from '../data/projects.json'
 
 const initialState = {
-    projectType: '',
+    selectType: '',
 }
 
 class Projects extends React.Component {
@@ -18,24 +18,23 @@ class Projects extends React.Component {
     handleSelectChange(e) {
         e.preventDefault()
         this.setState({
-            projectType: e.target.value,
+            selectType: e.target.value,
         })
     }
 
     render() {
-        const { projectType } = this.state
+        const { selectType } = this.state
         const projectImgs = this.props.projectImgs
-        let renderProjectList
 
-        if (projectType === '') {
-        } else {
-            renderProjectList = projectsList.filter(
-                project => projectType === project.type
+        let renderProjectList = projectList
+        if (selectType !== '') {
+            renderProjectList = projectList.filter(
+                project => selectType === project.type
             )
         }
 
-        console.log('renderProjectList: ', renderProjectList)
-        console.log('projectImgs: ', projectImgs)
+        // console.log('renderProjectList: ', renderProjectList)
+        // console.log('projectImgs: ', projectImgs)
 
         return (
             <div className='projects-container'>
@@ -62,7 +61,7 @@ class Projects extends React.Component {
 
                         <select
                             id='project-select'
-                            defaultValue={projectType}
+                            defaultValue={selectType}
                             onChange={this.handleSelectChange}>
                             <option value=''>All</option>
                             <option value='react'>React</option>
