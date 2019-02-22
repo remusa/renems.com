@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import projectList from '../data/projects.json'
 
-const initialState = {
-    selectType: 'react',
-}
-
 const ProjectCard = ({ project, imageSizes }) => (
     <a
         className='project-list__card'
@@ -40,15 +36,15 @@ ProjectCard.propTypes = {
 }
 
 class Projects extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = initialState
-
-        this.handleSelectChange = this.handleSelectChange.bind(this)
+    state = {
+        selectType: 'react',
     }
 
-    handleSelectChange(e) {
+    static propTypes = {
+        projectImgs: PropTypes.array.isRequired,
+    }
+
+    handleSelectChange = e => {
         e.preventDefault()
         this.setState({
             selectType: e.target.value,
@@ -57,7 +53,7 @@ class Projects extends React.Component {
 
     render() {
         const { selectType } = this.state
-        const projectImgs = this.props.projectImgs
+        const { projectImgs } = this.props
 
         const renderProjectList =
             selectType === ''
@@ -120,10 +116,6 @@ class Projects extends React.Component {
             </div>
         )
     }
-}
-
-Projects.propTypes = {
-    projectImgs: PropTypes.array.isRequired,
 }
 
 export default Projects
