@@ -46,8 +46,9 @@ class Projects extends React.Component {
 
     handleSelectChange = e => {
         e.preventDefault()
+        const value = e.target.value
         this.setState({
-            selectType: e.target.value,
+            selectType: value,
         })
     }
 
