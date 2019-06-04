@@ -1,14 +1,10 @@
+import React from 'react'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
-import React from 'react'
 import projectList from '../data/projects.json'
 
 const ProjectCard = ({ project, imageSizes }) => (
-    <a
-        className='project-list__card'
-        href={project.url}
-        target='_blank'
-        rel='noopener noreferrer'>
+    <a className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
         <div className='project-list__card__image'>
             <Img
                 title={project.name}
@@ -25,7 +21,7 @@ const ProjectCard = ({ project, imageSizes }) => (
 
             <h5>Technologies: {project.tech.join(', ')}</h5>
 
-            <p>{project.description}</p>
+            {/* <p>{project.description}</p> */}
         </div>
     </a>
 )
@@ -37,7 +33,7 @@ ProjectCard.propTypes = {
 
 class Projects extends React.Component {
     state = {
-        selectType: 'react',
+        selectType: '',
     }
 
     static propTypes = {
@@ -65,43 +61,31 @@ class Projects extends React.Component {
             <div className='projects-container'>
                 <h2>Projects</h2>
 
-                <p>
-                    These are some projects I've built while learning. Many of
-                    them have been made while finishing the{' '}
-                    <a
-                        className='active'
-                        href='https://www.freecodecamp.org/rms'>
-                        freeCodeCamp
-                    </a>{' '}
-                    curriculum
-                </p>
+                <p>These are some other projects I've built.</p>
 
                 <fieldset>
                     <form>
-                        <label
-                            style={{ marginRight: `8px` }}
-                            htmlFor='project-select'>
+                        <label style={{ marginRight: `8px` }} htmlFor='project-select'>
                             Filter projects
+                            <select
+                                id='project-select'
+                                defaultValue={selectType}
+                                onChange={this.handleSelectChange}
+                            >
+                                <option value=''>All</option>
+                                <option value='react'>React</option>
+                                <option value='fullstack'>Fullstack</option>
+                                <option value='front-end'>Front-end</option>
+                                <option value='back-end'>Back-end</option>
+                            </select>
                         </label>
-
-                        <select
-                            id='project-select'
-                            defaultValue={selectType}
-                            onChange={this.handleSelectChange}>
-                            <option value=''>All</option>
-                            <option value='react'>React</option>
-                            <option value='back-end'>Back-end</option>
-                            <option value='front-end'>Front-end</option>
-                        </select>
                     </form>
                 </fieldset>
 
                 <div className='project-list'>
                     {renderProjectList.map(project => {
                         const image = projectImgs.find(
-                            n =>
-                                n.node.relativePath ===
-                                `projects/${project.img}`
+                            n => n.node.relativePath === `projects/${project.img}`
                         )
                         const imageSizes = image.node.childImageSharp.sizes
 
