@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
@@ -7,7 +8,9 @@ import Social from '../components/social'
 import '../components/styles.scss'
 import Featured from './../components/featured'
 
-import styled from 'styled-components'
+const SectionStyles = styled.section`
+    text-align: center;
+`
 
 const SocialStyles = styled.div`
     display: flex;
@@ -26,17 +29,19 @@ const IndexPage = ({ data }) => {
                 keywords={[`gatsby`, `application`, `react`]}
             />
 
-            <section>
+            <SectionStyles>
                 <h1>
-                    Hello, I'm René Sánchez.
+                    Hello, I'm René M. Sánchez.
                     <br />
-                    Developer, student, engineer.
                 </h1>
+                <h2>Developer, student, software engineer.</h2>
 
                 <p>
                     I'm a passionate developer that enjoys building useful things and learning new
-                    technologies.{' '}
+                    technologies.
                 </p>
+
+                <p>I enjoy working with React, Node, GraphQL and Python.</p>
 
                 <SocialStyles>
                     <Social />
@@ -45,7 +50,7 @@ const IndexPage = ({ data }) => {
                 <Featured projectImgs={featuredImgData} />
 
                 <Projects projectImgs={projectImgData} />
-            </section>
+            </SectionStyles>
         </Layout>
     )
 }

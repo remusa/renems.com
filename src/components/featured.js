@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import projectList from '../data/projects.json'
@@ -105,7 +104,7 @@ const ProjectCard = ({ project, imageSizes }) => (
                 <p>{project.description}</p>
 
                 <a href={project.github} target='_blank' rel='noopener noreferrer'>
-                    <h6>Github link</h6>
+                    <h6>Source code (Github)</h6>
                 </a>
             </div>
         </div>
