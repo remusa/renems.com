@@ -21,7 +21,9 @@ const ProjectCard = ({ project, imageSizes }) => (
 
             <h5>Technologies: {project.tech.join(', ')}</h5>
 
-            {/* <p>{project.description}</p> */}
+            <a href={project.github} target='_blank' rel='noopener noreferrer'>
+                <code>Code</code>
+            </a>
         </div>
     </a>
 )

@@ -5,6 +5,11 @@
     "version": "0.1.0",
     "author": "Kyle Mathews <mathews.kyle@gmail.com>",
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.19",
+        "@fortawesome/free-brands-svg-icons": "^5.9.0",
+        "@fortawesome/free-regular-svg-icons": "^5.9.0",
+        "@fortawesome/free-solid-svg-icons": "^5.9.0",
+        "@fortawesome/react-fontawesome": "^0.1.4",
         "babel-plugin-styled-components": "^1.10.0",
         "gatsby": "^2.8.2",
         "gatsby-cli": "^2.6.5",
@@ -56,5 +61,11 @@
     },
     "bugs": {
         "url": "https://github.com/gatsbyjs/gatsby/issues"
-    }
+    },
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ]
 }

@@ -1,4 +1,5 @@
-[{
+[
+    {
         "name": "Github",
         "type": "social-media",
         "url": "https://github.com/remusa",
@@ -16,5 +17,4 @@
         "url": "https://twitter.com/remusa_",
         "icon": ""
     }
-
 ]

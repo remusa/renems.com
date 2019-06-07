@@ -12,11 +12,6 @@ const SectionStyles = styled.section`
     text-align: center;
 `
 
-const SocialStyles = styled.div`
-    display: flex;
-    justify-content: center;
-`
-
 const IndexPage = ({ data }) => {
     const { edges: projectImgData } = data.ProjectImgs
     const { edges: featuredImgData } = data.FeaturedProjectImgs
@@ -43,9 +38,7 @@ const IndexPage = ({ data }) => {
 
                 <p>I enjoy working with React, Node, GraphQL and Python.</p>
 
-                <SocialStyles>
-                    <Social />
-                </SocialStyles>
+                <Social />
 
                 <Featured projectImgs={featuredImgData} />
 

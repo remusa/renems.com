@@ -66,7 +66,7 @@ const CardStyles = styled.div`
         /* height: 50%; */
 
         & > p {
-            font-size: 1rem;
+            /* font-size: 1rem; */
             font-weight: 300;
             line-height: normal;
             height: 70%;
@@ -99,12 +99,12 @@ const ProjectCard = ({ project, imageSizes }) => (
             <div className='card__info'>
                 <h3 className='card__info__name'>{project.name}</h3>
 
-                <h5>Technologies: {project.tech.join(', ')}</h5>
+                <h4>Technologies: {project.tech.join(', ')}</h4>
 
                 <p>{project.description}</p>
 
                 <a href={project.github} target='_blank' rel='noopener noreferrer'>
-                    <h6>Source code (Github)</h6>
+                    <code>Source code (Github)</code>
                 </a>
             </div>
         </div>
