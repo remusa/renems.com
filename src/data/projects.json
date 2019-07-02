@@ -1,14 +1,5 @@
 [
     {
-        "name": "Portfolio",
-        "type": "react",
-        "description": "",
-        "tech": ["React", "Gatsby", "GraphQL"],
-        "img": "gatsby-portfolio.png",
-        "url": "https://renems.com",
-        "github": "https://github.com/remusa/portfolio"
-    },
-    {
         "name": "Cero",
         "type": "fullstack",
         "description": "Cero is an intermittent fasting tracker built in React, Node and GraphQL.",
@@ -17,6 +8,15 @@
         "url": "https://cero.netlify.com",
         "github": "https://github.com/remusa/cero",
         "featured": true
+    },
+    {
+        "name": "Portfolio",
+        "type": "react",
+        "description": "",
+        "tech": ["React", "Gatsby", "GraphQL"],
+        "img": "gatsby-portfolio.png",
+        "url": "https://renems.com",
+        "github": "https://github.com/remusa/portfolio"
     },
     {
         "name": "Pomodoro Clock",

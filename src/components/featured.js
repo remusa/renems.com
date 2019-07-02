@@ -19,8 +19,8 @@ const FeaturedStyles = styled.div`
 
 const CardStyles = styled.div`
     .card {
-        width: 600px;
-        height: 500px;
+        max-width: 600px;
+        max-height: 500px;
         display: block;
         text-align: center;
         margin-top: 8px;
