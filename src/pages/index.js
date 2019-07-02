@@ -6,7 +6,8 @@ import Projects from '../components/projects'
 import SEO from '../components/seo'
 import Social from '../components/social'
 import '../components/styles.scss'
-import Featured from './../components/featured'
+import Featured from '../components/featured'
+import Tech from '../components/tech'
 
 const SectionStyles = styled.section`
     text-align: center;
@@ -21,7 +22,7 @@ const IndexPage = ({ data }) => {
             <SEO
                 title='index'
                 description={data.description}
-                keywords={[`gatsby`, `application`, `react`]}
+                keywords={[`blog`, `technology`, `react`]}
             />
 
             <SectionStyles>
@@ -29,6 +30,7 @@ const IndexPage = ({ data }) => {
                     Hello, I'm René M. Sánchez.
                     <br />
                 </h1>
+
                 <h2>Developer, student, software engineer.</h2>
 
                 <p>
@@ -39,6 +41,8 @@ const IndexPage = ({ data }) => {
                 <p>I enjoy working with React, Node, GraphQL and Python.</p>
 
                 <Social />
+
+                {/* <Tech /> */}
 
                 <Featured projectImgs={featuredImgData} />
 

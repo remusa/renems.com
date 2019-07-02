@@ -1,12 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Main from '../components/main'
 
-const AboutPage = () => (
+const NowPage = () => (
     <Layout>
-        <SEO title='About' keywords={[`about`]} />
+        <SEO title='Now' keywords={[`now`]} />
 
-        <h1>About Me</h1>
+        <h1>Now</h1>
+
+        <p>Now Now Now</p>
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id tempor quam.
@@ -42,4 +45,4 @@ const AboutPage = () => (
     </Layout>
 )
 
-export default AboutPage
+export default NowPage
