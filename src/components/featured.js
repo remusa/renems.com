@@ -51,11 +51,12 @@ const CardStyles = styled.div`
     .card__divider {
         width: 100%;
         height: 8px;
+        /* background-color: transparent; */
         background-color: var(--color-primary);
     }
 
     .card:hover .card__image__src {
-        transform: scale(1.1);
+        transform: scale(1.2);
         transition: all 0.5s ease;
         text-decoration: none;
     }

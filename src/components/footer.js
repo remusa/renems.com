@@ -1,23 +1,27 @@
 import React from 'react'
+import styled from 'styled-components'
 import Social from './social'
 
-const footerStyle = {
-    display: `flex`,
-    flexAlign: `row`,
-    justifyContent: `space-around`,
-    alignItems: `center`,
-    width: `100%`,
-    padding: `8px`,
-    textAlign: `center`,
-    bottom: `0`,
-    left: `0`,
-    backgroundColor: `var(--color-white)`,
-}
+const FooterStyles = styled.footer`
+    grid-area: footer;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    backgroundcolor: var(--color-white);
+    text-align: center;
+    padding: 8px;
+    /* width: 100%; */
+    /* bottom: 0;
+    left: 0; */
+`
 
 const Footer = () => (
-    <footer style={footerStyle}>
+    <FooterStyles>
         <Social />© {new Date().getFullYear()} RMS
-    </footer>
+    </FooterStyles>
 )
 
 export default Footer

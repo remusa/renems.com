@@ -1,5 +1,5 @@
-import Link from 'gatsby-link'
 import React from 'react'
+import Link from 'gatsby-link'
 
 const containerMenu = {
     padding: `10px`,
@@ -19,7 +19,8 @@ const Menu = () => (
             to='/about'
             getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent ? { className: 'active' } : null
-            }>
+            }
+        >
             About
         </Link>
 
@@ -27,7 +28,8 @@ const Menu = () => (
             to='/blog'
             getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent ? { className: 'active' } : null
-            }>
+            }
+        >
             Blog
         </Link>
 
@@ -35,7 +37,8 @@ const Menu = () => (
             to='/projects'
             getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent ? { className: 'active' } : null
-            }>
+            }
+        >
             Projects
         </Link>
     </nav>
