@@ -20,7 +20,6 @@ const SocialStyles = styled.div`
     }
 
     a.social {
-        max-size: 50px;
         margin: 0 1rem;
         transition: transform 0.3s;
         display: inline-block;
