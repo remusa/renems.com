@@ -17,7 +17,8 @@ const LayoutStyles = styled.div`
     display: grid;
     grid-template-rows: auto 1fr auto;
     /* grid-template-columns: minmax(auto, 100px) 1fr minmax(auto, 100px); */
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: minmax(auto, 1/3fr) 1fr minmax(auto, 1/3fr);
+    /* grid-template-columns: auto 1fr auto; */
     grid-gap: 10px;
 
     grid-template-areas: 'header header header' '. main .' 'footer footer footer';

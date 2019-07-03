@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import socialLinks from '../data/social.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import socialLinks from '../data/social.json'
 
 const SocialStyles = styled.div`
     display: flex;
@@ -19,6 +19,7 @@ const SocialStyles = styled.div`
     }
 
     a.social {
+        max-size: 50px;
         margin: 0 1rem;
         transition: transform 0.3s;
         display: inline-block;
@@ -65,15 +66,30 @@ const SocialStyles = styled.div`
 
 const Social = () => (
     <SocialStyles className='social-container'>
-        <a target='_blank' href='https://github.com/remusa' className='social github'>
+        <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://github.com/remusa'
+            className='social github'
+        >
             <FontAwesomeIcon icon={faGithub} size='2x' />
         </a>
 
-        <a target='_blank' href='https://www.linkedin.com/in/remusa' className='social linkedin'>
+        <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.linkedin.com/in/remusa'
+            className='social linkedin'
+        >
             <FontAwesomeIcon icon={faLinkedin} size='2x' />
         </a>
 
-        {/* <a target='_blank' href='https://twitter.com/remusa_' className='social twitter'>
+        {/* <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://twitter.com/remusa_'
+            className='social twitter'
+        >
             <FontAwesomeIcon icon={faTwitter} size='2x' />
         </a> */}
     </SocialStyles>

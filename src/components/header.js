@@ -7,8 +7,8 @@ const HeaderStyles = styled.header`
     grid-area: header;
 
     background: var(--color-primary);
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 10%;
+    padding-right: 10%;
 
     nav {
         display: flex;
@@ -88,32 +88,32 @@ const Header = ({ siteTitle }) => (
                     Now
                 </Link>
 
-                <Link
+                {/* <Link
                     to='/blog'
                     getProps={({ isPartiallyCurrent }) =>
                         isPartiallyCurrent ? { className: 'active' } : null
                     }
                 >
                     Blog
-                </Link>
+                </Link> */}
 
-                <Link
+                {/* <Link
                     to='/projects'
                     getProps={({ isPartiallyCurrent }) =>
                         isPartiallyCurrent ? { className: 'active' } : null
                     }
                 >
                     Projects
-                </Link>
+                </Link> */}
 
-                <Link
+                {/* <Link
                     to='/about'
                     getProps={({ isPartiallyCurrent }) =>
                         isPartiallyCurrent ? { className: 'active' } : null
                     }
                 >
                     About
-                </Link>
+                </Link> */}
             </div>
         </nav>
     </HeaderStyles>
