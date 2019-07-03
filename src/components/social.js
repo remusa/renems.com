@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import socialLinks from '../data/social.json'
+// import socialLinks from '../data/social.json'
 
 const SocialStyles = styled.div`
     display: flex;
     justify-content: center;
 
     .social-container {
+        max-height: 100px;
         /* width: 100px; */
         /* align-items: center; */
         /* padding: 4px; */
