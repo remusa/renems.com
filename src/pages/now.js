@@ -19,6 +19,7 @@ const NowPage = () => (
         <ul>
             <li>More GraphQL! The whole ecosystem is enjoyable</li>
             <li>Django REST Framework</li>
+            <li>Svelte next?</li>
         </ul>
     </Layout>
 )
