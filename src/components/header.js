@@ -79,6 +79,10 @@ const Header = ({ siteTitle }) => (
             </div>
 
             <div className='right link'>
+                {/* <Link to='#projects'>Projects</Link>
+
+                <Link to='#contact'>Contact</Link> */}
+
                 <Link
                     to='/now'
                     getProps={({ isPartiallyCurrent }) =>

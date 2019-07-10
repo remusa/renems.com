@@ -9,6 +9,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 @font-face {
     format: 'woff2';
@@ -33,6 +34,10 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -84,11 +89,12 @@ a {
 }
 
 .project-list {
-    list-style: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
+
+    list-style: none;
 }
 
 .project-list__card {
@@ -97,6 +103,7 @@ a {
     margin-right: 4px;
 
     width: 250px;
+    max-width: 300px;
     height: 350px;
     overflow: hidden;
     display: block;

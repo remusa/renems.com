@@ -1,7 +1,7 @@
 [
     {
         "name": "Cero",
-        "type": "fullstack",
+        "type": ["fullstack", "react", "node", "graphql"],
         "description": "Cero is an intermittent fasting tracker built in React, Node and GraphQL.",
         "tech": ["React", "Node", "GraphQL"],
         "img": "cero.png",
@@ -11,7 +11,7 @@
     },
     {
         "name": "Portfolio",
-        "type": "react",
+        "type": ["react"],
         "description": "",
         "tech": ["React", "Gatsby", "GraphQL"],
         "img": "gatsby-portfolio.png",
@@ -20,7 +20,7 @@
     },
     {
         "name": "Pomodoro Clock",
-        "type": "react",
+        "type": ["react"],
         "description": "",
         "tech": ["React"],
         "img": "pomodoro-clock.png",
@@ -29,7 +29,7 @@
     },
     {
         "name": "JavaScript Calculator",
-        "type": "react",
+        "type": ["react"],
         "description": "",
         "tech": ["React"],
         "img": "javascript-calculator.png",
@@ -38,7 +38,7 @@
     },
     {
         "name": "Drum Machine",
-        "type": "react",
+        "type": ["react"],
         "description": "",
         "tech": ["React"],
         "img": "drum-machine.png",
@@ -47,7 +47,7 @@
     },
     {
         "name": "Markdown Previewer",
-        "type": "react",
+        "type": ["react"],
         "description": "",
         "tech": ["React"],
         "img": "markdown-previewer.png",
@@ -56,7 +56,7 @@
     },
     {
         "name": "Random Quote Generator",
-        "type": "react",
+        "type": ["react"],
         "tech": ["React"],
         "img": "random-quote-generator.png",
         "url": "https://myrandomquotes.netlify.com/",
@@ -64,7 +64,7 @@
     },
     {
         "name": "Charts made with D3.js",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["D3.js"],
         "img": "data-visualization.png",
@@ -73,7 +73,7 @@
     },
     {
         "name": "Timestamp Microservice",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js"],
         "img": "timestamp-microservice.png",
@@ -82,7 +82,7 @@
     },
     {
         "name": "Request Header Parser Microservice",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js"],
         "img": "request-header-parser.png",
@@ -91,7 +91,7 @@
     },
     {
         "name": "URL Shortener Microservice",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js"],
         "img": "url-shortener.png",
@@ -100,7 +100,7 @@
     },
     {
         "name": "Exercise Tracker",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js"],
         "img": "exercise-tracker.png",
@@ -109,7 +109,7 @@
     },
     {
         "name": "File Metadata Microservice",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js"],
         "img": "file-metadata.png",
@@ -118,7 +118,7 @@
     },
     {
         "name": "Metric Imperial Converter",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
         "img": "metric-imperial-converter.png",
@@ -127,7 +127,7 @@
     },
     {
         "name": "Issue Tracker",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
         "img": "issue-tracker.png",
@@ -136,7 +136,7 @@
     },
     {
         "name": "Personal Library",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
         "img": "personal-library.png",
@@ -145,7 +145,7 @@
     },
     {
         "name": "Stock Price Checker",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
         "img": "stock-checker.png",
@@ -154,7 +154,7 @@
     },
     {
         "name": "Anonymous Message Board",
-        "type": "back-end",
+        "type": ["back-end"],
         "description": "",
         "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
         "img": "message-board.png",
@@ -163,7 +163,7 @@
     },
     {
         "name": "Tribute Page",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
         "img": "tribute-page.png",
@@ -172,7 +172,7 @@
     },
     {
         "name": "Survey Form",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
         "img": "survey-form.png",
@@ -181,7 +181,7 @@
     },
     {
         "name": "Product Landing Page",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
         "img": "product-landing-page.png",
@@ -190,7 +190,7 @@
     },
     {
         "name": "Technical Documentation Page",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid", "JavaScript"],
         "img": "technical-documentation-page.png",
@@ -199,7 +199,7 @@
     },
     {
         "name": "Personal Portfolio Webpage",
-        "type": "front-end",
+        "type": ["front-end"],
         "description": "",
         "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
         "img": "personal-portfolio.png",

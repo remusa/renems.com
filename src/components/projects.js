@@ -35,7 +35,7 @@ ProjectCard.propTypes = {
 
 class Projects extends React.Component {
     state = {
-        selectType: '',
+        selectType: 'react',
     }
 
     static propTypes = {
@@ -44,7 +44,7 @@ class Projects extends React.Component {
 
     handleSelectChange = e => {
         e.preventDefault()
-        const value = e.target.value
+        const { value } = e.target
         this.setState({
             selectType: value,
         })
@@ -57,10 +57,10 @@ class Projects extends React.Component {
         const renderProjectList =
             selectType === ''
                 ? projectList
-                : projectList.filter(project => selectType === project.type)
+                : projectList.filter(project => project.type.includes(selectType))
 
         return (
-            <div className='projects-container'>
+            <a className='projects-container'>
                 <h2>Projects</h2>
 
                 <p>These are some other projects I've built.</p>
@@ -79,6 +79,7 @@ class Projects extends React.Component {
                                 <option value='fullstack'>Fullstack</option>
                                 <option value='front-end'>Front-end</option>
                                 <option value='back-end'>Back-end</option>
+                                <option value='node'>Node</option>
                             </select>
                         </label>
                     </form>
@@ -100,7 +101,7 @@ class Projects extends React.Component {
                         )
                     })}
                 </div>
-            </div>
+            </a>
         )
     }
 }

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
-import Social from '../components/social'
 import '../components/styles.scss'
 import Featured from '../components/featured'
-import Tech from '../components/tech'
+import Contact from '../components/contact'
+import BasicInfo from '../components/basic-info'
 
 const SectionStyles = styled.section`
     text-align: center;
@@ -26,27 +26,12 @@ const IndexPage = ({ data }) => {
             />
 
             <SectionStyles>
-                <h1>
-                    Hello, I'm René M. Sánchez.
-                    <br />
-                </h1>
-
-                <h2>Developer, student, software engineer.</h2>
-
-                <p>
-                    I'm a passionate developer that enjoys building useful things and learning new
-                    technologies.
-                </p>
-
-                <p>I enjoy working with React, Node, GraphQL and Python.</p>
-
-                <Social />
-
-                {/* <Tech /> */}
-
+                <BasicInfo />
+                {/* <div href='#projects' style={{ height: '100vh' }}> */}
                 <Featured projectImgs={featuredImgData} />
-
                 <Projects projectImgs={projectImgData} />
+                {/* </div> */}
+                <Contact href='#contact' />
             </SectionStyles>
         </Layout>
     )
