@@ -77,6 +77,7 @@ const FormStyles = styled.a`
     }
 `
 
+// data-netlify-recaptcha='true'
 const Contact = () => (
     <FormStyles>
         <form
@@ -84,7 +85,6 @@ const Contact = () => (
             method='POST'
             action='/success'
             data-netlify='true'
-            // data-netlify-recaptcha='true'
         >
             <h2>Contact me</h2>
 
