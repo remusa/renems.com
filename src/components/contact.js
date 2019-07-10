@@ -80,12 +80,7 @@ const FormStyles = styled.a`
 // data-netlify-recaptcha='true'
 const Contact = () => (
     <FormStyles>
-        <form
-            name='contact'
-            method='POST'
-            action='/success'
-            data-netlify='true'
-        >
+        <form name='contact' method='POST' action='/success' data-netlify='true'>
             <h2>Contact me</h2>
 
             <fieldset>
