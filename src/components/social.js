@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 // import socialLinks from '../data/social.json'
 
 const SocialStyles = styled.div`
@@ -9,7 +10,7 @@ const SocialStyles = styled.div`
     justify-content: center;
 
     .social-container {
-        max-height: 100px;
+        /* max-height: 100px; */
         /* width: 100px; */
         /* align-items: center; */
         /* padding: 4px; */
@@ -23,6 +24,7 @@ const SocialStyles = styled.div`
         margin: 0 1rem;
         transition: transform 0.3s;
         display: inline-block;
+        size: 25px;
 
         &:hover {
             /* transform: translateY(-2px); */
@@ -46,6 +48,10 @@ const SocialStyles = styled.div`
 
     a.linkedin {
         color: #0073b0;
+    }
+
+    a.email {
+        color: #333333;
     }
 
     /* .social-icon {
@@ -82,6 +88,10 @@ const Social = () => (
             className='social linkedin'
         >
             <FontAwesomeIcon icon={faLinkedin} size='2x' />
+        </a>
+
+        <a href='#contact' className='social email'>
+            <FontAwesomeIcon icon={faEnvelope} size='2x' />
         </a>
 
         {/* <a

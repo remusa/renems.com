@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import projectList from '../data/projects.json'
 
 const FeaturedStyles = styled.div`
+    margin-top: 24px;
     text-align: center;
     border-radius: 4px;
     padding: 16px;
