@@ -23,6 +23,7 @@
 html {
   box-sizing: border-box;
   // font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,7 +68,8 @@ h1 {
 //   font-size: 1.6rem;
 // }
 
-button {
+button,
+a {
   cursor: pointer;
 }
 
