@@ -4,5 +4,5 @@ module.exports = {
   extends: ['wesbos'],
   rules: {
     'prettier/prettier': ['error', prettierConfig],
-  }
+  },
 }
