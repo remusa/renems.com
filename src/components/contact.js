@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FormStyles = styled.a`
-  width: 80%;
+const FormStyles = styled.form`
+  /* width: 80%; */
 
-  form {
+  /* form { */
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -69,13 +69,13 @@ const FormStyles = styled.a`
                 } */
       }
     }
-  }
+  /* } */
 `
 
 // data-netlify-recaptcha='true'
 const Contact = () => (
-  <FormStyles>
-    <form name='contact' method='POST' action='/success' data-netlify='true'>
+  // <FormStyles>
+    <FormStyles name='contact' method='POST' action='/success' data-netlify='true'>
       <h2>Contact me</h2>
 
       <fieldset>
@@ -95,8 +95,8 @@ const Contact = () => (
 
         <button type='submit'>Send</button>
       </fieldset>
-    </form>
-  </FormStyles>
+    </FormStyles>
+  // </FormStyles>
 )
 
 export default Contact

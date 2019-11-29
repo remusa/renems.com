@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import '../static/css/styles.scss'
 import Featured from '../components/featured'
 import Contact from '../components/contact'
-import BasicInfo from '../components/basicinfo'
+import BasicInfo from '../components/basic-info'
 
 const ArticleStyles = styled.article`
   text-align: center;
