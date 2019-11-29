@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FormStyles = styled.form`
-  /* width: 80%; */
+const FormStyles = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  /* form { */
+  form {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -63,19 +65,15 @@ const FormStyles = styled.form`
         padding: 8px 16px;
         margin: 4px;
         transition: all 0.3s ease;
-
-        /* &:hover {
-                  background: var(--color-primary-dark);
-                } */
       }
     }
-  /* } */
+  }
 `
 
 // data-netlify-recaptcha='true'
 const Contact = () => (
-  // <FormStyles>
-    <FormStyles name='contact' method='POST' action='/success' data-netlify='true'>
+  <FormStyles id="contact">
+    <form name='contact' method='POST' action='/success' data-netlify='true'>
       <h2>Contact me</h2>
 
       <fieldset>
@@ -95,8 +93,8 @@ const Contact = () => (
 
         <button type='submit'>Send</button>
       </fieldset>
-    </FormStyles>
-  // </FormStyles>
+    </form>
+  </FormStyles>
 )
 
 export default Contact
