@@ -29,7 +29,8 @@ const IndexPage = ({ data }) => {
         <BasicInfo />
         <Featured projectImgs={featuredImgData} />
         <Projects projectImgs={projectImgData} />
-        <Contact href='#contact' />
+        <Contact />
+        {/* href='#contact'  */}
       </ArticleStyles>
     </Layout>
   )
