@@ -9,20 +9,15 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 // import socialLinks from '../data/social.json'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const SocialStyles = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   .social-container {
-    /* max-height: 100px; */
-    /* width: 100px; */
-    /* align-items: center; */
-    /* padding: 4px; */
-    /* display: flex; */
-    /* justify-content: space-evenly; */
     background: #eee;
-    /* padding: 25px 50px; */
     padding: 1.5rem 2.5rem;
   }
 
@@ -81,6 +76,10 @@ const Social = () => (
     >
       <FontAwesomeIcon icon={faLinkedin} size='2x' />
     </a>
+
+    {/* <AnchorLink href="#contact" className='social email'>
+      <FontAwesomeIcon icon={faEnvelope} size='2x' />
+    </AnchorLink> */}
 
     <a href='#contact' className='social email'>
       <FontAwesomeIcon icon={faEnvelope} size='2x' />
