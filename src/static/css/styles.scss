@@ -1,0 +1,82 @@
+@import url('./project.scss');
+@import url('./colors-nord.scss');
+@import url('./colors-onedark.scss');
+
+:root {
+  // General colors
+  --color-white: rgb(236, 239, 244);
+  // --color-grey: #4c566a;
+  // --color-blue: #00bcd4;
+  // --color-blue-dark: rgb(0, 122, 204);
+  // --color-aqua: rgb(3, 212, 191);
+
+  --color-dark-text: #b8b7d1;
+  --color-dark-nav-link: #9694ba;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
+// @font-face {
+//   src: url('../fonts/Assistant-Regular.ttf') format('ttf');
+//   font-family: 'Assistant', sans-serif;
+// }
+
+html {
+  box-sizing: border-box;
+  // font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Assistant', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-font);
+  font-size: 1.125em;
+  line-height: 1.15;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+// h2 {
+//   font-size: 1rem;
+//   font-weight: 400;
+// }
+
+// h3 {
+//   font-size: 2em;
+// }
+
+// h4 {
+//   font-size: 1.9rem;
+// }
+
+// h5 {
+//   font-size: 1.8rem;
+// }
+
+// p,
+// a,
+// li,
+// code {
+//   font-size: 1.6rem;
+// }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-font);
+}
+
+::selection {
+  background: var(--color-selection);
+  color: var(--color-white);
+}
