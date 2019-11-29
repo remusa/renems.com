@@ -93,22 +93,24 @@ const Header = ({ siteTitle }) => (
         </Link>
 
         {/* <Link
-                    to='/projects'
-                    getProps={({ isPartiallyCurrent }) =>
-                        isPartiallyCurrent ? { className: 'active' } : null
-                    }
-                >
-                    Projects
-                </Link> */}
+            to='/projects'
+            getProps={({ isPartiallyCurrent }) =>
+              isPartiallyCurrent ? { className: 'active' } : null
+            }
+          >
+            Projects
+          </Link>
+        */}
 
         {/* <Link
-                    to='/about'
-                    getProps={({ isPartiallyCurrent }) =>
-                        isPartiallyCurrent ? { className: 'active' } : null
-                    }
-                >
-                    About
-                </Link> */}
+            to='/about'
+            getProps={({ isPartiallyCurrent }) =>
+              isPartiallyCurrent ? { className: 'active' } : null
+            }
+          >
+            About
+          </Link>
+        */}
       </div>
     </nav>
   </HeaderStyles>
