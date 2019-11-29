@@ -44,7 +44,6 @@ const FooterStyles = styled.footer`
     size: 25px;
 
     &:hover {
-      /* transform: translateY(-2px); */
       transform: translateZ(0) scale(0.85);
       color: var(--color-primary);
       opacity: 1;
@@ -61,6 +60,7 @@ transition: transform 3s ease-in-out;
 const Footer = () => (
   <FooterStyles>
     {/* <Social /> */}
+
     <span className="social-links">
     <a
       target='_blank'
@@ -87,9 +87,6 @@ const Footer = () => (
     {/* <AnchorLink href="#header"  to='#header' className='border-bottom'>
       Back top
     </AnchorLink> */}
-    {/* <Link  href='' to='/'>
-      Back top
-    </Link> */}
 
     <span>© {new Date().getFullYear()} RMS</span>
   </FooterStyles>

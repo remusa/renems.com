@@ -21,7 +21,6 @@ const MainStyles = styled.main`
 
   margin: 0 auto;
   padding: 2rem;
-  /* max-width: 500px; */
 `
 
 const Layout = ({ children }) => (

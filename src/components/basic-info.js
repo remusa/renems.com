@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Social from './social'
+import Tech from './tech'
 
 const BasicInfoStyles = styled.div`
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: column;
+  justify-content: space-evenly;
   align-items: center;
 
   text-align: left;
@@ -21,6 +22,7 @@ const BasicInfoStyles = styled.div`
 
   p {
     max-width: 50rem;
+    line-height: 1.5;
   }
 `
 
@@ -31,10 +33,12 @@ const BasicInfo = () => (
     </h1>
     <h2>Software engineer.</h2>
     <p>
-      I'm a passionate developer that enjoys building useful things and learning new technologies. I
+      I'm a software engineer who enjoys building useful things and learning new technologies. I
       enjoy working with React, Node, GraphQL and Python.
     </p>
+
     <Social />
+
     {/* <Tech /> */}
   </BasicInfoStyles>
 )

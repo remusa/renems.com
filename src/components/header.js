@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import TransitionLink from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const HeaderStyles = styled.header`
   grid-area: header;
@@ -45,13 +48,9 @@ const HeaderStyles = styled.header`
         cursor: pointer;
         user-select: none;
 
-        &:hover {
-          background: var(--color-primary-dark, 0.7);
-        }
-
-        &.active {
-          background: var(--color-primary-dark, 0.7);
-          font-weight: 700;
+        &:hover, &.active {
+          /* background-color: rgba(0, 0, 0, 0.3); */
+          background-color: var(--color-primary);
         }
       }
     }
@@ -59,38 +58,46 @@ const HeaderStyles = styled.header`
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderStyles>
-    <nav>
+  <HeaderStyles id="header">
+    <nav id="nav">
       <div className='left'>
         <h1>
-          <Link to='/' activeClassName='active'>
+          <AniLink fade to='/' activeClassName='active'>
             {siteTitle}
-          </Link>
+          </AniLink>
         </h1>
       </div>
 
       <div className='right link'>
         {/* <Link to='#projects'>Projects</Link> */}
 
-        <Link to='/#contact'>Contact</Link>
+        {/* <Link to='/#contact'>Contact</Link> */}
 
-        <Link
+        {/* {
+          location.pathname === '/' ?
+          <AnchorLink href='#contact'>Contact</AnchorLink> :
+          null
+        } */}
+
+        <AniLink fade
           to='/blog'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
           Blog
-        </Link>
+        </AniLink>
 
-        <Link
+
+
+        <AniLink fade
           to='/now'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
           Now
-        </Link>
+        </AniLink>
 
         {/* <Link
             to='/projects'
