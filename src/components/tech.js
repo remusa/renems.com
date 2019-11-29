@@ -25,7 +25,8 @@ const TechStyles = styled.div`
 
 const Tech = () => (
   <TechStyles className='tech-container'>
-    <img src='' alt='icon' className='tech' />
+    {/* <img src='' alt='icon' className='tech' /> */}
+    <h3>Favorite Tech</h3>
   </TechStyles>
 )
 

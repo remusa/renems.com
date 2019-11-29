@@ -9,10 +9,6 @@ import Featured from '../components/featured'
 import Contact from '../components/contact'
 import BasicInfo from '../components/basic-info'
 
-const ArticleStyles = styled.article`
-  text-align: center;
-`
-
 const IndexPage = ({ data }) => {
   const { edges: projectImgData } = data.ProjectImgs
   const { edges: featuredImgData } = data.FeaturedProjectImgs
@@ -25,13 +21,23 @@ const IndexPage = ({ data }) => {
         keywords={[`blog`, `technology`, `react`]}
       />
 
-      <ArticleStyles>
-        <BasicInfo />
+      <article>
+        <section id="basic-info" >
+          <BasicInfo />
+        </section>
+
+        <section id="featured" >
         <Featured projectImgs={featuredImgData} />
+        </section>
+
+        <section id="projects" >
         <Projects projectImgs={projectImgData} />
+        </section>
+
+        <section id="contact" >
         <Contact />
-        {/* href='#contact'  */}
-      </ArticleStyles>
+        </section>
+      </article>
     </Layout>
   )
 }
