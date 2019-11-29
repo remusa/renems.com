@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
         node {
           id
@@ -49,9 +49,9 @@ const BlogPage = ({ data }) => (
       <div key={post.node.id}>
         <h3>{post.node.frontmatter.title}</h3>
 
-        <small>
+        {/* <small>
           Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}
-        </small>
+        </small> */}
 
         <br />
 
