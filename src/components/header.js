@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import styled from 'styled-components'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 // import TransitionLink from "gatsby-plugin-transition-link"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const HeaderStyles = styled.header`
   grid-area: header;
@@ -48,7 +48,8 @@ const HeaderStyles = styled.header`
         cursor: pointer;
         user-select: none;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           /* background-color: rgba(0, 0, 0, 0.3); */
           background-color: var(--color-primary);
         }
@@ -58,8 +59,8 @@ const HeaderStyles = styled.header`
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderStyles id="header">
-    <nav id="nav">
+  <HeaderStyles id='header'>
+    <nav id='nav'>
       <div className='left'>
         <h1>
           <AniLink fade to='/' activeClassName='active'>
@@ -79,7 +80,8 @@ const Header = ({ siteTitle }) => (
           null
         } */}
 
-        <AniLink fade
+        <AniLink
+          fade
           to='/blog'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
@@ -88,9 +90,18 @@ const Header = ({ siteTitle }) => (
           Blog
         </AniLink>
 
+        {/* <AniLink
+          fade
+          to='/notes'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Notes
+        </AniLink> */}
 
-
-        <AniLink fade
+        <AniLink
+          fade
           to='/now'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null

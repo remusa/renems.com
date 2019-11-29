@@ -4,10 +4,7 @@ import Social from './social'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import {
-  faGithub,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const FooterStyles = styled.footer`
   grid-area: footer;
@@ -37,23 +34,23 @@ const FooterStyles = styled.footer`
     justify-content: space-between;
 
     a.social {
-    color: var(--color-primary-light);
-    margin: 0 1rem;
-    transition: transform 0.3s;
-    display: inline-block;
-    size: 25px;
+      color: var(--color-primary-light);
+      margin: 0 1rem;
+      transition: transform 0.3s;
+      display: inline-block;
+      size: 25px;
 
-    &:hover {
-      transform: translateZ(0) scale(0.85);
-      color: var(--color-primary);
-      opacity: 1;
+      &:hover {
+        transform: translateZ(0) scale(0.85);
+        color: var(--color-primary);
+        opacity: 1;
+      }
     }
-  }
   }
 
   .move-top:target ~ #header {
-transform: translateY( 0px );
-transition: transform 3s ease-in-out;
+    transform: translateY(0px);
+    transition: transform 3s ease-in-out;
   }
 `
 
@@ -61,24 +58,24 @@ const Footer = () => (
   <FooterStyles>
     {/* <Social /> */}
 
-    <span className="social-links">
-    <a
-      target='_blank'
-      rel='noopener noreferrer'
-      href='https://github.com/remusa'
-      className='social'
-    >
-      <FontAwesomeIcon icon={faGithub} size='1x' />
-    </a>
+    <span className='social-links'>
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://github.com/remusa'
+        className='social'
+      >
+        <FontAwesomeIcon icon={faGithub} size='1x' />
+      </a>
 
-    <a
-      target='_blank'
-      rel='noopener noreferrer'
-      href='https://www.linkedin.com/in/remusa'
-      className='social'
-    >
-      <FontAwesomeIcon icon={faLinkedin} size='1x' />
-    </a>
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.linkedin.com/in/remusa'
+        className='social'
+      >
+        <FontAwesomeIcon icon={faLinkedin} size='1x' />
+      </a>
     </span>
 
     <a className='border-bottom move-top' href='#header'>
