@@ -57,6 +57,7 @@
     "eslint-plugin-react-hooks": "1.3.0",
     "graphql-tools": "^4.0.5",
     "jest-transform-graphql": "^2.1.0",
+    "netlify-cli": "^2.21.0",
     "node-sass": "^4.13.0",
     "prettier": "1.16.4",
     "pretty-quick": "^2.0.1"
