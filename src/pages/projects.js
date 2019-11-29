@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Projects from '../components/Projects'
-import SEO from '../components/SEO'
+import Layout from '../components/layout'
+import Projects from '../components/projects'
+import SEO from '../components/seo'
 
 const ProjectsPage = () => (
   <Layout>
@@ -21,8 +21,6 @@ const ProjectsPage = () => (
       tellus diam vel magna. Vestibulum dictum viverra eleifend. Quisque malesuada consectetur lacus
       elementum ornare.
     </p>
-
-    {/* <Projects /> */}
   </Layout>
 )
 

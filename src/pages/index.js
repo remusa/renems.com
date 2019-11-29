@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
-import Projects from '../components/Projects'
-import SEO from '../components/SEO'
+import Layout from '../components/layout'
+import Projects from '../components/projects'
+import SEO from '../components/seo'
 import '../static/css/styles.scss'
-import Featured from '../components/Featured'
-import Contact from '../components/Contact'
-import BasicInfo from '../components/BasicInfo'
+import Featured from '../components/featured'
+import Contact from '../components/contact'
+import BasicInfo from '../components/basicinfo'
 
 const ArticleStyles = styled.article`
   text-align: center;

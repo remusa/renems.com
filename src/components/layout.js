@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from './footer'
+import Header from './header'
 
 const LayoutStyles = styled.div`
   height: 100vh;
