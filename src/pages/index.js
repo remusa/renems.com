@@ -26,11 +26,21 @@ const IndexPage = ({ data }) => {
       />
 
       <ArticleStyles>
-        <BasicInfo />
+        <section id="basic-info" >
+          <BasicInfo />
+        </section>
+
+        <section id="featured" >
         <Featured projectImgs={featuredImgData} />
+        </section>
+
+        <section id="projects" >
         <Projects projectImgs={projectImgData} />
+        </section>
+
+        <section id="contact" >
         <Contact />
-        {/* href='#contact'  */}
+        </section>
       </ArticleStyles>
     </Layout>
   )
