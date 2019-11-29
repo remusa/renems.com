@@ -6,15 +6,17 @@
   "version": "0.1.0",
   "author": "RMS <contact@renems.com>",
   "scripts": {
-    "build": "gatsby build",
+    "start": "npm run develop",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "prettify": "pretty-quick",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "deploy": "npm run netlify:deploy",
+    "netlify:deploy": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.20-11",
