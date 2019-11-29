@@ -20,8 +20,8 @@ const MainStyles = styled.main`
   grid-area: main;
 
   margin: 0 auto;
-  /* max-width: 500px; */
   padding: 2rem;
+  /* max-width: 500px; */
 `
 
 const Layout = ({ children }) => (
