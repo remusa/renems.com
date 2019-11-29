@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Social from './Social'
+import Social from './social'
 
 const BasicInfoStyles = styled.div`
   display: flex;

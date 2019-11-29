@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Social from './Social'
+import Social from './social'
 import { Link } from 'gatsby'
 
 const FooterStyles = styled.footer`
