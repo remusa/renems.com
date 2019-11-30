@@ -2,11 +2,13 @@ import React from 'react'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import projectList from '../data/projects.json'
+// import AOS from "aos"
+// import "aos/dist/aos.css";
 
 const ProjectCard = ({ project, imageSizes }) => (
   <>
     <a className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
-      <div className='project-list__card__image'>
+      <div className='project-list__card__image' data-aos="image-enter">
         <Img
           title={project.name}
           alt='project screenshot'
@@ -43,6 +45,12 @@ class Projects extends React.Component {
   static propTypes = {
     projectImgs: PropTypes.array.isRequired,
   }
+
+  // componentDidMount() {
+  //   AOS.init({
+  //     once: true
+  //   })
+  // }
 
   handleSelectChange = e => {
     e.preventDefault()

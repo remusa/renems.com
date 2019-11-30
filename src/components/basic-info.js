@@ -29,7 +29,7 @@ const BasicInfoStyles = styled.div`
 const BasicInfo = () => (
   <BasicInfoStyles>
     <h1>
-      Hello, I'm <span>René M.S.</span>.
+      Hello, I'm <span>René M.S.</span>
     </h1>
     <h2>Software engineer.</h2>
     <p>
