@@ -14,7 +14,6 @@ const IconEmail = () => email
 
 export {
   IconEmail,
-  email,
 github,
 linkedin,
 twitter,

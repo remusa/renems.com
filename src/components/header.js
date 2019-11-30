@@ -90,16 +90,6 @@ const Header = ({ siteTitle }) => (
           Blog
         </AniLink>
 
-        {/* <AniLink
-          fade
-          to='/notes'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Notes
-        </AniLink> */}
-
         <AniLink
           fade
           to='/now'
@@ -117,16 +107,6 @@ const Header = ({ siteTitle }) => (
             }
           >
             Projects
-          </Link>
-        */}
-
-        {/* <Link
-            to='/about'
-            getProps={({ isPartiallyCurrent }) =>
-              isPartiallyCurrent ? { className: 'active' } : null
-            }
-          >
-            About
           </Link>
         */}
       </div>
