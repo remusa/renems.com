@@ -22,20 +22,20 @@ const IndexPage = ({ data }) => {
       />
 
       <article>
-        <section id="basic-info" >
+        <section id='basic-info'>
           <BasicInfo />
         </section>
 
-        <section id="featured" >
-        <Featured projectImgs={featuredImgData} />
+        <section id='featured'>
+          <Featured projectImgs={featuredImgData} />
         </section>
 
-        <section id="projects" >
-        <Projects projectImgs={projectImgData} />
+        <section id='projects'>
+          <Projects projectImgs={projectImgData} />
         </section>
 
-        <section id="contact" >
-        <Contact />
+        <section id='contact'>
+          <Contact />
         </section>
       </article>
     </Layout>

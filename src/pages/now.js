@@ -6,6 +6,7 @@ const NowPage = () => (
   <Layout>
     <SEO title='Now' keywords={[`now`]} />
 
+    <div style={{maxWidth: '500px'}}>
     <h1>Now</h1>
 
     <p>I see being a developer as my craft, so I'm always trying to improve.</p>
@@ -21,6 +22,8 @@ const NowPage = () => (
       <li>Django REST Framework</li>
       <li>Svelte next?</li>
     </ul>
+    </div>
+
   </Layout>
 )
 

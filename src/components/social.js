@@ -57,43 +57,47 @@ const SocialStyles = styled.div`
   } */
 `
 
-const Social = () => (
-  <SocialStyles className='social-container'>
-    <a
-      target='_blank'
-      rel='noopener noreferrer'
-      href='https://github.com/remusa'
-      className='social github'
-    >
-      <FontAwesomeIcon icon={faGithub} size='2x' />
-    </a>
+const Social = () => {
+  const iconSize = '1x'
 
-    <a
-      target='_blank'
-      rel='noopener noreferrer'
-      href='https://www.linkedin.com/in/remusa'
-      className='social linkedin'
-    >
-      <FontAwesomeIcon icon={faLinkedin} size='2x' />
-    </a>
+  return (
+    <SocialStyles className='social-container'>
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://github.com/remusa'
+        className='social github'
+      >
+        <FontAwesomeIcon icon={faGithub} size={iconSize} />
+      </a>
 
-    {/* <AnchorLink href="#contact" className='social email'>
-      <FontAwesomeIcon icon={faEnvelope} size='2x' />
-    </AnchorLink> */}
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.linkedin.com/in/remusa'
+        className='social linkedin'
+      >
+        <FontAwesomeIcon icon={faLinkedin} size={iconSize} />
+      </a>
 
-    <a href='#contact' className='social email'>
-      <FontAwesomeIcon icon={faEnvelope} size='2x' />
-    </a>
+      {/* <AnchorLink href="#contact" className='social email'>
+        <FontAwesomeIcon icon={faEnvelope} size={iconSize} />
+      </AnchorLink> */}
 
-    {/* <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://twitter.com/remusa_'
-            className='social twitter'
-        >
-            <FontAwesomeIcon icon={faTwitter} size='2x' />
-        </a> */}
-  </SocialStyles>
-)
+      <a href='#contact' className='social email'>
+        <FontAwesomeIcon icon={faEnvelope} size={iconSize} />
+      </a>
+
+      {/* <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://twitter.com/remusa_'
+        className='social twitter'
+      >
+        <FontAwesomeIcon icon={faTwitter} size={iconSize} />
+      </a> */}
+    </SocialStyles>
+  )
+}
 
 export default Social
