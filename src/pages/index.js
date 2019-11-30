@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
@@ -8,10 +8,18 @@ import '../static/css/styles.scss'
 import Featured from '../components/featured'
 import Contact from '../components/contact'
 import BasicInfo from '../components/basic-info'
+import AOS from "aos"
+import "aos/dist/aos.css";
 
 const IndexPage = ({ data }) => {
   const { edges: projectImgData } = data.ProjectImgs
   const { edges: featuredImgData } = data.FeaturedProjectImgs
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    })
+  }, [])
 
   return (
     <Layout>
