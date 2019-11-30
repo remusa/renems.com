@@ -18,7 +18,8 @@ const FormStyles = styled.div`
     text-align: center;
     max-width: 600px;
     border-radius: 5px;
-    box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17);
+    /* box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17); */
+    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
 
     fieldset {
       height: 100%;

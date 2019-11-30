@@ -16,6 +16,11 @@ const FeaturedStyles = styled.div`
     justify-content: space-evenly;
     align-items: center;
   }
+
+  @media all and (max-width: 500px) {
+    margin-top: 0;
+    padding: 8px;
+  }
 `
 
 const CardStyles = styled.div`
@@ -30,6 +35,7 @@ const CardStyles = styled.div`
     border-radius: 5;
     border-style: solid;
     /* box-shadow: 0px 5px 35px 0px var(--color-primary-dark, 0.17); */
+    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
 
     &:hover {
       border-style: solid;
