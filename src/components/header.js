@@ -48,6 +48,8 @@ const HeaderStyles = styled.header`
         cursor: pointer;
         user-select: none;
 
+        transition: all 0.3s ease-in-out;
+
         &:hover,
         &.active {
           /* background-color: rgba(0, 0, 0, 0.3); */

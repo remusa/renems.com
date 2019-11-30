@@ -13,7 +13,7 @@ const BasicInfoStyles = styled.div`
 
   h1 > span {
     border-bottom: 4px solid var(--color-primary);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       border-color: var(--coral);

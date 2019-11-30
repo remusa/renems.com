@@ -36,7 +36,7 @@ const FooterStyles = styled.footer`
     a.social {
       color: var(--color-primary-light);
       margin: 0 1rem;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in-out;
       display: inline-block;
       size: 25px;
 
