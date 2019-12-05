@@ -1,15 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 // import socialLinks from '../data/social.json'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { FaGithubAlt, FaLinkedin, FaEnvelope, FaYoutube, FaTwitter } from 'react-icons/fa'
 
 const SocialStyles = styled.div`
   display: flex;
@@ -48,61 +41,53 @@ const SocialStyles = styled.div`
   }
 `
 
-const Social = () => {
-  const iconSize = '1x'
+const Social = () => (
+  <SocialStyles>
+    <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href='https://github.com/remusa'
+      className='social-link github'
+    >
+      <FaGithubAlt />
+      <p className='icon-title'>Github</p>
+    </a>
 
-  return (
-    <SocialStyles>
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href='https://github.com/remusa'
-        className='social-link github'
-      >
-        <FontAwesomeIcon icon={faGithub} size={iconSize} />
-        <p className="icon-title">Github</p>
-      </a>
+    <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href='https://www.linkedin.com/in/remusa'
+      className='social-link linkedin'
+    >
+      <FaLinkedin />
+      <p className='icon-title'>LinkedIn</p>
+    </a>
 
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href='https://www.linkedin.com/in/remusa'
-        className='social-link linkedin'
-      >
-        <FontAwesomeIcon icon={faLinkedin} size={iconSize} />
-        <p className="icon-title">LinkedIn</p>
-      </a>
+    <a href='#contact' className='social-link email'>
+      <FaEnvelope />
+      <p className='icon-title'>Email</p>
+    </a>
 
-      {/* <AnchorLink href="#contact" className='social-link email'>
-        <FontAwesomeIcon icon={faEnvelope} size={iconSize} />
-      </AnchorLink> */}
+    {/* <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href='https://twitter.com/remusa_'
+      className='social-link twitter'
+    >
+      <FaTwitter />
+      <p className='icon-title'>Twitter</p>
+    </a> */}
 
-      <a href='#contact' className='social-link email'>
-        <FontAwesomeIcon icon={faEnvelope} size={iconSize} />
-        <p className="icon-title">Email</p>
-      </a>
-
-      {/* <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href='https://twitter.com/remusa_'
-        className='social-link twitter'
-      >
-        <FontAwesomeIcon icon={faTwitter} size={iconSize} />
-        <p className="icon-title">Twitter</p>
-      </a> */}
-
-      {/* <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href='https:/youtube.com/remusa_'
-        className='social-link twitter'
-      >
-        <FontAwesomeIcon icon={faYoutube} size={iconSize} />
-        <p className="icon-title">YouTube</p>
-      </a> */}
-    </SocialStyles>
-  )
-}
+    {/* <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href='https:/youtube.com/remusa_'
+      className='social-link twitter'
+    >
+      <FaYoutube />
+      <p className='icon-title'>YouTube</p>
+    </a> */}
+  </SocialStyles>
+)
 
 export default Social
