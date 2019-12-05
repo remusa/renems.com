@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Social from './social'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import Social from './social'
 
 const FooterStyles = styled.footer`
   grid-area: footer;
@@ -63,18 +62,20 @@ const Footer = () => (
         target='_blank'
         rel='noopener noreferrer'
         href='https://github.com/remusa'
-        className='social'
+        className='social-link github'
       >
-        <FontAwesomeIcon icon={faGithub} size='1x' />
+        <FaGithubAlt />
+        <p className='icon-title'>Github</p>
       </a>
 
       <a
         target='_blank'
         rel='noopener noreferrer'
         href='https://www.linkedin.com/in/remusa'
-        className='social'
+        className='social-link linkedin'
       >
-        <FontAwesomeIcon icon={faLinkedin} size='1x' />
+        <FaLinkedin />
+        <p className='icon-title'>LinkedIn</p>
       </a>
     </span>
 
