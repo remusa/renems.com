@@ -19,10 +19,6 @@
     "netlify:deploy": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.20-11",
-    "@fortawesome/free-brands-svg-icons": "^5.9.0",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "aos": "^3.0.0-beta.6",
     "gatsby": "^2.13.13",
     "gatsby-cli": "^2.7.9",
@@ -44,6 +40,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.8.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
