@@ -1,4 +1,4 @@
-name: Lighthouse
+name: Lighthouse # https://github.com/treosh/lighthouse-ci-action
 
 on: [push]
 
