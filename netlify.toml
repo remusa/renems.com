@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/github"
-  to = "https://github.com/remusa/"
+  to = "https://github.com/remusa"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
