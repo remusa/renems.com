@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+// import { FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Social from './social'
@@ -13,7 +13,7 @@ const FooterStyles = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   text-align: center;
 
   .border-bottom {
@@ -55,9 +55,9 @@ const FooterStyles = styled.footer`
 
 const Footer = () => (
   <FooterStyles>
-    {/* <Social /> */}
+    <Social />
 
-    <span className='social-links'>
+    {/* <span className='social-links'>
       <a
         target='_blank'
         rel='noopener noreferrer'
@@ -77,7 +77,7 @@ const Footer = () => (
         <FaLinkedin />
         <p className='icon-title'>LinkedIn</p>
       </a>
-    </span>
+    </span> */}
 
     <a className='border-bottom move-top' href='#header'>
       Back top
