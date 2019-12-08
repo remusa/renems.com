@@ -1,0 +1,13 @@
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/remusa/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/in/remusa"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
