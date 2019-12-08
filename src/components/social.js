@@ -15,7 +15,7 @@ const SocialStyles = styled.div`
     align-items: center;
 
     color: var(--color-primary-light);
-    margin: 0 1rem;
+    padding: 0 0.5rem;
     transition: transform 0.3s;
     display: inline-block;
     text-align: center;
