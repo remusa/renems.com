@@ -46,7 +46,8 @@ const Social = () => (
     <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https://renems.com/github'
+      href='https://github.com/remusa'
+      // href='https://renems.com/github'
       className='social-link github'
     >
       <FaGithubAlt />
@@ -56,7 +57,8 @@ const Social = () => (
     <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https://renems.com/linkedin'
+      href='https://www.linkedin.com/in/remusa'
+      // href='https://renems.com/linkedin'
       className='social-link linkedin'
     >
       <FaLinkedin />
