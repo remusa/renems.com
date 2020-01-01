@@ -1,11 +1,12 @@
 ---
-path: '/the-way-of-men'
+path: '/TheWayofMen'
 date: '2019-12-29'
 title: 'The Way of Men'
-book-author: 'Jack Donovan'
+book_author: 'Jack Donovan'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 

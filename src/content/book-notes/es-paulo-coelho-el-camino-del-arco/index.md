@@ -1,11 +1,12 @@
 ---
-path: '/el-camino-del-arco'
+path: '/ElCaminodelArco'
 date: '2019-12-29'
-title: 'El Camino Del Arco, por Paulo Coelho'
-title: 'Paulo Coelho'
+title: 'El Camino Del Arco'
+book_author: 'Paulo Coelho'
 author: 'RMS'
 tags: ['book-notes']
-language: ["spanish"]
+language: "spanish"
+type: "BOOK"
 ---
 
 -Puede que haya desistido, que se haya acobardado; no me importa -insistió el extranjero-. Pero no puede ser considerado el mejor arquero del país si ha abandonado su arte. Por eso he hecho un viaje de tantos días: para desafiarlo y terminar con una fama que ya no merece.

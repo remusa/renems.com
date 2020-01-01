@@ -1,10 +1,13 @@
 ---
-path: '/so-good'
+path: '/SoGood'
 date: '2019-12-29'
-title: "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love"
-book-author: 'Cal Newport'
+title: "So Good They Can't Ignore You"
+title_full: "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love"
+book_author: 'Cal Newport'
 author: 'RMS'
 tags: ['book-notes']
+language: "english"
+type: "BOOK"
 ---
 
 ‘Follow your passion’ is dangerous advice.”

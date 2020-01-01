@@ -1,10 +1,13 @@
 ---
-path: '/deep-work'
+path: '/DeepWork'
 date: '2019-12-29'
-title: 'Deep Work: Rules for Focused Success in a Distracted World'
-book-author: 'Cal Newport'
+title: 'Deep Work'
+title_full: 'Deep Work: Rules for Focused Success in a Distracted World'
+book_author: 'Cal Newport'
 author: 'RMS'
 tags: ['book-notes']
+language: "english"
+type: "BOOK"
 ---
 
 Deep Work: Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.

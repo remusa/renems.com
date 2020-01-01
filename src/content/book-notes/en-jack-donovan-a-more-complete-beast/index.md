@@ -1,11 +1,12 @@
 ---
-path: '/a-more-complete-beast'
+path: '/AMoreCompleteBeast'
 date: '2019-12-29'
 title: 'A More Complete Beast'
-book-author: 'Jack Donovan'
+book_author: 'Jack Donovan'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 

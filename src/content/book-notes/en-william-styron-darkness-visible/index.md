@@ -1,11 +1,12 @@
 ---
-path: '/darkness-visible'
+path: '/DarknessVisible'
 date: '2019-12-29'
 title: 'Darkness Visible'
-book-author: 'William Styron'
+book_author: 'William Styron'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 For the thing which I greatly feared is come upon me, and that which I was afraid of Is come unto me. I was not in safety, neither had I rest, neither was I quiet; yet trouble came. —Job

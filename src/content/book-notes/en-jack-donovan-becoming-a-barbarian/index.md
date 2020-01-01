@@ -1,11 +1,12 @@
 ---
-path: '/becoming-a-barbarian'
+path: '/BecomingaBarbarian'
 date: '2019-12-29'
 title: 'Becoming a Barbarian'
-book-author: 'Jack Donovan'
+book_author: 'Jack Donovan'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 
@@ -745,9 +746,9 @@ Instead of engaging yourself in the Sisyphean, self-defeating and self-denying t
 Jack Donovan, Becoming a Barbarian, loc. 1243-1250
 Instead of engaging yourself in the Sisyphean, self-defeating and self-denying task of purifying yourself from the Empire, use The Moral Gear Shift. Decide what values are important to you and your tribe and maintain them within the social perimeter of the group, but employ whatever means are necessary to ensure the tribe’s survival and prosperity in the context of the world as it exists in the present — not as you wish it to be in the future or imagine it was in the past. Accept every advantage. Exploit every opportunity. Exhaust every resource. Take everything the modern world has to offer and use it to aid your revolt and improve the future prospects of your people. Do not think like a citizen of the bloated Empire. Imagine yourself beyond the walls of Rome, and see its abundance beckoning from afar, as a barbarian would. Given the opportunity, what would you loot, pillage and plunder? And...given the opportunity — why wouldn’t you?
 Jack Donovan, Becoming a Barbarian, loc. 1243-1251
-No good, modern, civilized man wants to think of himself as a “criminal.” Most men see themselves as “good guys.” Men with a taste or talent for violence who want to be “good guys” often refer to themselves as “sheepdogs” — a metaphor popularized by Lt. Col. Dave Grossman in his book On Combat. According to Grossman, a sheepdog has a deep love for and fights to protect sheep, defined as “healthy, productive citizens” with “no capacity for violence,” from wolves, who have a capacity for violence but “no empathy for [their] fellow citizens.” Grossman diagnoses wolves as “aggressive sociopaths.”1 1 Grossman’s essay “On Sheep, Wolves and Sheepdogs” is currently available online at http://killology.com/sheep_dog.htm
+No good, modern, civilized man wants to think of himself as a “criminal.” Most men see themselves as “good guys.” Men with a taste or talent for violence who want to be “good guys” often refer to themselves as “sheepdogs” — a metaphor popularized by Lt. Col. Dave Grossman in his book On Combat. According to Grossman, a sheepdog has a deep love for and fights to protect sheep, defined as “healthy, productive citizens” with “no capacity for violence,” from wolves, who have a capacity for violence but “no empathy for [their] fellow citizens.” Grossman diagnoses wolves as “aggressive sociopaths.”1 1 Grossman’s essay “On Sheep, Wolves and Sheepdogs” is currently available online at <http://killology.com/sheep_dog.htm>
 Jack Donovan, Becoming a Barbarian, loc. 1260-1267
-No good, modern, civilized man wants to think of himself as a “criminal.” Most men see themselves as “good guys.” Men with a taste or talent for violence who want to be “good guys” often refer to themselves as “sheepdogs” — a metaphor popularized by Lt. Col. Dave Grossman in his book On Combat. According to Grossman, a sheepdog has a deep love for and fights to protect sheep, defined as “healthy, productive citizens” with “no capacity for violence,” from wolves, who have a capacity for violence but “no empathy for [their] fellow citizens.” Grossman diagnoses wolves as “aggressive sociopaths.”1 1 Grossman’s essay “On Sheep, Wolves and Sheepdogs” is currently available online at http://killology.com/sheep_dog.htm These definitions are far too simple...too black and white.
+No good, modern, civilized man wants to think of himself as a “criminal.” Most men see themselves as “good guys.” Men with a taste or talent for violence who want to be “good guys” often refer to themselves as “sheepdogs” — a metaphor popularized by Lt. Col. Dave Grossman in his book On Combat. According to Grossman, a sheepdog has a deep love for and fights to protect sheep, defined as “healthy, productive citizens” with “no capacity for violence,” from wolves, who have a capacity for violence but “no empathy for [their] fellow citizens.” Grossman diagnoses wolves as “aggressive sociopaths.”1 1 Grossman’s essay “On Sheep, Wolves and Sheepdogs” is currently available online at <http://killology.com/sheep_dog.htm> These definitions are far too simple...too black and white.
 Jack Donovan, Becoming a Barbarian, loc. 1260-1268
 The ideal of the sheepdog conjures the traditional role of men, who have always been expected to fight to protect everyone and everything inside the perimeter of their tribe against threats from outside that perimeter, whether those threats come from nature or or from other groups of men.
 Jack Donovan, Becoming a Barbarian, loc. 1268-1270

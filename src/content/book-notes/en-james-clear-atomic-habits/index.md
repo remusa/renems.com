@@ -1,11 +1,13 @@
 ---
-path: '/atomic-habits'
+path: '/AtomicHabits'
 date: '2019-12-29'
-title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
-book-author: 'James Clear'
+title: 'Atomic Habits'
+title_full: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
+book_author: 'James Clear'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 A habit is a routine or behavior that is performed regularly—and, in many cases, automatically.

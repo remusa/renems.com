@@ -1,11 +1,13 @@
 ---
-path: '/tidying-up'
+path: '/TidyingUp'
 date: '2019-12-29'
-title: 'The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing'
-book-author: 'Marie Kondo'
+title: 'The Life-Changing Magic of Tidying Up'
+title_full: 'The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing'
+book_author: 'Marie Kondo'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 

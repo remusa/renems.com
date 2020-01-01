@@ -1,10 +1,12 @@
 ---
-path: '/enquiridion'
+path: '/Enquiridion'
 date: '2019-12-29'
-title: 'Enquiridión, por Epicteto'
+title: 'Enquiridión'
+book_author: 'Epicteto'
 author: 'RMS'
 tags: ['book-notes']
-language: ["spanish"]
+language: "spanish"
+type: "BOOK"
 ---
 
 tiene por lema, “Abstente de pasiones, afectos y opiniones”.

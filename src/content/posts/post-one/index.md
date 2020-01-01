@@ -4,6 +4,7 @@ date: '2019-02-13'
 title: 'My First Gatsby Post'
 author: 'RMS'
 tags: ['test', 'tag2']
+type: "BLOG"
 ---
 
 This is my very post in Gatsby

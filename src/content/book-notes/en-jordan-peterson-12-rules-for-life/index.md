@@ -1,10 +1,13 @@
 ---
-path: '/12-rules'
+path: '/12RulesForLife'
 date: '2019-12-29'
-title: '12 Rules for Life: An Antidote to Chaos'
-book-author: 'Jordan Peterson'
+title: '12 Rules for Life'
+title_full: '12 Rules for Life: An Antidote to Chaos'
+book_author: 'Jordan Peterson'
 author: 'RMS'
 tags: ['book-notes']
+language: "english"
+type: "BOOK"
 ---
 
 Ideologies are simple ideas, disguised as science or philosophy, that purport to explain the complexity of the world and offer remedies that will perfect it. Ideologues are people who pretend they know how to “make the world a better place” before they’ve taken care of their own chaos within.

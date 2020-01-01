@@ -1,10 +1,13 @@
 ---
-path: '/digital-minimalism'
+path: '/DigitalMinimalism'
 date: '2019-12-29'
-title: 'Digital Minimalism: Choosing a Focused Life in a Noisy World'
-book-author: 'Cal Newport'
+title: 'Digital Minimalism'
+title_full: 'Digital Minimalism: Choosing a Focused Life in a Noisy World'
+book_author: 'Cal Newport'
 author: 'RMS'
 tags: ['book-notes']
+language: "english"
+type: "BOOK"
 ---
 
 their current relationship with technology was unsustainable—to

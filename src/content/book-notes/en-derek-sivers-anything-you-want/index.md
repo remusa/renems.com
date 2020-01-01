@@ -1,11 +1,12 @@
 ---
-path: '/anything-you-want'
+path: '/AnythingYouWant'
 date: '2019-12-29'
 title: 'Anything You Want'
-book-author: 'Derek Sivers'
+book_author: 'Derek Sivers'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 

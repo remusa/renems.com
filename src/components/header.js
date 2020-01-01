@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-// import { Link } from 'gatsby'
-import styled from 'styled-components'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 // import TransitionLink from "gatsby-plugin-transition-link"
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import PropTypes from 'prop-types'
+import React from 'react'
+// import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
   grid-area: header;
@@ -90,6 +90,16 @@ const Header = ({ siteTitle }) => (
           }
         >
           Blog
+        </AniLink>
+
+        <AniLink
+          fade
+          to='/books'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Notes
         </AniLink>
 
         <AniLink

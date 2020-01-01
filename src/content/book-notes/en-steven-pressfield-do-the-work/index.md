@@ -1,11 +1,12 @@
 ---
-path: '/do-the-work'
+path: '/DotheWork'
 date: '2019-12-29'
 title: 'Do the Work'
-book-author: 'Steven Pressfield'
+book_author: 'Steven Pressfield'
 author: 'RMS'
 tags: ['book-notes']
-language: ["english"]
+language: "english"
+type: "BOOK"
 ---
 
 Our Enemies The following is a list of the forces arrayed against us as artists and entrepreneurs: Resistance (i.e., fear, self-doubt, procrastination, addiction, distraction, timidity, ego and narcissism, self-loathing, perfectionism, etc.) Rational thought Friends and family
