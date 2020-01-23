@@ -6,46 +6,9 @@ import projectList from '../data/projects.json'
 // import AOS from "aos"
 // import "aos/dist/aos.css";
 
-const ProjectCard = ({ project, imageSizes }) => (
-  <>
-    <a
-      className='project-list__card'
-      href={project.url}
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      <div className='project-list__card__image' data-aos='image-enter'>
-        <Img
-          title={project.name}
-          alt='project screenshot'
-          sizes={imageSizes}
-          className='project-list__card__image__src'
-        />
-      </div>
-
-      <div className='project-list__card__divider' />
-
-      <div className='project-list__card__info'>
-        <h4 className='project-list__card__info__name'>{project.name}</h4>
-
-        <h5>Technologies: {project.tech.join(', ')}</h5>
-
-        <a href={project.github} target='_blank' rel='noopener noreferrer'>
-          <code>Code</code>
-        </a>
-      </div>
-    </a>
-  </>
-)
-
-ProjectCard.propTypes = {
-  project: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
-}
-
 class Projects extends React.Component {
   state = {
-    selectType: 'react',
+    selectType: '',
   }
 
   static propTypes = {
@@ -85,6 +48,7 @@ class Projects extends React.Component {
           <label htmlFor='project-select'>
             <select
               id='project-select'
+              name='project-select'
               defaultValue={selectType}
               onChange={this.handleSelectChange}
             >
@@ -116,6 +80,43 @@ class Projects extends React.Component {
       </a>
     )
   }
+}
+
+const ProjectCard = ({ project, imageSizes }) => (
+  <>
+    <a
+      className='project-list__card'
+      href={project.url}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <div className='project-list__card__image' data-aos='image-enter'>
+        <Img
+          title={project.name}
+          alt='project screenshot'
+          sizes={imageSizes}
+          className='project-list__card__image__src'
+        />
+      </div>
+
+      <div className='project-list__card__divider' />
+
+      <div className='project-list__card__info'>
+        <h4 className='project-list__card__info__name'>{project.name}</h4>
+
+        <h5>Technologies: {project.tech.join(', ')}</h5>
+
+        <a href={project.github} target='_blank' rel='noopener noreferrer'>
+          <code>Code</code>
+        </a>
+      </div>
+    </a>
+  </>
+)
+
+ProjectCard.propTypes = {
+  project: PropTypes.object.isRequired,
+  imageSizes: PropTypes.object.isRequired,
 }
 
 export default Projects
