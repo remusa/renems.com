@@ -72,15 +72,15 @@ const Header = ({ siteTitle }) => (
       </div>
 
       <div className='right link'>
-        {/* <Link to='#projects'>Projects</Link> */}
-
-        {/* <Link to='/#contact'>Contact</Link> */}
-
-        {/* {
-          location.pathname === '/' ?
-          <AnchorLink href='#contact'>Contact</AnchorLink> :
-          null
-        } */}
+        <AniLink
+          fade
+          to='/projects'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Projects
+        </AniLink>
 
         <AniLink
           fade
