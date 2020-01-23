@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 import projectList from '../data/projects.json'
 
@@ -132,10 +132,18 @@ const Featured = ({ projectImgs }) => (
       {projectList
         .filter(project => project.featured)
         .map(project => {
-          const image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
+          const image = projectImgs.find(
+            n => n.node.relativePath === `projects/${project.img}`
+          )
           const imageSizes = image.node.childImageSharp.sizes
 
-          return <ProjectCard key={project.url} project={project} imageSizes={imageSizes} />
+          return (
+            <ProjectCard
+              key={project.url}
+              project={project}
+              imageSizes={imageSizes}
+            />
+          )
         })}
     </div>
   </FeaturedStyles>
