@@ -1,0 +1,50 @@
+[
+  {
+    "name": "JavaScript",
+    "img": "javascript.webp"
+  },
+  {
+    "name": "TypeScript",
+    "img": "typescript.webp"
+  },
+  {
+    "name": "React",
+    "img": "react.webp"
+  },
+  {
+    "name": "Python",
+    "img": "python.png"
+  },
+  {
+    "name": "Django",
+    "img": "django.jpg"
+  },
+  {
+    "name": "Docker",
+    "img": "docker.webp"
+  },
+  {
+    "name": "Jest",
+    "img": "jest.webp"
+  },
+  {
+    "name": "Node",
+    "img": "node.webp"
+  },
+  {
+    "name": "Postgresql",
+    "img": "postgresql.png"
+  },
+  {
+    "name": "Apollo",
+    "img": "apollo.png"
+  },
+  {
+    "name": "Gatsby",
+    "img": "gatsby.png"
+  },
+  {
+    "name": "Next.js",
+    "img": "next.png"
+  }
+]

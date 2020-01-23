@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import React, { useEffect } from 'react'
+import BasicInfo from '../components/basic-info'
+import Contact from '../components/contact'
+import Featured from '../components/featured'
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
+import Tech from '../components/tech'
 import '../static/css/styles.scss'
-import Featured from '../components/featured'
-import Contact from '../components/contact'
-import BasicInfo from '../components/basic-info'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const IndexPage = ({ data }) => {
-  const { edges: projectImgData } = data.ProjectImgs
   const { edges: featuredImgData } = data.FeaturedProjectImgs
+  const { edges: projectImgData } = data.ProjectImgs
+  const { edges: techImgData } = data.TechImgs
 
   useEffect(() => {
     AOS.init({
@@ -32,6 +33,10 @@ const IndexPage = ({ data }) => {
       <article>
         <section id='basic-info'>
           <BasicInfo />
+        </section>
+
+        <section id='tech'>
+          <Tech techImgs={techImgData} />
         </section>
 
         <section id='featured'>
