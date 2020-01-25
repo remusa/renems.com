@@ -33,7 +33,7 @@ const ProjectsPage = () => {
     <Layout>
       <SEO title='Projects' keywords={[`projects`, `react`]} />
 
-      <h1>Projects</h1>
+      <h1 style={{ textAlign: 'center' }}>Projects</h1>
 
       <Projects projectImgs={projectImgData} />
     </Layout>
