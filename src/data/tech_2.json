@@ -36,6 +36,10 @@
     "img": "postgresql.png"
   },
   {
+    "name": "Jest",
+    "img": "jest.webp"
+  },
+  {
     "name": "Apollo",
     "img": "apollo.png"
   },
