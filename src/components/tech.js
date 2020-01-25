@@ -1,75 +1,12 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import techList from '../data/tech.json'
 
-const TechStyles = styled.div`
-  display: flex;
-  justify-content: center;
-
-  .tech-container {
-    background: #eee;
-    padding: 25px 50px;
-  }
-
-  img.tech {
-    margin: 0 1rem;
-    transition: transform 0.3s;
-    display: inline-block;
-
-    &:hover {
-      transform: translateZ(0) scale(1.3);
-      transition: transform all 0.7s ease;
-      opacity: 1;
-    }
-  }
-`
-
-const TechImage = ({ tech, imageSizes }) => (
-  <div data-aos='image-enter'>
-    <Img
-      title={tech.name}
-      alt={`${tech.name} screenshot`}
-      sizes={imageSizes}
-      className='project-list__card__image__src'
-    />
-  </div>
-)
-
-TechImage.propTypes = {
-  tech: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
-}
-
-const Tech = ({ techImgs }) => (
-  <TechStyles className='tech-container'>
-    <div className='tech-list'>
-      {techList.map(tech => {
-        const image = techImgs.find(
-          n => n.node.relativePath === `tech/${tech.img}`
-        )
-        const imageSizes = image.node.childImageSharp.sizes
-        return <TechImage key={tech.name} tech={tech} imageSizes={imageSizes} />
-      })}
-    </div>
-  </TechStyles>
-)
-
-Tech.propTypes = {
-  techImgs: PropTypes.object.isRequired,
-}
-
-export default Tech
-
-export const query = graphql`
-  query allDataQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
+const TECH_QUERY = graphql`
+  query allTechQuery {
     TechImgs: allFile(
       sort: { order: ASC, fields: [absolutePath] }
       filter: { relativePath: { regex: "/tech/.*.*/" } }
@@ -79,8 +16,11 @@ export const query = graphql`
           relativePath
           name
           childImageSharp {
-            sizes(maxWidth: 50) {
+            sizes(maxWidth: 300, maxHeight: 300) {
               ...GatsbyImageSharpSizes
+            }
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -88,3 +28,72 @@ export const query = graphql`
     }
   }
 `
+
+const TechStyles = styled.div`
+  /* display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center; */
+
+  max-width: 320px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .logo-container {
+      margin-bottom: 8px;
+
+      .logo {
+        /* display: inline-block; */
+        /* margin: 0 1rem; */
+      }
+    }
+  }
+`
+
+const Tech = () => {
+  const data = useStaticQuery(TECH_QUERY)
+  const { edges: techImgData } = data.TechImgs
+
+  return (
+    <TechStyles>
+      <div className='list'>
+        {techList.map(tech => {
+          const image = techImgData.find(
+            n => n.node.relativePath === `tech/${tech.img}`
+          )
+          const { sizes, fixed } = image.node.childImageSharp
+          return <TechImage key={tech.name} tech={tech} imageSizes={fixed} />
+        })}
+      </div>
+    </TechStyles>
+  )
+}
+
+// Tech.propTypes = {
+//   techImgs: PropTypes.object.isRequired,
+// }
+
+// <div data-aos='image-enter' className='logo-container'>
+const TechImage = ({ tech, imageSizes }) => (
+  <Img
+    title={tech.name}
+    alt={`${tech.name} icon`}
+    // sizes={imageSizes}
+    fixed={imageSizes}
+    className='logo'
+  />
+)
+// </div>
+
+TechImage.propTypes = {
+  tech: PropTypes.object.isRequired,
+  imageSizes: PropTypes.object.isRequired,
+}
+
+export default Tech
