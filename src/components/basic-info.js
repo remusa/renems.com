@@ -9,6 +9,8 @@ const BasicInfoStyles = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+  height: 80vh;
+  /* height: calc(100% - 100px); */
   text-align: left;
 
   h1 > span {
@@ -27,19 +29,21 @@ const BasicInfoStyles = styled.div`
 `
 
 const BasicInfo = () => (
+  // const data = useStaticQuery(TECH_QUERY)
+  // const { edges: techImgData } = data.TechImgs
+
   <BasicInfoStyles>
     <h1>
       Hello, I'm <span>René M.S.</span>
     </h1>
-    <h2>Software engineer.</h2>
+    <h2>Software engineer. </h2>
     <p>
-      I'm a software engineer who enjoys building useful things and learning new technologies. I
-      enjoy working with React, Node, GraphQL and Python.
+      I'm a software engineer who enjoys building useful things and learning new
+      technologies. I enjoy working with React, Node, GraphQL and Python.
     </p>
-
+    {/* <Tech techImgs={techImgData} /> */}
     <Social />
-
-    {/* <Tech /> */}
+    <Tech />
   </BasicInfoStyles>
 )
 
