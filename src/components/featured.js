@@ -9,6 +9,7 @@ const FeaturedStyles = styled.div`
   text-align: center;
   border-radius: 4px;
   padding: 16px;
+  height: 100vh;
 
   .project-list {
     display: flex;
@@ -87,6 +88,34 @@ const CardStyles = styled.div`
     }
   }
 `
+const Featured = ({ projectImgs }) => (
+  <FeaturedStyles>
+    <h2>Personal Projects</h2>
+
+    <div className='project-list'>
+      {projectList
+        .filter(project => project.featured)
+        .map(project => {
+          const image = projectImgs.find(
+            n => n.node.relativePath === `projects/${project.img}`
+          )
+          const imageSizes = image.node.childImageSharp.sizes
+
+          return (
+            <ProjectCard
+              key={project.url}
+              project={project}
+              imageSizes={imageSizes}
+            />
+          )
+        })}
+    </div>
+  </FeaturedStyles>
+)
+
+Featured.propTypes = {
+  projectImgs: PropTypes.array.isRequired,
+}
 
 const ProjectCard = ({ project, imageSizes }) => (
   <CardStyles>
@@ -122,35 +151,6 @@ const ProjectCard = ({ project, imageSizes }) => (
 ProjectCard.propTypes = {
   project: PropTypes.object.isRequired,
   imageSizes: PropTypes.object.isRequired,
-}
-
-const Featured = ({ projectImgs }) => (
-  <FeaturedStyles>
-    <h2>Featured Project</h2>
-
-    <div className='project-list'>
-      {projectList
-        .filter(project => project.featured)
-        .map(project => {
-          const image = projectImgs.find(
-            n => n.node.relativePath === `projects/${project.img}`
-          )
-          const imageSizes = image.node.childImageSharp.sizes
-
-          return (
-            <ProjectCard
-              key={project.url}
-              project={project}
-              imageSizes={imageSizes}
-            />
-          )
-        })}
-    </div>
-  </FeaturedStyles>
-)
-
-Featured.propTypes = {
-  projectImgs: PropTypes.array.isRequired,
 }
 
 export default Featured
