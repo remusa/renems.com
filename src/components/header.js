@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
   grid-area: header;
-  padding: 1rem;
+  padding: 1.25rem;
 
   nav {
     display: flex;
@@ -33,7 +33,6 @@ const HeaderStyles = styled.header`
         outline: 0;
         margin: 4px;
         flex: 0 1 20px;
-        /* color: var(--color-white-dark); */
 
         border-color: #fff;
         background-color: transparent;
@@ -84,26 +83,6 @@ const Header = ({ siteTitle }) => (
 
         <AniLink
           fade
-          to='/blog'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Blog
-        </AniLink>
-
-        <AniLink
-          fade
-          to='/books'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Notes
-        </AniLink>
-
-        <AniLink
-          fade
           to='/now'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
@@ -112,15 +91,25 @@ const Header = ({ siteTitle }) => (
           Now
         </AniLink>
 
-        {/* <Link
-            to='/projects'
-            getProps={({ isPartiallyCurrent }) =>
-              isPartiallyCurrent ? { className: 'active' } : null
-            }
-          >
-            Projects
-          </Link>
-        */}
+        {/* <AniLink
+          fade
+          to='/blog'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Blog
+        </AniLink> */}
+
+        {/* <AniLink
+          fade
+          to='/books'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Notes
+        </AniLink> */}
       </div>
     </nav>
   </HeaderStyles>
