@@ -6,15 +6,13 @@ import BasicInfo from '../components/basic-info'
 import Contact from '../components/contact'
 import Featured from '../components/featured'
 import Layout from '../components/layout'
-import Projects from '../components/projects'
 import SEO from '../components/seo'
-import Tech from '../components/tech'
+// import Tech from '../components/tech'
 import '../static/css/styles.scss'
 
 const IndexPage = ({ data }) => {
-  const { edges: featuredImgData } = data.FeaturedProjectImgs
   const { edges: projectImgData } = data.ProjectImgs
-  const { edges: techImgData } = data.TechImgs
+  // const { edges: techImgData } = data.TechImgs
 
   useEffect(() => {
     AOS.init({
@@ -35,17 +33,17 @@ const IndexPage = ({ data }) => {
           <BasicInfo />
         </section>
 
-        <section id='tech'>
+        {/* <section id='tech'>
           <Tech techImgs={techImgData} />
-        </section>
+        </section> */}
 
         <section id='featured'>
-          <Featured projectImgs={featuredImgData} />
+          <Featured projectImgs={projectImgData} />
         </section>
 
-        <section id='projects'>
+        {/* <section id='projects'>
           <Projects projectImgs={projectImgData} />
-        </section>
+        </section> */}
 
         <section id='contact'>
           <Contact />
@@ -76,23 +74,6 @@ export const query = graphql`
           name
           childImageSharp {
             sizes(maxWidth: 320) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-
-    FeaturedProjectImgs: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/projects/.*.png/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            sizes(maxWidth: 600) {
               ...GatsbyImageSharpSizes
             }
           }
