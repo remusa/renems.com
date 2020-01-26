@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
 
-const PROJECTS_QUERY = graphql`
+export const PROJECTS_QUERY = graphql`
   query allProjectsQuery {
     ProjectImgs: allFile(
       sort: { order: ASC, fields: [absolutePath] }

@@ -12,7 +12,7 @@
   {
     "name": "Personal website",
     "type": ["react", "graphql"],
-    "description": "",
+    "description": "Static website developed using Gatsby.js (React + GraphQL).",
     "tech": ["React", "Gatsby", "GraphQL"],
     "img": "gatsby-portfolio.png",
     "url": "https://renems.com",

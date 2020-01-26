@@ -32,6 +32,7 @@ class Projects extends React.Component {
   render() {
     const { selectType } = this.state
     const { projectImgs } = this.props
+    console.log('projectImgs', projectImgs)
 
     const renderProjectList =
       selectType === ''
@@ -64,9 +65,15 @@ class Projects extends React.Component {
 
         <div className='project-list'>
           {renderProjectList.map(project => {
-            const image = projectImgs.find(
+            let image = projectImgs.find(
               n => n.node.relativePath === `projects/${project.img}`
             )
+            if (!image) {
+              image = projectImgs.find(
+                n => n.node.relativePath === `images/projects/${project.img}`
+              )
+            }
+            console.log('image', image)
             const imageSizes = image.node.childImageSharp.sizes
             return (
               <ProjectCard
@@ -103,9 +110,7 @@ const ProjectCard = ({ project, imageSizes }) => (
 
       <div className='project-list__card__info'>
         <h4 className='project-list__card__info__name'>{project.name}</h4>
-
         <h5>Technologies: {project.tech.join(', ')}</h5>
-
         <a href={project.github} target='_blank' rel='noopener noreferrer'>
           <code>Code</code>
         </a>
