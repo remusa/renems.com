@@ -6,6 +6,43 @@ import projectList from '../data/projects.json'
 // import AOS from "aos"
 // import "aos/dist/aos.css";
 
+const ProjectCard = ({ project, fluid, sizes }) => (
+  <>
+    <a
+      className='project-list__card'
+      href={project.url}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <div className='project-list__card__image' data-aos='image-enter'>
+        <Img
+          title={project.name}
+          alt='project screenshot'
+          fluid={fluid}
+          // sizes={imageSizes}
+          className='project-list__card__image__src'
+        />
+      </div>
+
+      <div className='project-list__card__divider' />
+
+      <div className='project-list__card__info'>
+        <h4 className='project-list__card__info__name'>{project.name}</h4>
+        <h5>Technologies: {project.tech.join(', ')}</h5>
+        <a href={project.github} target='_blank' rel='noopener noreferrer'>
+          <code>Code</code>
+        </a>
+      </div>
+    </a>
+  </>
+)
+
+ProjectCard.propTypes = {
+  project: PropTypes.object.isRequired,
+  fluid: PropTypes.object.isRequired,
+  sizes: PropTypes.object.isRequired,
+}
+
 class Projects extends React.Component {
   state = {
     selectType: '',
@@ -32,7 +69,6 @@ class Projects extends React.Component {
   render() {
     const { selectType } = this.state
     const { projectImgs } = this.props
-    console.log('projectImgs', projectImgs)
 
     const renderProjectList =
       selectType === ''
@@ -73,13 +109,16 @@ class Projects extends React.Component {
                 n => n.node.relativePath === `images/projects/${project.img}`
               )
             }
-            console.log('image', image)
-            const imageSizes = image.node.childImageSharp.sizes
+
+            const imageFluid = image.node.childImageSharp.fluid || null
+            const imageSizes = image.node.childImageSharp.sizes || null
+
             return (
               <ProjectCard
                 key={project.url}
                 project={project}
-                imageSizes={imageSizes}
+                fluid={imageFluid}
+                sizes={imageSizes}
               />
             )
           })}
@@ -87,41 +126,6 @@ class Projects extends React.Component {
       </a>
     )
   }
-}
-
-const ProjectCard = ({ project, imageSizes }) => (
-  <>
-    <a
-      className='project-list__card'
-      href={project.url}
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      <div className='project-list__card__image' data-aos='image-enter'>
-        <Img
-          title={project.name}
-          alt='project screenshot'
-          sizes={imageSizes}
-          className='project-list__card__image__src'
-        />
-      </div>
-
-      <div className='project-list__card__divider' />
-
-      <div className='project-list__card__info'>
-        <h4 className='project-list__card__info__name'>{project.name}</h4>
-        <h5>Technologies: {project.tech.join(', ')}</h5>
-        <a href={project.github} target='_blank' rel='noopener noreferrer'>
-          <code>Code</code>
-        </a>
-      </div>
-    </a>
-  </>
-)
-
-ProjectCard.propTypes = {
-  project: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
 }
 
 export default Projects
