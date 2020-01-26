@@ -9,7 +9,7 @@ const BasicInfoStyles = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  height: 80vh;
+  min-height: 80vh;
   /* height: calc(100% - 100px); */
   text-align: left;
 

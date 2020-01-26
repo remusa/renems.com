@@ -30,11 +30,6 @@ const TECH_QUERY = graphql`
 `
 
 const TechStyles = styled.div`
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center; */
-
   max-width: 320px;
   padding-top: 8px;
   padding-bottom: 8px;
