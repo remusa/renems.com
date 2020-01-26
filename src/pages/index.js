@@ -10,7 +10,7 @@ import useSiteMetadata from '../hooks/useSiteMetadata'
 import '../static/css/styles.scss'
 
 const IndexPage = () => {
-  const { title, description } = useSiteMetadata()
+  const { description } = useSiteMetadata()
 
   useEffect(() => {
     AOS.init({
