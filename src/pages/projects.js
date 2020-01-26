@@ -1,33 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
-
-export const PROJECTS_QUERY = graphql`
-  query allProjectsQuery {
-    ProjectImgs: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/projects/.*.png/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            sizes(maxWidth: 320) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-  }
-`
+import useProjects from '../hooks/useProjects'
 
 const ProjectsPage = () => {
-  const data = useStaticQuery(PROJECTS_QUERY)
-  const { edges: projectImgData } = data.ProjectImgs
+  const projectImgs = useProjects()
 
   return (
     <Layout>
@@ -35,7 +13,7 @@ const ProjectsPage = () => {
 
       <h1 style={{ textAlign: 'center' }}>Projects</h1>
 
-      <Projects projectImgs={projectImgData} />
+      <Projects projectImgs={projectImgs} />
     </Layout>
   )
 }

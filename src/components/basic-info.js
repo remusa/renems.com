@@ -15,7 +15,7 @@ const BasicInfoStyles = styled.div`
 
   h1 > span {
     border-bottom: 4px solid var(--color-primary);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out 0.2s;
 
     &:hover {
       border-color: var(--coral);
@@ -25,13 +25,11 @@ const BasicInfoStyles = styled.div`
   p {
     max-width: 50rem;
     line-height: 1.5;
+    font-size: 22px;
   }
 `
 
 const BasicInfo = () => (
-  // const data = useStaticQuery(TECH_QUERY)
-  // const { edges: techImgData } = data.TechImgs
-
   <BasicInfoStyles>
     <h1>
       Hello, I'm <span>René M.S.</span>
@@ -41,7 +39,6 @@ const BasicInfo = () => (
       I'm a software engineer who enjoys building useful things and learning new
       technologies. I enjoy working with React, Node, GraphQL and Python.
     </p>
-    {/* <Tech techImgs={techImgData} /> */}
     <Social />
     <Tech />
   </BasicInfoStyles>

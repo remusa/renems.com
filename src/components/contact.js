@@ -5,7 +5,7 @@ const FormStyles = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(85vh - 100px);
+  /* height: calc(85vh - 100px); */
 
   form {
     display: flex;

@@ -1,18 +1,16 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { graphql } from 'gatsby'
 import React, { useEffect } from 'react'
 import BasicInfo from '../components/basic-info'
 import Contact from '../components/contact'
 import Featured from '../components/featured'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-// import Tech from '../components/tech'
+import useSiteMetadata from '../hooks/useSiteMetadata'
 import '../static/css/styles.scss'
 
-const IndexPage = ({ data }) => {
-  const { edges: projectImgData } = data.ProjectImgs
-  // const { edges: techImgData } = data.TechImgs
+const IndexPage = () => {
+  const { title, description } = useSiteMetadata()
 
   useEffect(() => {
     AOS.init({
@@ -24,7 +22,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title='index'
-        description={data.description}
+        description={description}
         keywords={[`blog`, `technology`, `react`]}
       />
 
@@ -33,12 +31,8 @@ const IndexPage = ({ data }) => {
           <BasicInfo />
         </section>
 
-        {/* <section id='tech'>
-          <Tech techImgs={techImgData} />
-        </section> */}
-
         <section id='featured'>
-          <Featured projectImgs={projectImgData} />
+          <Featured />
         </section>
 
         {/* <section id='projects'>
@@ -54,31 +48,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query allDataQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-
-    ProjectImgs: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/projects/.*.png/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            sizes(maxWidth: 320) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-  }
-`
