@@ -13,6 +13,10 @@ const BasicInfoStyles = styled.div`
   /* height: calc(100% - 100px); */
   text-align: left;
 
+  h2 {
+    text-align: center;
+  }
+
   h1 > span {
     border-bottom: 4px solid var(--color-primary);
     transition: all 0.3s ease-in-out 0.2s;
@@ -34,7 +38,7 @@ const BasicInfo = () => (
     <h1>
       Hello, I'm <span>René M.S.</span>
     </h1>
-    <h2>Software engineer.</h2>
+    <h2>Software engineer</h2>
     <p>
       I'm a software engineer who enjoys building useful things and learning new
       technologies. I enjoy working with React, Node, GraphQL and Python.
