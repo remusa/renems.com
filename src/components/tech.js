@@ -81,6 +81,8 @@ const Tech = () => {
 
   return (
     <TechStyles>
+      <h2>Favourite Technologies</h2>
+
       <div className='list'>
         {techList.map(tech => {
           const image = techImgData.find(
