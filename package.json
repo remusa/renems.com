@@ -16,7 +16,7 @@
     "prettify": "pretty-quick",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "analyze": "cross-env ANALYZE_BUNDLE_SIZE=true & npm run build",
+    "analyze": "cross-env-shell ANALYZE_BUNDLE_SIZE=true & npm run build",
     "deploy": "npm run netlify:deploy",
     "netlify:deploy": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\""
   },
