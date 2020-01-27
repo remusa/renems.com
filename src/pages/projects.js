@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import useProjects from '../hooks/useProjects'
 
 const ProjectsPage = () => {
-  const projectImgs = useProjects()
+  const { projectImgs } = useProjects()
 
   return (
     <Layout>

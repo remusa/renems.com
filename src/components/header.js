@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
   grid-area: header;
-  padding: 1.25rem;
+  padding: 1.5rem 2rem;
 
   nav {
     display: flex;

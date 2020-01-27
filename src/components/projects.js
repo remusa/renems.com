@@ -18,8 +18,8 @@ const ProjectCard = ({ project, fluid, sizes }) => (
         <Img
           title={project.name}
           alt='project screenshot'
-          fluid={fluid}
-          // sizes={imageSizes}
+          // fluid={fluid}
+          sizes={sizes}
           className='project-list__card__image__src'
         />
       </div>
@@ -39,8 +39,8 @@ const ProjectCard = ({ project, fluid, sizes }) => (
 
 ProjectCard.propTypes = {
   project: PropTypes.object.isRequired,
-  fluid: PropTypes.object.isRequired,
-  sizes: PropTypes.object.isRequired,
+  fluid: PropTypes.object,
+  sizes: PropTypes.object,
 }
 
 class Projects extends React.Component {
