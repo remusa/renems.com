@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import projectList from '../data/projects.json'
 
 const PROJECTS_QUERY = graphql`
   query featuredProjectsImagesQuery {
@@ -11,12 +12,12 @@ const PROJECTS_QUERY = graphql`
           relativePath
           name
           childImageSharp {
-            fluid(maxWidth: 500, maxHeight: 500) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid_withWebp
             }
-            # sizes(maxWidth: 500) {
-            #   ...GatsbyImageSharpSizes
-            # }
+            sizes(maxWidth: 320) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
           }
         }
       }
@@ -26,9 +27,12 @@ const PROJECTS_QUERY = graphql`
 
 const useProjects = () => {
   const data = useStaticQuery(PROJECTS_QUERY)
+  const allProjects = projectList
+  const featuredProjects = allProjects.filter(project => project.featured)
 
   const { edges: projectImgs } = data.ProjectImgs
-  return projectImgs
+
+  return { projectImgs, allProjects, featuredProjects }
 }
 
 export default useProjects
