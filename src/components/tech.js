@@ -16,11 +16,15 @@ const TECH_QUERY = graphql`
           relativePath
           name
           childImageSharp {
-            sizes(maxWidth: 300, maxHeight: 300) {
-              ...GatsbyImageSharpSizes
-            }
+            # fluid {
+            #   ...GatsbyImageSharpFluid_withWebp
+            # }
+            # sizes(maxWidth: 200, maxHeight: 200) {
+            #   ...GatsbyImageSharpSizes_withWebp
+            # }
             fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
+              # ...GatsbyImageSharpFixed_withWebp
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -51,6 +55,26 @@ const TechStyles = styled.div`
   }
 `
 
+const TechImage = ({ tech, fluid, sizes, fixed }) => (
+  <div data-aos='image-enter' className='logo-container'>
+    <Img
+      title={tech.name}
+      alt={`${tech.name} icon`}
+      // fluid={fluid}
+      // sizes={sizes}
+      fixed={fixed}
+      className='logo'
+    />
+  </div>
+)
+
+TechImage.propTypes = {
+  tech: PropTypes.object.isRequired,
+  fluid: PropTypes.object,
+  sizes: PropTypes.object,
+  fixed: PropTypes.object,
+}
+
 const Tech = () => {
   const data = useStaticQuery(TECH_QUERY)
   const { edges: techImgData } = data.TechImgs
@@ -62,33 +86,23 @@ const Tech = () => {
           const image = techImgData.find(
             n => n.node.relativePath === `tech/${tech.img}`
           )
-          const { sizes, fixed } = image.node.childImageSharp
-          return <TechImage key={tech.name} tech={tech} imageSizes={fixed} />
+          const fluid = image.node.childImageSharp.fluid || null
+          const sizes = image.node.childImageSharp.sizes || null
+          const fixed = image.node.childImageSharp.fixed || null
+
+          return (
+            <TechImage
+              key={tech.name}
+              tech={tech}
+              fluid={fluid}
+              sizes={sizes}
+              fixed={fixed}
+            />
+          )
         })}
       </div>
     </TechStyles>
   )
-}
-
-// Tech.propTypes = {
-//   techImgs: PropTypes.object.isRequired,
-// }
-
-// <div data-aos='image-enter' className='logo-container'>
-const TechImage = ({ tech, imageSizes }) => (
-  <Img
-    title={tech.name}
-    alt={`${tech.name} icon`}
-    // sizes={imageSizes}
-    fixed={imageSizes}
-    className='logo'
-  />
-)
-// </div>
-
-TechImage.propTypes = {
-  tech: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
 }
 
 export default Tech
