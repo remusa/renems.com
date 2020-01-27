@@ -1,18 +1,25 @@
-import React from 'react'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
+import React from 'react'
 import projectList from '../data/projects.json'
+
 // import AOS from "aos"
 // import "aos/dist/aos.css";
 
-const ProjectCard = ({ project, imageSizes }) => (
+const ProjectCard = ({ project, fluid, sizes }) => (
   <>
-    <a className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
-      <div className='project-list__card__image' data-aos="image-enter">
+    <a
+      className='project-list__card'
+      href={project.url}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <div className='project-list__card__image' data-aos='image-enter'>
         <Img
           title={project.name}
           alt='project screenshot'
-          sizes={imageSizes}
+          // fluid={fluid}
+          sizes={sizes}
           className='project-list__card__image__src'
         />
       </div>
@@ -21,9 +28,7 @@ const ProjectCard = ({ project, imageSizes }) => (
 
       <div className='project-list__card__info'>
         <h4 className='project-list__card__info__name'>{project.name}</h4>
-
         <h5>Technologies: {project.tech.join(', ')}</h5>
-
         <a href={project.github} target='_blank' rel='noopener noreferrer'>
           <code>Code</code>
         </a>
@@ -34,12 +39,13 @@ const ProjectCard = ({ project, imageSizes }) => (
 
 ProjectCard.propTypes = {
   project: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
+  fluid: PropTypes.object,
+  sizes: PropTypes.object,
 }
 
 class Projects extends React.Component {
   state = {
-    selectType: 'react',
+    selectType: '',
   }
 
   static propTypes = {
@@ -79,6 +85,7 @@ class Projects extends React.Component {
           <label htmlFor='project-select'>
             <select
               id='project-select'
+              name='project-select'
               defaultValue={selectType}
               onChange={this.handleSelectChange}
             >
@@ -94,10 +101,26 @@ class Projects extends React.Component {
 
         <div className='project-list'>
           {renderProjectList.map(project => {
-            const image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
-            const imageSizes = image.node.childImageSharp.sizes
+            let image = projectImgs.find(
+              n => n.node.relativePath === `projects/${project.img}`
+            )
+            if (!image) {
+              image = projectImgs.find(
+                n => n.node.relativePath === `images/projects/${project.img}`
+              )
+            }
 
-            return <ProjectCard key={project.url} project={project} imageSizes={imageSizes} />
+            const imageFluid = image.node.childImageSharp.fluid || null
+            const imageSizes = image.node.childImageSharp.sizes || null
+
+            return (
+              <ProjectCard
+                key={project.url}
+                project={project}
+                fluid={imageFluid}
+                sizes={imageSizes}
+              />
+            )
           })}
         </div>
       </a>

@@ -1,148 +1,185 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import { FaGithubAlt } from 'react-icons/fa'
 import styled from 'styled-components'
-import projectList from '../data/projects.json'
+import useProjects from '../hooks/useProjects.js'
 
 const FeaturedStyles = styled.div`
-  margin-top: 24px;
+  margin: 24px 0;
   text-align: center;
-  border-radius: 4px;
-  padding: 16px;
+  padding: 8px;
+  /* min-height: 80vh; */
 
   .project-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
   }
 
   @media all and (max-width: 500px) {
     margin-top: 0;
-    padding: 8px;
+    margin-bottom: 24px;
   }
 `
 
 const CardStyles = styled.div`
-  .card {
-    max-width: 600px;
-    max-height: 500px;
-    display: block;
-    text-align: center;
-    margin-top: 8px;
-    border-width: 0px 0px 0px 0px;
-    border-color: red;
-    border-radius: 5;
-    border-style: solid;
-    /* box-shadow: 0px 5px 35px 0px var(--color-primary-dark, 0.17); */
-    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
+  max-width: 500px;
+  height: 550px;
+  margin: 8px 16px;
+  border-radius: 8;
 
-    &:hover {
-      border-style: solid;
-      /* box-shadow: 0px 5px 35px 0px var(--color-primary-dark, 0.17); */
-    }
-  }
-
-  .card__image {
-    height: 50%;
+  .top {
+    height: 65%;
+    position: relative;
     overflow: hidden;
 
-    &__src {
+    + * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .image {
+      display: block;
+      overflow: hidden;
       width: 100%;
       height: 100%;
-      border-radius: 5px 5px 0 0;
-      transition: all 1s ease;
+      clip-path: inset(0);
     }
   }
 
-  .card__divider {
+  .bottom {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
     width: 100%;
-    height: 8px;
-    /* background-color: transparent; */
-    background-color: var(--color-primary);
-  }
+    padding: 8px;
+    height: calc(35% - 16px);
 
-  .card:hover .card__image__src {
-    transform: scale(1.2);
-    transition: all 0.5s ease;
-    text-decoration: none;
-  }
-
-  .card__info {
-    padding: 16px;
-    /* width: 100%; */
-    /* height: 50%; */
-
-    & > p {
-      /* font-size: 1rem; */
-      font-weight: 300;
-      line-height: normal;
-      height: 70%;
-      overflow-y: hidden;
-      position: relative;
+    p {
+      text-align: initial;
     }
 
-    &__name {
+    h3 {
+      text-align: center;
       color: var(--color-font);
+      /* text-decoration: underline var(--color-primary); */
+    }
+
+    .icon:hover,
+    h3:hover {
+      color: var(--coral);
+      text-decoration: underline var(--coral);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.17);
+    transition: box-shadow 0.5s ease;
+
+    .image {
+      clip-path: inset(0.5rem);
+      transition: clip-path 0.5s ease;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    height: auto;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .top {
+      height: 250px;
+    }
+
+    .bottom {
+      height: auto;
     }
   }
 `
 
-const ProjectCard = ({ project, imageSizes }) => (
-  <CardStyles>
-    <div className='card'>
-      <div className='card__image'>
+const ProjectCard = ({ project, fluid, sizes }) => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    })
+  }, [])
+
+  return (
+    <CardStyles className='card'>
+      <div className='top'>
         <a href={project.url} target='_blank' rel='noopener noreferrer'>
           <Img
             title={project.name}
             alt={project.name}
-            sizes={imageSizes}
-            className='card__image__src'
+            fluid={fluid}
+            // sizes={sizes}
+            className='image'
+            fadeIn
+            data-aos='image-enter'
           />
         </a>
       </div>
 
-      <div className='card__divider' />
-
-      <div className='card__info'>
-        <h3 className='card__info__name'>{project.name}</h3>
-
-        <h4>Technologies: {project.tech.join(', ')}</h4>
-
+      <div className='bottom'>
+        <a href={project.url} target='_blank' rel='noopener noreferrer'>
+          <h3>{project.name}</h3>
+        </a>
         <p>{project.description}</p>
-
-        <a href={project.github} target='_blank' rel='noopener noreferrer'>
-          <code>Source code (Github)</code>
+        <a
+          href={project.github}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='icon'
+        >
+          <FaGithubAlt />
         </a>
       </div>
-    </div>
-  </CardStyles>
-)
+    </CardStyles>
+  )
+}
 
 ProjectCard.propTypes = {
   project: PropTypes.object.isRequired,
-  imageSizes: PropTypes.object.isRequired,
+  fluid: PropTypes.object,
+  sizes: PropTypes.object,
 }
 
-const Featured = ({ projectImgs }) => (
-  <FeaturedStyles>
-    <h2>Featured Project</h2>
+const Featured = () => {
+  const { projectImgs, featuredProjects } = useProjects()
 
-    <div className='project-list'>
-      {projectList
-        .filter(project => project.featured)
-        .map(project => {
-          const image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
-          const imageSizes = image.node.childImageSharp.sizes
+  return (
+    <FeaturedStyles>
+      <h2>Personal Projects</h2>
 
-          return <ProjectCard key={project.url} project={project} imageSizes={imageSizes} />
+      <div className='project-list'>
+        {featuredProjects.map(project => {
+          const image = projectImgs.find(
+            n => n.node.relativePath === `projects/${project.img}`
+          )
+
+          const imageFluid = image.node.childImageSharp.fluid || null
+          const imageSizes = image.node.childImageSharp.sizes || null
+
+          return (
+            <ProjectCard
+              key={project.url}
+              project={project}
+              fluid={imageFluid}
+              sizes={imageSizes}
+            />
+          )
         })}
-    </div>
-  </FeaturedStyles>
-)
-
-Featured.propTypes = {
-  projectImgs: PropTypes.array.isRequired,
+      </div>
+    </FeaturedStyles>
+  )
 }
 
 export default Featured

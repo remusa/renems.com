@@ -1,5 +1,5 @@
-import React from 'react'
 import { graphql, Link } from 'gatsby'
+import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -15,6 +15,8 @@ export const pageQuery = graphql`
             date
             author
             tags
+            language
+            type
           }
           timeToRead
           wordCount {
@@ -39,30 +41,35 @@ export const pageQuery = graphql`
   }
 `
 
-const BlogPage = ({ data }) => (
-  <Layout>
-    <SEO title='Blog' keywords={[`blog`]} />
+const BlogPage = ({ data }) => {
+  const TYPE = 'BLOG'
+  const blogEntries = data.allMarkdownRemark.edges.filter(
+    post => post.node.frontmatter.type === TYPE
+  )
 
-    <h1>Latest Posts</h1>
+  return (
+    <Layout>
+      <SEO title='Blog' keywords={[`blog`]} />
 
-    {data.allMarkdownRemark.edges.map(post => (
-      <div key={post.node.id}>
-        <h3>{post.node.frontmatter.title}</h3>
+      <h1>Latest Posts</h1>
 
-        {/* <small>
-          Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}
-        </small> */}
+      {blogEntries.map(post => (
+        <div key={post.node.id}>
+          <h3>{post.node.frontmatter.title}</h3>
 
-        <br />
+          <small>Posted on {post.node.frontmatter.date}</small>
 
-        <Link to={post.node.frontmatter.path}>Read More</Link>
+          <br />
 
-        <br />
-        <br />
-        <hr />
-      </div>
-    ))}
-  </Layout>
-)
+          <Link to={post.node.frontmatter.path}>Read More</Link>
+
+          <br />
+          <br />
+          <hr />
+        </div>
+      ))}
+    </Layout>
+  )
+}
 
 export default BlogPage

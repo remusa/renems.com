@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-// import { Link } from 'gatsby'
-import styled from 'styled-components'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 // import TransitionLink from "gatsby-plugin-transition-link"
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import PropTypes from 'prop-types'
+import React from 'react'
+// import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
   grid-area: header;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
 
   nav {
     display: flex;
@@ -33,7 +33,6 @@ const HeaderStyles = styled.header`
         outline: 0;
         margin: 4px;
         flex: 0 1 20px;
-        /* color: var(--color-white-dark); */
 
         border-color: #fff;
         background-color: transparent;
@@ -72,24 +71,14 @@ const Header = ({ siteTitle }) => (
       </div>
 
       <div className='right link'>
-        {/* <Link to='#projects'>Projects</Link> */}
-
-        {/* <Link to='/#contact'>Contact</Link> */}
-
-        {/* {
-          location.pathname === '/' ?
-          <AnchorLink href='#contact'>Contact</AnchorLink> :
-          null
-        } */}
-
         <AniLink
           fade
-          to='/blog'
+          to='/projects'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
-          Blog
+          Projects
         </AniLink>
 
         <AniLink
@@ -102,15 +91,25 @@ const Header = ({ siteTitle }) => (
           Now
         </AniLink>
 
-        {/* <Link
-            to='/projects'
-            getProps={({ isPartiallyCurrent }) =>
-              isPartiallyCurrent ? { className: 'active' } : null
-            }
-          >
-            Projects
-          </Link>
-        */}
+        {/* <AniLink
+          fade
+          to='/blog'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Blog
+        </AniLink> */}
+
+        {/* <AniLink
+          fade
+          to='/books'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Notes
+        </AniLink> */}
       </div>
     </nav>
   </HeaderStyles>

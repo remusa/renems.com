@@ -9,11 +9,13 @@ const BasicInfoStyles = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+  min-height: 80vh;
+  /* height: calc(100% - 100px); */
   text-align: left;
 
   h1 > span {
     border-bottom: 4px solid var(--color-primary);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out 0.2s;
 
     &:hover {
       border-color: var(--coral);
@@ -23,6 +25,7 @@ const BasicInfoStyles = styled.div`
   p {
     max-width: 50rem;
     line-height: 1.5;
+    font-size: 22px;
   }
 `
 
@@ -33,13 +36,11 @@ const BasicInfo = () => (
     </h1>
     <h2>Software engineer.</h2>
     <p>
-      I'm a software engineer who enjoys building useful things and learning new technologies. I
-      enjoy working with React, Node, GraphQL and Python.
+      I'm a software engineer who enjoys building useful things and learning new
+      technologies. I enjoy working with React, Node, GraphQL and Python.
     </p>
-
     <Social />
-
-    {/* <Tech /> */}
+    <Tech />
   </BasicInfoStyles>
 )
 

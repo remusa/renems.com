@@ -18,6 +18,9 @@ exports.createPages = ({ graphql, actions }) => {
               date
               author
               tags
+              type
+              book_author
+              title_full
             }
             timeToRead
             wordCount {

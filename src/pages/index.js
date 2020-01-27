@@ -1,19 +1,16 @@
-import React, {useEffect} from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import Layout from '../components/layout'
-import Projects from '../components/projects'
-import SEO from '../components/seo'
-import '../static/css/styles.scss'
-import Featured from '../components/featured'
-import Contact from '../components/contact'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import React, { useEffect } from 'react'
 import BasicInfo from '../components/basic-info'
-import AOS from "aos"
-import "aos/dist/aos.css";
+import Contact from '../components/contact'
+import Featured from '../components/featured'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import useSiteMetadata from '../hooks/useSiteMetadata'
+import '../static/css/styles.scss'
 
-const IndexPage = ({ data }) => {
-  const { edges: projectImgData } = data.ProjectImgs
-  const { edges: featuredImgData } = data.FeaturedProjectImgs
+const IndexPage = () => {
+  const { description } = useSiteMetadata()
 
   useEffect(() => {
     AOS.init({
@@ -25,7 +22,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title='index'
-        description={data.description}
+        description={description}
         keywords={[`blog`, `technology`, `react`]}
       />
 
@@ -35,12 +32,12 @@ const IndexPage = ({ data }) => {
         </section>
 
         <section id='featured'>
-          <Featured projectImgs={featuredImgData} />
+          <Featured />
         </section>
 
-        <section id='projects'>
+        {/* <section id='projects'>
           <Projects projectImgs={projectImgData} />
-        </section>
+        </section> */}
 
         <section id='contact'>
           <Contact />
@@ -51,48 +48,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query allDataQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-
-    ProjectImgs: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/projects/.*.png/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            sizes(maxWidth: 320) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-
-    FeaturedProjectImgs: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/projects/.*.png/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-  }
-`
