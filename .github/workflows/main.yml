@@ -1,10 +1,11 @@
 name: CI
 
-on: [push] # [pull_request]
-# on:
-# push: # pull_request:
-#   branches:
-#     - master
+# on: [push] # [pull_request]
+on:
+push: # pull_request:
+  branches:
+    - master
+    - dev
 
 jobs:
   build:
@@ -27,8 +28,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      # - name: Lint
-      #   run: npm run lint
+      - name: Lint
+        run: npm run lint
 
       - name: Prettify
         run: npm run prettify
