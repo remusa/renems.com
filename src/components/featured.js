@@ -16,8 +16,12 @@ const FeaturedStyles = styled.div`
   .project-list {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-even;
     align-items: center;
+  }
+
+  @media all and (max-width: 768px) {
+    justify-content: center;
   }
 
   @media all and (max-width: 500px) {
@@ -27,10 +31,12 @@ const FeaturedStyles = styled.div`
 `
 
 const CardStyles = styled.div`
+  flex: 1 0 500px;
   max-width: 500px;
   height: 550px;
   margin: 8px 16px;
   border-radius: 8;
+  border-bottom: 4px solid var(--color-Primary);
 
   .top {
     height: 65%;
@@ -61,6 +67,8 @@ const CardStyles = styled.div`
 
     p {
       text-align: initial;
+      padding-left: 16px;
+      padding-right: 16px;
     }
 
     h3 {
@@ -72,14 +80,15 @@ const CardStyles = styled.div`
     .icon:hover,
     h3:hover {
       color: var(--coral);
-      text-decoration: underline var(--coral);
-      transition: all 0.3s ease-in-out;
+      /* text-decoration: underline var(--coral); */
+      transition: all 0.3s ease;
     }
   }
 
   &:hover {
+    transition: all 0.3s ease;
     box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.17);
-    transition: box-shadow 0.5s ease;
+    border-bottom: var(--coral);
 
     .image {
       clip-path: inset(0.5rem);
