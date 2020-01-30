@@ -36,7 +36,7 @@ const CardStyles = styled.div`
   height: 550px;
   margin: 8px 16px;
   border-radius: 8;
-  border-bottom: 4px transparent;
+  border-bottom: 4px solid var(--color-Primary);
 
   .top {
     height: 65%;
@@ -67,6 +67,8 @@ const CardStyles = styled.div`
 
     p {
       text-align: initial;
+      padding-left: 16px;
+      padding-right: 16px;
     }
 
     h3 {
@@ -79,18 +81,18 @@ const CardStyles = styled.div`
     h3:hover {
       color: var(--coral);
       /* text-decoration: underline var(--coral); */
-      transition: all 0.5s ease-in-out 0.3s;
+      transition: all 0.3s ease;
     }
   }
 
   &:hover {
-    transition: all 0.5s ease-in-out 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.17);
-    border-bottom: 4px solid var(--coral);
+    border-bottom: var(--coral);
 
     .image {
       clip-path: inset(0.5rem);
-      /* transition: clip-path 0.5s ease; */
+      transition: clip-path 0.5s ease;
     }
   }
 
