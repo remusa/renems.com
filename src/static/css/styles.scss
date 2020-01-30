@@ -12,6 +12,11 @@
 
   --color-dark-text: #b8b7d1;
   --color-dark-nav-link: #9694ba;
+
+  // Animations
+  --transitionDefault: all 0.5s ease-in-out 0.3s;
+  --transitionThreeMs: all 0.3s ease-in-out 0.2s;
+  --transitionSecond: all 1s ease;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
