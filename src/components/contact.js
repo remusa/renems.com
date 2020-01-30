@@ -75,9 +75,15 @@ const FormStyles = styled.div`
 // data-netlify-recaptcha='true'
 const Contact = () => (
   <FormStyles id='contact'>
-    <form name='contact' method='POST' action='/success' data-netlify='true'>
+    <form
+      name='contact'
+      method='POST'
+      action='/success'
+      data-netlify='true'
+      data-netlify-honeypot='bot-field'
+      // data-netlify-recaptcha='true'
+    >
       <h2>Contact me</h2>
-
       <fieldset>
         <div className='name-email-container'>
           <label htmlFor='name'>
