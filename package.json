@@ -21,12 +21,15 @@
     "netlify:deploy": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\""
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
     "aos": "^3.0.0-beta.6",
     "cross-env": "6.0.3",
     "gatsby": "^2.19.5",
     "gatsby-cli": "^2.8.27",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.38",
+    "gatsby-plugin-mdx": "^1.0.75",
     "gatsby-plugin-netlify": "^2.1.31",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
