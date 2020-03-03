@@ -54,6 +54,10 @@ const FormStyles = styled.div`
         }
       }
 
+      textarea {
+        width: 100%;
+      }
+
       button[type='submit'],
       input[type='submit'] {
         outline: none;
@@ -87,16 +91,16 @@ const Contact = () => (
       <fieldset>
         <div className='name-email-container'>
           <label htmlFor='name'>
-            Name: <input type='text' name='name' required />
+            Name: <input required type='text' name='name' />
           </label>
 
           <label htmlFor='email'>
-            Email: <input type='email' name='email' required />
+            Email: <input required type='email' name='email' />
           </label>
         </div>
 
         <label htmlFor='message'>
-          Message: <textarea name='message' required />
+          Message: <textarea required name='message' />
         </label>
 
         <button type='submit'>Send</button>
