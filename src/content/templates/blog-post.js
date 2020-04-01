@@ -1,4 +1,5 @@
 import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -166,6 +167,11 @@ const Template = ({ data, pageContext }) => {
       </Buttons>
     </StyledArticle>
   )
+}
+
+Template.propTypes = {
+  data: PropTypes.any,
+  pageContext: PropTypes.any,
 }
 
 export default Template
