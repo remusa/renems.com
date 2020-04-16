@@ -1,0 +1,61 @@
+name: Production CI
+
+on:
+  push:
+    - branches: [master]
+  pull_request:
+    - branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: master
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Prettify
+        run: npm run prettify
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build --if-present
+
+      # - name: Deploy to Netlify
+      #   run: npm run deploy
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        with:
+          # args: deploy --dir=build --prod
+          args: deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\"
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      # env:
+      #   CI: true
+      - name: Logs for Netlify
+        uses: bdougie/loglify@v1.0.0

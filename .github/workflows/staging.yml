@@ -1,12 +1,8 @@
-name: CI
+name: Staging CI
 
-on: [push]
-# on: [pull_request]
-# on:
-#   push: # pull_request:
-#     - branches:
-#         - master
-#         - dev
+on:
+  push:
+    - branches-ignore: [master]
 
 jobs:
   build:
@@ -14,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [13.x]
 
     steps:
       - uses: actions/checkout@v1
@@ -29,8 +25,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      # - name: Lint
-      #   run: npm run lint
+      - name: Lint
+        run: npm run lint
 
       - name: Prettify
         run: npm run prettify
@@ -41,14 +37,15 @@ jobs:
       - name: Build
         run: npm run build --if-present
 
-      - name: Deploy
-        run: npm run deploy
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
         env:
-          # Setup in Settings/Secrets
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_STAGING }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          # args: deploy --dir=./public --prod --message \" $(git log -1 --pretty=%B) \"
+          args: deploy --dir=./public --prod --message \" $(git log --oneline -n) \"
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID_STAGING"]'
 
-        # env:
-        #   CI: true
       - name: Logs for Netlify
         uses: bdougie/loglify@v1.0.0
