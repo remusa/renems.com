@@ -51,8 +51,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         with:
-          # args: deploy --dir=build --prod
-          args: deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\"
+          args: deploy --dir=./public --prod --open --message \"$(git log -1 --pretty=%B)\"
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
 
       # env:
