@@ -1,6 +1,9 @@
 name: Lighthouse # https://github.com/treosh/lighthouse-ci-action
 
-on: [push]
+on:
+  push:
+    - branches:
+        - master
 
 jobs:
   lighthouse:
