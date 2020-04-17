@@ -23,16 +23,16 @@
     "analyze": "cross-env-shell ANALYZE_BUNDLE_SIZE=true & npm run build",
     "deploy": "npm run deploy:netlify",
     "deploy:netlify": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\"",
-    "test": "npm run test:watch",
-    "//test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "//test2": "npm run test:watch",
+    "//test3": "is-ci \"test:coverage\" \"test:watch\"",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:e2e": "start-server-and-test start http://localhost:5020 cy:run",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
-    "cy": "cy:open",
     "//cy": "is-ci \"test:e2e\" \"cy:open\"",
-    "cy:open": "cypress open",
-    "cy:run": "cross-env CYPRESS_BASE_URL=http://localhost:5020 cypress run"
+    "//cy:open": "cypress open",
+    "//cy:run": "cross-env CYPRESS_BASE_URL=http://localhost:5020 cypress run"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
