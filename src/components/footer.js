@@ -82,7 +82,7 @@ const Footer = () => (
     <a className='border-bottom move-top' href='#header'>
       Back top
     </a>
-    {/* <AnchorLink href="#header"  to='#header' className='border-bottom'>
+    {/* <AnchorLink href="#header" to='#header' className='border-bottom'>
       Back top
     </AnchorLink> */}
 

@@ -40,8 +40,8 @@ const BasicInfo = () => (
     </h1>
     <h2>Software engineer</h2>
     <p>
-      I'm a software engineer who enjoys building useful things and learning new
-      technologies. I enjoy working with React, Node, GraphQL and Python.
+      I'm a software engineer who enjoys building useful things and learning new technologies. I
+      enjoy working with React, Node, GraphQL and Python.
     </p>
     <Social />
     <Tech />

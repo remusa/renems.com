@@ -46,7 +46,7 @@ export const bookQuery = graphql`
 const BookPage = ({ data }) => {
   const TYPE = 'BOOK'
   const bookEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === TYPE
+    post => post.node.frontmatter.type === TYPE,
   )
 
   return (

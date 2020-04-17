@@ -1,5 +1,3 @@
-import React from 'react'
-
 const email = './email-outline.svg'
 const github = './github-outline.svg'
 const linkedin = './linkedin-outline.svg'
@@ -14,12 +12,12 @@ const IconEmail = () => email
 
 export {
   IconEmail,
-github,
-linkedin,
-twitter,
-video,
-sunFilled,
-sunOutline,
-moonFilled,
-moonOutline,
+  github,
+  linkedin,
+  twitter,
+  video,
+  sunFilled,
+  sunOutline,
+  moonFilled,
+  moonOutline,
 }

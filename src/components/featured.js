@@ -142,12 +142,7 @@ const ProjectCard = ({ project, fluid, sizes }) => {
           <h3>{project.name}</h3>
         </a>
         <p>{project.description}</p>
-        <a
-          href={project.github}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='icon'
-        >
+        <a href={project.github} target='_blank' rel='noopener noreferrer' className='icon'>
           <FaGithubAlt />
         </a>
       </div>
@@ -170,9 +165,7 @@ const Featured = () => {
 
       <div className='project-list'>
         {featuredProjects.map(project => {
-          const image = projectImgs.find(
-            n => n.node.relativePath === `projects/${project.img}`
-          )
+          const image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
 
           const imageFluid = image.node.childImageSharp.fluid || null
           const imageSizes = image.node.childImageSharp.sizes || null

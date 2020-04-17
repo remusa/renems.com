@@ -18,6 +18,12 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     extensions: [`.mdx`, `.md`],
+    //   },
+    // },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
