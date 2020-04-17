@@ -30,10 +30,10 @@ jobs:
         run: npm run clean
 
       # - name: Lint
-      #   run: npm run lint
+      #   run: npm run lint --if-present
 
-      # - name: Format
-      #   run: npm run format:quick
+      - name: Format
+        run: npm run format:quick
 
       - name: Test
         run: npm run test
