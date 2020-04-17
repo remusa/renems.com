@@ -31,7 +31,7 @@ jobs:
       #   run: npm run lint
 
       - name: Format
-        run: npm run format:quick
+        run: npm run format
 
       - name: Test
         run: npm run test
