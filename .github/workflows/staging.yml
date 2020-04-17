@@ -32,8 +32,8 @@ jobs:
       # - name: Lint
       #   run: npm run lint
 
-      # - name: Format
-      #   run: npm run format:quick
+      - name: Format
+        run: npm run format:quick --if-present
 
       - name: Test
         run: npm run test
