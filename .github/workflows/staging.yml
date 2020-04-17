@@ -26,6 +26,9 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
+      - name: Clean
+        run: npm run clean
+
       # - name: Lint
       #   run: npm run lint
 
