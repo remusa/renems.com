@@ -27,11 +27,11 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Lint
-        run: npm run lint
+      # - name: Lint
+      #   run: npm run lint
 
-      - name: Prettify
-        run: npm run prettify
+      - name: Format
+        run: npm run format:quick
 
       - name: Test
         run: npm run test
@@ -54,7 +54,5 @@ jobs:
           args: deploy --dir=./public --prod --open --message \"$(git log -1 --pretty=%B)\"
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
 
-      # env:
-      #   CI: true
       - name: Logs for Netlify
         uses: bdougie/loglify@v1.0.0

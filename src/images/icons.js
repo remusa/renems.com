@@ -1,4 +1,5 @@
-<a target='blank' href='https://github.com/remusa' title='Github'>
+{
+  /* <a target='blank' href='https://github.com/remusa' title='Github'>
             <svg
                 className='social-icon'
                 data-icon='github'
@@ -45,4 +46,5 @@
                 <title>{socialLinks[2].name}</title>
                 <path d='M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4' />
             </svg>
-        </a>
+        </a> */
+}

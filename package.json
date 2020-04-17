@@ -7,21 +7,32 @@
   "author": "RMS <contact@renems.com>",
   "scripts": {
     "start": "npm run develop",
-    "dev": "gatsby develop",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:gatsby": "gatsby develop",
+    "//dev:functions": "dotenv -e ./netlify/.env netlify-lambda serve netlify/functions",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "setup": "npm install && npm run validate",
     "validate": "npm run build",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "prettify": "pretty-quick",
-    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|less|scss|graphql|md|mdx)\"",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|less|scss|graphql|md|mdx)\"",
+    "format:quick": "pretty-quick",
     "analyze": "cross-env-shell ANALYZE_BUNDLE_SIZE=true & npm run build",
     "deploy": "npm run deploy:netlify",
-    "deploy:netlify": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\""
+    "deploy:netlify": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\"",
+    "test": "npm run test:watch",
+    "//test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:e2e": "start-server-and-test start http://localhost:5020 cy:run",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "cy": "cy:open",
+    "//cy": "is-ci \"test:e2e\" \"cy:open\"",
+    "cy:open": "cypress open",
+    "cy:run": "cross-env CYPRESS_BASE_URL=http://localhost:5020 cypress run"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
@@ -54,33 +65,44 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/react": "^10.0.2",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@testing-library/user-event": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
     "babel-eslint": "10.x",
+    "babel-jest": "^25.3.0",
+    "babel-preset-gatsby": "^0.3.2",
     "eslint": "6.x",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "2.x",
     "graphql-tools": "^5.0.0",
     "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "is-ci-cli": "^2.0.0",
+    "jest": "^25.2.4",
+    "jest-in-case": "^1.0.2",
     "jest-transform-graphql": "^2.1.0",
     "lint-staged": "^10.1.3",
     "node-sass": "^4.13.1",
-    "pretty-quick": "^2.0.1"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.{js|jsx|ts|tsx|json|yml|yaml|css|less|scss|graphql|md|mdx}": [
-      "pretty-quick --staged",
-      "git add"
-    ]
   },
   "keywords": [
     "portfolio",

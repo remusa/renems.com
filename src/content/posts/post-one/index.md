@@ -46,8 +46,7 @@ type: 'BLOG'
 
 This is my very post in Gatsby
 
-Pandas are really sweet.
-Here's a video of a panda eating sweets.
+Pandas are really sweet. Here's a video of a panda eating sweets.
 
 <iframe
   width='560'

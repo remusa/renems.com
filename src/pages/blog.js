@@ -44,7 +44,7 @@ export const pageQuery = graphql`
 const BlogPage = ({ data }) => {
   const TYPE = 'BLOG'
   const blogEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === TYPE
+    post => post.node.frontmatter.type === TYPE,
   )
 
   return (

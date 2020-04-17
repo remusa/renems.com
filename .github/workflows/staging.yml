@@ -3,7 +3,7 @@ name: Staging
 on:
   push:
     branches-ignore:
-        - master
+      - master
 
 jobs:
   build:
@@ -26,11 +26,11 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Lint
-        run: npm run lint
+      # - name: Lint
+      #   run: npm run lint
 
-      - name: Prettify
-        run: npm run prettify
+      - name: Format
+        run: npm run format:quick
 
       - name: Test
         run: npm run test

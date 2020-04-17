@@ -117,20 +117,14 @@ const Template = ({ data, pageContext }) => {
   } = post
 
   const prevArticle = previous && (
-    <Link
-      to={previous.frontmatter.path}
-      style={{ maxWidth: '25%', textAlign: 'left' }}
-    >
+    <Link to={previous.frontmatter.path} style={{ maxWidth: '25%', textAlign: 'left' }}>
       <strong>Previous Article</strong> <br />
       {previous.frontmatter.title}
     </Link>
   )
 
   const nextArticle = next && (
-    <Link
-      to={next.frontmatter.path}
-      style={{ maxWidth: '25%', textAlign: 'right' }}
-    >
+    <Link to={next.frontmatter.path} style={{ maxWidth: '25%', textAlign: 'right' }}>
       <strong>Next Article</strong> <br />
       {next.frontmatter.title}
     </Link>
@@ -147,9 +141,7 @@ const Template = ({ data, pageContext }) => {
 
       <hr />
 
-      <h2>
-        {frontmatter.title_full ? frontmatter.title_full : frontmatter.title}
-      </h2>
+      <h2>{frontmatter.title_full ? frontmatter.title_full : frontmatter.title}</h2>
       <h3>
         Time to read: {timeToRead} minutes ({words} words)
       </h3>
