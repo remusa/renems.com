@@ -14,7 +14,7 @@ jobs:
         node-version: [13.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           ref: master
 
@@ -24,10 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install NPM dependencies
-        run: npm install
-
-      - name: Clean
-        run: npm run clean
+        run: npm ci
 
       # - name: Lint
       #   run: npm run lint --if-present
