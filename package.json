@@ -16,6 +16,7 @@
     "serve": "gatsby serve",
     "setup": "npm install && npm run validate",
     "validate": "npm run build",
+    "convert": "synp --source-file yarn.lock -f",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|less|scss|graphql|md|mdx)\"",
