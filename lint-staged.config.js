@@ -6,4 +6,5 @@ module.exports = {
     'pretty-quick --staged',
     'git add',
   ],
+  // 'yarn.lock': ['synp --source-file yarn.lock -f'],
 }
