@@ -24,8 +24,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install NPM dependencies
-        run: yarn install --frozen-lockfile --production
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile # --production
 
       - name: Test
         run: yarn test
