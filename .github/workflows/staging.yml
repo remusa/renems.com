@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install NPM dependencies
-        run: yarn install --frozen-lockfile --production # ci
+        run: yarn install --frozen-lockfile # --production # ci
 
       # - name: Lint
       #   run: yarn lint --if-present
