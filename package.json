@@ -15,15 +15,17 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "setup": "npm install && npm run validate",
-    "validate": "npm run build",
     "convert": "synp --source-file yarn.lock -f",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|less|scss|graphql|md|mdx)\"",
-    "format:quick": "pretty-quick",
+    "check-types": "tsc",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
     "analyze": "cross-env-shell ANALYZE_BUNDLE_SIZE=true & npm run build",
     "deploy": "npm run deploy:netlify",
     "deploy:netlify": "netlify deploy --dir=./public -p -m \"$(git log -1 --pretty=%B)\"",
+    "validate": "npm-run-all --parallel check-types check-format lint build",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "//test2": "npm run test:watch",
     "//test3": "is-ci \"test:coverage\" \"test:watch\"",
@@ -96,14 +98,8 @@
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.2",
-    "pretty-quick": "^2.0.1",
     "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "keywords": [
     "portfolio",
