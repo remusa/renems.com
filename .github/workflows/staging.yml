@@ -27,12 +27,6 @@ jobs:
         # run: npm ci
         run: yarn install --frozen-lockfile # --production
 
-      # - name: Lint
-      #   run: yarn lint --if-present
-
-      - name: Format
-        run: yarn format:quick --if-present
-
       - name: Test
         run: yarn test
 
