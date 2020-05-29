@@ -1945,7 +1945,7 @@
   resolved "https://registry.yarnpkg.com/@kwsites/exec-p/-/exec-p-0.4.0.tgz#ab3765d482849ba6e825721077c248cf9f3323b7"
   integrity sha512-44DWNv5gDR9EwrCTVQ4ZC99yPqVS0VCWrYIBl45qNR8XQy+4lbl0IQG8kBDf6NHwj4Ib4c2z1Fq1IUJOCbkZcw==
 
-"@mdx-js/mdx@^1.5.7", "@mdx-js/mdx@^1.6.1", "@mdx-js/mdx@^1.6.5":
+"@mdx-js/mdx@^1.6.1", "@mdx-js/mdx@^1.6.5":
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.5.tgz#4e00ca5d38d678c6070d73819bb696e4030e2662"
   integrity sha512-DC13eeEM0Dv9OD+UVhyB69BlV29d2eoAmfiR/XdgNl4R7YmRNEPGRD3QvGUdRUDxYdJBHauMz5ZIV507cNXXaA==
@@ -1970,7 +1970,7 @@
     unist-builder "2.0.3"
     unist-util-visit "2.0.2"
 
-"@mdx-js/react@^1.5.7", "@mdx-js/react@^1.6.1", "@mdx-js/react@^1.6.5":
+"@mdx-js/react@^1.6.1", "@mdx-js/react@^1.6.5":
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.6.5.tgz#70380f25209b62ef69349b7eef09fad7e1103824"
   integrity sha512-y1Yu9baw3KokFrs7g5RxHpJNSU4e1zk/5bAJX94yVATglG5HyAL0lYMySU8YzebXNE+fJJMCx9CuiQHy2ezoew==
@@ -7315,7 +7315,7 @@ gatsby-plugin-manifest@^2.2.38:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-mdx@^1.0.75:
+gatsby-plugin-mdx@^1.2.13:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.13.tgz#c24d207e4682e435f2e0c2d022091e729a0b9991"
   integrity sha512-+V2Krem/XzSq9GW+eE6HmggaI9gnbxKHBEN1feNW61AvXY5rEOEJ2SntC9lmO2QliYwuVcdxJ7X8jsimqZoiEw==

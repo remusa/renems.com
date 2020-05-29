@@ -16,13 +16,15 @@ const HeaderStyles = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-
     a {
       color: var(--color-font);
+      size: 1.8rem;
+    }
+
+    .left {
+      & > a {
+        font-size: 3.25rem;
+      }
     }
 
     .right {
@@ -64,24 +66,12 @@ const Header = ({ siteTitle }) => (
   <HeaderStyles id='header'>
     <nav id='nav'>
       <div className='left'>
-        <h1>
-          <AniLink fade to='/' activeClassName='active'>
-            {siteTitle}
-          </AniLink>
-        </h1>
+        <AniLink fade to='/' activeClassName='active'>
+          {siteTitle}
+        </AniLink>
       </div>
 
       <div className='right'>
-        <AniLink
-          fade
-          to='/projects'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Projects
-        </AniLink>
-
         <AniLink
           fade
           to='/blog'
@@ -90,6 +80,16 @@ const Header = ({ siteTitle }) => (
           }
         >
           Blog
+        </AniLink>
+
+        <AniLink
+          fade
+          to='/projects'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Projects
         </AniLink>
 
         {/* <AniLink

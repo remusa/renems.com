@@ -55,9 +55,9 @@ const TechStyles = styled.div`
       .logo {
         /* display: inline-block; */
         /* margin: 0 1rem; */
-        /* width: 100%;
+        width: 100%;
         height: 100%;
-        object-fit: cover; */
+        object-fit: cover;
       }
     }
   }

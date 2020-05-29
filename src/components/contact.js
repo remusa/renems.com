@@ -2,74 +2,89 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FormStyles = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: calc(85vh - 100px); */
-
   form {
-    display: flex;
+    /* display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
-    margin: 0 auto;
-    margin-top: 8px;
-    padding: 16px 8px 8px 8px;
+    margin: 12px auto;
+    padding: 8px;
     text-align: center;
     max-width: 600px;
     border-radius: 5px;
     /* box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17); */
     box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
 
+    h2 {
+      font-size: 2.5rem;
+    }
+
     fieldset {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
       height: 100%;
       border: 0;
       padding: 0;
 
       label {
         display: block;
-      }
-
-      .name-email-container {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
+        padding: 12px;
+        font-size: 1.8rem;
       }
 
       input,
       textarea,
       select {
-        width: 90%;
-        margin: 8px 16px;
-        font-size: 1.2rem;
-        border: 1px solid black;
+        font-size: 1.6rem;
+        padding: 8px 12px;
+        border: 1px solid transparent;
         border-radius: 3px;
 
         &:focus {
           outline: 0;
-          border-color: ${props => props.theme.colorPrimary};
-          box-shadow: 0 0 10px ${props => props.theme.colorPrimary};
+          /* border-color: ${props => props.theme.colorPrimary}; */
+          border: 1px solid var(--color-blue);
+          /* box-shadow: 0 0 10px ${props => props.theme.colorPrimary}; */
+          box-shadow: 0 0 10px var(--color-blue);
         }
       }
 
-      textarea {
-        width: 100%;
+      .name-email-container {
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      button[type='submit'],
-      input[type='submit'] {
-        outline: none;
+      .message-container {
+        margin: 6px auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        textarea {
+          display: block;
+          margin: 0 auto;
+          padding: 8px 12px;
+          width: 460px;
+        }
+      }
+
+      .submit-btn {
         width: auto;
+        padding: 8px 16px;
+        margin: 16px 0;
         background: var(--color-primary);
         color: var(--color-white);
         border: 0;
         border-radius: 3px;
-        font-size: 1.125rem;
+        font-size: 1.6rem;
         font-weight: 500;
-        padding: 8px 16px;
-        margin: 4px;
+        outline: none;
         transition: all 0.3s ease;
       }
     }
@@ -88,22 +103,29 @@ const Contact = () => (
       // data-netlify-recaptcha='true'
     >
       <h2>Contact me</h2>
+
       <fieldset>
         <div className='name-email-container'>
-          <label htmlFor='name'>
-            Name: <input required type='text' name='name' />
-          </label>
+          <label htmlFor='name'>Name: </label>
+          <input type='text' name='name' placeholder='Your name' required />
 
-          <label htmlFor='email'>
-            Email: <input required type='email' name='email' />
-          </label>
+          <label htmlFor='email'>Email: </label>
+          <input
+            type='email'
+            name='email'
+            placeholder='example@email.com'
+            required
+          />
         </div>
-
-        <label htmlFor='message'>
-          Message: <textarea required name='message' />
-        </label>
-
-        <button type='submit'>Send</button>
+        <div className='message-container'>
+          <label htmlFor='message' className='message'>
+            Message:
+          </label>
+          <textarea name='message' placeholder='Your message' required />
+        </div>
+        <button className='submit-btn' type='submit'>
+          Send
+        </button>
       </fieldset>
     </form>
   </FormStyles>
