@@ -30,8 +30,11 @@ jobs:
       - name: Test
         run: yarn test
 
+      - name: Clean
+        run: yarn clean
+
       - name: Build
-        run: yarn build --if-present
+        run: yarn build # --if-present
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
@@ -39,7 +42,9 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_STAGING }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         with:
-          args: deploy --dir=./public --prod --message \" $(git log -1 --pretty=format:%B) \"
+          args:
+            deploy --dir=./public --prod --message \" $(git log -1
+            --pretty=format:%B) \"
           # args: deploy --dir=./public --prod --open --message \" $(git log --oneline -n) \"
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID_STAGING"]'
 

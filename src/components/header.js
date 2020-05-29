@@ -18,6 +18,7 @@ const HeaderStyles = styled.header`
 
     h1 {
       margin: 0;
+      font-size: 3rem;
     }
 
     a {
