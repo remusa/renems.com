@@ -8,7 +8,7 @@ import Main from './main'
 // import '../static/css/styles.css'
 
 const LayoutStyles = styled.div`
-  /* height: 100vh; */
+  height: 100vh;
 
   display: grid;
   grid-template-rows: auto 1fr auto;

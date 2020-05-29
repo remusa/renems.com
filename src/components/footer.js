@@ -51,6 +51,10 @@ const FooterStyles = styled.footer`
     transform: translateY(0px);
     transition: transform 3s ease-in-out;
   }
+
+  .copyright {
+    font-size: 1.8rem;
+  }
 `
 
 const Footer = () => (
@@ -86,7 +90,7 @@ const Footer = () => (
       Back top
     </AnchorLink> */}
 
-    <span>© {new Date().getFullYear()} RMS</span>
+    <span className='copyright'>© {new Date().getFullYear()} RMS</span>
   </FooterStyles>
 )
 
