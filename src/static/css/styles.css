@@ -1,33 +1,33 @@
 @import url('./project.scss');
-// @import url('./colors-nord.scss');
-@import url('./colors-onedark.scss');
+@import url('./colors-nord.css');
+@import url('./colors-onedark.css');
 
 :root {
-  // General colors
+  /* General colors */
   --color-white: rgb(236, 239, 244);
-  // --color-grey: #4c566a;
-  // --color-blue: #00bcd4;
-  // --color-blue-dark: rgb(0, 122, 204);
-  // --color-aqua: rgb(3, 212, 191);
+  --color-grey: #4c566a;
+  --color-blue: #00bcd4;
+  --color-blue-dark: rgb(0, 122, 204);
+  --color-aqua: rgb(3, 212, 191);
 
   --color-dark-text: #b8b7d1;
   --color-dark-nav-link: #9694ba;
 
-  // Transitions
+  /* Transitions */
   --transitionDefault: all 0.5s ease-in-out 0.3s;
   --transitionThreeMs: all 0.3s ease-in-out 0.2s;
   --transitionSecond: all 1s ease;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
-// @font-face {
-//   src: url('../fonts/Assistant-Regular.ttf') format('ttf');
-//   font-family: 'Assistant', sans-serif;
-// }
+@font-face {
+  src: url('../fonts/Assistant-Regular.ttf') format('ttf');
+  font-family: 'Assistant', sans-serif;
+}
 
 html {
   box-sizing: border-box;
-  // font-size: 10px;
+  font-size: 10px;
   scroll-behavior: smooth;
 }
 
@@ -49,29 +49,29 @@ h1 {
   font-weight: 700;
 }
 
-// h2 {
-//   font-size: 1rem;
-//   font-weight: 400;
-// }
+h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
 
-// h3 {
-//   font-size: 2em;
-// }
+h3 {
+  font-size: 2em;
+}
 
-// h4 {
-//   font-size: 1.9rem;
-// }
+h4 {
+  font-size: 1.9rem;
+}
 
-// h5 {
-//   font-size: 1.8rem;
-// }
+h5 {
+  font-size: 1.8rem;
+}
 
-// p,
-// a,
-// li,
-// code {
-//   font-size: 1.6rem;
-// }
+p,
+a,
+li,
+code {
+  font-size: 1.6rem;
+}
 
 button,
 a {
