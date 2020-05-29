@@ -13,7 +13,7 @@ const FooterStyles = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 1rem;
+  padding: 1rem 1.75rem;
   text-align: center;
 
   .border-bottom {
