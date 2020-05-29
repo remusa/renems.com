@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Footer from './footer'
 import Header from './header'
 import Main from './main'
+// import '../static/css/styles.css'
 
 const LayoutStyles = styled.div`
   height: 100vh;

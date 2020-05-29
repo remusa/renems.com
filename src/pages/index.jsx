@@ -20,7 +20,11 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title='index' description={description} keywords={[`blog`, `technology`, `react`]} />
+      <SEO
+        title='index'
+        description={description}
+        keywords={[`blog`, `technology`, `react`]}
+      />
 
       <article>
         <section id='basic-info'>
