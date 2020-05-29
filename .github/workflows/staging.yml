@@ -34,7 +34,7 @@ jobs:
         run: yarn clean
 
       - name: Build
-        run: yarn build --if-present
+        run: yarn build # --if-present
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
