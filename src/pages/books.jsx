@@ -3,9 +3,12 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+export const bookQuery = graphql`
+  query BookIndexQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
       edges {
         node {
           id
@@ -17,6 +20,8 @@ export const pageQuery = graphql`
             tags
             language
             type
+            book_author
+            title_full
           }
           timeToRead
           wordCount {
@@ -41,23 +46,23 @@ export const pageQuery = graphql`
   }
 `
 
-const BlogPage = ({ data }) => {
-  const TYPE = 'BLOG'
-  const blogEntries = data.allMarkdownRemark.edges.filter(
+const BookPage = ({ data }) => {
+  const TYPE = 'BOOK'
+  const bookEntries = data.allMarkdownRemark.edges.filter(
     post => post.node.frontmatter.type === TYPE,
   )
 
   return (
     <Layout>
-      <SEO title='Blog' keywords={[`blog`]} />
+      <SEO title='Books' keywords={[`books`]} />
 
-      <h1>Latest Posts</h1>
+      <h1>Notes</h1>
 
-      {blogEntries.map(post => (
+      {bookEntries.map(post => (
         <div key={post.node.id}>
           <h3>{post.node.frontmatter.title}</h3>
 
-          <small>Posted on {post.node.frontmatter.date}</small>
+          <small>Book author: {post.node.frontmatter.book_author}</small>
 
           <br />
 
@@ -72,4 +77,4 @@ const BlogPage = ({ data }) => {
   )
 }
 
-export default BlogPage
+export default BookPage
