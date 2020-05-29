@@ -7,26 +7,27 @@ import Layout from '../../components/layout'
 const StyledArticle = styled.article`
   --yellow: #ffc600;
   max-width: 760px;
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
 
   img {
     max-width: 100%;
   }
 
-  a,
-  p {
-    line-height: 1.75;
-    font-size: 1.8rem;
-  }
-
-  a {
-    color: white;
-    text-decoration: underline wavy var(--color-primary);
-  }
-
   h2 {
     font-size: 2.5rem;
     font-style: bold;
+  }
+
+  a,
+  p,
+  ul > li {
+    line-height: 1.75;
+    font-size: 1.9rem;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline wavy var(--color-primary);
   }
 
   .post {
@@ -86,7 +87,6 @@ const StyledArticle = styled.article`
     padding: 0;
 
     & > li {
-      line-height: 1.5;
       display: inline-block;
       padding: 4px 8px;
       margin-right: 4px;
@@ -101,7 +101,29 @@ const Buttons = styled.div`
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  color: white;
+
+  margin-top: 40px;
+
+  span {
+    border: 1px solid var(--color-primary);
+    border-radius: 3px;
+    padding: 8px 12px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .post-btn {
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: var(--color-primary);
+      transition: all 0.3s linear;
+    }
+  }
 
   .previous {
     max-width: 25%;
@@ -147,24 +169,27 @@ const Template = ({ data, pageContext }) => {
     html,
   } = post
 
-  const prevArticle = previous && (
-    <Link to={previous.frontmatter.path} className='previous'>
-      <strong>Previous Post</strong> <br />
-      {previous.frontmatter.title}
-    </Link>
-  )
+  const prevArticle = previous ? (
+    <span className='post-btn'>
+      <Link to={previous.frontmatter.path} className='previous'>
+        <strong>Previous Post</strong> <br />
+        {previous.frontmatter.title}
+      </Link>
+    </span>
+  ) : null
 
-  const nextArticle = next && (
-    <Link to={next.frontmatter.path} className='next'>
-      <strong>Next Post</strong> <br />
-      {next.frontmatter.title}
-    </Link>
-  )
+  const nextArticle = next ? (
+    <span className='post-btn'>
+      <Link to={next.frontmatter.path} className='next'>
+        <strong>Next Post</strong> <br />
+        {next.frontmatter.title}
+      </Link>
+    </span>
+  ) : null
 
   const goBack = () => {
     if (type === 'BLOG') return <Link to='/blog'>Go Back</Link>
     if (type === 'BOOK') return <Link to='/books'>Go Back</Link>
-    console.log('type', type)
   }
 
   return (
@@ -195,8 +220,8 @@ const Template = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
         <Buttons>
-          <span>{previous && prevArticle}</span>
-          <span>{next && nextArticle}</span>
+          {prevArticle}
+          {nextArticle}
         </Buttons>
       </StyledArticle>
     </Layout>
