@@ -1,5 +1,5 @@
 :root {
-  // OneDark Vivid
+  /* OneDark Vivid */
   --background: #282c34;
   --purple: #d55fde;
   --error: #f44747;
@@ -13,7 +13,7 @@
   --fountainBlue: #2bbac5;
   --invalid: #ffffff;
 
-  // Apply colors
+  /* Apply colors */
   --color-background: var(--background);
   --color-font: var(--color-white);
   --color-selection: var(--color-primary-lighter);

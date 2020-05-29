@@ -8,7 +8,12 @@ import projectList from '../data/projects.json'
 
 const ProjectCard = ({ project, fluid, sizes }) => (
   <>
-    <a className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
+    <a
+      className='project-list__card'
+      href={project.url}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       <div className='project-list__card__image' data-aos='image-enter'>
         <Img
           title={project.name}
@@ -96,7 +101,9 @@ class Projects extends React.Component {
 
         <div className='project-list'>
           {renderProjectList.map(project => {
-            let image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
+            let image = projectImgs.find(
+              n => n.node.relativePath === `projects/${project.img}`,
+            )
             if (!image) {
               image = projectImgs.find(
                 n => n.node.relativePath === `images/projects/${project.img}`,

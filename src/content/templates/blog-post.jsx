@@ -2,12 +2,15 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import Layout from '../../components/layout'
 
 const StyledArticle = styled.article`
   --yellow: #ffc600;
-  font-size: 20px;
+  /* font-size: 20px; */
+  max-width: 960px;
 
   p {
+    font-size: 1.6rem;
     line-height: 1.8;
   }
 
@@ -22,15 +25,14 @@ const StyledArticle = styled.article`
 
   h1,
   h2 {
-    font-size: 80px;
-    font-style: italic;
-    font-weight: 100;
-    margin: 0;
+    /* font-size: 3rem; */
+    font-style: bold;
+    /* margin: 0; */
   }
 
   .post {
     display: grid;
-    max-width: 1000px;
+    max-width: 960px;
     margin: 200px auto;
     grid-gap: 10px 50px;
     grid-template-columns: 3fr 12fr 5fr;
@@ -74,6 +76,24 @@ const StyledArticle = styled.article`
     grid-column: span 1 / -1;
     border-left: 2px solid var(--yellow);
   }
+
+  .time {
+    font-style: italic;
+  }
+
+  ul.tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      display: inline-block;
+      padding: 4px 8px;
+      margin-right: 4px;
+      border-radius: 3px;
+      border: 1px solid var(--color-primary);
+    }
+  }
 `
 
 const Buttons = styled.div`
@@ -81,6 +101,7 @@ const Buttons = styled.div`
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  color: white;
 `
 
 export const postQuery = graphql`
@@ -94,7 +115,7 @@ export const postQuery = graphql`
         tags
         type
         book_author
-        title_full
+        # title_full
       }
       timeToRead
       wordCount {
@@ -117,14 +138,20 @@ const Template = ({ data, pageContext }) => {
   } = post
 
   const prevArticle = previous && (
-    <Link to={previous.frontmatter.path} style={{ maxWidth: '25%', textAlign: 'left' }}>
+    <Link
+      to={previous.frontmatter.path}
+      style={{ maxWidth: '25%', textAlign: 'left' }}
+    >
       <strong>Previous Article</strong> <br />
       {previous.frontmatter.title}
     </Link>
   )
 
   const nextArticle = next && (
-    <Link to={next.frontmatter.path} style={{ maxWidth: '25%', textAlign: 'right' }}>
+    <Link
+      to={next.frontmatter.path}
+      style={{ maxWidth: '25%', textAlign: 'right' }}
+    >
       <strong>Next Article</strong> <br />
       {next.frontmatter.title}
     </Link>
@@ -133,31 +160,41 @@ const Template = ({ data, pageContext }) => {
   const goBack = () => {
     if (type === 'BLOG') return <Link to='/blog'>Go Back</Link>
     if (type === 'BOOK') return <Link to='/books'>Go Back</Link>
+    console.log('type', type)
   }
 
   return (
-    <StyledArticle className='post'>
-      {goBack}
+    <Layout>
+      <StyledArticle className='post'>
+        {goBack}
 
-      <hr />
+        <h1>
+          {/* {frontmatter.title_full ? frontmatter.title_full : frontmatter.title} */}
+          {frontmatter.title}
+        </h1>
 
-      <h2>{frontmatter.title_full ? frontmatter.title_full : frontmatter.title}</h2>
-      <h3>
-        Time to read: {timeToRead} minutes ({words} words)
-      </h3>
-      <h4>
-        Posted by {frontmatter.author} on {frontmatter.date}
-      </h4>
+        <ul className='tags'>
+          {frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}
+        </ul>
 
-      <ul>{frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}</ul>
+        <p className='info'>
+          Posted by {frontmatter.author} on {frontmatter.date}
+        </p>
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+        <p className='time'>
+          Time to read: {timeToRead} minutes ({words} words)
+        </p>
 
-      <Buttons>
-        <span>{previous && prevArticle}</span>
-        <span>{next && nextArticle}</span>
-      </Buttons>
-    </StyledArticle>
+        <hr />
+
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+
+        <Buttons>
+          <span>{previous && prevArticle}</span>
+          <span>{next && nextArticle}</span>
+        </Buttons>
+      </StyledArticle>
+    </Layout>
   )
 }
 

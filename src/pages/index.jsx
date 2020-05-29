@@ -7,7 +7,7 @@ import Featured from '../components/featured'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import useSiteMetadata from '../hooks/useSiteMetadata'
-import '../static/css/styles.scss'
+import '../static/css/styles.css'
 
 const IndexPage = () => {
   const { description } = useSiteMetadata()
@@ -20,7 +20,11 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title='index' description={description} keywords={[`blog`, `technology`, `react`]} />
+      <SEO
+        title='index'
+        description={description}
+        keywords={[`blog`, `technology`, `react`]}
+      />
 
       <article>
         <section id='basic-info'>

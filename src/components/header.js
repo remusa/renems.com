@@ -1,5 +1,5 @@
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
-// import TransitionLink from "gatsby-plugin-transition-link"
+// import TransitionLink from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -70,7 +70,7 @@ const Header = ({ siteTitle }) => (
         </h1>
       </div>
 
-      <div className='right link'>
+      <div className='right'>
         <AniLink
           fade
           to='/projects'
@@ -83,23 +83,13 @@ const Header = ({ siteTitle }) => (
 
         <AniLink
           fade
-          to='/now'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Now
-        </AniLink>
-
-        {/* <AniLink
-          fade
           to='/blog'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
           Blog
-        </AniLink> */}
+        </AniLink>
 
         {/* <AniLink
           fade
@@ -110,6 +100,16 @@ const Header = ({ siteTitle }) => (
         >
           Notes
         </AniLink> */}
+
+        <AniLink
+          fade
+          to='/now'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Now
+        </AniLink>
       </div>
     </nav>
   </HeaderStyles>
