@@ -6,28 +6,27 @@ import Layout from '../../components/layout'
 
 const StyledArticle = styled.article`
   --yellow: #ffc600;
-  /* font-size: 20px; */
-  max-width: 960px;
-
-  p {
-    font-size: 1.6rem;
-    line-height: 1.8;
-  }
+  max-width: 760px;
+  font-size: 1.8rem;
 
   img {
     max-width: 100%;
   }
 
-  a {
-    color: black;
-    text-decoration: underline wavy var(--yellow);
+  a,
+  p {
+    line-height: 1.75;
+    font-size: 1.8rem;
   }
 
-  h1,
+  a {
+    color: white;
+    text-decoration: underline wavy var(--color-primary);
+  }
+
   h2 {
-    /* font-size: 3rem; */
+    font-size: 2.5rem;
     font-style: bold;
-    /* margin: 0; */
   }
 
   .post {
@@ -87,6 +86,7 @@ const StyledArticle = styled.article`
     padding: 0;
 
     & > li {
+      line-height: 1.5;
       display: inline-block;
       padding: 4px 8px;
       margin-right: 4px;
@@ -102,6 +102,16 @@ const Buttons = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
+
+  .previous {
+    max-width: 25%;
+    text-align: left;
+  }
+
+  .next {
+    max-width: 25%;
+    text-align: right;
+  }
 `
 
 export const postQuery = graphql`
@@ -138,21 +148,15 @@ const Template = ({ data, pageContext }) => {
   } = post
 
   const prevArticle = previous && (
-    <Link
-      to={previous.frontmatter.path}
-      style={{ maxWidth: '25%', textAlign: 'left' }}
-    >
-      <strong>Previous Article</strong> <br />
+    <Link to={previous.frontmatter.path} className='previous'>
+      <strong>Previous Post</strong> <br />
       {previous.frontmatter.title}
     </Link>
   )
 
   const nextArticle = next && (
-    <Link
-      to={next.frontmatter.path}
-      style={{ maxWidth: '25%', textAlign: 'right' }}
-    >
-      <strong>Next Article</strong> <br />
+    <Link to={next.frontmatter.path} className='next'>
+      <strong>Next Post</strong> <br />
       {next.frontmatter.title}
     </Link>
   )
@@ -178,7 +182,8 @@ const Template = ({ data, pageContext }) => {
         </ul>
 
         <p className='info'>
-          Posted by {frontmatter.author} on {frontmatter.date}
+          {/* Posted by {frontmatter.author} on */}
+          {frontmatter.date}
         </p>
 
         <p className='time'>
