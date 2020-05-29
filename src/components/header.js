@@ -16,9 +16,11 @@ const HeaderStyles = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-      margin: 0;
-      font-size: 3rem;
+    .left {
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+      }
     }
 
     a {
