@@ -24,6 +24,7 @@ module.exports = {
     //     extensions: [`.mdx`, `.md`],
     //   },
     // },
+    // `gatsby-plugin-mdx`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
