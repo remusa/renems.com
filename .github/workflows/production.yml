@@ -30,6 +30,9 @@ jobs:
       - name: Test
         run: yarn test
 
+      - name: Clean
+        run: yarn clean
+
       - name: Build
         run: yarn build
 
@@ -39,7 +42,9 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         with:
-          args: deploy --dir=./public --prod --open --message \"$(git log -1 --pretty=%B)\"
+          args:
+            deploy --dir=./public --prod --open --message \"$(git log -1
+            --pretty=%B)\"
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
 
       - name: Logs for Netlify
