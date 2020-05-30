@@ -93,22 +93,12 @@ const Tech = () => {
 
       <div className='list'>
         {techList.map(tech => {
-          const image = techImgData.find(
-            n => n.node.relativePath === `tech/${tech.img}`,
-          )
+          const image = techImgData.find(n => n.node.relativePath === `tech/${tech.img}`)
           const fluid = image.node.childImageSharp.fluid || null
           const sizes = image.node.childImageSharp.sizes || null
           const fixed = image.node.childImageSharp.fixed || null
 
-          return (
-            <TechImage
-              key={tech.name}
-              tech={tech}
-              fluid={fluid}
-              sizes={sizes}
-              fixed={fixed}
-            />
-          )
+          return <TechImage key={tech.name} tech={tech} fluid={fluid} sizes={sizes} fixed={fixed} />
         })}
       </div>
     </TechStyles>

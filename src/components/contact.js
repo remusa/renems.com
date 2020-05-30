@@ -110,12 +110,7 @@ const Contact = () => (
           <input type='text' name='name' placeholder='Your name' required />
 
           <label htmlFor='email'>Email: </label>
-          <input
-            type='email'
-            name='email'
-            placeholder='example@email.com'
-            required
-          />
+          <input type='email' name='email' placeholder='example@email.com' required />
         </div>
         <div className='message-container'>
           <label htmlFor='message' className='message'>
