@@ -202,9 +202,7 @@ const Template = ({ data, pageContext }) => {
           {frontmatter.title}
         </h1>
 
-        <ul className='tags'>
-          {frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}
-        </ul>
+        <ul className='tags'>{frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}</ul>
 
         <p className='info'>
           {/* Posted by {frontmatter.author} on */}
