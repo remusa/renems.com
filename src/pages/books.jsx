@@ -5,10 +5,7 @@ import SEO from '../components/seo'
 
 export const bookQuery = graphql`
   query BookIndexQuery {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
         node {
           id
