@@ -25,16 +25,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile # --production
+        run: npm ci
 
       - name: Test
-        run: yarn test
+        run: npm run test
 
       - name: Clean
-        run: yarn clean
+        run: npm run clean
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
