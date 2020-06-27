@@ -1,5 +1,5 @@
 import { graphql, Link } from 'gatsby'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -43,7 +43,11 @@ export const bookQuery = graphql`
   }
 `
 
-const BookPage = ({ data }) => {
+interface BookEntriesInterface {
+  data: any
+}
+
+const BookPage: React.FC<BookEntriesInterface> = ({ data }) => {
   const TYPE = 'BOOK'
   const bookEntries = data.allMarkdownRemark.edges.filter(
     post => post.node.frontmatter.type === TYPE,

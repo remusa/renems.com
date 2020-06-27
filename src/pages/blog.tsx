@@ -41,8 +41,8 @@ export const pageQuery = graphql`
   }
 `
 
-const BlogPage = ({ data }) => {
-  const TYPE = 'BLOG'
+const BlogPage: React.FC = ({ data }) => {
+  const TYPE: string = 'BLOG'
   const blogEntries = data.allMarkdownRemark.edges.filter(
     post => post.node.frontmatter.type === TYPE,
   )

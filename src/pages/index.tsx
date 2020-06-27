@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import '../static/css/styles.css'
 
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
   const { description } = useSiteMetadata()
 
   useEffect(() => {
