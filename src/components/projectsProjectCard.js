@@ -74,7 +74,6 @@ const Card = styled.a`
   }
 `
 
-
 const ProjectCard = ({ project, fluid, sizes }) => (
   <Card className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
     <div className='project-list__card__image' data-aos='image-enter'>
