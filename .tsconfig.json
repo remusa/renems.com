@@ -17,14 +17,11 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~*": [
-        "./*"
+      "@": [
+        "src"
       ],
-      "@components/*": [
-        "components/*"
-      ],
-      "test-utils": [
-        "../tests/test-utils"
+      "@components": [
+        "src/components"
       ]
     },
     "preserveConstEnums": true,

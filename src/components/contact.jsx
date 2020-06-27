@@ -46,9 +46,9 @@ const FormStyles = styled.div`
         &:focus {
           outline: 0;
           /* border-color: ${props => props.theme.colorPrimary}; */
-          border: 1px solid var(--color-blue);
+          border: 1px solid var(--blue);
           /* box-shadow: 0 0 10px ${props => props.theme.colorPrimary}; */
-          box-shadow: 0 0 10px var(--color-blue);
+          box-shadow: 0 0 10px var(--blue);
         }
       }
 
@@ -78,14 +78,14 @@ const FormStyles = styled.div`
         width: auto;
         padding: 8px 16px;
         margin: 16px 0;
-        background: var(--color-primary);
-        color: var(--color-white);
+        background: var(--primary);
+        color: var(--white);
         border: 0;
         border-radius: 3px;
         font-size: 1.6rem;
         font-weight: 500;
         outline: none;
-        transition: all 0.3s ease;
+        transition: var(--transitionThreeMs);
       }
     }
   }

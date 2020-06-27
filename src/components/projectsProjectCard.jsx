@@ -24,7 +24,7 @@ const Card = styled.a`
   &:hover {
     border-style: solid;
     /* box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17); */
-    /* box-shadow: 0px 5px 5px 0px var(--color-primary, 0.17); */
+    /* box-shadow: 0px 5px 5px 0px var(--primary, 0.17); */
   }
 
   .project-list__card__image {
@@ -35,13 +35,13 @@ const Card = styled.a`
       width: 100%;
       height: 100%;
       border-radius: 5px 5px 0 0;
-      transition: all 1s ease;
+      transition: var(--transitionSecond);
     }
   }
 
   .project-list__card:hover .project-list__card__image__src {
     transform: scale(1.2);
-    transition: all 0.5s ease;
+    transition: var(--transitionSecond);
     text-decoration: none;
   }
 
@@ -59,14 +59,14 @@ const Card = styled.a`
   }
 
   .project-list__card__info__name {
-    color: var(--color-font);
+    color: var(--fontColor);
   }
 
   .project-list__card__divider {
     width: 100%;
     height: 6px;
-    background-color: var(--color-primary-lighter);
-    transition: all 300ms linear;
+    background-color: var(--primaryLight);
+    transition: var(--transitionThreeMs);
 
     &:hover {
       background-color: var(--coral);

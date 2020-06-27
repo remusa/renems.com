@@ -17,7 +17,7 @@ const HeaderStyles = styled.header`
     align-items: center;
 
     a {
-      color: var(--color-font);
+      color: var(--fontColor);
       size: 1.8rem;
     }
 
@@ -50,12 +50,12 @@ const HeaderStyles = styled.header`
         cursor: pointer;
         user-select: none;
 
-        transition: all 0.3s ease-in-out;
+        transition: var(--transitionThreeMs);
 
         &:hover,
         &.active {
           /* background-color: rgba(0, 0, 0, 0.3); */
-          background-color: var(--color-primary);
+          background-color: var(--primary);
         }
       }
     }

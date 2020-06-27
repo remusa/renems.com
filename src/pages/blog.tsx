@@ -50,15 +50,15 @@ const PostsLists = styled.div`
     margin-bottom: 3rem;
 
     a:hover {
-      color: var(--color-primary);
+      color: var(--primary);
     }
 
     &::after {
       content: '';
       display: block;
       width: 100%;
-      padding: 2rem 0 0 0;
-      border-bottom: 1px solid var(--color-primary);
+      padding: 2.5rem 0 0 0;
+      border-bottom: 1px solid var(--primary);
     }
 
     .date {
@@ -75,11 +75,11 @@ const PostsLists = styled.div`
         padding: 0.5rem 0.75rem;
         margin-right: 4px;
         border-radius: 3px;
-        border: 1px solid var(--color-primary);
+        border: 1px solid var(--primary);
         font-size: 1.5rem;
 
         &:hover {
-          background: var(--color-primary);
+          background: var(--primary);
           color: var(--white);
         }
       }

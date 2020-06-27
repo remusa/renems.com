@@ -36,7 +36,7 @@ const CardStyles = styled.div`
   height: 550px;
   margin: 8px 16px;
   border-radius: 8;
-  border-bottom: 4px solid var(--color-primary);
+  border-bottom: 4px solid var(--primary);
 
   .top {
     height: 65%;
@@ -73,20 +73,20 @@ const CardStyles = styled.div`
 
     h3 {
       text-align: center;
-      color: var(--color-font);
-      /* text-decoration: underline var(--color-primary); */
+      color: var(--fontColor);
+      /* text-decoration: underline var(--primary); */
     }
 
     .icon:hover,
     h3:hover {
       color: var(--coral);
       /* text-decoration: underline var(--coral); */
-      transition: all 0.3s ease;
+      transition: var(--transitionThreeMs);
     }
   }
 
   &:hover {
-    transition: all 0.3s ease;
+    transition: var(--transitionThreeMs);
     box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.17);
     border-bottom: var(--coral);
 

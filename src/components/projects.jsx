@@ -29,7 +29,7 @@ const ProjectsContainer = styled.div`
     border-radius: 0.35rem;
 
     &:focus-within {
-      border: 1px solid var(--color-primary);
+      border: 1px solid var(--primary);
     }
 
     select {
