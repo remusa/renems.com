@@ -27,7 +27,12 @@ module.exports = {
     // `gatsby-plugin-mdx`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
     `gatsby-plugin-sass`,
     // {
     //   resolve: `gatsby-plugin-manifest`,

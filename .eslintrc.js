@@ -1,10 +1,15 @@
 const prettierConfig = require('./.prettierrc')
 
 module.exports = {
-  extends: ['react-app', 'plugin:prettier/recommended'],
-  // "extends": ["react-app", "plugin:jsx-a11y/recommended", "plugin:prettier/recommended"],
-  // "plugins": ["jsx-a11y"],
-  plugins: ['prettier'],
+  extends: [
+    'react-app',
+    //"plugin:jsx-a11y/recommended",
+    'plugin:prettier/recommended',
+  ],
+  plugins: [
+    'prettier',
+    //"jsx-a11y"
+  ],
   env: {
     browser: true,
   },
