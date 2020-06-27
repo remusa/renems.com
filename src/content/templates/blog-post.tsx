@@ -1,33 +1,34 @@
 import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../../components/layout'
 
 const StyledArticle = styled.article`
-  --yellow: #ffc600;
   max-width: 760px;
-  /* font-size: 1.8rem; */
-
-  img {
-    max-width: 100%;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    font-style: bold;
-  }
-
-  a,
-  p,
-  ul > li {
-    line-height: 1.75;
-    font-size: 1.9rem;
-  }
 
   a {
     color: var(--color-primary);
     text-decoration: underline wavy var(--color-primary);
+  }
+
+  ul.tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      margin-right: 4px;
+      border-radius: 3px;
+      border: 1px solid var(--color-primary);
+      color: var(--color-white);
+      font-size: 1.5rem;
+
+      &:hover {
+        background: var(--color-primary);
+      }
+    }
   }
 
   .post {
@@ -36,62 +37,59 @@ const StyledArticle = styled.article`
     margin: 200px auto;
     grid-gap: 10px 50px;
     grid-template-columns: 3fr 12fr 5fr;
-  }
 
-  .post > * {
-    grid-column: 2 / -2;
-  }
+    img {
+      max-width: 100%;
+    }
 
-  .post > figure {
-    margin: 0;
-    grid-column: 1 / -1;
-  }
+    a,
+    p,
+    ul > li {
+      line-height: 1.75;
+      font-size: 1.9rem;
+    }
 
-  figcaption {
-    font-size: 10px;
-  }
+    & > * {
+      grid-column: 2 / -2;
+    }
 
-  .post > blockquote {
-    grid-column: 1 / -1;
-    font-size: 60px;
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-  }
+    figure {
+      margin: 0;
+      grid-column: 1 / -1;
+    }
 
-  .tip {
-    background: #fafafa;
-    padding: 10px;
-    grid-row: span 5;
-    align-self: start;
-  }
+    figcaption {
+      font-size: 10px;
+    }
 
-  .tip-left {
-    grid-column: 1 / span 1;
-    text-align: right;
-    border-right: 2px solid var(--yellow);
-  }
+    blockquote {
+      grid-column: 1 / -1;
+      font-size: 60px;
+      font-style: italic;
+      text-align: center;
+      margin: 0;
+    }
 
-  .tip-right {
-    grid-column: span 1 / -1;
-    border-left: 2px solid var(--yellow);
-  }
+    .time {
+      font-style: italic;
+    }
 
-  .time {
-    font-style: italic;
-  }
+    .tip {
+      background: #fafafa;
+      padding: 10px;
+      grid-row: span 5;
+      align-self: start;
+    }
 
-  ul.tags {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    .tip-left {
+      grid-column: 1 / span 1;
+      text-align: right;
+      border-right: 2px solid var(--yellow);
+    }
 
-    & > li {
-      display: inline-block;
-      padding: 4px 8px;
-      margin-right: 4px;
-      border-radius: 3px;
-      border: 1px solid var(--color-primary);
+    .tip-right {
+      grid-column: span 1 / -1;
+      border-left: 2px solid var(--yellow);
     }
   }
 `
@@ -118,21 +116,15 @@ const Buttons = styled.div`
   .post-btn {
     cursor: pointer;
     transition: all 0.3s linear;
+    font-size: 1.1rem;
+    line-height: 1.15;
+    width: 250px;
 
     &:hover {
       background-color: var(--color-primary);
       transition: all 0.3s linear;
+      color: var(--white);
     }
-  }
-
-  .previous {
-    max-width: 25%;
-    text-align: left;
-  }
-
-  .next {
-    max-width: 25%;
-    text-align: right;
   }
 `
 
@@ -158,12 +150,10 @@ export const postQuery = graphql`
   }
 `
 
-interface TemplateInterface {
+const Template: React.FC<{
   data: any
   pageContext: any
-}
-
-const Template: React.FC<TemplateInterface> = ({ data, pageContext }) => {
+}> = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { type } = post.frontmatter
   const { previous, next } = pageContext
@@ -229,11 +219,6 @@ const Template: React.FC<TemplateInterface> = ({ data, pageContext }) => {
       </StyledArticle>
     </Layout>
   )
-}
-
-Template.propTypes = {
-  data: PropTypes.any,
-  pageContext: PropTypes.any,
 }
 
 export default Template
