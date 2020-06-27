@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { FaGithubAlt } from 'react-icons/fa'
 import styled from 'styled-components'
-import useProjects from '../hooks/useProjects.js'
+import useProjects from '../hooks/useProjects'
 
 const FeaturedStyles = styled.div`
   margin: 24px 0;

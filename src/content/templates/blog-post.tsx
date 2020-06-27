@@ -158,7 +158,12 @@ export const postQuery = graphql`
   }
 `
 
-const Template = ({ data, pageContext }) => {
+interface TemplateInterface {
+  data: any
+  pageContext: any
+}
+
+const Template: React.FC<TemplateInterface> = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { type } = post.frontmatter
   const { previous, next } = pageContext

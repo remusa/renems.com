@@ -25,7 +25,11 @@ const PROJECTS_QUERY = graphql`
   }
 `
 
-const useProjects = () => {
+const useProjects = (): {
+  projectImgs: any
+  allProjects: any
+  featuredProjects: any
+} => {
   const data = useStaticQuery(PROJECTS_QUERY)
   const allProjects = projectList
   const featuredProjects = allProjects.filter(project => project.featured)

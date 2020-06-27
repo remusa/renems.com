@@ -1,4 +1,4 @@
-const usePosts = () => {
+const usePosts = (): void => {
   // // const data = useStaticQuery(graphql`
   // //   query {
   //     # allMdx {
@@ -19,6 +19,7 @@ const usePosts = () => {
   //   slug: post.frontmatter.slug,
   //   excerpt: post.excerpt,
   // })
+  return
 }
 
 export default usePosts

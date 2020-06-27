@@ -4,7 +4,7 @@ import Projects from '../components/projects'
 import SEO from '../components/seo'
 import useProjects from '../hooks/useProjects'
 
-const ProjectsPage = () => {
+const ProjectsPage: React.FC = () => {
   const { projectImgs } = useProjects()
 
   return (
