@@ -36,7 +36,7 @@ const CardStyles = styled.div`
   height: 550px;
   margin: 8px 16px;
   border-radius: 8;
-  border-bottom: 4px solid var(--color-Primary);
+  border-bottom: 4px solid var(--color-primary);
 
   .top {
     height: 65%;

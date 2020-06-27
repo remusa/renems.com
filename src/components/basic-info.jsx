@@ -18,11 +18,11 @@ const BasicInfoStyles = styled.div`
   }
 
   h1 > span {
-    border-bottom: 4px solid var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
     transition: all 0.3s ease-in-out 0.2s;
 
     &:hover {
-      border-color: var(--coral);
+      border-bottom: 3px solid var(--coral);
     }
   }
 

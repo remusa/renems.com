@@ -1,42 +1,30 @@
-import Img from 'gatsby-image'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import React from 'react'
 import projectList from '../data/projects.json'
+import ProjectCard from './projectsProjectCard'
 
 // import AOS from "aos"
 // import "aos/dist/aos.css";
 
-const ProjectCard = ({ project, fluid, sizes }) => (
-  <>
-    <a className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
-      <div className='project-list__card__image' data-aos='image-enter'>
-        <Img
-          title={project.name}
-          alt='project screenshot'
-          // fluid={fluid}
-          sizes={sizes}
-          className='project-list__card__image__src'
-        />
-      </div>
+const ProjectsContainer = styled.div`
+  text-align: center;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
 
-      <div className='project-list__card__divider' />
+  .project-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
 
-      <div className='project-list__card__info'>
-        <h4 className='project-list__card__info__name'>{project.name}</h4>
-        <h5>Technologies: {project.tech.join(', ')}</h5>
-        <a href={project.github} target='_blank' rel='noopener noreferrer'>
-          <code>Code</code>
-        </a>
-      </div>
-    </a>
-  </>
-)
+    list-style: none;
 
-ProjectCard.propTypes = {
-  project: PropTypes.object.isRequired,
-  fluid: PropTypes.object,
-  sizes: PropTypes.object,
-}
+    .project-select {
+      
+    }
+  }
+`
 
 class Projects extends React.Component {
   state = {
@@ -71,9 +59,7 @@ class Projects extends React.Component {
         : projectList.filter(project => project.type.includes(selectType))
 
     return (
-      <a className='projects-container'>
-        <h2>Projects</h2>
-
+      <ProjectsContainer>
         <p>Filter projects</p>
 
         <form>
@@ -83,6 +69,7 @@ class Projects extends React.Component {
               name='project-select'
               defaultValue={selectType}
               onChange={this.handleSelectChange}
+              className="project-select"
             >
               <option value=''>All</option>
               <option value='react'>React</option>
@@ -116,7 +103,7 @@ class Projects extends React.Component {
             )
           })}
         </div>
-      </a>
+      </ProjectsContainer>
     )
   }
 }

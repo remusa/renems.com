@@ -1,7 +1,3 @@
-@import url('./project.scss');
-@import url('./colors-nord.css');
-@import url('./colors-onedark.css');
-
 :root {
   /* General colors */
   --color-white: rgb(236, 239, 244);
@@ -13,6 +9,29 @@
   --color-dark-text: #b8b7d1;
   --color-dark-nav-link: #9694ba;
 
+  /* OneDark palete */
+  /* OneDark Vivid */
+  --background: #282c34;
+  --purple: #d55fde;
+  --error: #f44747;
+  --coral: #ef596f;
+  --whiskey: #d19a66;
+  --chalky: #e5c07b;
+  --lightDark: #7f848e;
+  --dark: #5c6370;
+  --malibu: #61afef;
+  --green: #89ca78;
+  --fountainBlue: #2bbac5;
+  --invalid: #ffffff;
+
+  /* Main colors */
+  --color-background: var(--background);
+  --color-font: var(--color-white);
+  --color-selection: var(--color-primary-lighter);
+  --color-primary-dark: var(--fountainBlue);
+  --color-primary: var(--fountainBlue);
+  --color-primary-lighter: var(--fountainBlue);
+
   /* Transitions */
   --transitionDefault: all 0.5s ease-in-out 0.3s;
   --transitionThreeMs: all 0.3s ease-in-out 0.2s;
@@ -20,10 +39,10 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
-@font-face {
+/* @font-face {
   src: url('../fonts/Assistant-Regular.ttf') format('ttf');
   font-family: 'Assistant', sans-serif;
-}
+} */
 
 html {
   box-sizing: border-box;
