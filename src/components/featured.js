@@ -1,10 +1,10 @@
+import styled from '@emotion/styled'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { FaGithubAlt } from 'react-icons/fa'
-import styled from 'styled-components'
 import useProjects from '../hooks/useProjects'
 
 const FeaturedStyles = styled.div`

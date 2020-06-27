@@ -1,8 +1,8 @@
+import styled from '@emotion/styled'
 import React from 'react'
 // import socialLinks from '../data/social.json'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
-import styled from 'styled-components'
 
 const SocialStyles = styled.div`
   display: flex;

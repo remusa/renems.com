@@ -1,8 +1,8 @@
+import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 import techList from '../data/tech.json'
 
 const TECH_QUERY = graphql`

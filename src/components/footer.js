@@ -1,8 +1,5 @@
+import styled from '@emotion/styled'
 import React from 'react'
-import styled from 'styled-components'
-// import { FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { Link } from 'gatsby'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Social from './social'
 
 const FooterStyles = styled.footer`

@@ -1,7 +1,7 @@
+import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 import Layout from '../../components/layout'
 
 const StyledArticle = styled.article`

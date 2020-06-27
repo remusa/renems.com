@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 
 const MainStyles = styled.main`
   grid-area: main;

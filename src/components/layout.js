@@ -1,7 +1,7 @@
+import styled from '@emotion/styled'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 import Footer from './footer'
 import Header from './header'
 import Main from './main'

@@ -1,10 +1,10 @@
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 // import TransitionLink from 'gatsby-plugin-transition-link'
+// import { Link } from 'gatsby'
+import styled from '@emotion/styled'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import PropTypes from 'prop-types'
 import React from 'react'
-// import { Link } from 'gatsby'
-import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
   grid-area: header;
