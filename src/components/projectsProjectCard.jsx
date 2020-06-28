@@ -25,7 +25,7 @@ const Card = styled.a`
     transition: var(--transitionThreeMs);
   }
 
-  .project-list__card__image {
+  .card__image {
     height: 50%;
     overflow: hidden;
 
@@ -37,13 +37,13 @@ const Card = styled.a`
     }
   }
 
-  .project-list__card:hover .project-list__card__image__src {
+  .card:hover .card__image__src {
     transform: scale(1.2);
     transition: var(--transitionSecond);
     text-decoration: none;
   }
 
-  .project-list__card__info {
+  .card__info {
     width: 100%;
     height: 50%;
 
@@ -56,7 +56,7 @@ const Card = styled.a`
     }
   }
 
-  .project-list__card__divider {
+  .card__divider {
     width: 100%;
     height: 6px;
     background-color: var(--primaryLight);
@@ -69,21 +69,21 @@ const Card = styled.a`
 `
 
 const ProjectCard = ({ project, fluid, sizes }) => (
-  <Card className='project-list__card' href={project.url} target='_blank' rel='noopener noreferrer'>
-    <div className='project-list__card__image' data-aos='image-enter'>
+  <Card className='card' href={project.url} target='_blank' rel='noopener noreferrer'>
+    <div className='card__image' data-aos='image-enter'>
       <Img
         title={project.name}
         alt='project screenshot'
         // fluid={fluid}
         sizes={sizes}
-        className='project-list__card__image__src'
+        className='card__image__src'
       />
     </div>
 
-    <div className='project-list__card__divider' />
+    <div className='card__divider' />
 
-    <div className='project-list__card__info'>
-      <h4 className='project-list__card__info__name'>{project.name}</h4>
+    <div className='card__info'>
+      <h4 className='card__info__name'>{project.name}</h4>
       <h5>Technologies: {project.tech.join(', ')}</h5>
       <a href={project.github} target='_blank' rel='noopener noreferrer'>
         <code>Code</code>

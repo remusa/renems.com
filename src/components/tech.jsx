@@ -34,46 +34,30 @@ const TECH_QUERY = graphql`
 `
 
 const TechStyles = styled.div`
-  max-width: 320px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  margin: 2rem auto;
 
-  .list {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, 50px);
-    gap: 2px;
-    row-gap: 2px; */
+  .tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-gap: 2px;
+    width: 350px;
 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: stretch;
-
-    .logo-container {
-      margin-bottom: 8px;
-
-      .logo {
-        /* display: inline-block; */
-        /* margin: 0 1rem; */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .logo {
+      object-fit: scale-down;
     }
   }
 `
 
 const TechImage = ({ tech, fluid, sizes, fixed }) => (
-  <div data-aos='image-enter' className='logo-container'>
-    <Img
-      title={tech.name}
-      alt={`${tech.name} icon`}
-      // fluid={fluid}
-      // sizes={sizes}
-      fixed={fixed}
-      className='logo'
-    />
-  </div>
+  <Img
+    className='logo'
+    data-aos='image-enter'
+    title={tech.name}
+    alt={`${tech.name} icon`}
+    // fluid={fluid}
+    // sizes={sizes}
+    fixed={fixed}
+  />
 )
 
 TechImage.propTypes = {
@@ -91,7 +75,7 @@ const Tech = () => {
     <TechStyles>
       <h2>Favourite Technologies</h2>
 
-      <div className='list'>
+      <div className='tech-list'>
         {techList.map(tech => {
           const image = techImgData.find(n => n.node.relativePath === `tech/${tech.img}`)
           const fluid = image.node.childImageSharp.fluid || null
