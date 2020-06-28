@@ -5,26 +5,24 @@ import React from 'react'
 
 const Card = styled.a`
   flex: 1 1 250px;
-
-  margin: 32px 16px 0px 16px;
-  /* width: 250px; */
-  /* max-width: 300px; */
   height: 350px;
+  margin: 32px 16px 0px 16px;
 
-  overflow: hidden;
-  /* display: block; */
+  --boxShadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
+  --boxShadowHover: 0px 5px 5px 0px rgba(188, 188, 188, 0.5);
+
   text-align: center;
   border-width: 0px 0px 0px 0px;
   border-color: rgba(188, 188, 188, 1);
   border-radius: 5;
   border-style: solid;
-  /* box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17); */
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: var(--boxShadow);
+  overflow: hidden;
 
   &:hover {
     border-style: solid;
-    /* box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17); */
-    /* box-shadow: 0px 5px 5px 0px var(--primary, 0.17); */
+    box-shadow: var(--boxShadowHover);
+    transition: var(--transitionThreeMs);
   }
 
   .project-list__card__image {
@@ -56,10 +54,6 @@ const Card = styled.a`
       overflow-y: hidden;
       position: relative;
     }
-  }
-
-  .project-list__card__info__name {
-    color: var(--fontColor);
   }
 
   .project-list__card__divider {
