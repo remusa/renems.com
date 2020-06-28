@@ -33,11 +33,9 @@ const BasicInfoStyles = styled.div`
   }
 `
 
-const BasicInfo = () => (
+const BasicInfo: React.FC = () => (
   <BasicInfoStyles>
-    <h1>
-      Hello, I'm <span>René M.S.</span>
-    </h1>
+    <h1>Hello, I'm <span>René M.S.</span></h1>
     <h2>Software engineer</h2>
     <p>
       I'm a software engineer who enjoys building useful things and learning new technologies. I

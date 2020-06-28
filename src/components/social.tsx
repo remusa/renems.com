@@ -41,13 +41,12 @@ const SocialStyles = styled.div`
   }
 `
 
-const Social = () => (
+const Social: React.FC = () => (
   <SocialStyles>
     <a
       target='_blank'
       rel='noopener noreferrer'
       href='https://github.com/remusa'
-      // href='https://renems.com/github'
       className='social-link github'
     >
       <FaGithubAlt />
@@ -58,7 +57,6 @@ const Social = () => (
       target='_blank'
       rel='noopener noreferrer'
       href='https://www.linkedin.com/in/remusa'
-      // href='https://renems.com/linkedin'
       className='social-link linkedin'
     >
       <FaLinkedin />
@@ -84,7 +82,7 @@ const Social = () => (
       target='_blank'
       rel='noopener noreferrer'
       href='https:/youtube.com/remusa_'
-      className='social-link twitter'
+      className='social-link youtube'
     >
       <FaYoutube />
       <p className='icon-title'>YouTube</p>

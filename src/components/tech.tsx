@@ -16,14 +16,13 @@ const TECH_QUERY = graphql`
           relativePath
           name
           childImageSharp {
-            # fluid {
-            #   ...GatsbyImageSharpFluid_withWebp
-            # }
-            # sizes(maxWidth: 200, maxHeight: 200) {
-            #   ...GatsbyImageSharpSizes_withWebp
-            # }
+            #fluid {
+            #  ...GatsbyImageSharpFluid_withWebp
+            #}
+            #sizes(maxWidth: 200, maxHeight: 200) {
+            #  ...GatsbyImageSharpSizes_withWebp
+            #}
             fixed(width: 50, height: 50) {
-              # ...GatsbyImageSharpFixed_withWebp
               ...GatsbyImageSharpFixed_withWebp
             }
           }
@@ -34,46 +33,39 @@ const TECH_QUERY = graphql`
 `
 
 const TechStyles = styled.div`
-  max-width: 320px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  margin: 2rem auto;
 
-  .list {
-    /* display: grid;
+  .tech-list {
+    margin: 0 auto;
+    display: grid;
     grid-template-columns: repeat(auto-fill, 50px);
     gap: 2px;
-    row-gap: 2px; */
+    width: calc((50px * 6) + (2px * 6));
 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: stretch;
-
-    .logo-container {
-      margin-bottom: 8px;
-
-      .logo {
-        /* display: inline-block; */
-        /* margin: 0 1rem; */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      overflow: hidden;
     }
   }
 `
 
-const TechImage = ({ tech, fluid, sizes, fixed }) => (
-  <div data-aos='image-enter' className='logo-container'>
-    <Img
-      title={tech.name}
-      alt={`${tech.name} icon`}
-      // fluid={fluid}
-      // sizes={sizes}
-      fixed={fixed}
-      className='logo'
-    />
-  </div>
+const TechImage: React.FC<{
+  tech: any
+  fluid: any
+  sizes: any
+  fixed: any
+}> = ({ tech, fluid, sizes, fixed }) => (
+  <Img
+    className='logo'
+    data-aos='image-enter'
+    title={tech.name}
+    alt={`${tech.name} icon`}
+    // fluid={fluid}
+    // sizes={sizes}
+    fixed={fixed}
+  />
 )
 
 TechImage.propTypes = {
@@ -83,7 +75,7 @@ TechImage.propTypes = {
   fixed: PropTypes.object,
 }
 
-const Tech = () => {
+const Tech: React.FC = () => {
   const data = useStaticQuery(TECH_QUERY)
   const { edges: techImgData } = data.TechImgs
 
@@ -91,9 +83,10 @@ const Tech = () => {
     <TechStyles>
       <h2>Favourite Technologies</h2>
 
-      <div className='list'>
+      <div className='tech-list'>
         {techList.map(tech => {
           const image = techImgData.find(n => n.node.relativePath === `tech/${tech.img}`)
+
           const fluid = image.node.childImageSharp.fluid || null
           const sizes = image.node.childImageSharp.sizes || null
           const fixed = image.node.childImageSharp.fixed || null

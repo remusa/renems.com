@@ -54,7 +54,7 @@ const FooterStyles = styled.footer`
   }
 `
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <FooterStyles>
     <Social />
 

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Footer from './footer'
 import Header from './header'
 import Main from './main'
@@ -20,7 +20,7 @@ const LayoutStyles = styled.div`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout: React.FC<{ children: ReactElement }> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {

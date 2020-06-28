@@ -110,7 +110,11 @@ const CardStyles = styled.div`
   }
 `
 
-const ProjectCard = ({ project, fluid, sizes }) => {
+const ProjectCard: React.FC<{
+  project: any
+  fluid: any
+  sizes: any
+}> = ({ project, fluid, sizes }) => {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -152,7 +156,7 @@ ProjectCard.propTypes = {
   sizes: PropTypes.object,
 }
 
-const Featured = () => {
+const Featured: React.FC = () => {
   const { projectImgs, featuredProjects } = useProjects()
 
   return (

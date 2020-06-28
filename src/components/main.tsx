@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 const MainStyles = styled.main`
   grid-area: main;
@@ -9,7 +9,9 @@ const MainStyles = styled.main`
   padding: 2rem;
 `
 
-const Main = ({ children }) => <MainStyles>{children}</MainStyles>
+const Main: React.FC<{ children: ReactElement }> = ({ children }) => (
+  <MainStyles>{children}</MainStyles>
+)
 
 Main.propTypes = {
   children: PropTypes.node.isRequired,
