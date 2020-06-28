@@ -92,7 +92,7 @@ const FormStyles = styled.div`
 `
 
 // data-netlify-recaptcha='true'
-const Contact = () => (
+const Contact: React.FC = () => (
   <FormStyles id='contact'>
     <form
       name='contact'

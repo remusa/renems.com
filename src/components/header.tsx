@@ -62,7 +62,9 @@ const HeaderStyles = styled.header`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header: React.FC<{
+  siteTitle: string
+}> = ({ siteTitle = '' }) => (
   <HeaderStyles id='header'>
     <nav id='nav'>
       <div className='left'>
@@ -118,10 +120,6 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: '',
 }
 
 export default Header

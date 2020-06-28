@@ -68,7 +68,11 @@ const Card = styled.a`
   }
 `
 
-const ProjectCard = ({ project, fluid, sizes }) => (
+const ProjectCard: React.FC<{ project: any; fluid: any; sizes: any }> = ({
+  project,
+  fluid,
+  sizes,
+}) => (
   <Card className='card' href={project.url} target='_blank' rel='noopener noreferrer'>
     <div className='card__image' data-aos='image-enter'>
       <Img

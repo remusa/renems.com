@@ -16,14 +16,13 @@ const TECH_QUERY = graphql`
           relativePath
           name
           childImageSharp {
-            # fluid {
-            #   ...GatsbyImageSharpFluid_withWebp
-            # }
-            # sizes(maxWidth: 200, maxHeight: 200) {
-            #   ...GatsbyImageSharpSizes_withWebp
-            # }
+            #fluid {
+            #  ...GatsbyImageSharpFluid_withWebp
+            #}
+            #sizes(maxWidth: 200, maxHeight: 200) {
+            #  ...GatsbyImageSharpSizes_withWebp
+            #}
             fixed(width: 50, height: 50) {
-              # ...GatsbyImageSharpFixed_withWebp
               ...GatsbyImageSharpFixed_withWebp
             }
           }
@@ -37,18 +36,27 @@ const TechStyles = styled.div`
   margin: 2rem auto;
 
   .tech-list {
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 50px);
-    grid-gap: 2px;
-    width: 350px;
+    grid-template-columns: repeat(auto-fill, 50px);
+    gap: 2px;
+    width: calc((50px * 6) + (2px * 6));
 
     .logo {
-      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      overflow: hidden;
     }
   }
 `
 
-const TechImage = ({ tech, fluid, sizes, fixed }) => (
+const TechImage: React.FC<{
+  tech: any
+  fluid: any
+  sizes: any
+  fixed: any
+}> = ({ tech, fluid, sizes, fixed }) => (
   <Img
     className='logo'
     data-aos='image-enter'
@@ -67,7 +75,7 @@ TechImage.propTypes = {
   fixed: PropTypes.object,
 }
 
-const Tech = () => {
+const Tech: React.FC = () => {
   const data = useStaticQuery(TECH_QUERY)
   const { edges: techImgData } = data.TechImgs
 
@@ -78,6 +86,7 @@ const Tech = () => {
       <div className='tech-list'>
         {techList.map(tech => {
           const image = techImgData.find(n => n.node.relativePath === `tech/${tech.img}`)
+
           const fluid = image.node.childImageSharp.fluid || null
           const sizes = image.node.childImageSharp.sizes || null
           const fixed = image.node.childImageSharp.fixed || null

@@ -15,7 +15,7 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO({ description, lang, meta, keywords, title }) {
+const SEO = ({ description, lang, meta, keywords, title }) => {
   return (
     <StaticQuery
       query={detailsQuery}
