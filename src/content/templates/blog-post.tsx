@@ -3,120 +3,93 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../../components/layout'
 
-const StyledArticle = styled.article`
+const Article = styled.article`
   max-width: 760px;
 
-  ul.tags {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      display: inline-block;
-      padding: 0.5rem 0.75rem;
-      margin-right: 4px;
-      border-radius: 3px;
-      border: 1px solid var(--primary);
-      color: var(--white);
+  .post-info {
+    ul.tags {
       font-size: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-      &:hover {
-        background: var(--primary);
+      li {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        margin-right: 4px;
+        border-radius: 3px;
+        border: 1px solid var(--primary);
+        color: var(--white);
+
+        &:hover {
+          background: var(--primary);
+        }
       }
     }
-  }
 
-  .post {
-    display: grid;
-    max-width: 960px;
-    margin: 200px auto;
-    grid-gap: 10px 50px;
-    grid-template-columns: 3fr 12fr 5fr;
+    .info-time-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0 0 0;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
 
-    .content::before {
+    &::after {
       content: '';
       display: block;
       width: 100%;
-      padding: 2rem 0 0 0;
-      border-bottom: 1px solid var(--primary);
+      padding: 1.5rem 0 0 0;
+      border-bottom: 3px solid var(--primary);
     }
+  }
+`
 
-    & > a {
-      color: var(--primary);
-      text-decoration: underline wavy var(--primary);
+const BackButton = styled.a`
+  padding: 0.5rem 0;
+  color: var(--primary);
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--primary);
+  transition: var(--transitionThreeMs);
 
-      &:hover {
-        color: var(--coral);
-        text-decoration: underline wavy var(--coral);
-      }
+  &:hover {
+    color: var(--coral);
+    border-color: var(--coral);
+  }
+`
+
+const PostContent = styled.div`
+  width: auto;
+  max-width: 960px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-gap: 1rem 1rem; */
+
+  /* & > * {
+    grid-column: 2 / -2;
+  } */
+
+  a {
+    color: var(--primary);
+    text-decoration: underline var(--primary);
+    transition: var(--transitionThreeMs);
+
+    &:hover {
+      color: var(--coral);
+      text-decoration: underline wavy var(--coral);
     }
+  }
 
-    img {
-      max-width: 100%;
-    }
+  img {
+    max-width: 100%;
+  }
 
-    a,
-    p,
-    ul > li {
-      line-height: 1.75;
-      font-size: 2rem;
-    }
-
-    & > * {
-      grid-column: 2 / -2;
-    }
-
-    figure {
-      margin: 0;
-      grid-column: 1 / -1;
-    }
-
-    figcaption {
-      font-size: 10px;
-    }
-
-    blockquote {
-      grid-column: 1 / -1;
-      font-size: 60px;
-      font-style: italic;
-      text-align: center;
-      margin: 0;
-    }
-
-    .time {
-      font-style: italic;
-    }
-
-    .tip {
-      background: #fafafa;
-      padding: 10px;
-      grid-row: span 5;
-      align-self: start;
-    }
-
-    .tip-left {
-      grid-column: 1 / span 1;
-      text-align: right;
-      border-right: 2px solid var(--yellow);
-    }
-
-    .tip-right {
-      grid-column: span 1 / -1;
-      border-left: 2px solid var(--yellow);
-    }
-
-    a.back-btn {
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.15;
-      border: 1px solid var(--primary);
-      transition: var(--transitionThreeMs);
-      cursor: pointer;
-
-      &:hover {
-        background-color: var(--primary);
-      }
-    }
+  a,
+  p,
+  li {
+    /* font-size: 1.8rem; */
+    /* line-height: 1.35; */
   }
 `
 
@@ -128,6 +101,7 @@ const Buttons = styled.div`
   margin-top: 5rem;
 
   a {
+    position: relative;
     color: white;
     text-decoration: none;
     width: 200px;
@@ -186,7 +160,7 @@ const Template: React.FC<{
   } = post
 
   const prevArticle = previous ? (
-    <Link to={previous.frontmatter.path} className='previous'>
+    <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
       <strong>Previous</strong>
       <br />
       {previous.frontmatter.title}
@@ -194,7 +168,7 @@ const Template: React.FC<{
   ) : null
 
   const nextArticle = next ? (
-    <Link to={next.frontmatter.path} className='next'>
+    <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
       <strong>Next</strong>
       <br />
       {next.frontmatter.title}
@@ -220,25 +194,30 @@ const Template: React.FC<{
 
   return (
     <Layout>
-      <StyledArticle className='post'>
-        {goBackBtn()}
+      <Article>
+        <BackButton>{goBackBtn()}</BackButton>
 
-        <h1>{title}</h1>
-        <ul className='tags'>{frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}</ul>
-        <p className='info'>
-          {frontmatter.date}, by {frontmatter.author}
-        </p>
-        <p className='time'>
-          Time to read: {timeToRead} minutes ({words} words)
-        </p>
+        <div className='post-info'>
+          <h1>{title}</h1>
+          <ul className='tags'>
+            {frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}
+          </ul>
+          <div className='info-time-container'>
+            <span className='author'>by {frontmatter.author}</span>
+            <span className='date'>{frontmatter.date}</span>
+            <span className='time'>
+              {timeToRead} minute{timeToRead > 1 ? 's' : ''} ({words} words)
+            </span>
+          </div>
+        </div>
 
-        <div className='content' dangerouslySetInnerHTML={{ __html: html }} />
+        <PostContent className='content' dangerouslySetInnerHTML={{ __html: html }} />
 
         <Buttons>
           {prevArticle}
           {nextArticle}
         </Buttons>
-      </StyledArticle>
+      </Article>
     </Layout>
   )
 }
