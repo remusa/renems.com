@@ -1,98 +1,95 @@
+import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 import Layout from '../../components/layout'
 
-const StyledArticle = styled.article`
-  --yellow: #ffc600;
+const Article = styled.article`
   max-width: 760px;
-  /* font-size: 1.8rem; */
+
+  .post-info {
+    ul.tags {
+      font-size: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        margin-right: 4px;
+        border-radius: 3px;
+        border: 1px solid var(--primary);
+        color: var(--white);
+
+        &:hover {
+          background: var(--primary);
+        }
+      }
+    }
+
+    .info-time-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0 0 0;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding: 1.5rem 0 0 0;
+      border-bottom: 3px solid var(--primary);
+    }
+  }
+`
+
+const BackButton = styled.a`
+  padding: 0.5rem 0;
+  color: var(--primary);
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--primary);
+  transition: var(--transitionThreeMs);
+
+  &:hover {
+    color: var(--coral);
+    border-color: var(--coral);
+  }
+`
+
+const PostContent = styled.div`
+  width: auto;
+  max-width: 960px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-gap: 1rem 1rem; */
+
+  /* & > * {
+    grid-column: 2 / -2;
+  } */
+
+  a {
+    color: var(--primary);
+    text-decoration: underline var(--primary);
+    transition: var(--transitionThreeMs);
+
+    &:hover {
+      color: var(--coral);
+      text-decoration: underline wavy var(--coral);
+    }
+  }
 
   img {
     max-width: 100%;
   }
 
-  h2 {
-    font-size: 2.5rem;
-    font-style: bold;
-  }
-
   a,
   p,
-  ul > li {
-    line-height: 1.75;
-    font-size: 1.9rem;
-  }
-
-  a {
-    color: var(--color-primary);
-    text-decoration: underline wavy var(--color-primary);
-  }
-
-  .post {
-    display: grid;
-    max-width: 960px;
-    margin: 200px auto;
-    grid-gap: 10px 50px;
-    grid-template-columns: 3fr 12fr 5fr;
-  }
-
-  .post > * {
-    grid-column: 2 / -2;
-  }
-
-  .post > figure {
-    margin: 0;
-    grid-column: 1 / -1;
-  }
-
-  figcaption {
-    font-size: 10px;
-  }
-
-  .post > blockquote {
-    grid-column: 1 / -1;
-    font-size: 60px;
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-  }
-
-  .tip {
-    background: #fafafa;
-    padding: 10px;
-    grid-row: span 5;
-    align-self: start;
-  }
-
-  .tip-left {
-    grid-column: 1 / span 1;
-    text-align: right;
-    border-right: 2px solid var(--yellow);
-  }
-
-  .tip-right {
-    grid-column: span 1 / -1;
-    border-left: 2px solid var(--yellow);
-  }
-
-  .time {
-    font-style: italic;
-  }
-
-  ul.tags {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    & > li {
-      display: inline-block;
-      padding: 4px 8px;
-      margin-right: 4px;
-      border-radius: 3px;
-      border: 1px solid var(--color-primary);
-    }
+  li {
+    /* font-size: 1.8rem; */
+    /* line-height: 1.35; */
   }
 `
 
@@ -100,39 +97,29 @@ const Buttons = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  align-items: center;
-
-  margin-top: 40px;
-
-  span {
-    border: 1px solid var(--color-primary);
-    border-radius: 3px;
-    padding: 8px 12px;
-  }
+  align-items: flex-start;
+  margin-top: 5rem;
 
   a {
+    position: relative;
     color: white;
     text-decoration: none;
-  }
+    width: 200px;
+    height: 35px;
 
-  .post-btn {
-    cursor: pointer;
-    transition: all 0.3s linear;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+    padding: 8px 12px;
+    transition: var(--transitionThreeMs);
 
     &:hover {
-      background-color: var(--color-primary);
-      transition: all 0.3s linear;
+      color: var(--white);
+      background-color: var(--primary);
     }
-  }
-
-  .previous {
-    max-width: 25%;
-    text-align: left;
-  }
-
-  .next {
-    max-width: 25%;
-    text-align: right;
   }
 `
 
@@ -158,12 +145,10 @@ export const postQuery = graphql`
   }
 `
 
-interface TemplateInterface {
+const Template: React.FC<{
   data: any
   pageContext: any
-}
-
-const Template: React.FC<TemplateInterface> = ({ data, pageContext }) => {
+}> = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { type } = post.frontmatter
   const { previous, next } = pageContext
@@ -175,65 +160,66 @@ const Template: React.FC<TemplateInterface> = ({ data, pageContext }) => {
   } = post
 
   const prevArticle = previous ? (
-    <span className='post-btn'>
-      <Link to={previous.frontmatter.path} className='previous'>
-        <strong>Previous Post</strong> <br />
-        {previous.frontmatter.title}
-      </Link>
-    </span>
+    <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
+      <strong>Previous</strong>
+      <br />
+      {previous.frontmatter.title}
+    </Link>
   ) : null
 
   const nextArticle = next ? (
-    <span className='post-btn'>
-      <Link to={next.frontmatter.path} className='next'>
-        <strong>Next Post</strong> <br />
-        {next.frontmatter.title}
-      </Link>
-    </span>
+    <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
+      <strong>Next</strong>
+      <br />
+      {next.frontmatter.title}
+    </Link>
   ) : null
 
-  const goBack = () => {
-    if (type === 'BLOG') return <Link to='/blog'>Go Back</Link>
-    if (type === 'BOOK') return <Link to='/books'>Go Back</Link>
+  const goBackBtn = () => {
+    if (type === 'BLOG')
+      return (
+        <Link className='back-btn' to='/blog'>
+          Go Back
+        </Link>
+      )
+    if (type === 'BOOK')
+      return (
+        <Link className='back-btn' to='/books'>
+          Go Back
+        </Link>
+      )
   }
+
+  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   return (
     <Layout>
-      <StyledArticle className='post'>
-        {goBack}
+      <Article>
+        <BackButton>{goBackBtn()}</BackButton>
 
-        <h1>
-          {/* {frontmatter.title_full ? frontmatter.title_full : frontmatter.title} */}
-          {frontmatter.title}
-        </h1>
+        <div className='post-info'>
+          <h1>{title}</h1>
+          <ul className='tags'>
+            {frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}
+          </ul>
+          <div className='info-time-container'>
+            <span className='author'>by {frontmatter.author}</span>
+            <span className='date'>{frontmatter.date}</span>
+            <span className='time'>
+              {timeToRead} minute{timeToRead > 1 ? 's' : ''} ({words} words)
+            </span>
+          </div>
+        </div>
 
-        <ul className='tags'>{frontmatter.tags && frontmatter.tags.map(tag => <li>{tag}</li>)}</ul>
-
-        <p className='info'>
-          {/* Posted by {frontmatter.author} on */}
-          {frontmatter.date}
-        </p>
-
-        <p className='time'>
-          Time to read: {timeToRead} minutes ({words} words)
-        </p>
-
-        <hr />
-
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <PostContent className='content' dangerouslySetInnerHTML={{ __html: html }} />
 
         <Buttons>
           {prevArticle}
           {nextArticle}
         </Buttons>
-      </StyledArticle>
+      </Article>
     </Layout>
   )
-}
-
-Template.propTypes = {
-  data: PropTypes.any,
-  pageContext: PropTypes.any,
 }
 
 export default Template

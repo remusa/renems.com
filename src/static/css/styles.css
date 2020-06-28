@@ -1,17 +1,34 @@
-@import url('./project.scss');
-@import url('./colors-nord.css');
-@import url('./colors-onedark.css');
-
 :root {
   /* General colors */
-  --color-white: rgb(236, 239, 244);
-  --color-grey: #4c566a;
-  --color-blue: #00bcd4;
-  --color-blue-dark: rgb(0, 122, 204);
-  --color-aqua: rgb(3, 212, 191);
+  --white: rgb(236, 239, 244);
+  --grey: #4c566a;
+  --blue: #00bcd4;
+  --blue-dark: rgb(0, 122, 204);
+  --aqua: rgb(3, 212, 191);
+  --dark-text: #b8b7d1;
+  --dark-nav-link: #9694ba;
 
-  --color-dark-text: #b8b7d1;
-  --color-dark-nav-link: #9694ba;
+  /* OneDark Vivid palette */
+  --background: #282c34;
+  --purple: #d55fde;
+  --error: #f44747;
+  --coral: #ef596f;
+  --whiskey: #d19a66;
+  --chalky: #e5c07b;
+  --lightDark: #7f848e;
+  --dark: #5c6370;
+  --malibu: #61afef;
+  --green: #89ca78;
+  --fountainBlue: #2bbac5;
+  --invalid: #ffffff;
+
+  /* Main colors */
+  --backgroundColor: var(--background);
+  --fontColor: var(--white);
+  --selection: var(--primaryLight);
+  --primaryDark: var(--fountainBlue);
+  --primary: var(--fountainBlue);
+  --primaryLight: var(--fountainBlue);
 
   /* Transitions */
   --transitionDefault: all 0.5s ease-in-out 0.3s;
@@ -20,10 +37,10 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
-@font-face {
+/* @font-face {
   src: url('../fonts/Assistant-Regular.ttf') format('ttf');
   font-family: 'Assistant', sans-serif;
-}
+} */
 
 html {
   box-sizing: border-box;
@@ -35,8 +52,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Assistant', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-font);
+  background-color: var(--backgroundColor);
+  color: var(--fontColor);
   font-size: 1.125em;
   line-height: 1.15;
   text-rendering: optimizeLegibility;
@@ -55,7 +72,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 h4 {
@@ -80,10 +97,10 @@ a {
 
 a {
   text-decoration: none;
-  color: var(--color-font);
+  color: var(--fontColor);
 }
 
 ::selection {
-  background: var(--color-selection);
-  color: var(--color-white);
+  background: var(--selection);
+  color: var(--white);
 }

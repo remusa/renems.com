@@ -1,8 +1,8 @@
+import styled from '@emotion/styled'
 import React from 'react'
 // import socialLinks from '../data/social.json'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
-import styled from 'styled-components'
 
 const SocialStyles = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const SocialStyles = styled.div`
     justify-content: center;
     align-items: center;
 
-    color: var(--color-primary-light);
+    color: var(--primary-light);
     padding: 0 0.5rem;
     transition: transform 0.3s;
     display: inline-block;
@@ -30,7 +30,7 @@ const SocialStyles = styled.div`
     &:hover {
       /* transform: translateY(-2px); */
       transform: translateZ(0) scale(0.85);
-      color: var(--color-primary);
+      color: var(--primary);
 
       .icon-title {
         opacity: 1;

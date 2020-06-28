@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby'
-import React, { ReactNode } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import React from 'react'
 
 export const bookQuery = graphql`
   query BookIndexQuery {

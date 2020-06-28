@@ -1,8 +1,5 @@
+import styled from '@emotion/styled'
 import React from 'react'
-import styled from 'styled-components'
-// import { FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { Link } from 'gatsby'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Social from './social'
 
 const FooterStyles = styled.footer`
@@ -21,9 +18,9 @@ const FooterStyles = styled.footer`
     padding-bottom: 4px;
 
     &:hover {
-      transition: all 0.2s ease;
-      color: var(--color-primary);
-      border-color: var(--color-primary);
+      transition: var(--transitionThreeMs);
+      color: var(--primary);
+      border-color: var(--primary);
     }
   }
 
@@ -33,7 +30,7 @@ const FooterStyles = styled.footer`
     justify-content: space-between;
 
     a.social {
-      color: var(--color-primary-light);
+      color: var(--primary-light);
       margin: 0 1rem;
       transition: transform 0.3s ease-in-out;
       display: inline-block;
@@ -41,7 +38,7 @@ const FooterStyles = styled.footer`
 
       &:hover {
         transform: translateZ(0) scale(0.85);
-        color: var(--color-primary);
+        color: var(--primary);
         opacity: 1;
       }
     }
