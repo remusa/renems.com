@@ -11,7 +11,6 @@ const FeaturedStyles = styled.div`
   margin: 24px 0;
   text-align: center;
   padding: 8px;
-  /* min-height: 80vh; */
 
   .project-list {
     display: flex;
@@ -31,12 +30,13 @@ const FeaturedStyles = styled.div`
 `
 
 const CardStyles = styled.div`
-  flex: 1 0 500px;
-  max-width: 500px;
+  flex: 1 0 400px;
+  max-width: 550px;
   height: 550px;
   margin: 8px 16px;
-  border-radius: 8;
-  border-bottom: 4px solid var(--primary);
+  border-radius: 8px;
+  border-bottom: 3px solid var(--primary);
+  transition: var(--transitionDefault);
 
   .top {
     height: 65%;
@@ -74,25 +74,21 @@ const CardStyles = styled.div`
     h3 {
       text-align: center;
       color: var(--fontColor);
-      /* text-decoration: underline var(--primary); */
     }
 
     .icon:hover,
     h3:hover {
       color: var(--coral);
-      /* text-decoration: underline var(--coral); */
-      transition: var(--transitionThreeMs);
     }
   }
 
   &:hover {
-    transition: var(--transitionThreeMs);
     box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.17);
-    border-bottom: var(--coral);
+    border-bottom: 3px solid var(--coral);
 
     .image {
       clip-path: inset(0.5rem);
-      transition: clip-path 0.5s ease;
+      transition: clip-path 0.5s ease-in-out 0.3s;
     }
   }
 
@@ -166,7 +162,6 @@ const Featured = () => {
       <div className='project-list'>
         {featuredProjects.map(project => {
           const image = projectImgs.find(n => n.node.relativePath === `projects/${project.img}`)
-
           const imageFluid = image.node.childImageSharp.fluid || null
           const imageSizes = image.node.childImageSharp.sizes || null
 
