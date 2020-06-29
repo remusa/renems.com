@@ -20,7 +20,7 @@ const LayoutStyles = styled.div`
   }
 `
 
-const Layout: React.FC<{ children: ReactElement }> = ({ children }) => (
+const Layout: React.FC<{ children: ReactElement[] }> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
