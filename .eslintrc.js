@@ -5,10 +5,15 @@ module.exports = {
     'react-app',
     //"plugin:jsx-a11y/recommended",
     'plugin:prettier/recommended',
+    'plugin:jest-dom/recommended',
+    'plugin:testing-library/recommended',
+    'plugin:testing-library/react',
   ],
   plugins: [
     'prettier',
-    //"jsx-a11y"
+    //"jsx-a11y",
+    'testing-library',
+    'jest-dom',
   ],
   env: {
     browser: true,
@@ -24,6 +29,13 @@ module.exports = {
     'react/jsx-pascal-case': 'off',
     'react/prop-types': 'off',
     // 'prettier/prettier': ['error', prettierConfig],
+    'jest-dom/prefer-checked': 'error',
+    'jest-dom/prefer-enabled-disabled': 'error',
+    'jest-dom/prefer-required': 'error',
+    'jest-dom/prefer-to-have-attribute': 'error',
+    'testing-library/await-async-query': 'error',
+    'testing-library/no-await-sync-query': 'error',
+    'testing-library/no-debug': 'warn',
   },
   overrides: [
     {

@@ -45,10 +45,8 @@ const FormStyles = styled.div`
 
         &:focus {
           outline: 0;
-          /* border-color: ${props => props.theme.colorPrimary}; */
-          border: 1px solid var(--blue);
-          /* box-shadow: 0 0 10px ${props => props.theme.colorPrimary}; */
-          box-shadow: 0 0 10px var(--blue);
+          border: 1px solid var(--blue); /* props => props.theme.colorPrimary */
+          box-shadow: 0 0 10px var(--blue); /* props => props.theme.colorPrimary */
         }
       }
 
@@ -107,19 +105,21 @@ const Contact: React.FC = () => (
       <fieldset>
         <div className='name-email-container'>
           <label htmlFor='name'>Name: </label>
-          <input type='text' name='name' placeholder='Your name' required />
+          <input type='text' id='name' name='name' placeholder='Your name' required />
 
           <label htmlFor='email'>Email: </label>
-          <input type='email' name='email' placeholder='example@email.com' required />
+          <input type='email' id='email' name='email' placeholder='example@email.com' required />
         </div>
+
         <div className='message-container'>
           <label htmlFor='message' className='message'>
             Message:
           </label>
-          <textarea name='message' placeholder='Your message' required />
+          <textarea id='message' name='message' placeholder='Your message' required />
         </div>
+
         <button className='submit-btn' type='submit'>
-          Send
+          Submit
         </button>
       </fieldset>
     </form>

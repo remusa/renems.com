@@ -31,10 +31,6 @@ const IndexPage: React.FC = () => {
           <Featured />
         </section>
 
-        {/* <section id='projects'>
-          <Projects projectImgs={projectImgData} />
-        </section> */}
-
         <section id='contact'>
           <Contact />
         </section>

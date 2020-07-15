@@ -33,7 +33,6 @@ module.exports = {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
-    `gatsby-plugin-sass`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

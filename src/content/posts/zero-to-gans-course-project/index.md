@@ -26,12 +26,12 @@ audio etc.) b. What type of problem is it? (regression, classification, generati
 
 explore the data by plotting graphs and answer any questions you may have
 
-## Modeling - try 4-5 approaches
+## 4. Modeling - try 4-5 approaches
 
 a. Define a model (network architecture) b. Pick some hyperparameters c. Train the model d. Make
 predictions on samples e. Evaluate on test dataset f. Save the model weights g. Record the metrics
 
-## Conclusions
+## 5. Conclusions
 
 Summarize your learning & identify opportunities for future work.
 
