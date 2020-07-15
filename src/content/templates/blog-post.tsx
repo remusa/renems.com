@@ -49,6 +49,7 @@ const BackButton = styled.a`
   padding: 0.5rem 0;
   color: var(--primary);
   font-size: 1.75rem;
+  color: var(--primary);
   border-bottom: 2px solid var(--primary);
   transition: var(--transitionThreeMs);
 

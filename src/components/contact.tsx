@@ -112,14 +112,16 @@ const Contact: React.FC = () => (
           <label htmlFor='email'>Email: </label>
           <input type='email' name='email' placeholder='example@email.com' required />
         </div>
+
         <div className='message-container'>
           <label htmlFor='message' className='message'>
             Message:
           </label>
           <textarea name='message' placeholder='Your message' required />
         </div>
+
         <button className='submit-btn' type='submit'>
-          Send
+          Submit
         </button>
       </fieldset>
     </form>

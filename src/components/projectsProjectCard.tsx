@@ -68,6 +68,7 @@ const Card = styled.a`
   }
 `
 
+// TODO: fix image hover
 const ProjectCard: React.FC<{ project: any; fluid: any; sizes: any }> = ({
   project,
   fluid,
