@@ -45,10 +45,8 @@ const FormStyles = styled.div`
 
         &:focus {
           outline: 0;
-          /* border-color: ${props => props.theme.colorPrimary}; */
-          border: 1px solid var(--blue);
-          /* box-shadow: 0 0 10px ${props => props.theme.colorPrimary}; */
-          box-shadow: 0 0 10px var(--blue);
+          border: 1px solid var(--blue); /* props => props.theme.colorPrimary */
+          box-shadow: 0 0 10px var(--blue); /* props => props.theme.colorPrimary */
         }
       }
 
