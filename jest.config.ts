@@ -1,8 +1,14 @@
-const path = require('path')
+import path from 'path'
 
 const here = (...p) => path.join(__dirname, ...p)
 
 module.exports = {
+  moduleDirectories: [
+    'node_modules',
+    // add the directory with the test-utils.js file, for example:
+    'utils', // a utility folder
+    __dirname, // the root directory
+  ],
   transform: {
     '^.+\\.(j|t)sx?$': `<rootDir>/tests/jest-preprocess.js`,
     '\\.(gql|graphql)$': 'jest-transform-graphql',
