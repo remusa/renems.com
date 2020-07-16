@@ -15,16 +15,40 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-netlify`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
     // {
-    //   resolve: `gatsby-transformer-remark`,
+    //   resolve: `gatsby-source-filesystem`,
     //   options: {
-    //     extensions: [`.mdx`, `.md`],
+    //     name: `posts`,
+    //     path: `${__dirname}/src/content/posts`,
     //   },
     // },
-    // `gatsby-plugin-mdx`,
+    `gatsby-plugin-netlify`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/content/templates/blog-post.tsx'),
+        },
+        extensions: [`.md`, `.mdx`],
+        remarkPlugins: [],
+        gatsbyRemarkPlugins: [
+          //   'gatsby-remark-embed-gist',
+          //   'gatsby-remark-copy-linked-files',
+          //   `gatsby-remark-embedder`,
+          // {
+          //   resolve: 'gatsby-remark-images',
+          //   options: {
+          //     //       backgroundColor: '#fafafa',
+          //     maxWidth: 1000,
+          //     linkImagesToOriginal: false,
+          //     //       // showCaptions: true,
+          //     disableBgImage: true,
+          //   },
+          // },
+        ],
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     {

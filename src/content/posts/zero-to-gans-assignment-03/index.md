@@ -5,6 +5,7 @@ title: 'Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks'
 author: 'RMS'
 tags: ['machine-learning', 'deep-learning', 'zero-to-gans', 'python', 'pytorch']
 type: 'BLOG'
+published: true
 ---
 
 For this assignment we had to use a dataset of everyday objects and classify it by training and

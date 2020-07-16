@@ -2,9 +2,39 @@ import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../../components/layout'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
+const shortcodes = { Link } // Provide common components here
+
+export const postQueryMdx = graphql`
+  query BlogPostQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      # query BlogPostByPath($path: String!) {
+      # markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
+      body
+      frontmatter {
+        path
+        title
+        author
+        date(formatString: "MMMM DD, YYYY")
+        tags
+        type
+        book_author
+        # title_full
+        published
+      }
+      timeToRead
+      wordCount {
+        words
+      }
+    }
+  }
+`
 
 const Article = styled.article`
-  max-width: 760px;
+  max-width: 767px;
 
   .post-info {
     ul.tags {
@@ -124,74 +154,57 @@ const Buttons = styled.div`
   }
 `
 
-export const postQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      frontmatter {
-        path
-        title
-        author
-        date
-        tags
-        type
-        book_author
-        # title_full
-      }
-      timeToRead
-      wordCount {
-        words
-      }
-      html
-    }
-  }
-`
-
-const Template: React.FC<{
+const TemplateMdx: React.FC<{
   data: any
   pageContext: any
-}> = ({ data, pageContext }) => {
-  const post = data.markdownRemark
-  const { type } = post.frontmatter
+}> = ({ data: { mdx }, pageContext }) => {
+  const { type } = mdx.frontmatter
   const { previous, next } = pageContext
   const {
     frontmatter,
     timeToRead,
     wordCount: { words },
-    html,
-  } = post
+    body,
+  } = mdx
+  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
-  const prevArticle = previous ? (
-    <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
-      <strong>Previous</strong>
-      <br />
-      {previous.frontmatter.title}
-    </Link>
-  ) : null
+  const prevArticle =
+    previous && previous.frontmatter.published === true ? (
+      <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
+        <strong>Previous</strong>
+        <br />
+        {previous.frontmatter.title}
+      </Link>
+    ) : (
+      <span />
+    )
 
-  const nextArticle = next ? (
-    <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
-      <strong>Next</strong>
-      <br />
-      {next.frontmatter.title}
-    </Link>
-  ) : null
+  const nextArticle =
+    next && next.frontmatter.published === true ? (
+      <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
+        <strong>Next</strong>
+        <br />
+        {next.frontmatter.title}
+      </Link>
+    ) : (
+      <span />
+    )
 
   const goBackBtn = () => {
-    if (type === 'BLOG')
-      return (
-        <Link className='back-btn' to='/blog'>
-          Go Back
-        </Link>
-      )
-    if (type === 'BOOK')
-      return (
-        <Link className='back-btn' to='/books'>
-          Go Back
-        </Link>
-      )
-  }
+    let returnLink = '/'
 
-  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
+    if (type.toLowerCase() === 'blog') {
+      returnLink = '/blog'
+    } else if (type.toLowerCase() === 'book') {
+      returnLink = '/books'
+    }
+
+    return (
+      <Link className='back-btn' to={returnLink}>
+        Go Back
+      </Link>
+    )
+  }
 
   return (
     <Layout>
@@ -212,7 +225,11 @@ const Template: React.FC<{
           </div>
         </div>
 
-        <PostContent className='content' dangerouslySetInnerHTML={{ __html: html }} />
+        <PostContent className='content'>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+        </PostContent>
 
         <Buttons>
           {prevArticle}
@@ -223,4 +240,4 @@ const Template: React.FC<{
   )
 }
 
-export default Template
+export default TemplateMdx

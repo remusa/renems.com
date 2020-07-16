@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import projectList from '../data/projects.json'
 
 const PROJECTS_QUERY = graphql`
-  query featuredProjectsImagesQuery {
+  query ProjectsQuery {
     ProjectImgs: allFile(
       sort: { order: ASC, fields: [absolutePath] }
       filter: { relativePath: { regex: "/projects/.*.png/" } }

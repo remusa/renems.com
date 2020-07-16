@@ -6,10 +6,11 @@ import SEO from '../components/seo'
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+    allMdx(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
+          excerpt(pruneLength: 250)
           frontmatter {
             path
             title
@@ -18,23 +19,28 @@ export const pageQuery = graphql`
             tags
             language
             type
+            published
           }
+          # fields {
+          #   slug
+          # }
           timeToRead
           wordCount {
             words
           }
-          html
         }
         next {
           frontmatter {
             path
             title
+            published
           }
         }
         previous {
           frontmatter {
             path
             title
+            published
           }
         }
       }
@@ -43,6 +49,8 @@ export const pageQuery = graphql`
 `
 
 const PostsLists = styled.div`
+  width: 80vw;
+  max-width: 767px;
   margin-top: 4rem;
   transform: all 0.3s linear;
 
@@ -84,12 +92,16 @@ const PostsLists = styled.div`
         }
       }
     }
+
+    .excerpt {
+      /* width: 80vw; */
+    }
   }
 `
 
 const BlogPage: React.FC<{ data: any }> = ({ data }) => {
-  const blogEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === 'BLOG',
+  const blogEntries = data.allMdx.edges.filter(
+    post => post.node.frontmatter.type === 'BLOG' && post.node.frontmatter.published === true,
   )
 
   return (
@@ -100,10 +112,11 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
 
       <PostsLists>
         {blogEntries.map(post => {
-          console.log('post', post)
           const {
             id,
+            excerpt,
             frontmatter: { title, date, path, tags },
+            // fields: { slug },
           } = post.node
 
           return (
@@ -117,6 +130,7 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
                   <li id='tag'>{tag}</li>
                 ))}
               </ul>
+              <p className='excerpt'>{excerpt}</p>
             </div>
           )
         })}

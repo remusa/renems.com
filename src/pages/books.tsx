@@ -3,12 +3,14 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import React from 'react'
 
-export const bookQuery = graphql`
-  query BookIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+export const pageQuery = graphql`
+  query BookIndexQueryMdx {
+    allMdx(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
+          # excerpt
+          # html
           frontmatter {
             path
             title
@@ -19,23 +21,28 @@ export const bookQuery = graphql`
             type
             book_author
             title_full
+            published
           }
+          # fields {
+          #   slug
+          # }
           timeToRead
           wordCount {
             words
           }
-          html
         }
         next {
           frontmatter {
             path
             title
+            published
           }
         }
         previous {
           frontmatter {
             path
             title
+            published
           }
         }
       }
@@ -48,9 +55,8 @@ interface BookEntriesInterface {
 }
 
 const BookPage: React.FC<BookEntriesInterface> = ({ data }) => {
-  const TYPE = 'BOOK'
-  const bookEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === TYPE,
+  const bookEntries = data.allMdx.edges.filter(
+    post => post.node.frontmatter.type === 'BOOK' && post.node.frontmatter.published === true,
   )
 
   return (
@@ -59,21 +65,29 @@ const BookPage: React.FC<BookEntriesInterface> = ({ data }) => {
 
       <h1>Notes</h1>
 
-      {bookEntries.map(post => (
-        <div key={post.node.id}>
-          <h3>{post.node.frontmatter.title}</h3>
+      {bookEntries.map(post => {
+        const {
+          id,
+          frontmatter: { title, date, path, tags, excerpt, book_author },
+          // fields: { slug },
+        } = post.node
 
-          <small>Book author: {post.node.frontmatter.book_author}</small>
+        return (
+          <div className='post' key={id}>
+            <h2>{title}</h2>
 
-          <br />
+            <small>Book author: {book_author}</small>
 
-          <Link to={post.node.frontmatter.path}>Read More</Link>
+            <br />
 
-          <br />
-          <br />
-          <hr />
-        </div>
-      ))}
+            <Link to={path}>Read More</Link>
+
+            <br />
+            <br />
+            <hr />
+          </div>
+        )
+      })}
     </Layout>
   )
 }

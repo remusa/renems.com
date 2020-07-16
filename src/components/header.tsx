@@ -32,7 +32,6 @@ const HeaderStyles = styled.header`
       a {
         outline: 0;
         margin: 4px;
-        flex: 0 1 20px;
 
         border-color: #fff;
         background-color: transparent;
@@ -98,7 +97,7 @@ const Header: React.FC<{
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
-          Notes
+          Book Notes
         </AniLink> */}
 
         <AniLink
