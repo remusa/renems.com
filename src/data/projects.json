@@ -11,7 +11,7 @@
   },
   {
     "name": "Does it break fast?",
-    "type": ["react", "firebase"],
+    "type": ["fullstack", "react", "firebase"],
     "description": "A web app that helps checking whether some kind of food breaks a fasting period.",
     "tech": ["React", "Next.js", "TypeScript", "Firebase"],
     "img": "doesitbreakfast.png",

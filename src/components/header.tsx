@@ -32,7 +32,6 @@ const HeaderStyles = styled.header`
       a {
         outline: 0;
         margin: 4px;
-        flex: 0 1 20px;
 
         border-color: #fff;
         background-color: transparent;
@@ -83,16 +82,6 @@ const Header: React.FC<{
 
         <AniLink
           fade
-          to='/blog-mdx'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Blog MDX
-        </AniLink>
-
-        <AniLink
-          fade
           to='/projects'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
@@ -101,25 +90,15 @@ const Header: React.FC<{
           Projects
         </AniLink>
 
-        <AniLink
+        {/* <AniLink
           fade
           to='/books'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
-          Books
-        </AniLink>
-
-        <AniLink
-          fade
-          to='/books-mdx'
-          getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: 'active' } : null
-          }
-        >
-          Books MDX
-        </AniLink>
+          Book Notes
+        </AniLink> */}
 
         <AniLink
           fade

@@ -2,9 +2,38 @@ import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../../components/layout'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
+const shortcodes = { Link } // Provide common components here
+
+export const postQueryMdx = graphql`
+  query BlogPostQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      # query BlogPostByPath($path: String!) {
+      # markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
+      body
+      frontmatter {
+        path
+        title
+        author
+        date
+        tags
+        type
+        book_author
+        # title_full
+      }
+      timeToRead
+      wordCount {
+        words
+      }
+    }
+  }
+`
 
 const Article = styled.article`
-  max-width: 760px;
+  max-width: 767px;
 
   .post-info {
     ul.tags {
@@ -124,41 +153,18 @@ const Buttons = styled.div`
   }
 `
 
-export const postQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        path
-        title
-        author
-        date
-        tags
-        type
-        book_author
-        # title_full
-      }
-      timeToRead
-      wordCount {
-        words
-      }
-    }
-  }
-`
-
-const Template: React.FC<{
+const TemplateMdx: React.FC<{
   data: any
   pageContext: any
-}> = ({ data: { post }, pageContext }) => {
-  const { type } = post.frontmatter
+}> = ({ data: { mdx }, pageContext }) => {
+  const { type } = mdx.frontmatter
   const { previous, next } = pageContext
   const {
     frontmatter,
     timeToRead,
     wordCount: { words },
-    html,
-  } = post
+    body,
+  } = mdx
   const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   const prevArticle = previous ? (
@@ -211,7 +217,11 @@ const Template: React.FC<{
           </div>
         </div>
 
-        <PostContent className='content' dangerouslySetInnerHTML={{ __html: html }} />
+        <PostContent className='content'>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+        </PostContent>
 
         <Buttons>
           {prevArticle}
@@ -222,4 +232,4 @@ const Template: React.FC<{
   )
 }
 
-export default Template
+export default TemplateMdx

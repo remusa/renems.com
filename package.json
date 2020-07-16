@@ -56,7 +56,6 @@
     "gatsby-plugin-transition-link": "^1.17.7",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-source-filesystem": "^2.3.19",
-    "gatsby-transformer-remark": "^2.8.25",
     "gatsby-transformer-sharp": "^2.5.11",
     "gsap": "^3.4.0",
     "prop-types": "^15.7.2",

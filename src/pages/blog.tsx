@@ -5,8 +5,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+  query BlogIndexQuery($fields: [MdxFieldsEnum] = [frontmatter___date]) {
+    allMdx(limit: 1000, sort: { order: DESC, fields: $fields }) {
       edges {
         node {
           id
@@ -20,9 +20,9 @@ export const pageQuery = graphql`
             language
             type
           }
-          fields {
-            slug
-          }
+          # fields {
+          #   slug
+          # }
           timeToRead
           wordCount {
             words
@@ -46,6 +46,8 @@ export const pageQuery = graphql`
 `
 
 const PostsLists = styled.div`
+  width: 80vw;
+  max-width: 767px;
   margin-top: 4rem;
   transform: all 0.3s linear;
 
@@ -87,6 +89,10 @@ const PostsLists = styled.div`
         }
       }
     }
+
+    .excerpt {
+      /* width: 80vw; */
+    }
   }
 `
 
@@ -103,13 +109,14 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
         {blogEntries.map(post => {
           const {
             id,
-            frontmatter: { title, date, path, tags, excerpt },
-            fields: { slug },
+            excerpt,
+            frontmatter: { title, date, path, tags },
+            // fields: { slug },
           } = post.node
 
           return (
             <div className='post' key={id}>
-              <Link to={slug}>
+              <Link to={path}>
                 <h2>{title}</h2>
               </Link>
               <p className='date'>Date: {date}</p>
@@ -118,7 +125,7 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
                   <li id='tag'>{tag}</li>
                 ))}
               </ul>
-              <p>{excerpt}</p>
+              <p className='excerpt'>{excerpt}</p>
             </div>
           )
         })}

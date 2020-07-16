@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
 const POSTS_QUERY = graphql`
-  query MyQuery {
+  query PostsQuery {
     allMdx {
       edges {
         node {
