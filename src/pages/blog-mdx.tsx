@@ -3,9 +3,8 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { SSL_OP_CRYPTOPRO_TLSEXT_BUG } from 'constants'
 
-export const postQueryMdx = graphql`
+export const pageQuery = graphql`
   query BlogIndexQueryMdx {
     allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
@@ -96,9 +95,9 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title='Blog MDX' keywords={[`blog`]} />
+      <SEO title='Blog' keywords={[`blog`]} />
 
-      <h1>Posts in MDX</h1>
+      <h1>Posts</h1>
 
       <PostsLists>
         {blogEntries.map(post => {

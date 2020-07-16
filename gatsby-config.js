@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `postsmdx`,
-        path: `${__dirname}/src/content/postsmdx`,
+        name: `posts`,
+        path: `${__dirname}/src/content/posts`,
       },
     },
     `gatsby-plugin-netlify`,
@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/content/templates/blog-post-mdx.tsx'),
+          default: require.resolve('./src/content/templates/blog-post.tsx'),
         },
         extensions: [`.md`, `.mdx`],
         remarkPlugins: [],
@@ -38,16 +38,16 @@ module.exports = {
           //   'gatsby-remark-embed-gist',
           //   'gatsby-remark-copy-linked-files',
           //   `gatsby-remark-embedder`,
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              //       backgroundColor: '#fafafa',
-              maxWidth: 1000,
-              linkImagesToOriginal: false,
-              //       // showCaptions: true,
-              disableBgImage: true,
-            },
-          },
+          // {
+          //   resolve: 'gatsby-remark-images',
+          //   options: {
+          //     //       backgroundColor: '#fafafa',
+          //     maxWidth: 1000,
+          //     linkImagesToOriginal: false,
+          //     //       // showCaptions: true,
+          //     disableBgImage: true,
+          //   },
+          // },
         ],
       },
     },

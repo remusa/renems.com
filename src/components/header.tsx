@@ -88,7 +88,7 @@ const Header: React.FC<{
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
-          MDX
+          Blog MDX
         </AniLink>
 
         <AniLink
@@ -101,15 +101,25 @@ const Header: React.FC<{
           Projects
         </AniLink>
 
-        {/* <AniLink
+        <AniLink
           fade
           to='/books'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
           }
         >
-          Notes
-        </AniLink> */}
+          Books
+        </AniLink>
+
+        <AniLink
+          fade
+          to='/books-mdx'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          Books MDX
+        </AniLink>
 
         <AniLink
           fade
