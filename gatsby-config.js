@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://renems.com',
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
