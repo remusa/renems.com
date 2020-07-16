@@ -3,10 +3,11 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { SSL_OP_CRYPTOPRO_TLSEXT_BUG } from 'constants'
 
-export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+export const postQueryMdx = graphql`
+  query BlogIndexQueryMdx {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
         node {
           id
@@ -20,11 +21,13 @@ export const pageQuery = graphql`
             language
             type
           }
+          fields {
+            slug
+          }
           timeToRead
           wordCount {
             words
           }
-          html
         }
         next {
           frontmatter {
@@ -89,27 +92,25 @@ const PostsLists = styled.div`
 `
 
 const BlogPage: React.FC<{ data: any }> = ({ data }) => {
-  const blogEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === 'BLOG',
-  )
+  const blogEntries = data.allMdx.edges.filter(post => post.node.frontmatter.type === 'BLOG')
 
   return (
     <Layout>
-      <SEO title='Blog' keywords={[`blog`]} />
+      <SEO title='Blog MDX' keywords={[`blog`]} />
 
-      <h1>Posts</h1>
+      <h1>Posts in MDX</h1>
 
       <PostsLists>
         {blogEntries.map(post => {
-          console.log('post', post)
           const {
             id,
             frontmatter: { title, date, path, tags, excerpt },
+            fields: { slug },
           } = post.node
 
           return (
             <div className='post' key={id}>
-              <Link to={path}>
+              <Link to={slug}>
                 <h2>{title}</h2>
               </Link>
               <p className='date'>Date: {date}</p>

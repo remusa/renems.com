@@ -83,6 +83,16 @@ const Header: React.FC<{
 
         <AniLink
           fade
+          to='/blog-mdx'
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent ? { className: 'active' } : null
+          }
+        >
+          MDX
+        </AniLink>
+
+        <AniLink
+          fade
           to='/projects'
           getProps={({ isPartiallyCurrent }) =>
             isPartiallyCurrent ? { className: 'active' } : null
