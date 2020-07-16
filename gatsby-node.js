@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-/* exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   // you only want to operate on `Mdx` nodes. If you had content from a
   // remote CMS you could also check to see if the parent node was a
@@ -17,10 +17,11 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
       // Generated value based on filepath with "blog" prefix. you
       // don't need a separating "/" before the value because
       // createFilePath returns a path with the leading "/".
-      value: `/blog${value}`,
+      // value: `/blog${value}`,
+      value,
     })
   }
-} */
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
