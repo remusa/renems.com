@@ -24,18 +24,20 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-mdx`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/content/templates/blog-post.tsx'),
+          default: require.resolve('./src/content/templates/blog-post-mdx.tsx'),
         },
-        extensions: [`.mdx`],
+        extensions: [`.md`, `.mdx`],
         remarkPlugins: [],
         gatsbyRemarkPlugins: [
           //   'gatsby-remark-embed-gist',
           //   'gatsby-remark-copy-linked-files',
+          //   `gatsby-remark-embedder`,
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -46,11 +48,9 @@ module.exports = {
               disableBgImage: true,
             },
           },
-          //   `gatsby-remark-embedder`,
         ],
       },
     },
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     {

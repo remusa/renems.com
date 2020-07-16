@@ -140,7 +140,7 @@ export const postQueryMdx = graphql`
         date
         tags
         type
-        # book_author
+        book_author
         # title_full
       }
       timeToRead
@@ -154,14 +154,16 @@ export const postQueryMdx = graphql`
 const TemplateMdx: React.FC<{
   data: any
   pageContext: any
-}> = ({ data: { mdx }, pageContext }) => {
-  const { type } = mdx.frontmatter
+}> = ({ data: { mdx: postMdx }, pageContext }) => {
+  const { type } = postMdx.frontmatter
   const { previous, next } = pageContext
   const {
     frontmatter,
     timeToRead,
     wordCount: { words },
-  } = mdx
+    body,
+  } = postMdx
+  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   const prevArticle = previous ? (
     <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
@@ -180,21 +182,19 @@ const TemplateMdx: React.FC<{
   ) : null
 
   const goBackBtn = () => {
-    if (type === 'BLOG')
+    if (type.toLowerCase() === 'blog')
       return (
         <Link className='back-btn' to='/blog'>
           Go Back
         </Link>
       )
-    if (type === 'BOOK')
+    if (type.toLowerCase() === 'book')
       return (
         <Link className='back-btn' to='/books'>
           Go Back
         </Link>
       )
   }
-
-  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   return (
     <Layout>
@@ -217,7 +217,7 @@ const TemplateMdx: React.FC<{
 
         <PostContent className='content'>
           <MDXProvider components={shortcodes}>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
+            <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
         </PostContent>
 

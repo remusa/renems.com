@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
         node {
           id
@@ -20,11 +20,13 @@ export const pageQuery = graphql`
             language
             type
           }
+          fields {
+            slug
+          }
           timeToRead
           wordCount {
             words
           }
-          html
         }
         next {
           frontmatter {
@@ -89,9 +91,7 @@ const PostsLists = styled.div`
 `
 
 const BlogPage: React.FC<{ data: any }> = ({ data }) => {
-  const blogEntries = data.allMarkdownRemark.edges.filter(
-    post => post.node.frontmatter.type === 'BLOG',
-  )
+  const blogEntries = data.allMdx.edges.filter(post => post.node.frontmatter.type === 'BLOG')
 
   return (
     <Layout>
@@ -101,15 +101,15 @@ const BlogPage: React.FC<{ data: any }> = ({ data }) => {
 
       <PostsLists>
         {blogEntries.map(post => {
-          console.log('post', post)
           const {
             id,
             frontmatter: { title, date, path, tags, excerpt },
+            fields: { slug },
           } = post.node
 
           return (
             <div className='post' key={id}>
-              <Link to={path}>
+              <Link to={slug}>
                 <h2>{title}</h2>
               </Link>
               <p className='date'>Date: {date}</p>

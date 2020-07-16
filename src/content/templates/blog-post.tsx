@@ -127,6 +127,8 @@ const Buttons = styled.div`
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
+      html
       frontmatter {
         path
         title
@@ -141,7 +143,6 @@ export const postQuery = graphql`
       wordCount {
         words
       }
-      html
     }
   }
 `
@@ -149,8 +150,7 @@ export const postQuery = graphql`
 const Template: React.FC<{
   data: any
   pageContext: any
-}> = ({ data, pageContext }) => {
-  const post = data.markdownRemark
+}> = ({ data: { post }, pageContext }) => {
   const { type } = post.frontmatter
   const { previous, next } = pageContext
   const {
@@ -159,6 +159,7 @@ const Template: React.FC<{
     wordCount: { words },
     html,
   } = post
+  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   const prevArticle = previous ? (
     <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
@@ -177,21 +178,19 @@ const Template: React.FC<{
   ) : null
 
   const goBackBtn = () => {
-    if (type === 'BLOG')
+    if (type.toLowerCase() === 'blog')
       return (
         <Link className='back-btn' to='/blog'>
           Go Back
         </Link>
       )
-    if (type === 'BOOK')
+    if (type.toLowerCase() === 'book')
       return (
         <Link className='back-btn' to='/books'>
           Go Back
         </Link>
       )
   }
-
-  const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
   return (
     <Layout>
