@@ -18,11 +18,12 @@ export const postQueryMdx = graphql`
         path
         title
         author
-        date
+        date(formatString: "MMMM DD, YYYY")
         tags
         type
         book_author
         # title_full
+        published
       }
       timeToRead
       wordCount {
@@ -167,35 +168,42 @@ const TemplateMdx: React.FC<{
   } = mdx
   const title = frontmatter.title_full ? frontmatter.title_full : frontmatter.title
 
-  const prevArticle = previous ? (
-    <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
-      <strong>Previous</strong>
-      <br />
-      {previous.frontmatter.title}
-    </Link>
-  ) : null
+  const prevArticle =
+    previous && previous.frontmatter.published === true ? (
+      <Link to={previous.frontmatter.path} tool-tips={previous.frontmatter.title}>
+        <strong>Previous</strong>
+        <br />
+        {previous.frontmatter.title}
+      </Link>
+    ) : (
+      <span />
+    )
 
-  const nextArticle = next ? (
-    <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
-      <strong>Next</strong>
-      <br />
-      {next.frontmatter.title}
-    </Link>
-  ) : null
+  const nextArticle =
+    next && next.frontmatter.published === true ? (
+      <Link to={next.frontmatter.path} tool-tips={next.frontmatter.title}>
+        <strong>Next</strong>
+        <br />
+        {next.frontmatter.title}
+      </Link>
+    ) : (
+      <span />
+    )
 
   const goBackBtn = () => {
-    if (type.toLowerCase() === 'blog')
-      return (
-        <Link className='back-btn' to='/blog'>
-          Go Back
-        </Link>
-      )
-    if (type.toLowerCase() === 'book')
-      return (
-        <Link className='back-btn' to='/books'>
-          Go Back
-        </Link>
-      )
+    let returnLink = '/'
+
+    if (type.toLowerCase() === 'blog') {
+      returnLink = '/blog'
+    } else if (type.toLowerCase() === 'book') {
+      returnLink = '/books'
+    }
+
+    return (
+      <Link className='back-btn' to={returnLink}>
+        Go Back
+      </Link>
+    )
   }
 
   return (

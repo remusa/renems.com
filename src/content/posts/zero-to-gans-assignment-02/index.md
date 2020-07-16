@@ -5,6 +5,7 @@ title: 'Pytorch - Zero to GANs: Assignment 2 - Train Your First Model'
 author: 'RMS'
 tags: ['machine-learning', 'deep-learning', 'zero-to-gans', 'python', 'pytorch']
 type: 'BLOG'
+published: true
 ---
 
 For this assignment we had to use personal information from a person to predict the price of medical

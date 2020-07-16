@@ -43,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
               type
               book_author
               title_full
+              published
             }
             #fields {
             #  slug
@@ -56,12 +57,14 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               path
               title
+              published
             }
           }
           previous {
             frontmatter {
               path
               title
+              published
             }
           }
         }

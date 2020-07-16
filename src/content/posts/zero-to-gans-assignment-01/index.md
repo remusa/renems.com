@@ -5,6 +5,7 @@ title: 'Pytorch - Zero to GANs: Assignment 1 - All About torch.Tensor'
 author: 'RMS'
 tags: ['machine-learning', 'deep-learning', 'zero-to-gans', 'python', 'pytorch']
 type: 'BLOG'
+published: true
 ---
 
 <p>I attended the first lecture of the freeOnlineCamp and Jovian.ml Pytorch Deep Learning certification last Saturday. Our first assignment consisted of reading through Pytorch's documentation and choosing five functions deemed useful.</p>

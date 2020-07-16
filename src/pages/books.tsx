@@ -5,7 +5,7 @@ import React from 'react'
 
 export const pageQuery = graphql`
   query BookIndexQueryMdx {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+    allMdx(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
@@ -21,6 +21,7 @@ export const pageQuery = graphql`
             type
             book_author
             title_full
+            published
           }
           # fields {
           #   slug
@@ -34,12 +35,14 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
+            published
           }
         }
         previous {
           frontmatter {
             path
             title
+            published
           }
         }
       }
@@ -52,7 +55,9 @@ interface BookEntriesInterface {
 }
 
 const BookPage: React.FC<BookEntriesInterface> = ({ data }) => {
-  const bookEntries = data.allMdx.edges.filter(post => post.node.frontmatter.type === 'BOOK')
+  const bookEntries = data.allMdx.edges.filter(
+    post => post.node.frontmatter.type === 'BOOK' && post.node.frontmatter.published === true,
+  )
 
   return (
     <Layout>

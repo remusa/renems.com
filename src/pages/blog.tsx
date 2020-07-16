@@ -5,12 +5,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 export const pageQuery = graphql`
-  query BlogIndexQuery($fields: [MdxFieldsEnum] = [frontmatter___date]) {
-    allMdx(limit: 1000, sort: { order: DESC, fields: $fields }) {
+  query BlogIndexQuery {
+    allMdx(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
-          excerpt
+          excerpt(pruneLength: 250)
           frontmatter {
             path
             title
@@ -19,6 +19,7 @@ export const pageQuery = graphql`
             tags
             language
             type
+            published
           }
           # fields {
           #   slug
@@ -32,12 +33,14 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
+            published
           }
         }
         previous {
           frontmatter {
             path
             title
+            published
           }
         }
       }
@@ -97,7 +100,9 @@ const PostsLists = styled.div`
 `
 
 const BlogPage: React.FC<{ data: any }> = ({ data }) => {
-  const blogEntries = data.allMdx.edges.filter(post => post.node.frontmatter.type === 'BLOG')
+  const blogEntries = data.allMdx.edges.filter(
+    post => post.node.frontmatter.type === 'BLOG' && post.node.frontmatter.published === true,
+  )
 
   return (
     <Layout>

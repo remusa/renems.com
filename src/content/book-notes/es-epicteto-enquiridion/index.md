@@ -8,6 +8,7 @@ author: 'RMS'
 tags: ['book-notes']
 language: 'spanish'
 type: 'BOOK'
+published: false
 ---
 
 tiene por lema, “Abstente de pasiones, afectos y opiniones”. Epicteto, Enquiridión: Manual de vida,

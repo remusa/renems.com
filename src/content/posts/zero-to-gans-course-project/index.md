@@ -5,6 +5,7 @@ title: 'Pytorch - Zero to GANs: Course Project'
 author: 'RMS'
 tags: ['machine-learning', 'deep-learning', 'zero-to-gans', 'python', 'pytorch']
 type: 'BLOG'
+published: true
 ---
 
 As the last assignment to finish the course, we had to choose an online dataset and apply the
