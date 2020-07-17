@@ -1,4 +1,5 @@
-const path = require(`path`)
+const path = require('path')
+const _ = require('lodash')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -26,11 +27,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/content/templates/blog-post.tsx`)
+  const blogPostTemplate = path.resolve(`./src/content/templates/blog-post.tsx`)
+  const tagTemplate = path.resolve('src/content/templates/tags.tsx')
 
   const result = await graphql(`
     {
-      allMdx {
+      postsRemark: allMdx {
         edges {
           node {
             id
@@ -70,16 +72,24 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+
+      tagsGroup: allMdx(limit: 1000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `)
 
+  // handle errors
   if (result.errors) {
-    // reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    // reporter.panicOnBuild(`🚨  Error while running GraphQL query.`)
+    // return
     return Promise.reject(result.errors)
   }
 
   // Create blog post pages.
-  const posts = result.data.allMdx.edges
+  const posts = result.data.postsRemark.edges
 
   // you'll call `createPage` for each result
   posts.forEach(({ node, next, previous }, index) => {
@@ -89,10 +99,24 @@ exports.createPages = async ({ graphql, actions }) => {
       // path: node.fields.slug,
       path: node.frontmatter.path,
       // This component will wrap our MDX content
-      component: blogPost,
+      component: blogPostTemplate,
       // You can use the values in this context in
       // our page layout component
       context: { id: node.id, next, previous },
+    })
+  })
+
+  // Extract tag data from query
+  const tags = result.data.tagsGroup.group
+
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     })
   })
 }

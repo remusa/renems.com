@@ -7,7 +7,8 @@
   "author": "RMS <contact@renems.com>",
   "scripts": {
     "start": "npm run develop",
-    "dev": "cross-env GATSBY_GRAPHQL_IDE=playground npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev2:playground": "cross-env GATSBY_GRAPHQL_IDE=playground npm-run-all --parallel dev:*",
     "dev:gatsby": "gatsby develop",
     "dev2:functions": "dotenv -e ./netlify/.env netlify-lambda serve netlify/functions",
     "develop": "gatsby develop",
