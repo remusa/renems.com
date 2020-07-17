@@ -7,32 +7,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const shortcodes = { Link } // Provide common components here
 
-export const postQueryMdx = graphql`
-  query BlogPostQuery($id: String) {
-    mdx(id: { eq: $id }) {
-      # query BlogPostByPath($path: String!) {
-      # markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      body
-      frontmatter {
-        path
-        title
-        author
-        date(formatString: "MMMM DD, YYYY")
-        tags
-        type
-        book_author
-        # title_full
-        published
-      }
-      timeToRead
-      wordCount {
-        words
-      }
-    }
-  }
-`
-
 const Article = styled.article`
   max-width: 767px;
 
@@ -75,7 +49,7 @@ const Article = styled.article`
   }
 `
 
-const BackButton = styled.a`
+export const BackButton = styled.a`
   padding: 0.5rem 0;
   color: var(--primary);
   font-size: 1.75rem;
@@ -241,3 +215,29 @@ const TemplateMdx: React.FC<{
 }
 
 export default TemplateMdx
+
+export const postQueryMdx = graphql`
+  query BlogPostQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      # query BlogPostByPath($path: String!) {
+      # markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
+      body
+      frontmatter {
+        path
+        title
+        author
+        date(formatString: "MMMM DD, YYYY")
+        tags
+        type
+        book_author
+        # title_full
+        published
+      }
+      timeToRead
+      wordCount {
+        words
+      }
+    }
+  }
+`
