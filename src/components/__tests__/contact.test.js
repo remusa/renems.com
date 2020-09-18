@@ -1,7 +1,7 @@
-import React from 'react'
-import { userEvent, screen, render } from 'test-utils'
-import Contact from '../contact'
 import { fireEvent } from '@testing-library/react'
+import React from 'react'
+import { render, screen, userEvent } from 'test-utils'
+import Contact from '../contact'
 
 const submit = jest.fn()
 

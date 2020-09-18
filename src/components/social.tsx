@@ -46,7 +46,7 @@ const Social: React.FC = () => (
     <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https://github.com/remusa'
+      href='https://renems.com/github'
       className='social-link github'
     >
       <FaGithubAlt />
@@ -56,7 +56,7 @@ const Social: React.FC = () => (
     <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https://www.linkedin.com/in/remusa'
+      href='https://renems.com/linkedin'
       className='social-link linkedin'
     >
       <FaLinkedin />
@@ -71,7 +71,7 @@ const Social: React.FC = () => (
     {/* <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https://twitter.com/remusa_'
+      href='https://renems.com/twitter'
       className='social-link twitter'
     >
       <FaTwitter />
@@ -81,7 +81,7 @@ const Social: React.FC = () => (
     {/* <a
       target='_blank'
       rel='noopener noreferrer'
-      href='https:/youtube.com/remusa_'
+      href='https://renems.com/youtube'
       className='social-link youtube'
     >
       <FaYoutube />
