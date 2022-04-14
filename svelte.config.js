@@ -27,6 +27,10 @@ const config = {
 
   extensions: ['.svelte', '.md'],
 
+  prerender: {
+    entries: ['*', '/sitemap.xml', '/rss.xml'],
+  },
+
   kit: {
     adapter: adapter(),
 
