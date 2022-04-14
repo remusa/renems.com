@@ -1,0 +1,41 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      # glob: "*.{svelte}"
+      run: pnpm check
+    lint:
+      # glob: "*.{svelte}"
+      run: pnpm lint {staged_files}
+    # prettier:
+    #   glob: "*.{js,ts,jsx,tsx,json,css,html,yml,md}"
+    #   run: pnpm format {staged_files}
+
+commit-msg:
+  parallel: true
+  commands:
+    lint-commit-msg:
+      run: pnpm commitlint
+
+pre-push:
+  parallel: true
+  commands:
+    # lslint:
+    #   run: pnpm lslint
+    # test:
+    #   files: git diff --name-only @{push}
+    #   glob: '*.{js,jsx,ts,tsx}'
+    #   run: pnpm test:ci {staged_files}
+    test:e2e:
+      run: pnpm test:e2e
+    packages-audit:
+      run: pnpm audit
+    format:
+      glob: '*.{svelte,json,css,html,yml,md}'
+      run: pnpm format && git add {staged_files}
+    validate:
+      run: pnpm validate
