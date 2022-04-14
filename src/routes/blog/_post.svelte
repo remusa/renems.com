@@ -52,4 +52,6 @@
   </aside>
 {/if}
 
+<hr />
+
 <slot />
