@@ -5,7 +5,10 @@ title: 'Enquiridión'
 title_full: 'Enquiridión por Epicteto'
 book_author: 'Epicteto'
 author: 'RMS'
-tags: ['book-notes']
+tags:
+  - 'book-notes'
+categories:
+  - 'book-notes'
 language: 'spanish'
 type: 'BOOK'
 published: false

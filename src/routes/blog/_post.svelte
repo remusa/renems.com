@@ -1,10 +1,11 @@
 <script>
   import '$lib/styles/themes/prism-one-dark.css'
-  export let date = '2020-07-15'
-  export let title = 'MDX Test'
-  export let path = '/test-mdx'
+  export let date = ''
+  export let title = ''
+  export let path = ''
   export let author = 'RMS'
-  export let tags = ['mdx']
+  export let tags
+  export let categories
   export let language = 'english'
   export let type = 'BLOG'
   export let published = false
@@ -15,9 +16,40 @@
 <p>Published: {date}</p>
 <p>Path: {path}</p>
 <p>Author: {author}</p>
+<p>Categories: {categories}</p>
 <p>Tags: {tags}</p>
 <p>Language: {language}</p>
 <p>Type: {type}</p>
 <p>Published: {published}</p>
+
+{#if categories.length}
+  <aside>
+    <h2>Categories:</h2>
+    <ul>
+      {#each categories as category}
+        <li>
+          <a href="/blog/categories/{category}">
+            {category}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </aside>
+{/if}
+
+{#if tags.length}
+  <aside>
+    <h2>Tags:</h2>
+    <ul>
+      {#each tags as tag}
+        <li>
+          <a href="/blog/tags/{tag}">
+            {tag}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </aside>
+{/if}
 
 <slot />

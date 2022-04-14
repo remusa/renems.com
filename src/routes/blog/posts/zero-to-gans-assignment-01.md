@@ -3,7 +3,14 @@ path: '/zero-to-gans-tensor-operations'
 date: '2020-05-29'
 title: 'Pytorch - Zero to GANs: Assignment 1 - All About torch.Tensor'
 author: 'RMS'
-tags: ['machine-learning', 'deep-learning', 'zero-to-gans', 'python', 'pytorch']
+tags:
+  - 'machine-learning'
+  - 'deep-learning'
+  - 'zero-to-gans'
+  - 'python'
+  - 'pytorch'
+categories:
+  - 'machine learning'
 type: 'BLOG'
 published: true
 ---
