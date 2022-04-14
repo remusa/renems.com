@@ -1,11 +1,23 @@
 // import adapter from '@sveltejs/adapter-auto'
 import adapter from '@sveltejs/adapter-static'
 import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
 import { mdsvex } from 'mdsvex'
 import relativeImages from 'mdsvex-relative-images'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import preprocess from 'svelte-preprocess'
+
+const mode = process.env.NODE_ENV
+const dev = mode === 'development'
+
+const devPlugins = !dev
+  ? [
+      cssnano({
+        preset: 'default',
+      }),
+    ]
+  : []
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,7 +26,7 @@ const config = {
   preprocess: [
     preprocess({
       postcss: {
-        plugins: [autoprefixer],
+        plugins: [autoprefixer, ...devPlugins],
       },
     }),
     mdsvex({
@@ -22,7 +34,15 @@ const config = {
       layout: {
         blog: 'src/routes/blog/_post.svelte',
       },
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'wrap',
+          },
+        ],
+      ],
       remarkPlugins: [relativeImages],
     }),
   ],

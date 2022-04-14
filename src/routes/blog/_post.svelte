@@ -16,8 +16,6 @@
 
 <Head title="Test" />
 
-<h1>{title}</h1>
-
 <p>Published: {date}</p>
 <p>Path: {path}</p>
 <p>Author: {author}</p>
@@ -58,5 +56,7 @@
 {/if}
 
 <hr />
+
+<h1>{title}</h1>
 
 <slot />
