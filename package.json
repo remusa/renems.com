@@ -27,6 +27,7 @@
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
+    "mdsvex-relative-images": "^1.0.2",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1"
   },
