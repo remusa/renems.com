@@ -1,5 +1,5 @@
 <script context="module">
-  export const load = ({ url }) => {
+  export async function load({ url }) {
     const currentRoute = url.pathname
 
     return {

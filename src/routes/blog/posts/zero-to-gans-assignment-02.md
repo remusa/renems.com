@@ -10,7 +10,7 @@ tags:
   - 'python'
   - 'pytorch'
 categories:
-  - "machine learning"
+  - 'machine learning'
 type: 'BLOG'
 published: true
 ---

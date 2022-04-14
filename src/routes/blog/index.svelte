@@ -2,7 +2,6 @@
   export async function load({ fetch }) {
     const posts = await fetch('/api/posts.json')
     const allPosts = await posts.json()
-    console.log('allPosts', allPosts)
 
     return {
       props: {
@@ -24,10 +23,10 @@
   <li>
     <h2>
       <a href={post.path}>
-        {post.meta.title}
+        {post.metadata.title}
       </a>
     </h2>
-    Published {post.meta.date}
+    Published {post.metadata.date}
   </li>
 {/each}
 
