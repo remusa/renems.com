@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ params, fetch }) {
-    const currentTag = params.category
+    const { tag: currentTag } = params
     const response = await fetch('/api/posts.json')
     const posts = await response.json()
 

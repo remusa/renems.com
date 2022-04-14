@@ -1,8 +1,5 @@
+import { siteTitle, siteDescription, siteURL } from '$lib/info'
 import { getPosts, getSortedPosts } from './api/posts.json'
-
-export const siteURL = 'https://renems.com'
-export const siteTitle = 'René MS'
-export const siteDescription = 'My personal site'
 
 export const headers = {
   'Cache-Control': 'max-age=0, s-maxage=3600',

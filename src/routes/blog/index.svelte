@@ -1,19 +1,23 @@
 <script context="module">
   export async function load({ fetch }) {
-    const posts = await fetch('/api/posts.json')
-    const allPosts = await posts.json()
+    const allPosts = await fetch('/api/posts.json')
+    const posts = await allPosts.json()
 
     return {
       props: {
-        posts: allPosts,
+        posts,
       },
     }
   }
 </script>
 
 <script>
+  import Head from '$lib/components/Head.svelte'
+
   export let posts
 </script>
+
+<Head title="Blog" />
 
 <h1>Blog</h1>
 
@@ -22,13 +26,10 @@
 {#each posts as post}
   <li>
     <h2>
-      <a href={post.path}>
+      <a href={post.slug}>
         {post.metadata.title}
       </a>
     </h2>
     Published {post.metadata.date}
   </li>
 {/each}
-
-<style>
-</style>

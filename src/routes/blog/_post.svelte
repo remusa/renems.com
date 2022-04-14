@@ -1,5 +1,8 @@
 <script>
-  import '$lib/styles/themes/prism-one-dark.css'
+  import '$lib/assets/styles/themes/prism-one-dark.css'
+  import '$lib/assets/styles/_layout.scss'
+  import Head from '$lib/components/Head.svelte'
+
   export let date = ''
   export let title = ''
   export let path = ''
@@ -10,6 +13,8 @@
   export let type = 'BLOG'
   export let published = false
 </script>
+
+<Head title="Test" />
 
 <h1>Title: {title}</h1>
 

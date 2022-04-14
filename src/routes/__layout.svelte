@@ -13,7 +13,7 @@
 <script>
   import Footer from '$lib/components/Footer.svelte'
   import Header from '$lib/components/Header.svelte'
-  import '$lib/styles/style.css'
+  import '$lib/assets/styles/app.css'
   import { fade } from 'svelte/transition'
 
   export let currentRoute

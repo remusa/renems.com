@@ -1,5 +1,6 @@
+import { siteURL } from '$lib/info'
 import { getPosts, getSortedPosts } from './api/posts.json'
-import { headers, siteURL } from './rss.xml'
+import { headers } from './rss.xml'
 
 export async function get() {
   const allPosts = await getPosts()
