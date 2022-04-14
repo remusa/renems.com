@@ -16,7 +16,7 @@
 
 <Head title="Test" />
 
-<h1>Title: {title}</h1>
+<h1>{title}</h1>
 
 <p>Published: {date}</p>
 <p>Path: {path}</p>

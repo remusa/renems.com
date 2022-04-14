@@ -9,7 +9,7 @@
 {#each posts as post}
   <li>
     <h2>
-      <a href={post.slug}>
+      <a href={post.slug} sveltekit:prefetch>
         {post.metadata.title}
       </a>
     </h2>
