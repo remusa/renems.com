@@ -12,7 +12,7 @@ type: 'BLOG'
 published: false
 ---
 
-## First heading
+## Level 2
 
 ```js
 // JavaScript goes here,
@@ -24,6 +24,10 @@ export default function Layout({ children }) {
 }
 ```
 
-## Second heading
+### Level 3
 
-## Third heading
+#### Level 4
+
+##### Level 5
+
+###### Level 6
