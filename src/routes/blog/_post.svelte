@@ -66,10 +66,9 @@
 
 <div class="container">
   <div class="toc-wrapper">
-    <TableContents {headings} />
-
     <div class="toc" style="1px solid crimson;">
-      <Toc />
+      <TableContents {headings} />
+      <!-- <Toc /> -->
     </div>
   </div>
 
@@ -82,7 +81,7 @@
   .container {
     display: flex;
     flex-direction: row;
-    width: 700px;
+    width: auto;
   }
 
   .content {
