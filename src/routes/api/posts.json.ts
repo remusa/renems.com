@@ -1,4 +1,4 @@
-export async function getPosts() {
+export async function getPosts({ limit, page }: { limit: number; page: number }) {
   const allPostFiles = import.meta.glob('../blog/**/*.{md,svx}')
   const iterablePostFiles = Object.entries(allPostFiles)
   const postsPromises = iterablePostFiles.map(async ([path, resolver]) => {
@@ -18,8 +18,10 @@ export function getSortedPosts(posts) {
   return sortedPosts
 }
 
-export async function get() {
-  const allPosts = await getPosts()
+export async function get({ url: { searchParams } }) {
+  const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')) : undefined
+  const page = searchParams.get('page') ? parseInt(searchParams.get('page')) : undefined
+  const allPosts = await getPosts({ limit, page })
   const sortedPosts = getSortedPosts(allPosts)
 
   return {

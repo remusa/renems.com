@@ -55,7 +55,7 @@ const config = {
         ],
       ],
 
-      remarkPlugins: [relativeImages, remarkAbbr, getHeadings],
+      remarkPlugins: [videos, relativeImages, remarkAbbr, getHeadings],
     }),
   ],
 
@@ -122,4 +122,34 @@ function slugify(str) {
       .replace(/[^\w ]+/g, '')
       .replace(/ +/g, '-')
   }`
+}
+
+/**
+ * Adds support to video files in markdown image links
+ */
+function videos() {
+  let visit
+  const extensions = ['mp4', 'webm']
+
+  return async function transformer(tree) {
+    if (!visit) {
+      visit = (await import('unist-util-visit')).visit
+    }
+
+    visit(tree, 'image', (node) => {
+      if (extensions.some((ext) => node.url.endsWith(ext))) {
+        node.type = 'html'
+        node.value = `
+            <video
+              src="${node.url}"
+              autoplay
+              muted
+              playsinline
+              loop
+              title="${node.alt}"
+            />
+          `
+      }
+    })
+  }
 }
