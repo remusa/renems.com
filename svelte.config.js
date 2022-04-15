@@ -44,7 +44,7 @@ const config = {
           rehypeAutolinkHeadings,
           {
             behavior: 'wrap',
-            test: [`h2`, `h3`, `h4`, `h5`, `h6`], // don't auto-link <h1>
+            // test: [`h2`, `h3`, `h4`, `h5`, `h6`], // don't auto-link <h1>
             content: s(
               `svg`,
               { width: 16, height: 16, viewBox: `0 0 16 16` },
@@ -96,12 +96,12 @@ function getHeadings() {
 
     visit(tree, 'heading', (node) => {
       const title = treeToString(node)
-      const slug = slugify(title)
+      const url = slugify(title)
 
       vFile.data.headings.push({
-        level: node.depth,
+        url,
         title,
-        slug,
+        level: node.depth,
       })
     })
 
@@ -111,10 +111,10 @@ function getHeadings() {
   }
 }
 
-function slugify(title) {
+function slugify(str) {
   return `${
     '#' +
-    title
+    str
       .trim()
       .toLowerCase()
       .replace(/[^\w ]+/g, '')

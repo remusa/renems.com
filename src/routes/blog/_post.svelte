@@ -2,6 +2,7 @@
   import '$lib/assets/styles/themes/prism-one-dark.css'
   import '$lib/assets/styles/_layout.scss'
   import Head from '$lib/components/Head.svelte'
+  import TableContents from '$lib/components/TableContents.svelte'
   import Toc from 'svelte-toc'
 
   export let date = ''
@@ -63,8 +64,9 @@
 
 <h1>{title}</h1>
 
+<TableContents {headings} />
+
 <!-- TODO: fix table of contents -->
-{@debug headings}
 <div class="toc" style="min-height: 50px; border: 1px solid crimson;">
   <Toc />
 </div>
