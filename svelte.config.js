@@ -61,12 +61,14 @@ const config = {
 
   extensions: ['.svelte', '.svx', '.md'],
 
-  prerender: {
-    entries: ['*', '/sitemap.xml', '/rss.xml'],
-  },
-
   kit: {
     adapter: adapter(),
+
+    // if you are not using the static adapter and
+    // you don't want prerendering, remove this section
+    prerender: {
+      entries: ['*', '/sitemap.xml', '/rss.xml'],
+    },
 
     package: {
       // exclude auxiliary files from package.json "exports"
