@@ -1,7 +1,7 @@
-// import adapter from '@sveltejs/adapter-auto'
 import adapter from '@sveltejs/adapter-static'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
+import { s } from 'hastscript'
 import { mdsvex } from 'mdsvex'
 import relativeImages from 'mdsvex-relative-images'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -43,7 +43,13 @@ const config = {
           rehypeAutolinkHeadings,
           {
             behavior: 'wrap',
-            // test: [`h2`, `h3`, `h4`, `h5`, `h6`], // don't auto-link <h1>
+            test: [`h2`, `h3`, `h4`, `h5`, `h6`], // don't auto-link <h1>
+            content: s(
+              `svg`,
+              { width: 16, height: 16, viewBox: `0 0 16 16` },
+              // symbol #octicon-link defined in app.html
+              s(`use`, { 'xlink:href': `#octicon-link` })
+            ),
           },
         ],
       ],
@@ -60,6 +66,11 @@ const config = {
 
   kit: {
     adapter: adapter(),
+
+    package: {
+      // exclude auxiliary files from package.json "exports"
+      exports: (filepath) => [`Toc.svelte`, `index.ts`, `package.json`].includes(filepath),
+    },
 
     // Override http methods in the Todo forms
     methodOverride: {

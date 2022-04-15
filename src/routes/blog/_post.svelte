@@ -2,6 +2,7 @@
   import '$lib/assets/styles/themes/prism-one-dark.css'
   import '$lib/assets/styles/_layout.scss'
   import Head from '$lib/components/Head.svelte'
+  import Toc from 'svelte-toc'
 
   export let date = ''
   export let title = ''
@@ -60,6 +61,16 @@
 
 <a href="/blog">Go back to posts</a>
 
-<h1>{title}</h1>
+{@debug headings}
+<div class="toc">
+  <Toc />
+</div>
 
 <slot />
+
+<style>
+  .toc {
+    min-height: 50px;
+    border: 1px solid crimson;
+  }
+</style>
