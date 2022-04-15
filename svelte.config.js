@@ -29,21 +29,26 @@ const config = {
         plugins: [autoprefixer, ...devPlugins],
       },
     }),
+
     mdsvex({
-      extensions: ['.md'],
+      extensions: [`.svx`, `.md`],
+
       layout: {
         blog: 'src/routes/blog/_post.svelte',
       },
+
       rehypePlugins: [
         rehypeSlug,
         [
           rehypeAutolinkHeadings,
           {
             behavior: 'wrap',
+            // test: [`h2`, `h3`, `h4`, `h5`, `h6`], // don't auto-link <h1>
           },
         ],
       ],
-      remarkPlugins: [relativeImages],
+
+      remarkPlugins: [relativeImages, getHeadings],
     }),
   ],
 
@@ -64,3 +69,28 @@ const config = {
 }
 
 export default config
+
+function getHeadings() {
+  let visit
+  let treeToString
+
+  return async function transformer(tree, vFile) {
+    if (!visit) {
+      treeToString = (await import('mdast-util-to-string')).toString
+      visit = (await import('unist-util-visit')).visit
+    }
+
+    vFile.data.headings = []
+
+    visit(tree, 'heading', (node) => {
+      vFile.data.headings.push({
+        level: node.depth,
+        title: treeToString(node),
+      })
+    })
+
+    if (!vFile.data.fm) vFile.data.fm = {}
+
+    vFile.data.fm.headings = vFile.data.headings
+  }
+}

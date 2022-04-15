@@ -12,6 +12,7 @@
   export let language = 'english'
   export let type = 'BLOG'
   export let published = false
+  export let headings = []
 </script>
 
 <Head title="Test" />
@@ -56,6 +57,8 @@
 {/if}
 
 <hr />
+
+<a href="/blog">Go back to posts</a>
 
 <h1>{title}</h1>
 

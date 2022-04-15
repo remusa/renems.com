@@ -1,5 +1,5 @@
 export async function getPosts() {
-  const allPostFiles = import.meta.glob('../blog/**/*.md')
+  const allPostFiles = import.meta.glob('../blog/**/*.{md,svx}')
   const iterablePostFiles = Object.entries(allPostFiles)
   const postsPromises = iterablePostFiles.map(async ([path, resolver]) => {
     const { metadata } = await resolver()

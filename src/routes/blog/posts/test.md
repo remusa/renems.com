@@ -12,11 +12,7 @@ type: 'BLOG'
 published: false
 ---
 
-<script>
-  import Header from '$lib/components/Header.svelte'
-</script>
-
-## Test
+## First heading
 
 ```js
 // JavaScript goes here,
@@ -27,3 +23,7 @@ export default function Layout({ children }) {
   return <>{children}</>
 }
 ```
+
+## Second heading
+
+## Third heading
