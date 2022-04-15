@@ -3,7 +3,6 @@
   import '$lib/assets/styles/_layout.scss'
   import Head from '$lib/components/Head.svelte'
   import TableContents from '$lib/components/TableContents.svelte'
-  import Toc from 'svelte-toc'
 
   export let date = ''
   export let title = ''

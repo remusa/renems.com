@@ -12,7 +12,8 @@
 
 <script>
   import { prefetch } from '$app/navigation'
-  import '$lib/assets/styles/app.css'
+  // TODO: update styles
+  // import '$lib/assets/styles/app.css'
   import Footer from '$lib/components/Footer.svelte'
   import Header from '$lib/components/Header.svelte'
   import { navItems } from '$lib/config'

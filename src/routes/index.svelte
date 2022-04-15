@@ -1,9 +1,9 @@
 <script context="module">
   export const prerender = true
   export async function load({ fetch }) {
-    const posts = await fetch('/posts.json?limit=2')
-    const recentPosts = await posts.json()
-    console.log('recentPosts', recentPosts)
+    const allPosts = await fetch('api/posts.json?limit=2')
+    const recentPosts = await allPosts.json()
+
     return {
       props: {
         recentPosts,
@@ -14,6 +14,7 @@
 
 <script>
   import Head from '$lib/components/Head.svelte'
+  import PostPreview from '$lib/components/PostPreview.svelte'
 
   export let recentPosts
 </script>
@@ -26,12 +27,12 @@
 <!-- https://github.com/mattjennings/sveltekit-blog-template/blob/main/src/routes/index.svelte -->
 <h2>
   Recent Posts
-  <button href="/posts">View All</button>
+  <button href="/blog">View All</button>
 </h2>
 
-<div >
+<div>
   {#each recentPosts as post}
-    <div >
+    <div>
       <PostPreview {post} small />
     </div>
   {/each}

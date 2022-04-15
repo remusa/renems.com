@@ -97,12 +97,8 @@ function getHeadings() {
     vFile.data.headings = []
 
     visit(tree, 'heading', (node) => {
-      const title = treeToString(node)
-      const url = slugify(title)
-
       vFile.data.headings.push({
-        url,
-        title,
+        title: treeToString(node),
         level: node.depth,
       })
     })
@@ -111,17 +107,6 @@ function getHeadings() {
 
     vFile.data.fm.headings = vFile.data.headings
   }
-}
-
-function slugify(str) {
-  return `${
-    '#' +
-    str
-      .trim()
-      .toLowerCase()
-      .replace(/[^\w ]+/g, '')
-      .replace(/ +/g, '-')
-  }`
 }
 
 /**
