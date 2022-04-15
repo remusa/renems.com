@@ -1,10 +1,9 @@
 import { siteURL } from '$lib/config'
-import { getPosts, getSortedPosts } from './api/posts.json'
+import { getPosts } from './api/posts.json'
 import { headers } from './rss.xml'
 
 export async function get() {
-  const allPosts = await getPosts()
-  const posts = getSortedPosts(allPosts)
+  const posts = await getPosts({})
   const pages = [`about`, `contact`, `blog`]
   const body = render({ posts, pages })
 

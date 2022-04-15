@@ -2,37 +2,35 @@
   export let post
   export let small = false
   // https://github.com/mattjennings/sveltekit-blog-template/blob/main/src/lib/components/PostPreview.svelte
-  const { slug } = post
 </script>
 
 <div>
   <div>
     {#if !small}
       <h1>
-        <a href={slug}>{post.metadata.title}</a>
+        <a href={post.slug}>{post.title}</a>
       </h1>
     {:else}
       <h3>
-        <a href={slug}>{post.metadata.title}</a>
+        <a href={post.slug}>{post.title}</a>
       </h3>
     {/if}
 
     <div>
-      <time>{new Date(post.metadata.date)}</time>
+      <time>{new Date(post.date)}</time>
       •
       <span
         >Reading time:
-        <!-- TODO: show reading time -->
-        {post.metadata?.readingTime}
+        {post.readingTime}
       </span>
     </div>
   </div>
 
-  <!-- TODO: show post preview -->
-  <div>{@html post.metadata?.preview?.html}</div>
+  <div>{@html post.preview.html}</div>
+
   <slot>
     <div>
-      <button href={slug}>Read More</button>
+      <a href={post.slug}>Read More</a>
     </div>
   </slot>
 </div>

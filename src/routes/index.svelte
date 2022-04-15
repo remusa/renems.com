@@ -27,7 +27,7 @@
 <!-- https://github.com/mattjennings/sveltekit-blog-template/blob/main/src/routes/index.svelte -->
 <h2>
   Recent Posts
-  <button href="/blog">View All</button>
+  <a href="/blog">View All</a>
 </h2>
 
 <div>

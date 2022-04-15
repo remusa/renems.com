@@ -10,9 +10,10 @@
   <li>
     <h2>
       <a href={post.slug} sveltekit:prefetch>
-        {post.metadata.title}
+        {post.title}
       </a>
     </h2>
-    Published {post.metadata.date}
+    <p>Published {post.date}</p>
+    <p>Reading time: {post.readingTime}</p>
   </li>
 {/each}

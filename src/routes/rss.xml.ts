@@ -1,5 +1,5 @@
-import { siteTitle, siteDescription, siteURL } from '$lib/config'
-import { getPosts, getSortedPosts } from './api/posts.json'
+import { siteDescription, siteTitle, siteURL } from '$lib/config'
+import { getPosts } from './api/posts.json'
 
 export const headers = {
   'Cache-Control': 'max-age=0, s-maxage=3600',
@@ -7,8 +7,7 @@ export const headers = {
 }
 
 export async function get() {
-  const allPosts = await getPosts()
-  const posts = getSortedPosts(allPosts)
+  const posts = await getPosts({})
   const body = render(posts)
 
   return {
