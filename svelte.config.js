@@ -6,6 +6,7 @@ import { mdsvex } from 'mdsvex'
 import relativeImages from 'mdsvex-relative-images'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import remarkAbbr from 'remark-abbr'
 import preprocess from 'svelte-preprocess'
 
 const mode = process.env.NODE_ENV
@@ -54,7 +55,7 @@ const config = {
         ],
       ],
 
-      remarkPlugins: [relativeImages, getHeadings],
+      remarkPlugins: [relativeImages, remarkAbbr, getHeadings],
     }),
   ],
 

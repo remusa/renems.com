@@ -61,16 +61,12 @@
 
 <a href="/blog">Go back to posts</a>
 
+<h1>{title}</h1>
+
+<!-- TODO: fix table of contents -->
 {@debug headings}
-<div class="toc">
+<div class="toc" style="min-height: 50px; border: 1px solid crimson;">
   <Toc />
 </div>
 
 <slot />
-
-<style>
-  .toc {
-    min-height: 50px;
-    border: 1px solid crimson;
-  }
-</style>
