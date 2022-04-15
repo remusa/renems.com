@@ -12,11 +12,11 @@ type: 'BLOG'
 published: false
 ---
 
-<script lang="ts">
+<!-- <script lang="ts">
   import Toc from '../../../lib/components/Toc/Toc.svelte'
 </script>
 
-<article>
+<Toc /> -->
 
 # VS Code November 2021 Release Notes (v1.63)
 
@@ -549,7 +549,3 @@ You can provide feedback about this API in [issue #74967](https://github.com/mic
 Last but certainly not least, a big _**Thank You**_ to the contributors of VS Code.
 
 [Back to landing page](/)
-
-</article>
-
-<Toc />

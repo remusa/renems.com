@@ -30,7 +30,7 @@
 
 {#if categories.length}
   <aside>
-    <h2>Categories:</h2>
+    <p>Categories:</p>
     <ul>
       {#each categories as category}
         <li>
@@ -45,7 +45,7 @@
 
 {#if tags.length}
   <aside>
-    <h2>Tags:</h2>
+    <p>Tags:</p>
     <ul>
       {#each tags as tag}
         <li>
@@ -64,11 +64,29 @@
 
 <h1>{title}</h1>
 
-<TableContents {headings} />
+<div class="container">
+  <div class="toc-wrapper">
+    <TableContents {headings} />
 
-<!-- TODO: fix table of contents -->
-<div class="toc" style="min-height: 50px; border: 1px solid crimson;">
-  <Toc />
+    <div class="toc" style="1px solid crimson;">
+      <Toc />
+    </div>
+  </div>
+
+  <div class="content">
+    <slot />
+  </div>
 </div>
 
-<slot />
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+  }
+
+  .content {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+</style>
