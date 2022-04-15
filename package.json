@@ -12,6 +12,7 @@
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
+    "test": "echo \"Testing!\"",
     "test:e2e": "playwright test",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -21,7 +22,8 @@
     "fix": "run-p format lint:fix",
     "validate": "run-p check lint build",
     "upgrade-interactive": "npx npm-check --update",
-    "commitlint": "npx --no -- commitlint --edit \"$1\""
+    "commitlint": "npx --no -- commitlint --edit \"$1\"",
+    "depcheck": "pnpm dlx depcheck"
   },
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.7",
@@ -88,5 +90,15 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "engineStrict": true,
+  "engines": {
+    "node": ">=14.x",
+    "pnpm": ">=7.x"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
 }

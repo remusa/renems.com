@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.0-rc.5
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - run: pnpm install
+      - run: pnpm check
+      - run: pnpm test -- --coverage
+        env:
+          CI: true
+
+      # - name: Upload Test Coverage
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: code-coverage
+      #     path: coverage
+
+      - name: Build
+        run: pnpm build
+        if: github.event_name == 'push'
+
+      # - name: Create a Release
+      #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      #   run: npx semantic-release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
+
+      - name: Deploy to Staging
+        id: deploy-staging
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_STAGING }}
+        with:
+          args: deploy --dir=./public --prod --message \" $(git log -1 --pretty=format:%B) \"
+          # args: deploy --dir=./public --prod --open --message \" $(git log --oneline -n) \"
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID_STAGING"]'
+
+      - name: Deploy to Production
+        id: deploy-production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=./public --prod --message \" $(git log -1 --pretty=format:%B) \"
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Logs for Netlify
+        if: steps.deploy-staging.outcome == 'success' || steps.deploy-production.outcome == 'success'
+        uses: bdougie/loglify@v1.0.0
+
+      # - name: Upload Coverage Reports
+      #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      #   run: npx codecov
+      #   env:
+      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      # - name: Open Issue
+      #   if: failure() && github.event_name == 'pull_request'
+      #   run: |
+      #     curl --request POST \
+      #     --url https://api.github.com/repos/${{ github.repository }}/issues \
+      #     --header 'authorization: Bearer ${{ secrets.CUSTOM_TOKEN }}' \
+      #     --header 'content-type: application/json' \
+      #     --data '{
+      #       "title": "Automated issue for commit: ${{ github.sha }}",
+      #       "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_.",
+      #       "assignees": ["${{ github.event.pull_request.user.login }}"]
+      #       }'
