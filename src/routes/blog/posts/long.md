@@ -12,12 +12,6 @@ type: 'BLOG'
 published: false
 ---
 
-<!-- <script lang="ts">
-  import Toc from '../../../lib/components/Toc/Toc.svelte'
-</script>
-
-<Toc /> -->
-
 # VS Code November 2021 Release Notes (v1.63)
 
 [Back to landing page](/)
