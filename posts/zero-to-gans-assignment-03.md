@@ -1,7 +1,7 @@
 ---
 path: /zero-to-gans-03-feed-forward-neural-networks
 date: 2020-06-10
-title: "Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks"
+title: 'Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks'
 author: RMS
 tags:
   - machine-learning

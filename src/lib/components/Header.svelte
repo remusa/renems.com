@@ -1,6 +1,6 @@
 <script>
   import { browser } from '$app/env'
-  import { siteTitle } from '$lib/config'
+  import { siteTitle } from '$lib/info'
   import MoonIcon from 'heroicons-svelte/solid/MoonIcon.svelte'
   import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
 

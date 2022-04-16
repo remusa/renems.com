@@ -1,7 +1,7 @@
 ---
 path: /zero-to-gans-02-train-first-model
 date: 2020-06-02
-title: "Pytorch - Zero to GANs: Assignment 2 - Train Your First Model"
+title: 'Pytorch - Zero to GANs: Assignment 2 - Train Your First Model'
 author: RMS
 tags:
   - machine-learning

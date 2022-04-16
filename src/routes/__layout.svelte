@@ -16,7 +16,7 @@
   import '$lib/assets/styles/app.css'
   import Footer from '$lib/components/Footer.svelte'
   import Header from '$lib/components/Header.svelte'
-  import { navItems } from '$lib/config'
+  import { navItems } from '$lib/info'
   import { currentPage } from '$lib/store'
   import 'focus-visible'
   import { onMount } from 'svelte'

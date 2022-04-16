@@ -1,5 +1,5 @@
 <script>
-  import { siteTitle } from '$lib/config'
+  import { siteTitle } from '$lib/info'
 
   export let title
   export let url = ''

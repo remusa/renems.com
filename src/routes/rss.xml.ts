@@ -1,4 +1,4 @@
-import { siteDescription, siteTitle, siteURL } from '$lib/config'
+import { siteDescription, siteTitle, siteURL } from '$lib/info'
 import { getPosts } from './api/posts.json'
 
 export const headers = {

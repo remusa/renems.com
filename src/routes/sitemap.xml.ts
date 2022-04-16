@@ -1,4 +1,4 @@
-import { siteURL } from '$lib/config'
+import { siteURL } from '$lib/info'
 import { getPosts } from './api/posts.json'
 import { headers } from './rss.xml'
 

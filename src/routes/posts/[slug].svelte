@@ -36,7 +36,7 @@
   import Head from '$lib/components/Head.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ToC from '$lib/components/ToC.svelte'
-  import { siteURL } from '$lib/config'
+  import { siteURL } from '$lib/info'
   import { format, parseISO } from 'date-fns'
 
   export let component
