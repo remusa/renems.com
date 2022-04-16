@@ -1,16 +1,15 @@
 ---
-path: '/enquiridion'
-date: '2019-12-29'
-title: 'Enquiridión'
-title_full: 'Enquiridión por Epicteto'
-book_author: 'Epicteto'
-author: 'RMS'
+path: /enquiridion
+date: 2019-12-29
+title: Enquiridión
+book_author: Epicteto
+author: RMS
 tags:
-  - 'book-notes'
+  - book-notes
 categories:
-  - 'book-notes'
-language: 'spanish'
-type: 'BOOK'
+  - book-notes
+language: spanish
+type: BOOK
 published: false
 ---
 

@@ -1,14 +1,14 @@
 ---
-path: '/test-mdx'
-date: '2020-07-15'
-title: 'MDX Test'
-author: 'RMS'
+path: /test-mdx
+date: 2020-07-15
+title: MDX Test
+author: RMS
 tags:
-  - 'mdx'
+  - mdx
 categories:
-  - 'test'
-language: 'english'
-type: 'BLOG'
+  - test
+language: english
+type: blog
 published: false
 ---
 

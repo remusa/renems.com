@@ -1,19 +1,21 @@
 ---
-path: '/zero-to-gans-03-feed-forward-neural-networks'
-date: '2020-06-10'
-title: 'Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks'
-author: 'RMS'
+path: /zero-to-gans-03-feed-forward-neural-networks
+date: 2020-06-10
+title: "Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks"
+author: RMS
 tags:
-  - 'machine-learning'
-  - 'deep-learning'
-  - 'zero-to-gans'
-  - 'python'
-  - 'pytorch'
+  - machine-learning
+  - deep-learning
+  - zero-to-gans
+  - python
+  - pytorch
 categories:
-  - 'machine learning'
-type: 'BLOG'
+  - machine learning
+type: blog
 published: true
 ---
+
+# Pytorch - Zero to GANs: Assignment 3 - Feed Forward Neural Networks
 
 For this assignment we had to use a dataset of everyday objects and classify it by training and
 using a neural network.

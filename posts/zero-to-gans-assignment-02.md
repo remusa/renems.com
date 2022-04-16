@@ -1,19 +1,21 @@
 ---
-path: '/zero-to-gans-02-train-first-model'
-date: '2020-06-02'
-title: 'Pytorch - Zero to GANs: Assignment 2 - Train Your First Model'
-author: 'RMS'
+path: /zero-to-gans-02-train-first-model
+date: 2020-06-02
+title: "Pytorch - Zero to GANs: Assignment 2 - Train Your First Model"
+author: RMS
 tags:
-  - 'machine-learning'
-  - 'deep-learning'
-  - 'zero-to-gans'
-  - 'python'
-  - 'pytorch'
+  - machine-learning
+  - deep-learning
+  - zero-to-gans
+  - python
+  - pytorch
 categories:
-  - 'machine learning'
-type: 'BLOG'
+  - machine learning
+type: blog
 published: true
 ---
+
+# Pytorch - Zero to GANs: Assignment 2 - Train Your First Model
 
 For this assignment we had to use personal information from a person to predict the price of medical
 bills for a year.

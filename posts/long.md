@@ -1,14 +1,14 @@
 ---
-path: '/long-post'
-date: '2020-07-15'
-title: 'Long Post'
-author: 'RMS'
+path: /long-post
+date: 2020-07-15
+title: Long Post
+author: RMS
 tags:
-  - 'mdx'
+  - mdx
 categories:
-  - 'test'
-language: 'english'
-type: 'BLOG'
+  - test
+language: english
+type: blog
 published: false
 ---
 
@@ -133,7 +133,7 @@ All uncommon invisible characters in source code are now highlighted by default:
 
 In addition, characters that can be confused with ASCII characters are also highlighted:
 
-You can read ["The Invisible JavaScript Backdoor" blog post](https://certitude.consulting/blog/en/invisible-backdoor/) or [this University of Cambridge article](https://www.trojansource.codes/) for how invisible or confusable Unicode characters can be used in Unicode spoofing attacks.
+You can read ["The Invisible JavaScript Backdoor" blog post](https://certitude.consulting/posts/en/invisible-backdoor/) or [this University of Cambridge article](https://www.trojansource.codes/) for how invisible or confusable Unicode characters can be used in Unicode spoofing attacks.
 
 Note that this feature does not detect all possible Unicode spoofing attacks, as this depends on your font and locale settings. Also, the detection of ambiguous characters is done heuristically. To be on the safe side, VS Code's Workspace Trust [Restricted Mode](https://code.visualstudio.com/docs/editor/workspace-trust#_restricted-mode) should be used to review source code, as **all** non-ASCII characters are highlighted in untrusted workspaces.
 

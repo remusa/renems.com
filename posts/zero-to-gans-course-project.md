@@ -1,19 +1,21 @@
 ---
-path: '/zero-to-gans-course-project'
-date: '2020-06-27'
-title: 'Pytorch - Zero to GANs: Course Project'
-author: 'RMS'
+path: /zero-to-gans-course-project
+date: 2020-06-27
+title: "Pytorch - Zero to GANs: Course Project"
+author: RMS
 tags:
-  - 'machine-learning'
-  - 'deep-learning'
-  - 'zero-to-gans'
-  - 'python'
-  - 'pytorch'
+  - machine-learning
+  - deep-learning
+  - zero-to-gans
+  - python
+  - pytorch
 categories:
-  - 'machine learning'
-type: 'BLOG'
+  - machine learning
+type: blog
 published: true
 ---
+
+# Pytorch - Zero to GANs: Course Project
 
 As the last assignment to finish the course, we had to choose an online dataset and apply the
 concepts learned during the course.
@@ -22,7 +24,7 @@ concepts learned during the course.
 
 To start with I was considering using either one related to sports (most likely the Champion's
 League matches one) or one about e-sports (one about the MOBA DOTA2). However, I ended up choosing
-this one: [](). The main reason was that I had previously used a similar one for a mobile app demo I
+this [one](https://jovian.ml/remusa/course-project). The main reason was that I had previously used a similar one for a mobile app demo I
 did ~1-2 years ago, so it was interesting to me.
 
 ## 2. Understanding the dataset
