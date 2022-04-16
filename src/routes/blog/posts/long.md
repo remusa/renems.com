@@ -14,8 +14,6 @@ published: false
 
 # VS Code November 2021 Release Notes (v1.63)
 
-[Back to landing page](/)
-
 Welcome to the November 2021 release of Visual Studio Code. There are many updates in this version that we hope you will like, some of the key highlights include:
 
 - **[Marketplace theme preview](#preview-themes-before-installing)** - Try out Color Themes without installing them.
@@ -541,5 +539,3 @@ You can provide feedback about this API in [issue #74967](https://github.com/mic
 ## Thank you
 
 Last but certainly not least, a big _**Thank You**_ to the contributors of VS Code.
-
-[Back to landing page](/)

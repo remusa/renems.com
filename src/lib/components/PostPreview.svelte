@@ -1,36 +1,38 @@
 <script>
+  import { format } from 'date-fns'
+  import ButtonLink from './ButtonLink.svelte'
+
   export let post
+  console.log('post', post);
   export let small = false
-  // https://github.com/mattjennings/sveltekit-blog-template/blob/main/src/lib/components/PostPreview.svelte
+  const date = format(new Date(post.date), 'MMMM d, yyyy')
+  const url = post.slug
 </script>
 
-<div>
+<div class="flex flex-col">
   <div>
     {#if !small}
-      <h1>
-        <a href={post.slug}>{post.title}</a>
+      <h1 class="!mt-0 !mb-2">
+        <a href={url}>{post.title}</a>
       </h1>
     {:else}
-      <h3>
-        <a href={post.slug}>{post.title}</a>
+      <h3 class="!mt-0 !mb-2">
+        <a href={url}>{post.title}</a>
       </h3>
     {/if}
 
-    <div>
-      <time>{new Date(post.date)}</time>
+    <div class="opacity-70">
+      <time>{date}</time>
       •
-      <span
-        >Reading time:
-        {post.readingTime}
-      </span>
+      <span>{post.readingTime}</span>
     </div>
   </div>
 
-  <div>{@html post.preview.html}</div>
+  <div class="flex-1">{@html post.preview.html}</div>
 
-  <slot>
-    <div>
-      <a href={post.slug}>Read More</a>
+  <slot name="actions">
+    <div class="flex justify-end w-full">
+      <ButtonLink href={url}>Read More</ButtonLink>
     </div>
   </slot>
 </div>

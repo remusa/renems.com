@@ -12,6 +12,10 @@ type: 'BLOG'
 published: false
 ---
 
+# Level 1
+
+Hello, world!
+
 ## Level 2
 
 ```js
