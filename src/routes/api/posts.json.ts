@@ -1,4 +1,5 @@
 import { browser } from '$app/env'
+import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time/lib/reading-time.js'
 
@@ -10,24 +11,6 @@ if (browser) {
 function addTimezoneOffset(date) {
   const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000
   return new Date(new Date(date).getTime() + offsetInMilliseconds)
-}
-
-function formatDate(date) {
-  if (!date) return undefined
-  const formatter = new Intl.DateTimeFormat('en-US')
-  return formatter.format(date)
-}
-
-function slugify(str) {
-  return str.slice(2, -3)
-  // return `${
-  //   '#' +
-  //   str
-  //     .trim()
-  //     .toLowerCase()
-  //     .replace(/[^\w ]+/g, '')
-  //     .replace(/ +/g, '-')
-  // }`
 }
 
 function getSortedPosts(posts) {
@@ -76,28 +59,33 @@ function getPostsReferences(posts) {
 type PostsParams = { page?: number; limit?: number }
 
 export async function getPosts({ page = 1, limit = 100 }: PostsParams) {
-  const allPostFiles = import.meta.glob('/posts/**/*.{md,svx}')
+  const allPostFiles = import.meta.glob('/posts/**/*.md')
   const iterablePostFiles = Object.entries(allPostFiles)
-  const postsPromises = iterablePostFiles.map(async ([path, resolver]) => {
-    const { metadata, ...rest } = await resolver()
+  const postsPromises = iterablePostFiles.map(async ([filepath, resolver]) => {
+    const post = await resolver()
+    const { metadata, ...rest } = post
 
     return {
       ...metadata,
 
       // get slug from file path
-      slug: slugify(path),
-      // slug: slugify(metadata.title),
+      slug: filepath
+        .replace(/(\/index)?\.md/, '')
+        .split('/')
+        .pop(),
 
-      // TODO: handle /index.md posts https://github.com/mattjennings/sveltekit-blog-template/blob/1e3d3097abefd8b0835c2957643112d182acd8e3/src/routes/posts/%5Bslug%5D.svelte#L19
       // whether or not this file is `my-post.md` or `my-post/index.md`
       // (needed to do correct dynamic import in posts/[slug].svelte)
-      isIndexFile: path.endsWith('/index.md'),
+      isIndexFile: filepath.endsWith('/index.md'),
 
       // add offset and format date
-      date: formatDate(
-        // offset by timezone so that the date is correct
-        addTimezoneOffset(new Date(metadata.date))
-      ),
+      date: metadata.date
+        ? format(
+            // offset by timezone so that the date is correct
+            addTimezoneOffset(new Date(metadata.date)),
+            'yyyy-MM-dd'
+          )
+        : undefined,
 
       // svelte component
       component: rest.default,
