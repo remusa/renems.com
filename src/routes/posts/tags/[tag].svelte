@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
   export async function load({ params, fetch }) {
     const { tag } = params
     const response = await fetch('/api/posts.json')

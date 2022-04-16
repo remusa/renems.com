@@ -19,7 +19,7 @@ commit-msg:
   parallel: true
   commands:
     lint-commit-msg:
-      run: pnpm commitlint
+      run: npx commitlint
 
 pre-push:
   parallel: true

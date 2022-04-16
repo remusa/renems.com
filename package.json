@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "developer-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Portfolio site written with Svelte & Sveltekit",
   "baseUrl": "https://renems.com/",
   "version": "0.1.0",
   "author": "RMS <contact@renems.com>",
@@ -22,7 +22,7 @@
     "fix": "run-p format lint:fix",
     "validate": "run-p check lint build",
     "upgrade-interactive": "pnpm dlx  npm-check --update",
-    "commitlint": "pnpm dlx  --no -- commitlint --edit \"$1\"",
+    "commitlint": "npx --no -- commitlint --edit \"$1\"",
     "depcheck": "pnpm dlx depcheck",
     "deps:check": "pnpm dlx npm-check-updates",
     "deps:check:dev": "pnpm deps:check -- --dep dev",
