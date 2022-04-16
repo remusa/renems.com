@@ -3,7 +3,7 @@
     const { tag } = params
     const response = await fetch('/api/posts.json')
     const posts = await response.json()
-    const matchingPosts = posts.filter((post) => post.metadata.tags.includes(tag))
+    const matchingPosts = posts.filter((post) => post.tags.includes(tag))
 
     return {
       props: {

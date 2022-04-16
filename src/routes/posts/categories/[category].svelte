@@ -3,7 +3,7 @@
     const { category } = params
     const response = await fetch('/api/posts.json')
     const posts = await response.json()
-    const matchingPosts = posts.filter((post) => post.metadata.categories.includes(category))
+    const matchingPosts = posts.filter((post) => post.categories.includes(category))
 
     return {
       props: {

@@ -2,7 +2,8 @@
   export const prerender = true
 
   export async function load({ fetch }) {
-    const allPosts = await fetch('/api/posts.json?limit=2')
+    const limit = 2
+    const allPosts = await fetch(`/api/posts.json?limit=${limit}`)
     const recentPosts = await allPosts.json()
 
     return {

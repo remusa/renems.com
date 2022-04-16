@@ -1,13 +1,10 @@
 <script context="module">
   export async function load({ params, fetch }) {
     const { slug } = params
-    console.log('slug', slug)
 
     // fetch posts from endpoint so that it includes all metadata (see posts.json.js for explanation)
     const posts = await fetch('/api/posts.json').then((res) => res.json())
-    console.log('posts', posts)
     const post = posts.find((post) => slug === post.slug)
-    console.log('post', post)
 
     if (!post) {
       return {
@@ -40,7 +37,7 @@
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ToC from '$lib/components/ToC.svelte'
   import { siteURL } from '$lib/config'
-  import { format,parseISO } from 'date-fns'
+  import { format, parseISO } from 'date-fns'
 
   export let component
 
@@ -57,7 +54,7 @@
   export let tags
   export let categories
   export let language
-  export let type = 'BLOG'
+  export let type
 
   const url = `${siteURL}/${slug}`
 </script>
@@ -65,15 +62,16 @@
 <Head {title} {url} text={preview.text} />
 
 <article class="relative">
-  <p>Published: {date}</p>
+  <!-- TODO: show extra post metadata -->
+  <!-- <p>Published: {date}</p>
   <p>Path: {path}</p>
   <p>Author: {author}</p>
   <p>Categories: {categories}</p>
   <p>Tags: {tags}</p>
   <p>Language: {language}</p>
-  <p>Type: {type}</p>
+  <p>Type: {type}</p> -->
 
-  {#if categories.length}
+  <!-- {#if categories.length}
     <aside>
       <p>Categories:</p>
       <ul>
@@ -101,11 +99,11 @@
         {/each}
       </ul>
     </aside>
-  {/if}
+  {/if} -->
 
   <hr />
 
-  <a href="/posts">Go back to posts</a>
+  <!-- <a href="/posts">Go back to posts</a> -->
 
   <h1 class="!mt-0 !mb-2">
     <a class="!font-medium" href={$page.url.pathname}>
@@ -114,6 +112,8 @@
   </h1>
 
   <div class="opacity-70">
+    <span>By {author}</span>
+    •
     <time datetime={new Date(parseISO(date)).toISOString()}
       >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
     >
