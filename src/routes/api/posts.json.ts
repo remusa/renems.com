@@ -1,5 +1,5 @@
 import { browser } from '$app/env'
-import { format } from 'date-fns'
+import { formatDate } from '$lib/utils/date'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time/lib/reading-time.js'
 
@@ -80,10 +80,9 @@ export async function getPosts({ page = 1, limit = 100 }: PostsParams) {
 
       // add offset and format date
       date: metadata.date
-        ? format(
+        ? formatDate(
             // offset by timezone so that the date is correct
-            addTimezoneOffset(new Date(metadata.date)),
-            'yyyy-MM-dd'
+            addTimezoneOffset(new Date(metadata.date))
           )
         : undefined,
 

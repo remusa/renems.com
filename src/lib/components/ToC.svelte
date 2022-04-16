@@ -63,7 +63,7 @@
 <svelte:window on:scroll={setActiveHeading} />
 
 <h6 id="__sections" class="uppercase text-slate-400/75 dark:text-slate-600 font-bold text-sm">
-  Sections
+  Table of Contents
 </h6>
 
 <ul class="mt-2 !pl-0">

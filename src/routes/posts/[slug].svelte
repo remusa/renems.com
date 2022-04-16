@@ -37,7 +37,7 @@
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ToC from '$lib/components/ToC.svelte'
   import { siteURL } from '$lib/info'
-  import { format, parseISO } from 'date-fns'
+  import { formatDate } from '$lib/utils/date'
 
   export let component
 
@@ -57,6 +57,8 @@
   export let type
 
   const url = `${siteURL}/${slug}`
+  const datetime = new Date(date).toISOString()
+  const formattedDate = formatDate(new Date(datetime))
 </script>
 
 <Head {title} {url} text={preview.text} />
@@ -114,9 +116,7 @@
   <div class="opacity-70">
     <span>By {author}</span>
     •
-    <time datetime={new Date(parseISO(date)).toISOString()}
-      >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
-    >
+    <time {datetime}>{formattedDate}</time>
     •
     <span>{readingTime}</span>
   </div>
