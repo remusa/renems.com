@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
+
 @tailwind base;
 
 @layer utilities {
@@ -16,6 +18,10 @@
 
 .prose pre {
   @apply shadow-md dark:shadow-slate-900;
+}
+
+body {
+  font-family: 'Assistant', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 hr {

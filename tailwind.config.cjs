@@ -93,5 +93,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-font-inter')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // require('tailwindcss-font-inter')
+  ],
 }
