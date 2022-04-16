@@ -21,9 +21,15 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "fix": "run-p format lint:fix",
     "validate": "run-p check lint build",
-    "upgrade-interactive": "npx npm-check --update",
-    "commitlint": "npx --no -- commitlint --edit \"$1\"",
-    "depcheck": "pnpm dlx depcheck"
+    "upgrade-interactive": "pnpm dlx  npm-check --update",
+    "commitlint": "pnpm dlx  --no -- commitlint --edit \"$1\"",
+    "depcheck": "pnpm dlx depcheck",
+    "deps:check": "pnpx dlx npm-check-updates",
+    "deps:check:dev": "pnpm deps:check -- --dep dev",
+    "deps:check:prod": "pnpm deps:check -- --dep prod",
+    "deps:update:patch": "pnpm deps:check -- -u -t patch",
+    "deps:update:minor": "pnpm deps:check -- -u -t minor",
+    "deps:update:all": "pnpm deps:check -- -u"
   },
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.7",
@@ -74,7 +80,7 @@
   },
   "keywords": [
     "portfolio",
-    "gatsby",
+    "svelte-kit",
     "react"
   ],
   "license": "MIT",
