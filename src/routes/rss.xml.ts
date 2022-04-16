@@ -27,9 +27,9 @@ function render(posts) {
     ${posts
       .map(
         (post) => `<item>
-    <guid isPermaLink="true">${siteURL}/blog/${post.slug}</guid>
+    <guid isPermaLink="true">${siteURL}/posts/${post.slug}</guid>
     <title>${post.title}</title>
-    <link>${siteURL}/blog/${post.slug}</link>
+    <link>${siteURL}/posts/${post.slug}</link>
     <description>${post.excerpt}</description>
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     </item>`

@@ -2,8 +2,8 @@
   import { siteTitle } from '$lib/config'
 
   export let title
-  export let url
-  export let text
+  export let url = ''
+  export let text = ''
 
   const finalTitle = title ? `${title} | ${siteTitle}` : siteTitle
 

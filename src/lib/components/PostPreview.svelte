@@ -3,7 +3,6 @@
   import ButtonLink from './ButtonLink.svelte'
 
   export let post
-  console.log('post', post);
   export let small = false
   const date = format(new Date(post.date), 'MMMM d, yyyy')
   const url = post.slug

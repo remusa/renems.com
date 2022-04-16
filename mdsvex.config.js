@@ -29,6 +29,7 @@ const config = {
 
 export default config
 
+// TODO: remove get headings function
 /**
  * Gets headingsfrom markdown files
  */

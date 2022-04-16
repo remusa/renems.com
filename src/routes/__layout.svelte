@@ -14,7 +14,6 @@
   import { browser } from '$app/env'
   import { prefetch } from '$app/navigation'
   import '$lib/assets/styles/app.css'
-  import '$lib/assets/styles/_layout.scss'
   import Footer from '$lib/components/Footer.svelte'
   import Header from '$lib/components/Header.svelte'
   import { navItems } from '$lib/config'

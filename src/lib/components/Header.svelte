@@ -20,7 +20,7 @@
   <nav>
     <ul>
       <li>
-        <a href="/blog">Blog</a>
+        <a href="/posts">Blog</a>
       </li>
       <li>
         <a href="/about">About</a>

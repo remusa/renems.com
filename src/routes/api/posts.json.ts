@@ -76,7 +76,7 @@ function getPostsReferences(posts) {
 type PostsParams = { page?: number; limit?: number }
 
 export async function getPosts({ page = 1, limit = 100 }: PostsParams) {
-  const allPostFiles = import.meta.glob('../blog/**/*.{md,svx}')
+  const allPostFiles = import.meta.glob('/posts/**/*.{md,svx}')
   const iterablePostFiles = Object.entries(allPostFiles)
   const postsPromises = iterablePostFiles.map(async ([path, resolver]) => {
     const { metadata, ...rest } = await resolver()

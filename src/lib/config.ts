@@ -7,7 +7,7 @@ export const postsPerPage = 10
 export const navItems = [
   {
     title: 'Blog',
-    route: '/blog',
+    route: '/posts',
   },
   {
     title: 'About',
