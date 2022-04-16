@@ -1,13 +1,13 @@
 <script context="module">
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
   export async function load({ params, fetch }) {
     const { slug } = params
+    console.log('slug', slug)
 
     // fetch posts from endpoint so that it includes all metadata (see posts.json.js for explanation)
-    const posts = await fetch('/posts.json').then((res) => res.json())
+    const posts = await fetch('/api/posts.json').then((res) => res.json())
+    console.log('posts', posts)
     const post = posts.find((post) => slug === post.slug)
+    console.log('post', post)
 
     if (!post) {
       return {
@@ -32,59 +32,88 @@
 
 <script>
   import { page } from '$app/stores'
+  import '$lib/assets/styles/themes/prism-one-dark.css'
+  import '$lib/assets/styles/_layout.scss'
   import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
   import ButtonLink from '$lib/components/ButtonLink.svelte'
+  import Head from '$lib/components/Head.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ToC from '$lib/components/ToC.svelte'
-  import { siteTitle, siteURL } from '$lib/config'
+  import { siteURL } from '$lib/config'
+  import { format, parseISO } from 'date-fns'
 
   export let component
 
   // metadata
   export let title
-  console.log('title', title);
   export let date
   export let preview
   export let readingTime
   export let slug
   export let next
   export let previous
-
-  // generated open-graph image for sharing on social media. Visit https://og-image.vercel.app/ to see more options.
-  const ogImage = `https://og-image.vercel.app/**${encodeURIComponent(
-    title
-  )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
+  export let path
+  export let author
+  export let tags
+  export let categories
+  export let language
+  export let type = 'BLOG'
+  export let headings
 
   const url = `${siteURL}/${slug}`
 </script>
 
-<svelte:head>
-  <title>{title}</title>
-  <meta name="description" content={preview.text} />
-  <meta name="author" content={name} />
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content={url} />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={preview.text} />
-  <meta property="og:image" content={ogImage} />
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:domain" content={siteTitle} />
-  <meta property="twitter:url" content={url} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={preview.text} />
-  <meta name="twitter:image" content={ogImage} />
-</svelte:head>
+<Head {title} {url} text={preview.text} />
 
 <article class="relative">
+  <p>Published: {date}</p>
+  <p>Path: {path}</p>
+  <p>Author: {author}</p>
+  <p>Categories: {categories}</p>
+  <p>Tags: {tags}</p>
+  <p>Language: {language}</p>
+  <p>Type: {type}</p>
+
+  {#if categories.length}
+    <aside>
+      <p>Categories:</p>
+      <ul>
+        {#each categories as category}
+          <li>
+            <a href="/posts/categories/{category}">
+              {category}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </aside>
+  {/if}
+
+  {#if tags.length}
+    <aside>
+      <p>Tags:</p>
+      <ul>
+        {#each tags as tag}
+          <li>
+            <a href="/posts/tags/{tag}">
+              {tag}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </aside>
+  {/if}
+
+  <hr />
+
+  <a href="/posts">Go back to posts</a>
+
   <h1 class="!mt-0 !mb-2">
     <a class="!font-medium" href={$page.url.pathname}>
       {title}
     </a>
   </h1>
+
   <div class="opacity-70">
     <time datetime={new Date(parseISO(date)).toISOString()}
       >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
