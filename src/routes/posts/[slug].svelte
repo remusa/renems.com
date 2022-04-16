@@ -40,7 +40,7 @@
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ToC from '$lib/components/ToC.svelte'
   import { siteURL } from '$lib/config'
-  import { format, parseISO } from 'date-fns'
+  import { format,parseISO } from 'date-fns'
 
   export let component
 
@@ -58,7 +58,6 @@
   export let categories
   export let language
   export let type = 'BLOG'
-  export let headings
 
   const url = `${siteURL}/${slug}`
 </script>

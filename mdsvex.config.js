@@ -24,39 +24,10 @@ const config = {
     ],
   ],
 
-  remarkPlugins: [videos, relativeImages, remarkAbbr, getHeadings],
+  remarkPlugins: [videos, relativeImages, remarkAbbr],
 }
 
 export default config
-
-// TODO: remove get headings function
-/**
- * Gets headingsfrom markdown files
- */
-function getHeadings() {
-  let visit
-  let treeToString
-
-  return async function transformer(tree, vFile) {
-    if (!visit) {
-      treeToString = (await import('mdast-util-to-string')).toString
-      visit = (await import('unist-util-visit')).visit
-    }
-
-    vFile.data.headings = []
-
-    visit(tree, 'heading', (node) => {
-      vFile.data.headings.push({
-        title: treeToString(node),
-        level: node.depth,
-      })
-    })
-
-    if (!vFile.data.fm) vFile.data.fm = {}
-
-    vFile.data.fm.headings = vFile.data.headings
-  }
-}
 
 /**
  * Adds support to video files in markdown image links
