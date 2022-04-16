@@ -2,7 +2,6 @@
   import '$lib/assets/styles/themes/prism-one-dark.css'
   import '$lib/assets/styles/_layout.scss'
   import Head from '$lib/components/Head.svelte'
-  import TableContents from '$lib/components/TableContents.svelte'
 
   export let date = ''
   export let title = ''
@@ -63,28 +62,4 @@
 
 <h1>{title}</h1>
 
-<div class="container">
-  <div class="toc-wrapper">
-    <div class="toc" style="1px solid crimson;">
-      <TableContents {headings} />
-      <!-- <Toc /> -->
-    </div>
-  </div>
-
-  <div class="content">
-    <slot />
-  </div>
-</div>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-  }
-
-  .content {
-    max-height: 500px;
-    overflow-y: scroll;
-  }
-</style>
+<slot />

@@ -48,15 +48,15 @@ function getPostsExtraMetadata(posts) {
     const parsedHtml = parse(post.component.render().html)
 
     // Use the custom preview in the metadata, if availabe, or the first paragraph of the post for the preview
-    const preview = post?.customPreview ?? parsedHtml.querySelector('p')
+    const preview = post?.customPreview || parsedHtml.querySelector('p')
 
     return {
       ...post,
 
       preview: {
-        html: preview.toString(),
+        html: preview?.toString(),
         // text-only preview (i.e no html elements), used for SEO
-        text: preview.structuredText,
+        text: preview?.structuredText,
       },
 
       // get estimated reading time for the post

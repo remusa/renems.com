@@ -11,17 +11,19 @@
 </script>
 
 <script>
+  import { browser } from '$app/env'
   import { prefetch } from '$app/navigation'
-  // TODO: update styles
-  // import '$lib/assets/styles/app.css'
+  import '$lib/assets/styles/app.css'
+  import '$lib/assets/styles/_layout.scss'
   import Footer from '$lib/components/Footer.svelte'
   import Header from '$lib/components/Header.svelte'
   import { navItems } from '$lib/config'
   import { currentPage } from '$lib/store'
+  import 'focus-visible'
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
 
-  // prefetchRoutes() // Loads ALL routes in the background
+  let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
 
   export let path
 
@@ -42,19 +44,22 @@
   })
 </script>
 
-<div class="">
-  <Header />
+<div class="flex flex-col min-h-screen">
+  <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
+    <Header {prefersLight} />
 
-  {#key path}
-    <main
-      id="main"
-      tabindex="-1"
-      in:fade={{ duration: 150, delay: 150 }}
-      out:fade={{ duration: 150 }}
-    >
-      <slot />
-    </main>
-  {/key}
+    {#key path}
+      <main
+        id="main"
+        tabindex="-1"
+        in:fade={{ duration: 150, delay: 150 }}
+        out:fade={{ duration: 150 }}
+        class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow py-4 px-4"
+      >
+        <slot />
+      </main>
+    {/key}
 
-  <Footer />
+    <Footer />
+  </div>
 </div>
