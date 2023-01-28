@@ -9,13 +9,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test:pw": "playwright test",
+    "test:e2e": "run-s build test:pw",
     "deps": "npx taze -Iwi"
   },
   "dependencies": {
-    "astro": "^2.0.2",
     "@astrojs/mdx": "^0.15.1",
     "@astrojs/rss": "^2.1.0",
-    "@astrojs/sitemap": "^1.0.0"
+    "@astrojs/sitemap": "^1.0.0",
+    "astro": "^2.0.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "npm-run-all": "^4.1.5"
   },
   "volta": {
     "node": "18.13.0"
