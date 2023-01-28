@@ -5,7 +5,7 @@ import Featured from '../components/Featured.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Tech from '../components/Tech.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import { SITE_DESCRIPTION,SITE_TITLE } from '../consts'
 
 const title = `index | ${SITE_TITLE}`
 ---
@@ -15,6 +15,7 @@ const title = `index | ${SITE_TITLE}`
   <head>
     <BaseHead title={title} description={SITE_DESCRIPTION} />
   </head>
+
   <body>
     <Header title={title} />
     <main>
