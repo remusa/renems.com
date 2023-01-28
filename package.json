@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deps": "npx taze -Iwi"
   },
   "dependencies": {
     "astro": "^2.0.2",
