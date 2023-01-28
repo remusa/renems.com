@@ -45,12 +45,9 @@
       "react",
       "graphql"
     ],
-    "description": "This site!, developed using Gatsby.js (React + GraphQL).",
+    "description": "This site!, developed using Astro.",
     "tech": [
-      "React",
-      "Gatsby.js",
-      "GraphQL",
-      "Apollo"
+      "Astro"
     ],
     "img": "gatsby-portfolio.png",
     "url": "https://renems.com",
