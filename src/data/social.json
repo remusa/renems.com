@@ -1,20 +1,20 @@
-[
-  {
+{
+  "github": {
     "name": "Github",
     "type": "social-media",
     "url": "https://github.com/remusa",
     "icon": ""
   },
-  {
+  "linkedin": {
     "name": "LinkedIn",
     "type": "social-media",
     "url": "https://www.linkedin.com/in/remusa",
     "icon": ""
   },
-  {
+  "twitter": {
     "name": "Twitter",
     "type": "social-media",
     "url": "https://twitter.com/remusa_",
     "icon": ""
   }
-]
+}
