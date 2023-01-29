@@ -25,7 +25,9 @@ function handleSubmit() {
   <body>
     <Header title={title} />
     <main>
-      <!-- <form onsubmit='{() => console.log(selected)}'>
+      <h1>Projects</h1>
+
+      <form onsubmit='{() => console.log(selected)}'>
         <label for='project-select'>
           Filter by type
           <select id='project-select' name='project-select' value={selected} onchange="{() => selected = ''}">
@@ -37,8 +39,7 @@ function handleSubmit() {
             <option value='fullstack'>Fullstack</option>
           </select>
         </label>
-      </form> -->
-      <h1>Projects</h1>
+      </form>
 
       <div>
         <ul>
@@ -60,6 +61,7 @@ function handleSubmit() {
         </ul>
       </div>
     </main>
+
     <Footer />
   </body>
 </html>

@@ -1,0 +1,29 @@
+---
+import social from '../data/social.json'
+import EmailIcon from './icons/EmailIcon.astro'
+import GitHubIcon from './icons/GitHubIcon.astro'
+import LinkedInIcon from './icons/LinkedInIcon.astro'
+import RssIcon from './icons/RssIcon.astro'
+---
+
+<div class='icons'>
+  <a target='_blank' rel='noopener noreferrer' href={social.github.url} class='social-link github'>
+    <GitHubIcon />
+    <span class=''>{social.github.name}</span>
+  </a>
+
+  <a target='_blank' rel='noopener noreferrer' href={social.linkedin.url} class='social-link linkedin'>
+    <LinkedInIcon />
+    <span class=''>{social.linkedin.name}</span>
+  </a>
+
+  <a href='#contact' class='social-link email'>
+    <EmailIcon />
+    <span class=''>Email</span>
+  </a>
+
+  <a href='/rss.xml' target='_blank'>
+    <RssIcon />
+    <span class=''>RSS</span>
+  </a>
+</div>
