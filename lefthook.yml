@@ -1,0 +1,47 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+
+# pre-commit:
+#   parallel: true
+#   commands:
+#     lint-check:
+#       run: pnpm dlx lint
+#     format-check:
+#       run: pnpm dlx pretty-quick --check --staged
+
+commit-msg:
+  parallel: true
+  commands:
+    lint-commit-msg:
+      run: pnpm commitlint
+
+pre-push:
+  parallel: true
+  commands:
+    # lslint:
+    #   run: pnpm lslint
+    packages-audit:
+      tags: security
+      run: pnpm audit
+    # test-unit:
+    #   run: pnpm test:run
+    # test-components:
+    #   run: pnpm test:ct
+    # test-e2e:
+    #   run: pnpm test:e2e
+    # type-check:
+    #   glob: '*.{ts,tsx}'
+    #   run: pnpm typecheck
+    format:
+      run: pnpm format
+    # lint-fix:
+    #   run: pnpm next lint --fix
+    # spelling:
+    #   files: git diff --name-only HEAD @{push}
+    #   glob: '*.md'
+    #   run: pnpm dlx yaspeller {files}
+    # check-links:
+    #   files: git diff --name-only HEAD @{push}
+    #   glob: '*.md'
+    #   run: pnpm dlx markdown-link-check {files}

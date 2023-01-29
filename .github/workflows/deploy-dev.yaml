@@ -1,0 +1,102 @@
+name: CD (zib)
+
+on:
+  workflow_dispatch:
+    inputs:
+      zib_name:
+        description: 'ZIB Name'
+        required: true
+        default: 'zib01'
+        type: string
+
+run-name: Deploy ${{ github.ref_name }} to ZIB ${{ inputs.zib_name }} by @${{ github.actor }}
+
+env:
+  IMAGE: 'grading-tool-web'
+  NAMESPACE: ${{ inputs.zib_name }}
+  ENVIRONMENT: 'zib'
+  GKE_PROJECT: zb-infraops-zib
+  GKE_CLUSTER: zb-infraops-zib
+  GKE_REGION: us-central1-c
+  VAULT_HOSTNAME: 'https://vault-zib.zubale.com'
+  CHART_REGISTRY: 'oci://us-central1-docker.pkg.dev/zb-host-ci-cd/helm-charts'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Checkout shared workflows repository
+        uses: actions/checkout@v3
+        with:
+          repository: zubale/shared-github-actions
+          ref: 'main'
+          ssh-key: ${{ secrets.SHARED_GITHUB_ACTIONS_REPO_SSH_KEY }}
+          path: shared-github-actions
+
+      - name: Import Workflow Secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: ${{ env.VAULT_HOSTNAME }}
+          method: approle
+          roleId: ${{ secrets.VAULT_ROLE_ID_GITHUB_ACTIONS }}
+          secretId: ${{ secrets.VAULT_SECRET_ID_GITHUB_ACTIONS }}
+          secrets: |
+            secret/data/github/${{ env.GKE_PROJECT }} GKE_PROJECT_SA ;
+            secret/data/github/${{ env.GKE_PROJECT }} REGISTRY_URL ;
+          exportToken: true
+
+      - name: Set up gcloud with shared action
+        uses: ./shared-github-actions/actions/gcp/auth
+        with:
+          service_account: ${{ env.GKE_PROJECT_SA }}
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          cluster_location: ${{ env.GKE_REGION }}
+          artifactregistry_auth: true
+          docker_registry_auth: true
+
+      - name: Build and publish image
+        uses: docker/build-push-action@v3
+        env:
+          NEXT_PUBLIC_APP_ENV: staging
+          NEXT_PUBLIC_SOCKET_URL: wss://zubsoc.fly.dev/socket
+          NEXT_PUBLIC_GCP_BASE_URL: https://us-central1-kubernetescluster-265514.cloudfunctions.net
+        with:
+          cache-from: '$REGISTRY_URL/$IMAGE:dev'
+          cache-to: type=inline
+          context: .
+          pull: true
+          tags: |
+            "${{ env.REGISTRY_URL }}/${{ env.IMAGE }}:${{ github.sha }}"
+            "${{ env.REGISTRY_URL }}/${{ env.IMAGE }}:dev"
+          build-args: |
+            NEXT_PUBLIC_APP_ENV="staging"
+            NEXT_PUBLIC_SOCKET_URL="wss://zubsoc.fly.dev/socket"
+            NEXT_PUBLIC_GCP_BASE_URL="https://us-central1-kubernetescluster-265514.cloudfunctions.net"
+          push: true
+
+      - name: Set up helm with shared action
+        uses: ./shared-github-actions/actions/helm/setup
+
+      - name: Get values feature flag
+        id: helm-overrides
+        uses: ./shared-github-actions/actions/helm/set-overrides
+        with:
+          values-file: '.github/helm/values-${{ env.NAMESPACE }}.yaml'
+
+      - name: Deploy app
+        env:
+          HELM_CHART: '${{ env.CHART_REGISTRY }}/${{env.IMAGE}}'
+          VALUES_CLI_FLAG: '${{ steps.helm-overrides.outputs.values-flag }}'
+        run: |-
+          helm \
+          -n ${{ env.NAMESPACE }} \
+          upgrade --install "${{ env.IMAGE }}" \
+          ${{ env.HELM_CHART }} ${{ env.VALUES_CLI_FLAG }} \
+          --set zubale.environment="${{ env.ENVIRONMENT }}" \
+          --set zubale.image.repository="${{ env.REGISTRY_URL }}/${{ env.IMAGE }}" \
+          --set zubale.image.tag="$GITHUB_SHA" \
+          --set zubale.secretsConfig.vault.kubernetesMountPath="${{ env.GKE_CLUSTER }}" \
+          --wait

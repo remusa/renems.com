@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "astro telemetry disable",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
@@ -12,7 +13,9 @@
     "test:pw": "playwright test",
     "test:e2e": "run-s build test:pw",
     "format": "prettier -w --plugin-search-dir=. .",
-    "deps": "npx taze -Iwi"
+    "commitlint": "commitlint --edit --verbose",
+    "commitlint:last": "commitlint --from HEAD~1 --to HEAD --verbose",
+    "deps": "pnpm dlx taze -Iwi"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.15.1",
@@ -21,7 +24,10 @@
     "astro": "^2.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@playwright/test": "^1.30.0",
+    "lefthook": "^1.2.8",
     "npm-run-all": "^4.1.5"
   },
   "volta": {
