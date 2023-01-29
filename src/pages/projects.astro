@@ -1,12 +1,7 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
-import { SITE_DESCRIPTION,SITE_TITLE } from '../consts'
 import projects from '../data/projects.json'
+import PageLayout from '../layouts/PageLayout.astro'
 import { listFormatter } from '../utils/intl'
-
-const title = `projects | ${SITE_TITLE}`
 
 let selected = ''
 let filtered = selected === '' ? projects : projects.filter(item => item.type.includes(selected))
@@ -16,52 +11,40 @@ function handleSubmit() {
 }
 ---
 
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-  </head>
+<PageLayout pageTitle='projects'>
+  <h1>Projects</h1>
 
-  <body>
-    <Header title={title} />
-    <main>
-      <h1>Projects</h1>
+  <form onsubmit='{() => console.log(selected)}'>
+    <label for='project-select'>
+      Filter by type
+      <select id='project-select' name='project-select' value={selected} onchange="{() => selected = ''}">
+        <option value=''>All</option>
+        <option value='react'>React</option>
+        <option value='node'>Node</option>
+        <option value='front-end'>Front-end</option>
+        <option value='back-end'>Back-end</option>
+        <option value='fullstack'>Fullstack</option>
+      </select>
+    </label>
+  </form>
 
-      <form onsubmit='{() => console.log(selected)}'>
-        <label for='project-select'>
-          Filter by type
-          <select id='project-select' name='project-select' value={selected} onchange="{() => selected = ''}">
-            <option value=''>All</option>
-            <option value='react'>React</option>
-            <option value='node'>Node</option>
-            <option value='front-end'>Front-end</option>
-            <option value='back-end'>Back-end</option>
-            <option value='fullstack'>Fullstack</option>
-          </select>
-        </label>
-      </form>
-
-      <div>
-        <ul>
-          {
-            filtered.map(item => {
-              return (
-                <li>
-                  <img src={`/images/projects/${item.img}`} alt={item.name} />
-                  <p>{item.name}</p>
-                  <p>{item.description}</p>
-                  <p>{listFormatter.format(item.tech)}</p>
-                  <a href={item.github}>
-                    <code>Code</code>
-                  </a>{' '}
-                </li>
-              )
-            })
-          }
-        </ul>
-      </div>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+  <div>
+    <ul>
+      {
+        filtered.map(item => {
+          return (
+            <li>
+              <img src={`/images/projects/${item.img}`} alt={item.name} />
+              <p>{item.name}</p>
+              <p>{item.description}</p>
+              <p>{listFormatter.format(item.tech)}</p>
+              <a href={item.github}>
+                <code>Code</code>
+              </a>{' '}
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+</PageLayout>

@@ -1,30 +1,12 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import BasicInfo from '../components/BasicInfo.astro'
-import Featured from '../components/Featured.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
-import Tech from '../components/Tech.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
-
-const title = `index | ${SITE_TITLE}`
+import BasicInfo from '../components/BasicInfo.astro';
+import Featured from '../components/Featured.astro';
+import Tech from '../components/Tech.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-  </head>
-
-  <body>
-    <Header title={title} />
-
-    <main>
-      <BasicInfo />
-      <Tech />
-      <Featured />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<PageLayout pageTitle='index'>
+  <BasicInfo />
+  <Tech />
+  <Featured />
+</PageLayout>
