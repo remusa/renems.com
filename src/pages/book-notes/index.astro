@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content'
+import BaseHead from '../../components/BaseHead.astro'
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import { SITE_DESCRIPTION,SITE_TITLE } from '../../consts'
+
+const title = `blog | ${SITE_TITLE}`
+
+const posts = (await getCollection('book-notes')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+
+    <main>
+      <h1>Book Notes</h1>
+
+      <section>
+        <ul>
+          {
+            posts.map(post => (
+              <li>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-us', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+                <a href={`/book-notes/${post.slug}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

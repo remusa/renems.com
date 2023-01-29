@@ -15,7 +15,26 @@ const blog = defineCollection({
       .optional()
       .transform(str => (str ? new Date(str) : undefined)),
     heroImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 })
 
-export const collections = { blog }
+const bookNotes = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z
+      .string()
+      .or(z.date())
+      .transform(val => new Date(val)),
+    updatedDate: z
+      .string()
+      .optional()
+      .transform(str => (str ? new Date(str) : undefined)),
+    bookAuthor: z.string(),
+    tags: z.array(z.string()).optional(),
+    language: z.string(),
+  }),
+})
+
+export const collections = { blog, 'book-notes': bookNotes }
