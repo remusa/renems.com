@@ -4,26 +4,23 @@ import EmailIcon from './icons/EmailIcon.astro'
 import GitHubIcon from './icons/GitHubIcon.astro'
 import LinkedInIcon from './icons/LinkedInIcon.astro'
 import RssIcon from './icons/RssIcon.astro'
+import SocialIcon from './SocialIcon.astro'
 ---
 
-<div class="icons">
-  <a target="_blank" rel="noopener noreferrer" href={social.github.url} class="social-link github">
+<div class="flex row justify-between p-6 text-center">
+  <SocialIcon href={social.github.url} title={social.github.name}>
     <GitHubIcon />
-    <span class="">{social.github.name}</span>
-  </a>
+  </SocialIcon>
 
-  <a target="_blank" rel="noopener noreferrer" href={social.linkedin.url} class="social-link linkedin">
+  <SocialIcon href={social.linkedin.url} title={social.linkedin.name}>
     <LinkedInIcon />
-    <span class="">{social.linkedin.name}</span>
-  </a>
+  </SocialIcon>
 
-  <a href="#contact" class="social-link email">
+  <SocialIcon href={'#contact'} title="Email">
     <EmailIcon />
-    <span class="">Email</span>
-  </a>
+  </SocialIcon>
 
-  <a href="/rss.xml" target="_blank">
+  <SocialIcon href="/rss.xml" title="RSS">
     <RssIcon />
-    <span class="">RSS</span>
-  </a>
+  </SocialIcon>
 </div>

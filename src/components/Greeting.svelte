@@ -15,6 +15,3 @@
   <h3>{greeting}! Thank you for visiting!</h3>
   <button on:click={onClick}> New Greeting </button>
 </div>
-
-<style>
-</style>

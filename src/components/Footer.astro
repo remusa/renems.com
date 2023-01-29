@@ -1,20 +1,13 @@
 ---
-import SocialIcons from './SocialIcons.astro'
+import SocialIcons from './SocialIcons.astro';
 
 const today = new Date()
 ---
 
-<footer>
+<footer class="w-full flex justify-between p-6 text-center">
   <SocialIcons />
   <a href="#header">Back top</a>
   <span>
     &copy; {today.getFullYear()} RMS. All rights reserved.
   </span>
 </footer>
-
-<style>
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-</style>

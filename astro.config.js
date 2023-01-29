@@ -11,6 +11,12 @@ import presetUno from '@unocss/preset-uno'
 import presetWebFonts from '@unocss/preset-web-fonts'
 import UnoCSS from 'unocss/astro'
 
+const root = {
+  colorBackground: '#282c34',
+  colorPrimary: '#2bbac5',
+  colorSecondary: '#ef596f',
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://renems.com',
@@ -31,6 +37,14 @@ export default defineConfig({
           },
         }),
       ],
+      // https://github.com/unocss/unocss#extend-theme
+      theme: {
+        colors: {
+          background: root.colorBackground,
+          primary: root.colorPrimary,
+          secondary: root.colorSecondary,
+        },
+      },
     }),
   ],
 })

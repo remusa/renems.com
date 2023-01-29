@@ -1,0 +1,11 @@
+---
+const { tooltip } = Astro.props
+---
+
+<div class="p-1 group flex relative">
+  <span><slot /></span>
+  <span
+    class="group-hover:opacity-90 transition-opacity bg-gray-800 p-2 m-4 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 mx-auto z-10"
+    >{tooltip}
+  </span>
+</div>
