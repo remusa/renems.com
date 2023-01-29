@@ -15,7 +15,7 @@ const blog = defineCollection({
       .optional()
       .transform((str) => (str ? new Date(str) : undefined)),
     heroImage: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()),
   }),
 })
 
@@ -32,7 +32,7 @@ const bookNotes = defineCollection({
       .optional()
       .transform((str) => (str ? new Date(str) : undefined)),
     bookAuthor: z.string(),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()),
     language: z.string(),
   }),
 })
