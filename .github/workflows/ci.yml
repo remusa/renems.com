@@ -1,8 +1,13 @@
 name: CI
-on: [pull_request]
+
 on:
+  pull_request:
+    branches: [master, develop]
   push:
     branches: [master, develop]
+
+env:
+  ASTRO_TELEMETRY_DISABLED: true
 
 jobs:
   build:
@@ -26,7 +31,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: assets/package-lock.json
 
       - name: Install
@@ -49,9 +54,9 @@ jobs:
         run: |
           npm test:e2e
 
-      - name: 'TODO to Issue'
-        uses: 'alstr/todo-to-issue-action@v4'
-        id: 'todo'
+      - name: "TODO to Issue"
+        uses: "alstr/todo-to-issue-action@v4"
+        id: "todo"
 
       - run: npm run build
       - name: Upload build directory
