@@ -2,19 +2,19 @@
   "github": {
     "name": "Github",
     "type": "social-media",
-    "url": "https://github.com/remusa",
+    "url": "https://renems.com/github",
     "icon": ""
   },
   "linkedin": {
     "name": "LinkedIn",
     "type": "social-media",
-    "url": "https://www.linkedin.com/in/remusa",
+    "url": "https://renems.com/linkedin",
     "icon": ""
   },
   "twitter": {
     "name": "Twitter",
     "type": "social-media",
-    "url": "https://twitter.com/remusa_",
+    "url": "https://renems.com/twitter",
     "icon": ""
   }
 }
