@@ -1,8 +1,9 @@
 ---
-import { SITE_TITLE } from '../consts';
-import social from '../data/social.json';
-import HeaderLink from './HeaderLink.astro';
-import RssIcon from './icons/RssIcon.astro';
+import { SITE_TITLE } from '../consts'
+import social from '../data/social.json'
+import HeaderLink from './HeaderLink.astro'
+import RssIcon from './icons/RssIcon.astro'
+import ThemeIcon from './ThemeIcon.astro'
 ---
 
 <header id="header">
@@ -18,9 +19,11 @@ import RssIcon from './icons/RssIcon.astro';
       <HeaderLink href="/tags/">Tags</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/now">Now</HeaderLink>
+      <HeaderLink href={social.github.url} target="_blank">GitHub</HeaderLink>
     </span>
     <span>
-      <HeaderLink href={social.github.url} target="_blank">GitHub</HeaderLink>
+      <!-- <Hamburger /> -->
+      <ThemeIcon />
       <HeaderLink href="/rss.xml" target="_blank">
         <RssIcon />
       </HeaderLink>
