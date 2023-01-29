@@ -1,6 +1,6 @@
 ---
 import projects from '../data/projects.json'
-import PageLayout from '../layouts/PageLayout.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 import { listFormatter } from '../utils/intl'
 
 let selected = ''
@@ -11,7 +11,7 @@ function handleSubmit() {
 }
 ---
 
-<PageLayout pageTitle="projects">
+<BaseLayout pageTitle="Projects">
   <h1>Projects</h1>
 
   <form onsubmit="{() => console.log(selected)}">
@@ -47,4 +47,4 @@ function handleSubmit() {
       }
     </ul>
   </div>
-</PageLayout>
+</BaseLayout>

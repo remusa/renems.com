@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
-import PageLayout from '../../layouts/PageLayout.astro'
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
 
-<PageLayout pageTitle="blog">
+<BaseLayout pageTitle="Blog">
   <h1>Blog</h1>
 
   <section>
@@ -26,4 +26,4 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
       }
     </ul>
   </section>
-</PageLayout>
+</BaseLayout>
