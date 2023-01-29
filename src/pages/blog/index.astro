@@ -1,17 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
-import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '../../layouts/PageLayout.astro'
 
 const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
 
-<PageLayout pageTitle='blog'>
+<PageLayout pageTitle="blog">
   <h1>Blog</h1>
 
   <section>
     <ul>
       {
-        posts.map(post => (
+        posts.map((post) => (
           <li>
             <time datetime={post.data.pubDate.toISOString()}>
               {post.data.pubDate.toLocaleDateString('en-us', {

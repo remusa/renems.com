@@ -11,6 +11,7 @@
     "astro": "astro",
     "test:pw": "playwright test",
     "test:e2e": "run-s build test:pw",
+    "format": "prettier -w --plugin-search-dir=. .",
     "deps": "npx taze -Iwi"
   },
   "dependencies": {

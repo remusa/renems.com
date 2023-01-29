@@ -5,22 +5,22 @@ import HeaderLink from './HeaderLink.astro'
 import RssIcon from './icons/RssIcon.astro'
 ---
 
-<header id='header'>
+<header id="header">
   <h2>
     {SITE_TITLE}
   </h2>
   <!-- TODO: add hamburguer menu -->
   <nav>
     <span>
-      <HeaderLink href='/'>Home</HeaderLink>
-      <HeaderLink href='/blog'>Blog</HeaderLink>
-      <HeaderLink href='/book-notes'>Book Notes</HeaderLink>
-      <HeaderLink href='/projects'>Projects</HeaderLink>
-      <HeaderLink href='/now'>Now</HeaderLink>
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/book-notes">Book Notes</HeaderLink>
+      <HeaderLink href="/projects">Projects</HeaderLink>
+      <HeaderLink href="/now">Now</HeaderLink>
     </span>
     <span>
-      <HeaderLink href={social.github.url} target='_blank'>GitHub</HeaderLink>
-      <HeaderLink href='/rss.xml' target='_blank'>
+      <HeaderLink href={social.github.url} target="_blank">GitHub</HeaderLink>
+      <HeaderLink href="/rss.xml" target="_blank">
         <RssIcon />
       </HeaderLink>
     </span>

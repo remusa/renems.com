@@ -1,16 +1,16 @@
 ---
-import projects from '../data/projects.json';
+import projects from '../data/projects.json'
 
-const featured = projects.filter(item => item.featured)
+const featured = projects.filter((item) => item.featured)
 ---
 
 <div>
   <h2>Featured Projects</h2>
 
-  <div class='projects'>
+  <div class="projects">
     <ul>
       {
-        featured.map(item => {
+        featured.map((item) => {
           return (
             <li>
               <img src={`/images/projects/${item.img}`} alt={item.name} />
