@@ -21,7 +21,9 @@
     "@astrojs/mdx": "^0.15.1",
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^2.0.2"
+    "@astrojs/svelte": "^2.0.0",
+    "astro": "^2.0.0",
+    "svelte": "3.54.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",

@@ -1,12 +1,14 @@
 ---
-import BasicInfo from '../components/BasicInfo.astro';
-import Featured from '../components/Featured.astro';
-import Tech from '../components/Tech.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BasicInfo from '../components/BasicInfo.astro'
+import Featured from '../components/Featured.astro'
+import Greeting from '../components/Greeting.svelte'
+import Tech from '../components/Tech.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout pageTitle="index">
   <BasicInfo />
+  <Greeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
   <Tech />
   <Featured />
 </BaseLayout>
