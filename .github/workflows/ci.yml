@@ -1,0 +1,61 @@
+name: CI
+on: [pull_request]
+on:
+  push:
+    branches: [master, develop]
+
+jobs:
+  build:
+    name: Build
+    timeout-minutes: 10
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [18]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+          # This is important to fetch the changes to the previous commit
+          fetch-depth: 0
+
+      - name: Setup Node ${{ matrix.node_version }} on ${{ matrix.os }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: 'npm'
+          cache-dependency-path: assets/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Format
+        uses: creyD/prettier_action@v4.2
+        if: "contains(github.ref, fromJson(env.PROTECTED_BRANCHES))"
+        with:
+          prettier_options: --loglevel=silent **/*.+(js|jsx|ts|tsx|css)
+          only_changed: True
+          same_commit: True
+
+      - name: Lint
+        run: echo "⏳ todo fix linting issues"
+      #   run: npm run check:lint
+      #   continue-on-error: true
+
+      - name: Test
+        run: |
+          npm test:e2e
+
+      - name: 'TODO to Issue'
+        uses: 'alstr/todo-to-issue-action@v4'
+        id: 'todo'
+
+      - run: npm run build
+      - name: Upload build directory
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
