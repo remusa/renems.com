@@ -28,9 +28,15 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@iconify-json/mdi": "^1.1.44",
+    "@iconify-json/skill-icons": "^1.1.0",
+    "@iconify-json/vscode-icons": "^1.1.21",
     "@playwright/test": "^1.30.0",
+    "@unocss/preset-icons": "^0.49.1",
+    "@unocss/preset-web-fonts": "^0.49.1",
     "lefthook": "^1.2.8",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "unocss": "^0.49.1"
   },
   "volta": {
     "node": "18.13.0"
