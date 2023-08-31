@@ -3,67 +3,54 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
-body {
-  font-family: Verdana, sans-serif;
-  margin: auto;
-  padding: 20px;
-  max-width: 65ch;
-  text-align: left;
-  background-color: #fff;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.5;
-  color: #444;
+:root {
+  /* Colors */
+  --color-background: #282c34;
+  --color-primary: #2bbac5;
+  --color-secondary: #ef596f;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  color: #222;
+
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+  @apply text-center p-4 mx-auto;
 }
-a {
-  color: #3273dc;
+
+h1 {
+  @apply text-3xl leading-tight my-16 mx-auto max-w-xs;
 }
-nav a {
-  margin-right: 10px;
+
+p {
+  @apply max-w-xs my-8 mx-auto leading-snug;
 }
-textarea {
-  width: 100%;
-  font-size: 16px;
+
+@screen sm {
+  h1 {
+    @apply max-w-xl text-center;
+  }
+
+  h2 {
+    @apply text-2xl text-center;
+  }
+
+  p {
+    @apply max-w-xl text-lg leading-normal;
+  }
 }
-input {
-  font-size: 16px;
+
+.transition-default {
+  @apply transition duration-300 ease-in-out;
 }
-content {
-  line-height: 1.6;
+
+.border-bottom {
+  @apply border-b-2 border-transparent hover:border-primary transition duration-300 ease-in-out;
 }
-table {
-  width: 100%;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-code {
-  padding: 2px 5px;
-  background-color: #f2f2f2;
-}
-pre {
-  padding: 1rem;
-}
-pre > code {
-  all: unset;
-}
-blockquote {
-  border: 1px solid #999;
-  color: #222;
-  padding: 2px 0px 2px 20px;
-  margin: 0px;
-  font-style: italic;
+
+svg {
+  @apply h-5 w-5 fill-current hover:text-primary transition duration-300 ease-linear;
 }
 
 .dark body {
