@@ -51,7 +51,7 @@ dependencies:
     specifier: ^0.10.11
     version: 0.10.11
   svelte:
-    specifier: ^5.0.0-next.14
+    specifier: 5.0.0-next.14
     version: 5.0.0-next.14
   tailwindcss:
     specifier: ^3.3.5
