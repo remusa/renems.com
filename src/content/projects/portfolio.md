@@ -1,17 +1,15 @@
 ---
 title: Personal website
 description: This site!, developed using Astro.
-type:
+tags:
   - frontend
   - react
-tech:
-  - React
-  - Astro
-  - Svelte
-  - TypeScript
+  - astro
+  - svelte
+  - typescript
 ogImage: gatsby-portfolio.png
 url: https://renems.com
 repository: https://github.com/remusa/renems.com
 featured: true
-draft: false
+draft: true
 ---

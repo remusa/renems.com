@@ -1,12 +1,10 @@
 ---
+import Card from '@components/CardProject.svelte'
+import Footer from '@components/Footer.astro'
+import Header from '@components/Header.astro'
 import { SITE } from '@config'
 import Layout from '@layouts/Layout.astro'
 import Main from '@layouts/Main.astro'
-import Header from '@components/Header.astro'
-import Footer from '@components/Footer.astro'
-import Card from '@components/CardProject.svelte'
-import LinkButton from '@components/LinkButton.astro'
-import slugify from '@utils/slugify'
 import type { CollectionEntry } from 'astro:content'
 
 export interface Props {
@@ -17,17 +15,12 @@ const { posts } = Astro.props
 ---
 
 <Layout title={`Projects | ${SITE.title}`}>
-  <Header activeNav='Projects' />
+  <Header activeNav='projects' />
   <Main pageTitle='Projects' pageDesc="All the projects I've created.">
     <ul>
-      {
-        posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
-        ))
-      }
+      {posts.map(({ data }) => <Card frontmatter={data} />)}
     </ul>
   </Main>
-
   <Footer />
 </Layout>
 

@@ -1,11 +1,11 @@
 ---
+import Card from '@components/Card.svelte'
+import Footer from '@components/Footer.astro'
+import Header from '@components/Header.astro'
+import LinkButton from '@components/LinkButton.astro'
 import { SITE } from '@config'
 import Layout from '@layouts/Layout.astro'
 import Main from '@layouts/Main.astro'
-import Header from '@components/Header.astro'
-import Footer from '@components/Footer.astro'
-import Card from '@components/Card.svelte'
-import LinkButton from '@components/LinkButton.astro'
 import slugify from '@utils/slugify'
 import type { CollectionEntry } from 'astro:content'
 
@@ -32,7 +32,6 @@ const next = pageNum < totalPages ? '' : 'disabled'
       }
     </ul>
   </Main>
-
   {
     totalPages > 1 && (
       <nav class='pagination-wrapper' aria-label='Pagination'>
