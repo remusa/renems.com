@@ -1,0 +1,35 @@
+---
+import projects from '../../data/projects.json'
+import { Image } from 'astro:assets'
+import { listFormatter } from '@utils/formatters'
+---
+
+<!-- <Posts posts={paginatedPosts} pageNum={1} totalPages={totalPages.length} /> -->
+<h1>Projects</h1>
+
+<ul>
+  {
+    projects
+      .filter(item => !item.draft)
+      .map(p => {
+        return (
+          <li>
+            <img
+              src={`src/assets/images/projects/${p.ogImage}`}
+              alt='something'
+            />
+            <p>{p.title}</p>
+            <p>{p.description}</p>
+            <p>{listFormatter.format(p.type)}</p>
+            <p>{listFormatter.format(p.tech)}</p>
+            <a href={p.url} target='_blank' rel='noopener noreferrer'>
+              Demo
+            </a>
+            <a href={p.repository} target='_blank' rel='noopener noreferrer'>
+              Code
+            </a>
+          </li>
+        )
+      })
+  }
+</ul>
