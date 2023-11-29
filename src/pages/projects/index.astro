@@ -1,35 +1,42 @@
 ---
-import projects from '../../data/projects.json'
+import { SITE } from '@config'
+import Projects from '@layouts/Projects.astro'
+// import projects from '../../data/projects.json'
 import { Image } from 'astro:assets'
 import { listFormatter } from '@utils/formatters'
+import { getCollection } from 'astro:content'
+
+// const filteredProjects = projects.filter(({ data }) => !data?.draft)
+
+const posts = await getCollection('projects')
+const featuredPosts = posts
+  .filter(({ data }) => !data.draft)
+  .filter(({ data }) => data.featured)
 ---
 
-<!-- <Posts posts={paginatedPosts} pageNum={1} totalPages={totalPages.length} /> -->
-<h1>Projects</h1>
-
-<ul>
+<Projects posts={featuredPosts} />
+<!-- <ul>
   {
-    projects
-      .filter(item => !item.draft)
-      .map(p => {
-        return (
-          <li>
-            <img
-              src={`src/assets/images/projects/${p.ogImage}`}
-              alt='something'
-            />
-            <p>{p.title}</p>
-            <p>{p.description}</p>
-            <p>{listFormatter.format(p.type)}</p>
-            <p>{listFormatter.format(p.tech)}</p>
-            <a href={p.url} target='_blank' rel='noopener noreferrer'>
-              Demo
-            </a>
-            <a href={p.repository} target='_blank' rel='noopener noreferrer'>
-              Code
-            </a>
-          </li>
-        )
-      })
+    filteredProjects.map(p => {
+      // const { data: p } = post
+      return (
+        <li>
+          <img
+            src={`src/assets/images/projects/${p.ogImage}`}
+            alt='something'
+          />
+          <p>{p.title}</p>
+          <p>{p.description}</p>
+          <p>{listFormatter.format(p.type)}</p>
+          <p>{listFormatter.format(p.tech)}</p>
+          <a href={p.url} target='_blank' rel='noopener noreferrer'>
+            Demo
+          </a>
+          <a href={p.repository} target='_blank' rel='noopener noreferrer'>
+            Code
+          </a>
+        </li>
+      )
+    })
   }
-</ul>
+</ul> -->

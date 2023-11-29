@@ -15,7 +15,7 @@
     "cz": "cz",
     "prepare": "husky install",
     "lint": "eslint .",
-    "clean": "npx rimraf node_modules/ .astro/",
+    "clean": "npx rimraf node_modules/ .astro/ dist/",
     "deps": "npx taze -Iwi"
   },
   "dependencies": {

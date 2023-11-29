@@ -25,11 +25,10 @@ const blog = defineCollection({
 })
 
 const projects = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      postSlug: z.string().optional(),
       description: z.string(),
       type: z.array(z.string()).default(['others']),
       tech: z.array(z.string()).default(['others']),
