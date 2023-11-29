@@ -15,6 +15,7 @@
     "cz": "cz",
     "prepare": "husky install",
     "lint": "eslint .",
+    "clean": "npx rimraf node_modules/ .astro/",
     "deps": "npx taze -Iwi"
   },
   "dependencies": {
@@ -58,6 +59,7 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "taze": "^0.12.2"
   },
   "config": {
