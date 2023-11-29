@@ -1,0 +1,220 @@
+[
+  {
+    "name": "Cero",
+    "type": ["fullstack", "react", "node", "graphql", "typescript"],
+    "description": "Cero is an intermittent fasting tracker built in React, Node and GraphQL.",
+    "tech": ["React", "TypeScript", "Node", "GraphQL"],
+    "img": "cero.png",
+    "url": "https://cero.netlify.com",
+    "github": "https://github.com/remusa/cero",
+    "featured": true
+  },
+  {
+    "name": "Does it break fast?",
+    "type": ["fullstack", "react", "firebase"],
+    "description": "A web app that helps checking whether some kind of food breaks a fasting period.",
+    "tech": ["React", "Next.js", "TypeScript", "Firebase"],
+    "img": "doesitbreakfast.png",
+    "url": "https://doesitbreakfast.now.sh",
+    "github": "https://github.com/remusa/doesitbreakfast",
+    "featured": true
+  },
+  {
+    "name": "Personal website",
+    "type": ["react", "graphql"],
+    "description": "This site!, developed using Astro.",
+    "tech": ["Astro"],
+    "img": "gatsby-portfolio.png",
+    "url": "https://renems.com",
+    "github": "https://github.com/remusa/portfolio",
+    "featured": true
+  },
+  {
+    "name": "Pomodoro Clock",
+    "type": ["react"],
+    "description": "",
+    "tech": ["React"],
+    "img": "pomodoro-clock.png",
+    "url": "https://apomodoroclock.netlify.com/",
+    "github": "https://github.com/remusa/pomodoro-clock"
+  },
+  {
+    "name": "JavaScript Calculator",
+    "type": ["react"],
+    "description": "",
+    "tech": ["React"],
+    "img": "javascript-calculator.png",
+    "url": "https://ajavascriptcalculator.netlify.com/",
+    "github": "https://github.com/remusa/javascript-calculator"
+  },
+  {
+    "name": "Drum Machine",
+    "type": ["react"],
+    "description": "",
+    "tech": ["React"],
+    "img": "drum-machine.png",
+    "url": "https://adrummachine.netlify.com",
+    "github": "https://github.com/remusa/drum-machine"
+  },
+  {
+    "name": "Markdown Previewer",
+    "type": ["react"],
+    "description": "",
+    "tech": ["React"],
+    "img": "markdown-previewer.png",
+    "url": "https://amarkdownpreviewer.netlify.com/",
+    "github": "https://github.com/remusa/markdown-previewer"
+  },
+  {
+    "name": "Random Quote Generator",
+    "type": ["react"],
+    "tech": ["React"],
+    "img": "random-quote-generator.png",
+    "url": "https://myrandomquotes.netlify.com/",
+    "github": "https://github.com/remusa/random-quote-machine"
+  },
+  {
+    "name": "Charts made with D3.js",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["D3.js"],
+    "img": "data-visualization.png",
+    "url": "https://datavisualization.netlify.com",
+    "github": "https://github.com/remusa/fcc-data-visualization-projects"
+  },
+  {
+    "name": "Timestamp Microservice",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js"],
+    "img": "timestamp-microservice.png",
+    "url": "https://fcc-project-timestamp-rms.glitch.me/",
+    "github": "https://github.com/remusa/boilerplate-project-timestamp"
+  },
+  {
+    "name": "Request Header Parser Microservice",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js"],
+    "img": "request-header-parser.png",
+    "url": "https://fcc-project-headerparser-rms.glitch.me",
+    "github": "https://github.com/remusa/boilerplate-project-headerparser"
+  },
+  {
+    "name": "URL Shortener Microservice",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js"],
+    "img": "url-shortener.png",
+    "url": "https://fcc-project-urlshortener-rms.glitch.me/",
+    "github": "https://github.com/remusa/boilerplate-project-urlshortener"
+  },
+  {
+    "name": "Exercise Tracker",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js"],
+    "img": "exercise-tracker.png",
+    "url": "https://fcc-project-exercisetracker-rms.glitch.me/",
+    "github": "https://github.com/remusa/boilerplate-project-exercisetracker"
+  },
+  {
+    "name": "File Metadata Microservice",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js"],
+    "img": "file-metadata.png",
+    "url": "https://fcc-project-filemetadata-rms.glitch.me/",
+    "github": "https://github.com/remusa/boilerplate-project-filemetadata"
+  },
+  {
+    "name": "Metric Imperial Converter",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+    "img": "metric-imperial-converter.png",
+    "url": "https://fcc-metricimpconverter.glitch.me/",
+    "github": "https://github.com/remusa/project-metricimpconverter"
+  },
+  {
+    "name": "Issue Tracker",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+    "img": "issue-tracker.png",
+    "url": "https://fcc-issuetracker-rms.glitch.me/",
+    "github": "https://github.com/remusa/project-issuetracker"
+  },
+  {
+    "name": "Personal Library",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+    "img": "personal-library.png",
+    "url": "https://fcc-library-rms.glitch.me/",
+    "github": "https://github.com/remusa/project-library"
+  },
+  {
+    "name": "Stock Price Checker",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+    "img": "stock-checker.png",
+    "url": "https://fcc-stockpricechecker.glitch.me/",
+    "github": "https://github.com/remusa/project-stockchecker"
+  },
+  {
+    "name": "Anonymous Message Board",
+    "type": ["backend"],
+    "description": "",
+    "tech": ["Node.js", "Express.js", "Chai", "Mocha"],
+    "img": "message-board.png",
+    "url": "https://fcc-messageboard.glitch.me/",
+    "github": "https://github.com/remusa/project-messageboard"
+  },
+  {
+    "name": "Tribute Page",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+    "img": "tribute-page.png",
+    "url": "https://tributepage.netlify.com/",
+    "github": "https://github.com/remusa/tribute-page"
+  },
+  {
+    "name": "Survey Form",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+    "img": "survey-form.png",
+    "url": "https://asurveyform.netlify.com",
+    "github": "https://github.com/remusa/survey-form"
+  },
+  {
+    "name": "Product Landing Page",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+    "img": "product-landing-page.png",
+    "url": "https://product-landing.netlify.com/",
+    "github": "https://github.com/remusa/product-landing-page"
+  },
+  {
+    "name": "Technical Documentation Page",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["HTML5", "CSS Flexbox", "CSS Grid", "JavaScript"],
+    "img": "technical-documentation-page.png",
+    "url": "https://technical-documentation.netlify.com/",
+    "github": "https://github.com/remusa/technical-documentation-page"
+  },
+  {
+    "name": "Personal Portfolio Webpage",
+    "type": ["frontend"],
+    "description": "",
+    "tech": ["HTML5", "CSS Flexbox", "CSS Grid"],
+    "img": "personal-portfolio.png",
+    "url": "https://apersonalportfolio.netlify.com/",
+    "github": "https://github.com/remusa/personal-portfolio"
+  }
+]
