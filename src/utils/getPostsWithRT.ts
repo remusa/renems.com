@@ -3,7 +3,7 @@ import slugify from './slugify'
 
 export async function getReadingTime() {
   // Get all posts using glob. This is to get the updated frontmatter
-  const globPosts = import.meta.glob('../content/blog/*.md') as Promise<
+  const globPosts = import.meta.glob('../content/blog/*.{md,mdx}') as Promise<
     CollectionEntry<'blog'>['data'][]
   >
 
