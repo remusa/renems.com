@@ -1,6 +1,7 @@
 {
   "name": "template-astro-paper",
   "version": "3.0.0",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
