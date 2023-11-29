@@ -1,5 +1,6 @@
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
+import svelte from '@astrojs/svelte'
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 import remarkCollapse from 'remark-collapse'
@@ -14,6 +15,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     react(),
+    svelte(),
     sitemap(),
   ],
   markdown: {
