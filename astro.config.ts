@@ -43,4 +43,14 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: 'where',
+  experimental: {
+    i18n: {
+      routingStrategy: 'prefix-other-locales',
+      defaultLocale: 'en',
+      locales: ['en', 'es'],
+      fallback: {
+        es: 'en',
+      },
+    },
+  },
 })
