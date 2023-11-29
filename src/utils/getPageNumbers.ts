@@ -1,6 +1,6 @@
 import { SITE } from '@config'
 
-const getPageNumbers = (numberOfPosts: number) => {
+function getPageNumbers(numberOfPosts: number) {
   const numberOfPages = numberOfPosts / Number(SITE.postPerPage)
 
   let pageNumbers: number[] = []

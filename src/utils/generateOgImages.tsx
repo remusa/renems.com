@@ -1,10 +1,10 @@
-import satori, { type SatoriOptions } from 'satori'
 import { Resvg } from '@resvg/resvg-js'
 import { type CollectionEntry } from 'astro:content'
+import satori, { type SatoriOptions } from 'satori'
 import postOgImage from './og-templates/post'
 import siteOgImage from './og-templates/site'
 
-const fetchFonts = async () => {
+async function fetchFonts() {
   // Regular Font
   const fontFileRegular = await fetch(
     'https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf'
