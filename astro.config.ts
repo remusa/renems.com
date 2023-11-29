@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config'
 import remarkCollapse from 'remark-collapse'
 import remarkToc from 'remark-toc'
 import { SITE } from './src/config'
+import { remarkReadingTime } from './src/utils/remark-reading-time.mjs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +22,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkToc,
+      remarkReadingTime,
       [
         remarkCollapse,
         {
