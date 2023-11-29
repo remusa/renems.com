@@ -17,6 +17,9 @@ dependencies:
   '@astrojs/svelte':
     specifier: ^4.0.4
     version: 4.0.4(astro@3.5.4)(svelte@5.0.0-next.14)(typescript@5.2.2)(vite@4.5.0)
+  '@fontsource-variable/assistant':
+    specifier: ^5.0.15
+    version: 5.0.15
   '@fontsource/inter':
     specifier: ^5.0.15
     version: 5.0.15
@@ -1200,6 +1203,10 @@ packages:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
     dev: true
+
+  /@fontsource-variable/assistant@5.0.15:
+    resolution: {integrity: sha512-59Z9KyuczSrKGAQONphin7nncReqPQB7w5H+wR5KeZUPA3PztAxcClaiiQoneWBWSlmw9EaaDSMmY5BENwKTyw==}
+    dev: false
 
   /@fontsource/inter@5.0.15:
     resolution: {integrity: sha512-/IoWYEXl8lqJEx50JqNPT+bI4VNwxb/bg2oOfvG8PiEsDsmHRFvWBVHlohBNn1+QdBf+KbAjU/gb4vlGOSsVWw==}

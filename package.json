@@ -23,6 +23,7 @@
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/svelte": "^4.0.4",
+    "@fontsource-variable/assistant": "^5.0.15",
     "@fontsource/inter": "^5.0.15",
     "@resvg/resvg-js": "^2.4.1",
     "astro": "^3.1.3",
