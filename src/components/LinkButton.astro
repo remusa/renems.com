@@ -5,9 +5,23 @@ export interface Props {
   ariaLabel?: string
   title?: string
   disabled?: boolean
+  openInNewTab?: boolean
 }
 
-const { href, className, ariaLabel, title, disabled = false } = Astro.props
+const {
+  href,
+  className,
+  ariaLabel,
+  title,
+  disabled = false,
+  openInNewTab = false,
+} = Astro.props
+const extraProps = openInNewTab
+  ? {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }
+  : {}
 ---
 
 <a
@@ -17,6 +31,7 @@ const { href, className, ariaLabel, title, disabled = false } = Astro.props
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
+  {...extraProps}
 >
   <slot />
 </a>
