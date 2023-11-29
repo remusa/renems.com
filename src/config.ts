@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: 'https://renems.com',
   author: 'René MS',
   desc: 'Personal website.',
-  title: 'Rene MS',
+  title: 'René MS',
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,

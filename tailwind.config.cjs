@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -57,8 +59,8 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      sans: ['var(--font-geist-sans)'],
-      mono: ['var(--font-geist-mono)'],
+      sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
+      mono: ["IBM Plex Mono", "monospace"],
     },
     // },
   },
