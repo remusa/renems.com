@@ -60,7 +60,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ["AssistantVariable", "Assistant", "InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
-      mono: ["IBM Plex Mono", "monospace"],
+      mono: ["MonaspaceNeon-Regular", "IBM Plex Mono", "monospace"],
     },
     // },
   },
