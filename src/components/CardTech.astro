@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  imagePath: string
+  altText: string
+}
+
+const { imagePath, altText } = Astro.props
+const images = import.meta.glob(
+  '/src/assets/images/tech/*.{jpeg,jpg,png,gif,webp}'
+)
+---
+
+<Fragment>
+  <Image class='object-contain' src={images[imagePath]()} alt={altText} />
+</Fragment>

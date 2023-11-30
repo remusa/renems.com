@@ -15,6 +15,24 @@ export type SocialObjects = {
   linkTitle: string
 }[]
 
+export type TechObjects = {
+  imagePath: string
+  altText: string
+  active: boolean
+}[]
+
+export type ProjectObjects = {
+  title: string
+  description: string
+  type: string[]
+  tech: string[]
+  ogImage: string
+  url: string
+  repository: string
+  active: boolean
+  featured?: boolean
+}[]
+
 export type SocialIcons = {
   [social in SocialMedia]: string
 }

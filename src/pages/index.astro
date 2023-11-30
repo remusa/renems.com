@@ -1,17 +1,16 @@
 ---
 import Card from '@components/Card'
+import CardTech from '@components/CardTech.astro'
 import Footer from '@components/Footer.astro'
 import Header from '@components/Header.astro'
 import Hr from '@components/Hr.astro'
 import LinkButton from '@components/LinkButton.astro'
 import Socials from '@components/Socials.astro'
-import { SOCIALS } from '@config'
+import { SOCIALS, TECH } from '@config'
 import Layout from '@layouts/Layout.astro'
 import getSortedPosts from '@utils/getSortedPosts'
 import slugify from '@utils/slugify'
-import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
-import tech from '../data/tech.json'
 
 const posts = await getCollection('blog')
 const sortedPosts = await getSortedPosts(posts)
@@ -26,7 +25,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
     <section id='hero'>
       <h1 class='mr-2 text-xl'>
         Hello, I'm <span
-          class='underline duration-300 text-skin-accent underline-offset-4 hover:underline'
+          class='text-skin-accent underline underline-offset-4 duration-300 hover:underline'
           >René</span
         >.
       </h1>
@@ -35,16 +34,14 @@ const socialCount = SOCIALS.filter(social => social.active).length
         I'm a software engineer who enjoys building useful things and learning
         new technologies.
       </p>
-      <ul class='grid grid-flow-col gap-2 pt-4 auto-cols-max'>
+      <ul class='grid auto-cols-max grid-flow-col gap-2 pt-4'>
         {
-          tech.map(item => {
+          TECH.filter(item => item.active === true).map(item => {
+            const imagePath = `/src/assets/images/tech/${item.imagePath}`
+            const altText = `${item.altText} logo`
             return (
-              <li class='w-12 h-12'>
-                <Image
-                  class='object-contain'
-                  src={`src/assets/images/tech/${item.img}`}
-                  alt={`logo of ${item.name}`}
-                />
+              <li class='flex h-10 w-10 items-center justify-center'>
+                <CardTech {imagePath} {altText} />
               </li>
             )
           })
@@ -63,7 +60,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
-          <div class='pt-4 social-wrapper'>
+          <div class='social-wrapper pt-4'>
             <div class='social-links'>Social Links:</div>
             <Socials />
           </div>
