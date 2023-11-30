@@ -1,5 +1,5 @@
 ---
-import Card from '@components/CardProject.svelte'
+import Project from '@components/Project.svelte'
 import Footer from '@components/Footer.astro'
 import Header from '@components/Header.astro'
 import { SITE } from '@config'
@@ -18,7 +18,7 @@ const { posts } = Astro.props
   <Header activeNav='projects' />
   <Main pageTitle='Projects' pageDesc="All the projects I've created.">
     <ul>
-      {posts.map(({ data }) => <Card frontmatter={data} />)}
+      {posts.map(({ data }) => <Project frontmatter={data} />)}
     </ul>
   </Main>
   <Footer />

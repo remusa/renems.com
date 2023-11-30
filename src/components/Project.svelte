@@ -4,7 +4,6 @@
   import type { CollectionEntry } from 'astro:content'
 
   export let frontmatter: CollectionEntry<'projects'>['data']
-
   const { title, description, tags, url, repository, ogImage } = frontmatter
 
   const headerProps = {
@@ -16,9 +15,10 @@
 <li class="my-6">
   <img
     class="rounded-md shadow-2xl"
-    src={`src/assets/images/projects/${ogImage}`}
+    src={`/src/assets/images/projects/${ogImage}`}
     alt={`image of project ${title}`}
   />
+
   <div
     class="mt-2 inline-block decoration-slice text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
   >
