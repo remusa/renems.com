@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+// import { Image } from '@unpic/astro'
 
 interface Props {
   imagePath: string
@@ -8,13 +9,13 @@ interface Props {
 
 const { imagePath, altText } = Astro.props
 const images = import.meta.glob(
-  '/src/assets/images/tech/*.{jpeg,jpg,png,gif,webp}'
+  '/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}'
 )
 ---
 
 <Fragment>
   <Image
-    class='scale-100 cursor-pointer object-cover transition duration-500 hover:scale-90'
+    class='scale-100 cursor-pointer rounded-md object-cover shadow-2xl transition duration-500 hover:scale-95'
     src={images[imagePath]()}
     alt={altText}
   />

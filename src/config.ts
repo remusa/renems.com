@@ -164,7 +164,7 @@ export const TECH: TechObjects = [
     active: true,
   },
   {
-    imagePath: 'node.webp',
+    imagePath: 'node.png',
     altText: 'node',
     active: true,
   },
