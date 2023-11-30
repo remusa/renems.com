@@ -9,6 +9,7 @@ import { SOCIALS } from '@config'
 import Layout from '@layouts/Layout.astro'
 import getSortedPosts from '@utils/getSortedPosts'
 import slugify from '@utils/slugify'
+import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import tech from '../data/tech.json'
 
@@ -39,7 +40,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
           tech.map(item => {
             return (
               <li class='w-12 h-12'>
-                <img
+                <Image
                   class='object-contain'
                   src={`src/assets/images/tech/${item.img}`}
                   alt={`logo of ${item.name}`}
