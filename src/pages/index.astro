@@ -40,7 +40,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
             const imagePath = `/src/assets/images/tech/${item.imagePath}`
             const altText = `${item.altText} logo`
             return (
-              <li class='flex h-10 w-10 items-center justify-center'>
+              <li class='flex h-8 w-8 items-center justify-center'>
                 <CardTech {imagePath} {altText} />
               </li>
             )
@@ -60,7 +60,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
-          <div class='social-wrapper pt-4'>
+          <div class='social-wrapper pt-2'>
             <div class='social-links'>Social Links:</div>
             <Socials />
           </div>
