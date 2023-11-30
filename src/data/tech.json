@@ -28,6 +28,14 @@
     "img": "python.png"
   },
   {
+    "name": "docker",
+    "img": "docker.webp"
+  },
+  {
+    "name": "postgresql",
+    "img": "postgresql.png"
+  },
+  {
     "name": "next.js",
     "img": "next.png"
   }
