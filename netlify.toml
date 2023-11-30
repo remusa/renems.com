@@ -1,7 +1,3 @@
-[build]
-  command = "pnpm run build"
-  publish = "dist"
-
 [[redirects]]
   from = "/github"
   to = "https://github.com/remusa"
