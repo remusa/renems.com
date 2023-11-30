@@ -18,8 +18,8 @@ export default defineConfig({
     }),
     react(),
     svelte(),
-    sitemap(),
     mdx(),
+    sitemap(),
   ],
   markdown: {
     remarkPlugins: [

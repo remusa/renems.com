@@ -5,7 +5,7 @@
 
   export let href: string | undefined
   export let frontmatter: CollectionEntry<'blog'>['data']
-  export let secHeading: boolean | undefined
+  export let secHeading: boolean | undefined = false
 
   const { title, pubDatetime, description, readingTime } = frontmatter
 
