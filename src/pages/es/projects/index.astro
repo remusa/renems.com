@@ -1,0 +1,11 @@
+---
+import Projects from '@layouts/Projects.astro'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('projects')
+const featuredPosts = posts
+  .filter(({ data }) => !data.draft)
+  .filter(({ data }) => data.featured)
+---
+
+<Projects posts={featuredPosts} />
