@@ -13,5 +13,5 @@ title: 'Now'
 <ul>
   <li>Svelte</li>
   <li>Elixir & Phoenix Framework</li>
-  <li>Tauri & Rust for developing desktop apps</li>
+  <li>Tauri & Rust</li>
 </ul>

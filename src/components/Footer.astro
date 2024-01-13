@@ -1,5 +1,6 @@
 ---
 import Hr from './Hr.astro'
+import LanguagePicker from './LanguagePicker.astro'
 import Socials from './Socials.astro'
 
 const currentYear = new Date().getFullYear()
@@ -14,6 +15,7 @@ const { noMarginTop = false } = Astro.props
 <footer class={`${noMarginTop ? '' : 'mt-auto'}`}>
   <Hr noPadding />
   <div class='footer-wrapper'>
+    <LanguagePicker />
     <Socials centered />
     <div class='copyright-wrapper'>
       <span>Copyright &#169; {currentYear}</span>

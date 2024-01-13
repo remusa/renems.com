@@ -44,14 +44,14 @@ export default defineConfig({
   },
   scopedStyleStrategy: 'where',
   i18n: {
-    routing: {
-      prefixDefaultLocale: false,
-      strategy: 'pathname',
-    },
     defaultLocale: 'en',
     locales: ['en', 'es'],
     fallback: {
       es: 'en',
+    },
+    routing: {
+      prefixDefaultLocale: false,
+      strategy: 'pathname',
     },
   },
 })
