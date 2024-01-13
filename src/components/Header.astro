@@ -103,7 +103,7 @@ const { activeNav } = Astro.props
             <a
               target='_blank'
               href='/rss.xml'
-              class=''
+              class='group inline-block scale-125 hover:rotate-12 hover:text-skin-accent sm:scale-100'
               aria-label='rss feed'
               title='RSS Feed'
             >
@@ -173,7 +173,7 @@ const { activeNav } = Astro.props
     @apply col-span-2 flex items-center justify-center;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply w-full scale-125 px-4 py-3 text-center font-medium hover:rotate-12 hover:text-skin-accent sm:my-0 sm:scale-100 sm:px-2 sm:py-1;
   }
   nav ul li:nth-last-child(2) a {
     @apply w-auto;
