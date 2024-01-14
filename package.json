@@ -14,7 +14,7 @@
     "format": "pnpm dlx @biomejs/biome format ./src --write",
     "lint": "pnpm dlx @biomejs/biome lint ./src ",
     "cz": "cz",
-    "prepare": "husky install",
+    "postinstall": "lefthook install",
     "clean": "npx rimraf node_modules/ .astro/ dist/",
     "deps": "npx taze -Iwi"
   },
@@ -52,8 +52,7 @@
     "@types/react": "^18.2.39",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "lefthook": "^1.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
