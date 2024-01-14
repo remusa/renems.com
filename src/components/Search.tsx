@@ -47,10 +47,11 @@ export default function SearchBar({ searchList }: Props) {
 		if (searchStr) {
 			setInputVal(searchStr);
 		}
-
 		// put focus cursor at the end of the string
 		setTimeout(() => {
-			inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length || 0;
+			if (inputRef.current?.selectionStart && inputRef.current?.selectionEnd) {
+				inputRef.current.selectionStart = inputRef.current.selectionEnd = searchStr?.length || 0;
+			}
 		}, 50);
 	}, []);
 
@@ -69,7 +70,7 @@ export default function SearchBar({ searchList }: Props) {
 		} else {
 			history.replaceState(history.state, "", window.location.pathname);
 		}
-	}, [inputVal]);
+	}, [inputVal, fuse]);
 
 	return (
 		<>
@@ -80,9 +81,9 @@ export default function SearchBar({ searchList }: Props) {
 					</svg>
 				</span>
 				<input
-					className="block w-full rounded border border-skin-fill 
+					className="block w-full rounded border border-skin-fill
         border-opacity-40 bg-skin-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-opacity-75 
+        pr-3 placeholder:italic placeholder:text-opacity-75
         focus:border-skin-accent focus:outline-none"
 					placeholder="Search for anything..."
 					type="text"

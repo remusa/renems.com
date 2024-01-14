@@ -7,9 +7,7 @@ interface Props {
 }
 
 const { imagePath, altText } = Astro.props
-const images = import.meta.glob(
-  '/src/assets/images/tech/*.{jpeg,jpg,png,gif,webp}'
-)
+const images = import.meta.glob('/src/assets/images/tech/*.{jpeg,jpg,png,gif,webp}')
 ---
 
 <Fragment>
