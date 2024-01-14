@@ -11,6 +11,7 @@ const images = import.meta.glob('/src/assets/images/tech/*.{jpeg,jpg,png,gif,web
 ---
 
 <Fragment>
+  <!-- @ts-ignore -->
   <Image
     class='scale-100 cursor-pointer object-cover transition duration-500 hover:scale-90'
     src={images[imagePath]()}

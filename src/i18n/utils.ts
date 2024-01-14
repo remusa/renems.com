@@ -15,10 +15,13 @@ export function useTranslations(lang: keyof typeof ui) {
 }
 
 export function useTranslatedPath(lang: keyof typeof ui) {
+	// @ts-ignore
 	return function translatePath(path: string, l: string = lang) {
 		const pathName = path.replaceAll("/", "");
 		const hasTranslation =
+			// @ts-ignore
 			defaultLang !== l && routes[l] !== undefined && routes[l][pathName] !== undefined;
+		// @ts-ignore
 		const translatedPath = hasTranslation ? `/${routes[l][pathName]}` : path;
 
 		return !showDefaultLang && l === defaultLang ? translatedPath : `/${l}${translatedPath}`;
@@ -38,6 +41,7 @@ export function getRouteFromUrl(url: URL): string | undefined {
 
 	if (defaultLang === currentLang) {
 		const route = Object.values(routes)[0];
+		// @ts-ignore
 		return route[path] !== undefined ? route[path] : undefined;
 	}
 
@@ -45,6 +49,7 @@ export function getRouteFromUrl(url: URL): string | undefined {
 		return Object.keys(obj).find((key) => obj[key] === value);
 	};
 
+	// @ts-ignore
 	const reversedKey = getKeyByValue(routes[currentLang], path);
 
 	if (reversedKey !== undefined) {

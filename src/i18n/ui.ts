@@ -6,7 +6,13 @@ export const languages = {
 export const defaultLang = "en";
 export const showDefaultLang = false;
 
-export const ui = {
+export type StringMap = {
+	[key: string]: {
+		[key: string]: string;
+	};
+};
+
+export const ui: StringMap = {
 	en: {
 		"nav.home": "home",
 		"nav.about": "about",
