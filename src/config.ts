@@ -199,8 +199,7 @@ export const PROJECTS: ProjectObjects = [
 	{
 		title: "Cero",
 		active: false,
-		description:
-			"Cero is an intermittent fasting tracker built in React, Node and GraphQL.",
+		description: "Cero is an intermittent fasting tracker built in React, Node and GraphQL.",
 		type: ["fullstack", "react", "node", "graphql", "typescript"],
 		tech: ["React", "TypeScript", "Node", "GraphQL"],
 		ogImage: "cero.png",
@@ -211,8 +210,7 @@ export const PROJECTS: ProjectObjects = [
 	{
 		title: "Does it break fast?",
 		active: true,
-		description:
-			"A web app that helps checking whether some kind of food breaks a fasting period.",
+		description: "A web app that helps checking whether some kind of food breaks a fasting period.",
 		type: ["fullstack", "react", "firebase"],
 		tech: ["React", "Next.js", "TypeScript", "Firebase"],
 		ogImage: "doesitbreakfast.png",

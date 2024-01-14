@@ -7,12 +7,7 @@ export interface Props {
 	readingTime?: string;
 }
 
-export default function Datetime({
-	datetime,
-	size = "sm",
-	className,
-	readingTime,
-}: Props) {
+export default function Datetime({ datetime, size = "sm", className, readingTime }: Props) {
 	return (
 		<div className={`flex items-center space-x-2 opacity-80 ${className}`}>
 			<svg

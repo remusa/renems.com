@@ -6,10 +6,7 @@ function getUniqueTags(posts: CollectionEntry<"blog">[]) {
 	const tags: string[] = filteredPosts
 		.flatMap((post) => post.data.tags)
 		.map((tag) => slugifyStr(tag))
-		.filter(
-			(value: string, index: number, self: string[]) =>
-				self.indexOf(value) === index,
-		)
+		.filter((value: string, index: number, self: string[]) => self.indexOf(value) === index)
 		.sort((tagA: string, tagB: string) => tagA.localeCompare(tagB));
 	return tags;
 }

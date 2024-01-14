@@ -22,9 +22,7 @@ interface SearchResult {
 export default function SearchBar({ searchList }: Props) {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [inputVal, setInputVal] = useState("");
-	const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-		null,
-	);
+	const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
 
 	const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
 		setInputVal(e.currentTarget.value);
@@ -46,12 +44,13 @@ export default function SearchBar({ searchList }: Props) {
 		// insert that search query in input field
 		const searchUrl = new URLSearchParams(window.location.search);
 		const searchStr = searchUrl.get("q");
-		if (searchStr) setInputVal(searchStr);
+		if (searchStr) {
+			setInputVal(searchStr);
+		}
 
 		// put focus cursor at the end of the string
 		setTimeout(() => {
-			inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-				searchStr?.length || 0;
+			inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length || 0;
 		}, 50);
 	}, []);
 
@@ -65,9 +64,7 @@ export default function SearchBar({ searchList }: Props) {
 		if (inputVal.length > 0) {
 			const searchParams = new URLSearchParams(window.location.search);
 			searchParams.set("q", inputVal);
-			const newRelativePathQuery = `${
-				window.location.pathname
-			}?${searchParams.toString()}`;
+			const newRelativePathQuery = `${window.location.pathname}?${searchParams.toString()}`;
 			history.replaceState(history.state, "", newRelativePathQuery);
 		} else {
 			history.replaceState(history.state, "", window.location.pathname);
@@ -100,10 +97,8 @@ export default function SearchBar({ searchList }: Props) {
 			{inputVal.length > 1 && (
 				<div className="mt-8">
 					Found {searchResults?.length}
-					{searchResults?.length && searchResults?.length === 1
-						? " result"
-						: " results"}{" "}
-					for '{inputVal}'
+					{searchResults?.length && searchResults?.length === 1 ? " result" : " results"} for '
+					{inputVal}'
 				</div>
 			)}
 
