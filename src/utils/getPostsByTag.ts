@@ -1,8 +1,8 @@
-import type { CollectionEntry } from 'astro:content'
-import { slugifyAll } from './slugify'
+import { slugifyAll } from "./slugify";
+import type { CollectionEntry } from "astro:content";
 
-function getPostsByTag(posts: CollectionEntry<'blog'>[], tag: string) {
-  return posts.filter(post => slugifyAll(post.data.tags).includes(tag))
+function getPostsByTag(posts: CollectionEntry<"blog">[], tag: string) {
+	return posts.filter((post) => slugifyAll(post.data.tags).includes(tag));
 }
 
-export default getPostsByTag
+export default getPostsByTag;
