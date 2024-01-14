@@ -3,6 +3,7 @@ import { SITE } from '@config'
 import '@styles/base.css'
 import { ViewTransitions } from 'astro:transitions'
 import '@fontsource/inter'
+import { getLangFromUrl } from 'i18n/utils'
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
 
@@ -22,14 +23,13 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props
 
-const socialImageURL = new URL(
-  ogImage ?? SITE.ogImage ?? 'og.png',
-  Astro.url.origin
-).href
+const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.origin).href
+
+const lang = getLangFromUrl(Astro.url) as string
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -71,12 +71,7 @@ const socialImageURL = new URL(
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
       // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && (
-        <meta
-          name='google-site-verification'
-          content={googleSiteVerification}
-        />
-      )
+      googleSiteVerification && <meta name='google-site-verification' content={googleSiteVerification} />
     }
 
     <ViewTransitions />

@@ -2,6 +2,7 @@
 import { slugifyStr } from '@utils/slugify'
 import type { CollectionEntry } from 'astro:content'
 import CardProject from './CardProject.astro'
+import { getLangFromUrl, useTranslations } from 'i18n/utils'
 
 export interface Props {
   frontmatter: CollectionEntry<'projects'>['data']
@@ -17,13 +18,15 @@ const headerProps = {
 
 const imagePath = `/src/assets/images/projects/${ogImage}`
 const altText = `project ${title.toLocaleLowerCase()} image`
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <li class='my-6'>
   <CardProject imagePath={imagePath} altText={altText} />
   <div
-    class='mt-2 inline-block decoration-slice text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'
-  >
+    class='mt-2 inline-block decoration-slice text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'>
     <h3 {...headerProps}>{title}</h3>
   </div>
   <p>{description}</p>
@@ -44,12 +47,14 @@ const altText = `project ${title.toLocaleLowerCase()} image`
     }
   </ul>
   <p class='text-right text-skin-accent'>
-    <a href={url} target='_blank' rel='noopener noreferrer'>Demo</a>
+    <a class='capitalize' href={url} target='_blank' rel='noopener noreferrer'
+      >demo</a
+    >
     <a
-      class='font-mono'
+      class='font-mono capitalize'
       href={repository}
       target='_blank'
-      rel='noopener noreferrer'>Code</a
+      rel='noopener noreferrer'>{t('components.code')}</a
     >
   </p>
 </li>

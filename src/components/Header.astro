@@ -1,5 +1,6 @@
 ---
 import { LOGO_IMAGE, SITE } from '@config'
+import { getLangFromUrl, useTranslatedPath, useTranslations } from 'i18n/utils'
 import Hr from './Hr.astro'
 import LinkButton from './LinkButton.astro'
 
@@ -8,6 +9,10 @@ export interface Props {
 }
 
 const { activeNav } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
 ---
 
 <header>
@@ -56,34 +61,40 @@ const { activeNav } = Astro.props
         </button>
         <ul id='menu-items' class='display-none sm:flex'>
           <li>
-            <a href='/posts' class={activeNav === 'posts' ? 'active' : ''}>
-              Posts
+            <a
+              href={translatePath('/posts/')}
+              class={activeNav === 'posts' ? 'active' : ''}
+            >
+              {t('nav.posts')}
             </a>
           </li>
           <li>
             <a
-              href='/projects'
+              href={translatePath('/projects/')}
               class={activeNav === 'projects' ? 'active' : ''}
             >
-              Projects
+              {t('nav.projects')}
             </a>
           </li>
           <li>
-            <a href='/tags' class={activeNav === 'tags' ? 'active' : ''}>
-              Tags
+            <a
+              href={translatePath('/tags/')}
+              class={activeNav === 'tags' ? 'active' : ''}
+            >
+              {t('nav.tags')}
             </a>
           </li>
           <li>
-            <a href='/about' class={activeNav === 'about' ? 'active' : ''}>
-              About
+            <a
+              href={translatePath('/now/')}
+              class={activeNav === 'now' ? 'active' : ''}
+            >
+              {t('nav.now')}
             </a>
-          </li>
-          <li>
-            <a href='/now' class={activeNav === 'now' ? 'active' : ''}> Now</a>
           </li>
           <li>
             <LinkButton
-              href='/search'
+              href={translatePath('/search/')}
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === 'search' ? 'active' : ''
               } flex`}
@@ -103,7 +114,7 @@ const { activeNav } = Astro.props
             <a
               target='_blank'
               href='/rss.xml'
-              class=''
+              class='group inline-block scale-125 hover:rotate-12 hover:text-skin-accent sm:scale-100'
               aria-label='rss feed'
               title='RSS Feed'
             >
@@ -173,7 +184,7 @@ const { activeNav } = Astro.props
     @apply col-span-2 flex items-center justify-center;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply w-full scale-125 px-4 py-3 text-center font-medium capitalize hover:rotate-12 hover:text-skin-accent sm:my-0 sm:scale-100 sm:px-2 sm:py-1;
   }
   nav ul li:nth-last-child(2) a {
     @apply w-auto;

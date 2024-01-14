@@ -8,12 +8,11 @@ interface Props {
 }
 
 const { imagePath, altText } = Astro.props
-const images = import.meta.glob(
-  '/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}'
-)
+const images = import.meta.glob('/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}')
 ---
 
 <Fragment>
+  <!-- @ts-ignore -->
   <Image
     class='scale-100 cursor-pointer rounded-md object-cover shadow-2xl transition duration-500 hover:scale-95'
     src={images[imagePath]()}

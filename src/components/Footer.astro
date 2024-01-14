@@ -1,5 +1,7 @@
 ---
+import { getLangFromUrl, useTranslations } from 'i18n/utils'
 import Hr from './Hr.astro'
+import LanguagePicker from './LanguagePicker.astro'
 import Socials from './Socials.astro'
 
 const currentYear = new Date().getFullYear()
@@ -9,16 +11,20 @@ export interface Props {
 }
 
 const { noMarginTop = false } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <footer class={`${noMarginTop ? '' : 'mt-auto'}`}>
   <Hr noPadding />
   <div class='footer-wrapper'>
+    <LanguagePicker />
     <Socials centered />
     <div class='copyright-wrapper'>
-      <span>Copyright &#169; {currentYear}</span>
+      <span>{t('footer.copyright')} &#169; {currentYear}</span>
       <span class='separator'>&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+      <span>{t('footer.all-rights-reserved')}.</span>
     </div>
   </div>
 </footer>
@@ -37,7 +43,7 @@ const { noMarginTop = false } = Astro.props
     @apply scale-125;
   }
   .copyright-wrapper {
-    @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
+    @apply my-2 flex flex-col items-center whitespace-nowrap capitalize sm:flex-row;
   }
   .separator {
     @apply hidden sm:inline;

@@ -6,17 +6,21 @@ import { SITE } from '@config'
 import Layout from '@layouts/Layout.astro'
 import Main from '@layouts/Main.astro'
 import type { CollectionEntry } from 'astro:content'
+import { getLangFromUrl, useTranslations } from 'i18n/utils'
 
 export interface Props {
   posts: CollectionEntry<'projects'>[]
 }
 
 const { posts } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Layout title={`Projects | ${SITE.title}`}>
+<Layout title={`${t('projects.title')} | ${SITE.title}`}>
   <Header activeNav='projects' />
-  <Main pageTitle='Projects' pageDesc="All the projects I've created.">
+  <Main pageTitle={t('projects.title')} pageDesc={t('projects.desc') + '.'}>
     <ul>
       {posts.map(({ data }) => <Project frontmatter={data} />)}
     </ul>
