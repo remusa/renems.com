@@ -10,9 +10,9 @@
     "sync": "astro sync",
     "astro": "astro",
     "check": "astro check",
-    "fix": "pnpm dlx @biomejs/biome check --apply-unsafe ./src",
-    "format": "pnpm dlx @biomejs/biome format ./src --write",
-    "lint": "pnpm dlx @biomejs/biome lint ./src ",
+    "format": "nlx @biomejs/biome format ./src --write",
+    "lint": "nlx @biomejs/biome lint ./src ",
+    "fix": "nlx @biomejs/biome check --apply-unsafe ./src",
     "cz": "cz",
     "postinstall": "lefthook install",
     "clean": "nlx rimraf node_modules/ .astro/ dist/",
@@ -62,11 +62,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "*.{astro,js,jsx,ts,tsx,md,mdx,json}": [
-      "nlx biome check --changed"
-    ]
   },
   "volta": {
     "node": "21.2.0"
