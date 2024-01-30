@@ -50,9 +50,8 @@ export default defineConfig({
 			es: "en",
 		},
 		routing: {
-			prefixDefaultLocale: true,
+			prefixDefaultLocale: false,
 			strategy: "pathname",
-			redirectToDefaultLocale: false,
 		},
 	},
 });
