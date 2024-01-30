@@ -26,13 +26,14 @@ const t = useTranslations(lang)
 <li class='my-6'>
   <CardProject imagePath={imagePath} altText={altText} />
   <div
-    class='mt-2 inline-block decoration-slice text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'>
+    class='mt-2 inline-block decoration-slice text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'
+  >
     <h3 {...headerProps}>{title}</h3>
   </div>
   <p>{description}</p>
   <ul>
     {
-      tags.map(tag => {
+      tags.map((tag: string) => {
         return (
           <li class='my-1 inline-block underline-offset-4'>
             <p class='tag-wrapper group pr-2 text-sm'>
@@ -47,14 +48,9 @@ const t = useTranslations(lang)
     }
   </ul>
   <p class='text-right text-skin-accent'>
-    <a class='capitalize' href={url} target='_blank' rel='noopener noreferrer'
-      >demo</a
-    >
-    <a
-      class='font-mono capitalize'
-      href={repository}
-      target='_blank'
-      rel='noopener noreferrer'>{t('components.code')}</a
+    <a class='capitalize' href={url} target='_blank' rel='noopener noreferrer'>demo</a>
+    <a class='font-mono capitalize' href={repository} target='_blank' rel='noopener noreferrer'
+      >{t('components.code')}</a
     >
   </p>
 </li>
