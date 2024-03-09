@@ -2,7 +2,7 @@ import { Resvg } from "@resvg/resvg-js";
 import satori, { type SatoriOptions } from "satori";
 import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 async function fetchFonts() {
 	// Regular Font

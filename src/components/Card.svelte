@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { slugifyStr } from '@utils/slugify'
-  import type { CollectionEntry } from 'astro:content'
-  import Datetime from './Datetime.svelte'
+import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
+import Datetime from "./Datetime.svelte";
 
-  export let href: string | undefined
-  export let frontmatter: CollectionEntry<'blog'>['data']
-  export let secHeading: boolean | undefined = false
+export let href: string | undefined;
+export let frontmatter: CollectionEntry<"blog">["data"];
+export const secHeading: boolean | undefined = false;
 
-  const { title, pubDatetime, description, readingTime } = frontmatter
+const { title, pubDatetime, description, readingTime } = frontmatter;
 
-  const headerProps = {
-    style: { viewTransitionName: slugifyStr(title) },
-    class: 'text-lg font-medium decoration-slice hover:underline',
-  }
+const headerProps = {
+	style: { viewTransitionName: slugifyStr(title) },
+	class: "text-lg font-medium decoration-slice hover:underline",
+};
 </script>
 
 <li class="my-6">

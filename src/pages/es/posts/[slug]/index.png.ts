@@ -1,7 +1,7 @@
+import { type CollectionEntry, getCollection } from "astro:content";
 import { generateOgImageForPost } from "@utils/generateOgImages";
 import { slugifyStr } from "@utils/slugify";
 import type { APIRoute } from "astro";
-import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog").then((p) =>

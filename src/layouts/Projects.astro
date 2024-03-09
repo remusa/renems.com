@@ -1,21 +1,21 @@
 ---
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header.astro'
-import Project from '@components/Project.astro'
-import { SITE } from '@config'
-import Layout from '@layouts/Layout.astro'
-import Main from '@layouts/Main.astro'
-import type { CollectionEntry } from 'astro:content'
-import { getLangFromUrl, useTranslations } from 'i18n/utils'
+import type { CollectionEntry } from "astro:content";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Project from "@components/Project.astro";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import { getLangFromUrl, useTranslations } from "i18n/utils";
 
 export interface Props {
-  posts: CollectionEntry<'projects'>[]
+	posts: CollectionEntry<"projects">[];
 }
 
-const { posts } = Astro.props
+const { posts } = Astro.props;
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title={`${t('projects.title')} | ${SITE.title}`}>

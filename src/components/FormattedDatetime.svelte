@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { LOCALE } from '@config'
+import { LOCALE } from "@config";
 
-  export let datetime: string | Date
+export let datetime: string | Date;
 
-  const myDatetime = new Date(datetime)
+const myDatetime = new Date(datetime);
 
-  const date = myDatetime.toLocaleDateString(LOCALE, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+const date = myDatetime.toLocaleDateString(LOCALE, {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
 
-  const time = myDatetime.toLocaleTimeString(LOCALE, {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+const time = myDatetime.toLocaleTimeString(LOCALE, {
+	hour: "2-digit",
+	minute: "2-digit",
+});
 </script>
 
 {date}

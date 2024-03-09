@@ -1,20 +1,20 @@
 ---
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header.astro'
-import Tag from '@components/Tag.astro'
-import { SITE } from '@config'
-import Layout from '@layouts/Layout.astro'
-import Main from '@layouts/Main.astro'
-import getUniqueTags from '@utils/getUniqueTags'
-import { getCollection } from 'astro:content'
-import { getLangFromUrl, useTranslations } from 'i18n/utils'
+import { getCollection } from "astro:content";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Tag from "@components/Tag.astro";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import getUniqueTags from "@utils/getUniqueTags";
+import { getLangFromUrl, useTranslations } from "i18n/utils";
 
-const posts = await getCollection('blog')
+const posts = await getCollection("blog");
 
-let tags = getUniqueTags(posts)
+const tags = getUniqueTags(posts);
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title={`${t('tags.title')} | ${SITE.title}`}>

@@ -1,18 +1,18 @@
 ---
-import { LOGO_IMAGE, SITE } from '@config'
-import { getLangFromUrl, useTranslatedPath, useTranslations } from 'i18n/utils'
-import Hr from './Hr.astro'
-import LinkButton from './LinkButton.astro'
+import { LOGO_IMAGE, SITE } from "@config";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "i18n/utils";
+import Hr from "./Hr.astro";
+import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: 'posts' | 'projects' | 'tags' | 'about' | 'now' | 'search'
+	activeNav?: "posts" | "projects" | "tags" | "about" | "now" | "search";
 }
 
-const { activeNav } = Astro.props
+const { activeNav } = Astro.props;
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
-const translatePath = useTranslatedPath(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <header>
