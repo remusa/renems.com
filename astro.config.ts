@@ -50,10 +50,10 @@ export default defineConfig({
 		fallback: {
 			es: "en",
 		},
-		routing: {
-			prefixDefaultLocale: false,
-			strategy: "pathname",
-			// redirectToDefaultLocale: false,
-		},
+		// routing: {
+		// 	prefixDefaultLocale: false,
+		// 	strategy: "pathname",
+		// 	redirectToDefaultLocale: false,
+		// },
 	},
 });
