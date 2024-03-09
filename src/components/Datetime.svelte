@@ -1,10 +1,10 @@
 <script lang="ts">
-  import FormattedDatetime from './FormattedDatetime.svelte'
+import FormattedDatetime from "./FormattedDatetime.svelte";
 
-  export let datetime: string | Date
-  export let size: 'sm' | 'lg' | undefined = 'sm'
-  export let className: string | undefined = ''
-  export let readingTime: string | undefined = ''
+export let datetime: string | Date;
+export const size: "sm" | "lg" | undefined = "sm";
+export const className: string | undefined = "";
+export const readingTime: string | undefined = "";
 </script>
 
 <div class={`flex items-center space-x-2 opacity-80 ${className}`}>

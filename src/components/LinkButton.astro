@@ -1,28 +1,21 @@
 ---
 export interface Props {
-  href: string
-  className?: string
-  ariaLabel?: string
-  title?: string
-  disabled?: boolean
-  openInNewTab?: boolean
+	href: string;
+	className?: string;
+	ariaLabel?: string;
+	title?: string;
+	disabled?: boolean;
+	openInNewTab?: boolean;
 }
 
-const {
-  href,
-  className,
-  ariaLabel,
-  title,
-  disabled = false,
-  openInNewTab = false,
-} = Astro.props
+const { href, className, ariaLabel, title, disabled = false, openInNewTab = false } = Astro.props;
 
 const extraProps = openInNewTab
-  ? {
-      target: '_blank',
-      rel: 'noopener noreferrer',
-    }
-  : {}
+	? {
+			target: "_blank",
+			rel: "noopener noreferrer",
+	  }
+	: {};
 ---
 
 <a

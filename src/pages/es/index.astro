@@ -1,26 +1,26 @@
 ---
-import Card from '@components/Card'
-import CardTech from '@components/CardTech.astro'
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header.astro'
-import Hr from '@components/Hr.astro'
-import LinkButton from '@components/LinkButton.astro'
-import Socials from '@components/Socials.astro'
-import { SOCIALS, TECH } from '@config'
-import Layout from '@layouts/Layout.astro'
-import getSortedPosts from '@utils/getSortedPosts'
-import slugify from '@utils/slugify'
-import { getCollection } from 'astro:content'
-import { getLangFromUrl, useTranslations } from 'i18n/utils'
+import { getCollection } from "astro:content";
+import Card from "@components/Card";
+import CardTech from "@components/CardTech.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Hr from "@components/Hr.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Socials from "@components/Socials.astro";
+import { SOCIALS, TECH } from "@config";
+import Layout from "@layouts/Layout.astro";
+import getSortedPosts from "@utils/getSortedPosts";
+import slugify from "@utils/slugify";
+import { getLangFromUrl, useTranslations } from "i18n/utils";
 
-const posts = await getCollection('blog')
-const sortedPosts = await getSortedPosts(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+const posts = await getCollection("blog");
+const sortedPosts = await getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length
+const socialCount = SOCIALS.filter((social) => social.active).length;
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout>

@@ -1,26 +1,26 @@
 ---
-import { slugifyStr } from '@utils/slugify'
-import type { CollectionEntry } from 'astro:content'
-import CardProject from './CardProject.astro'
-import { getLangFromUrl, useTranslations } from 'i18n/utils'
+import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
+import { getLangFromUrl, useTranslations } from "i18n/utils";
+import CardProject from "./CardProject.astro";
 
 export interface Props {
-  frontmatter: CollectionEntry<'projects'>['data']
+	frontmatter: CollectionEntry<"projects">["data"];
 }
 
-const { frontmatter } = Astro.props
-const { title, description, tags, url, repository, ogImage } = frontmatter
+const { frontmatter } = Astro.props;
+const { title, description, tags, url, repository, ogImage } = frontmatter;
 
 const headerProps = {
-  style: { viewTransitionName: slugifyStr(title) },
-  class: 'text-lg font-medium decoration-slice hover:underline',
-}
+	style: { viewTransitionName: slugifyStr(title) },
+	class: "text-lg font-medium decoration-slice hover:underline",
+};
 
-const imagePath = `/src/assets/images/projects/${ogImage}`
-const altText = `project ${title.toLocaleLowerCase()} image`
+const imagePath = `/src/assets/images/projects/${ogImage}`;
+const altText = `project ${title.toLocaleLowerCase()} image`;
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <li class='my-6'>

@@ -1,11 +1,11 @@
 ---
-import { languages } from 'i18n/ui'
-import { getLangFromUrl, getRouteFromUrl, useTranslatedPath } from 'i18n/utils'
+import { languages } from "i18n/ui";
+import { getLangFromUrl, getRouteFromUrl, useTranslatedPath } from "i18n/utils";
 
-const lang = getLangFromUrl(Astro.url)
-const translatePath = useTranslatedPath(lang)
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 
-const route = getRouteFromUrl(Astro.url)
+const route = getRouteFromUrl(Astro.url);
 ---
 
 <ul class='flex flex-row gap-2'>
