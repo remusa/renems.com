@@ -1,5 +1,5 @@
 {
-	"name": "template-astro-paper",
+	"name": "renems.com",
 	"version": "3.0.0",
 	"type": "module",
 	"scripts": {
@@ -35,7 +35,7 @@
 		"remark-collapse": "^0.1.2",
 		"remark-toc": "^9.0.0",
 		"satori": "^0.10.13",
-		"svelte": "5.0.0-next.15",
+		"svelte": "5.0.0-next.73",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5.4.2"
 	},
