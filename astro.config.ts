@@ -12,6 +12,7 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
 	site: SITE.website,
+	base: "/",
 	integrations: [
 		tailwind({
 			applyBaseStyles: false,
@@ -52,6 +53,7 @@ export default defineConfig({
 		routing: {
 			prefixDefaultLocale: false,
 			strategy: "pathname",
+			// redirectToDefaultLocale: false,
 		},
 	},
 });
