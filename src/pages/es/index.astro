@@ -28,11 +28,11 @@ const t = useTranslations(lang);
   <main id='main-content'>
     <section id='hero'>
       <h1 class='mr-2 text-xl first-letter:capitalize'>
-        {t('index.hi')}
-        <span
-          class='text-skin-accent underline underline-offset-4 duration-300 hover:underline'
-          >René</span
-        >.
+        {t('index.hi')},
+        <span>
+          {t('index.i')}
+        </span>
+        <span class='text-skin-accent underline underline-offset-4 duration-300 hover:underline'>René</span>.
       </h1>
       <h2 class='text-3xl capitalize'>{t('index.profession')}</h2>
       <p class='pt-4 first-letter:capitalize'>
@@ -65,9 +65,7 @@ const t = useTranslations(lang);
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class='social-wrapper pt-2'>
-            <div class='social-links first-letter:capitalize'>
-              {t('index.social-links')}:
-            </div>
+            <div class='social-links first-letter:capitalize'>{t('index.social-links')}:</div>
             <Socials />
           </div>
         )
@@ -83,11 +81,7 @@ const t = useTranslations(lang);
             <h2>{t('index.featured')}</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
+                <Card href={`/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
               ))}
             </ul>
           </section>
@@ -104,13 +98,7 @@ const t = useTranslations(lang);
             .filter(({ data }) => !data.featured)
             .map(
               ({ data }, index) =>
-                index < 4 && (
-                  <Card
-                    href={`/posts/${slugify(data)}`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                )
+                index < 4 && <Card href={`/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />,
             )
         }
       </ul>
@@ -120,9 +108,7 @@ const t = useTranslations(lang);
             {t('index.all-posts')}
           </span>
           <svg xmlns='http://www.w3.org/2000/svg'
-            ><path
-              d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'
-            ></path>
+            ><path d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'></path>
           </svg>
         </LinkButton>
       </div>

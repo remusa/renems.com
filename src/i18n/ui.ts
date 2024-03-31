@@ -21,7 +21,8 @@ export const ui: StringMap = {
 		"nav.tags": "tags",
 		"nav.now": "now",
 		"nav.search": "search",
-		"index.hi": "hello, i'm",
+		"index.hi": "hello",
+		"index.i": "i'm",
 		"index.profession": "software engineer",
 		"index.summary":
 			"i'm a software engineer who enjoys building useful things and learning new technologies",
@@ -51,7 +52,8 @@ export const ui: StringMap = {
 		"nav.tags": "etiquetas",
 		"nav.now": "ahora",
 		"nav.search": "buscar",
-		"index.hi": "Hola, soy",
+		"index.hi": "hola",
+		"index.i": "soy",
 		"index.profession": "ingeniero de software",
 		"index.summary":
 			"Soy un ingeniero de software que disfruta contruir cosas útiles y aprender nuevas tecnologías",

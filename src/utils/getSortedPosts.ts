@@ -1,5 +1,5 @@
-import getPostsWithRT from "./getPostsWithRT";
 import type { CollectionEntry } from "astro:content";
+import getPostsWithRT from "./getPostsWithRT";
 
 const getSortedPosts = async (posts: CollectionEntry<"blog">[]) => {
 	const postsWithRT = await getPostsWithRT(posts); // add reading time

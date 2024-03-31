@@ -1,5 +1,5 @@
-import { SITE } from "@config";
 import { defineCollection, z } from "astro:content";
+import { SITE } from "@config";
 
 const blog = defineCollection({
 	type: "content",
