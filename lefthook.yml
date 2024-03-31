@@ -9,11 +9,13 @@ pre-commit:
     check:
       glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
       # run: nlx biome check --changed
-      run: npx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+      run: nlx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
 
 pre-push:
-  parallel: false
+  parallel: true
   commands:
     check:
       glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
       run: npx biome check --no-errors-on-unmatched --files-ignore-unknown=true {pushed_files}
+    audit:
+      run: pnpm audit --fix && git update-index --again
