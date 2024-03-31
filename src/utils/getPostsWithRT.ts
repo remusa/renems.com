@@ -1,5 +1,5 @@
-import slugify from "./slugify";
 import type { CollectionEntry } from "astro:content";
+import slugify from "./slugify";
 
 export async function getReadingTime() {
 	// Get all posts using glob. This is to get the updated frontmatter
