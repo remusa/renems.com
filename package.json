@@ -13,6 +13,7 @@
 		"format": "nlx @biomejs/biome format ./src --write",
 		"lint": "nlx @biomejs/biome lint ./src ",
 		"fix": "nlx @biomejs/biome check --apply-unsafe ./src",
+		"ci": "biome format --changed",
 		"knip": "knip",
 		"cz": "cz",
 		"postinstall": "lefthook install",
