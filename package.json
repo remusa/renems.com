@@ -67,7 +67,7 @@
 		}
 	},
 	"volta": {
-		"node": "21.2.0"
+		"node": "21.7.3"
 	},
 	"pnpm": {
 		"overrides": {
