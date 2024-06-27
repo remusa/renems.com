@@ -68,9 +68,10 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"volta": {
-		"node": "22.2.0"
+	"engines": {
+		"node": ">=20"
 	},
+	"engineStrict": true,
 	"pnpm": {
 		"overrides": {
 			"ip@=2.0.0": ">=2.0.1",
