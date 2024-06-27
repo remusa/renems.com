@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import { SITE } from "./src/config";
@@ -55,5 +55,16 @@ export default defineConfig({
 		// 	strategy: "pathname",
 		// 	redirectToDefaultLocale: false,
 		// },
+	},
+	experimental: {
+		env: {
+			schema: {
+				ASTRO_TELEMETRY_DISABLED: envField.number({
+					context: "server",
+					access: "public",
+					default: 1,
+				}),
+			},
+		},
 	},
 });
