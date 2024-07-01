@@ -125,8 +125,8 @@ importers:
         specifier: 5.0.0-next.166
         version: 5.0.0-next.166
       taze:
-        specifier: ^0.13.8
-        version: 0.13.9
+        specifier: ^0.14.0
+        version: 0.14.0
       typescript:
         specifier: ^5.4.5
         version: 5.5.2
@@ -145,8 +145,8 @@ packages:
     resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
     hasBin: true
 
-  '@antfu/utils@0.7.8':
-    resolution: {integrity: sha512-rWQkqXRESdjXtc+7NRfK9lASQjpXJu1ayp7qi1d23zZorY+wBHVLHHoVcMsEnkqEBWTFqbztO7/QdJFzyEcLTg==}
+  '@antfu/utils@0.7.10':
+    resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
   '@astrojs/check@0.7.0':
     resolution: {integrity: sha512-UTqwOeKNu9IYZmJXEeWnQuTdSd/pX58Hl4TUARsMlT97SVDL//kLBE4T/ctxRz6J573N87oE5ddtW/uOOnQTug==}
@@ -2039,6 +2039,9 @@ packages:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
 
+  fast-npm-meta@0.0.1:
+    resolution: {integrity: sha512-Uh4wg3/3v8I+6kC9zeSfqXa5jmZQrnZ44X3mx0jPtSlRdsqfolBgsmZ81ktHfwFd5ObCUhL2eRSslI/AYojzLw==}
+
   fast-xml-parser@4.4.0:
     resolution: {integrity: sha512-kLY3jFlwIYwBNDojclKsNAC12sfD6NwW74QB2CoNGPvtVxjliYehVunB3HYyNi+n4Tt1dAcgwYvmKF/Z18flqg==}
     hasBin: true
@@ -2303,8 +2306,8 @@ packages:
   import-meta-resolve@4.1.0:
     resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
 
-  importx@0.3.7:
-    resolution: {integrity: sha512-K2+4GWH3ftMEbwLUK4IVC1qmk5POIofYb+2dHua1Szl5hQexSKv/QfwruTMzROqFWXnPUDJml5CnRiyk1YAesg==}
+  importx@0.3.10:
+    resolution: {integrity: sha512-BGq0cY3Rd6aYGwTj6wxCh27KmYBne+TZpZ4BiiitfB8fBbKXt/pkhetS1/RFzbaY2aNNjgIlswoAvjrCJX2+tw==}
 
   indent-string@4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
@@ -3040,6 +3043,9 @@ packages:
   ofetch@1.3.3:
     resolution: {integrity: sha512-s1ZCMmQWXy4b5K/TW9i/DtiN8Ku+xCiHcjQ6/J/nDdssirrQNOoB165Zu8EqLMA2lln1JUth9a0aW9Ap2ctrUg==}
 
+  ofetch@1.3.4:
+    resolution: {integrity: sha512-KLIET85ik3vhEfS+3fDlc/BAZiAp+43QEC/yCo5zkNoY2YaKvNkOaFr/6wCFgFH1kuYQM5pMNi0Tg8koiIemtw==}
+
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
@@ -3700,8 +3706,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  taze@0.13.9:
-    resolution: {integrity: sha512-qBKfViatIEkw7GNlHU8wV28MtRbdrpwxjcZbcqtCi6gHv2X0JAZ9+K8cp4O5UfVjEvFiafw5iSosBlKM7Fb4XA==}
+  taze@0.14.0:
+    resolution: {integrity: sha512-MdF9gQGmVwfXIe0SOkdikg4EhM84H/sHdRYi1ozorMuL/SDtd3t9s63PR83MZgP+S+O3mMz1yTAGJ5PBu/fXRA==}
     hasBin: true
 
   terser@5.31.1:
@@ -3781,8 +3787,8 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  tsx@4.15.7:
-    resolution: {integrity: sha512-u3H0iSFDZM3za+VxkZ1kywdCeHCn+8/qHQS1MNoO2sONDgD95HlWtt8aB23OzeTmFP9IU4/8bZUdg58Uu5J4cg==}
+  tsx@4.16.0:
+    resolution: {integrity: sha512-MPgN+CuY+4iKxGoJNPv+1pyo5YWZAQ5XfsyobUG+zoKG7IkvCPLZDEyoIb8yLS2FcWci1nlxAqmvPlFWD5AFiQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3819,8 +3825,8 @@ packages:
   ultrahtml@1.5.3:
     resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
 
-  unconfig@0.4.4:
-    resolution: {integrity: sha512-Dmz2VZAnx5yxANZ5koy5u6bLd/GJ8dgr0y6/78+40obWIsnvZdTIxLMIx6qBqsabzGTB4yUiMRIOV4hwwVM2pQ==}
+  unconfig@0.4.5:
+    resolution: {integrity: sha512-+b4pZmGFeT3FD9EHWGkNwuOwrNzfgUq4ZoTh63+EKDyxLvYKajbowjRcKLumGExmPKNi5jxIpzhheKsPtV8dig==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -4145,7 +4151,7 @@ snapshots:
 
   '@antfu/ni@0.21.12': {}
 
-  '@antfu/utils@0.7.8': {}
+  '@antfu/utils@0.7.10': {}
 
   '@astrojs/check@0.7.0(typescript@5.5.2)':
     dependencies:
@@ -6176,6 +6182,10 @@ snapshots:
       merge2: 1.4.1
       micromatch: 4.0.7
 
+  fast-npm-meta@0.0.1:
+    dependencies:
+      ofetch: 1.3.4
+
   fast-xml-parser@4.4.0:
     dependencies:
       strnum: 1.0.5
@@ -6548,7 +6558,7 @@ snapshots:
 
   import-meta-resolve@4.1.0: {}
 
-  importx@0.3.7:
+  importx@0.3.10:
     dependencies:
       bundle-require: 5.0.0(esbuild@0.20.2)
       debug: 4.3.5
@@ -6556,7 +6566,7 @@ snapshots:
       jiti: 1.21.6
       pathe: 1.1.2
       pkg-types: 1.1.1
-      tsx: 4.15.7
+      tsx: 4.16.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7474,6 +7484,12 @@ snapshots:
       node-fetch-native: 1.6.4
       ufo: 1.5.3
 
+  ofetch@1.3.4:
+    dependencies:
+      destr: 2.0.3
+      node-fetch-native: 1.6.4
+      ufo: 1.5.3
+
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -8251,17 +8267,19 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  taze@0.13.9:
+  taze@0.14.0:
     dependencies:
       '@antfu/ni': 0.21.12
       '@jsdevtools/ez-spawn': 3.0.4
       cli-progress: 3.12.0
       deepmerge: 4.3.1
       detect-indent: 7.0.1
+      fast-npm-meta: 0.0.1
+      ofetch: 1.3.4
       picocolors: 1.0.1
       prompts: 2.4.2
       ufo: 1.5.3
-      unconfig: 0.4.4
+      unconfig: 0.4.5
       yargs: 17.7.2
     transitivePeerDependencies:
       - supports-color
@@ -8332,7 +8350,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsx@4.15.7:
+  tsx@4.16.0:
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
@@ -8359,11 +8377,11 @@ snapshots:
 
   ultrahtml@1.5.3: {}
 
-  unconfig@0.4.4:
+  unconfig@0.4.5:
     dependencies:
-      '@antfu/utils': 0.7.8
+      '@antfu/utils': 0.7.10
       defu: 6.1.4
-      importx: 0.3.7
+      importx: 0.3.10
     transitivePeerDependencies:
       - supports-color
 
