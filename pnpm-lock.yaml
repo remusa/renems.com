@@ -32,7 +32,7 @@ importers:
         version: 5.0.18
       '@fontsource/inter':
         specifier: ^5.0.18
-        version: 5.0.18
+        version: 5.0.19
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -778,8 +778,8 @@ packages:
   '@fontsource-variable/assistant@5.0.18':
     resolution: {integrity: sha512-CIyL5SpaaGiFatnIgif/b/U55ZQKquhKV2WYgYfSnOeK8mTeZ3X20CLrCVe9JgFCMpWq08xVEx3P5NHOjlPU4w==}
 
-  '@fontsource/inter@5.0.18':
-    resolution: {integrity: sha512-YCsoYPTcs713sI7tLtxaPrIhXAXvEetGg5Ry02ivA8qUOb3fQHojbK/X9HLD5OOKvFUNR2Ynkwb1kR1hVKQHpw==}
+  '@fontsource/inter@5.0.19':
+    resolution: {integrity: sha512-tVU77yjKnsoUotrXGYbbYxmL9nbm/MSo3deZietmf8V2FEDlbi9fvkJHMrYbo7ZsOqR1AYBBqRYmemz4pSE5Mg==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -4833,7 +4833,7 @@ snapshots:
 
   '@fontsource-variable/assistant@5.0.18': {}
 
-  '@fontsource/inter@5.0.18': {}
+  '@fontsource/inter@5.0.19': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
