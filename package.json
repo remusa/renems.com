@@ -60,7 +60,7 @@
 		"react-dom": "^18.3.1",
 		"rimraf": "^5.0.7",
 		"svelte": "5.0.0-next.166",
-		"taze": "^0.13.8",
+		"taze": "^0.16.0",
 		"typescript": "^5.4.5"
 	},
 	"config": {
