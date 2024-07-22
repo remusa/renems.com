@@ -3,7 +3,6 @@
 	"version": "3.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro check && astro build && jampack ./dist",
 		"preview": "astro preview",
@@ -59,7 +58,7 @@
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"rimraf": "^5.0.9",
-		"svelte": "5.0.0-next.111",
+		"svelte": "5.0.0-next.193",
 		"taze": "^0.16.1",
 		"typescript": "^5.5.3"
 	},
