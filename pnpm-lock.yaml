@@ -26,7 +26,7 @@ importers:
         version: 4.0.7
       '@astrojs/svelte':
         specifier: ^5.7.0
-        version: 5.7.0(astro@4.12.3(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.5.3))(svelte@5.0.0-next.193)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
+        version: 5.7.0(astro@4.12.3(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.5.3))(svelte@5.0.0-next.210)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
       '@fontsource-variable/assistant':
         specifier: ^5.0.18
         version: 5.0.18
@@ -122,8 +122,8 @@ importers:
         specifier: ^5.0.9
         version: 5.0.9
       svelte:
-        specifier: 5.0.0-next.193
-        version: 5.0.0-next.193
+        specifier: 5.0.0-next.210
+        version: 5.0.0-next.210
       taze:
         specifier: ^0.16.1
         version: 0.16.1
@@ -1391,11 +1391,6 @@ packages:
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
     peerDependencies:
       acorn: '>=8.9.0'
-
-  acorn@8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
@@ -3766,8 +3761,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.0.0-next.193:
-    resolution: {integrity: sha512-ZCiPf2+LMWkITDp4iOXdAQ1XMhsxV56PdRxgiAf4UZx1/UgV5k/xcg8big7+TmRmEisjDOr9Ibtwf2ujFj+yDw==}
+  svelte@5.0.0-next.210:
+    resolution: {integrity: sha512-6QZpzr31weKDyAKifOdXJHK9oEeBE2Z/z/h1IX4tmJRuWPE/2Wc7Lzpfxl+0irS19GZH6V5YZnZLNTRJKjGzfg==}
     engines: {node: '>=18'}
 
   svgo@3.3.2:
@@ -4337,12 +4332,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/svelte@5.7.0(astro@4.12.3(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.5.3))(svelte@5.0.0-next.193)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
+  '@astrojs/svelte@5.7.0(astro@4.12.3(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.5.3))(svelte@5.0.0-next.210)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
       astro: 4.12.3(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.5.3)
-      svelte: 5.0.0-next.193
-      svelte2tsx: 0.7.13(svelte@5.0.0-next.193)(typescript@5.5.3)
+      svelte: 5.0.0-next.210
+      svelte2tsx: 0.7.13(svelte@5.0.0-next.210)(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
@@ -5226,24 +5221,24 @@ snapshots:
       ignore: 5.3.1
       p-map: 4.0.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)))(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)))(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
       debug: 4.3.5
-      svelte: 5.0.0-next.193
+      svelte: 5.0.0-next.210
       vite: 5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
+  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)))(svelte@5.0.0-next.193)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)))(svelte@5.0.0-next.210)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
       debug: 4.3.5
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.10
-      svelte: 5.0.0-next.193
-      svelte-hmr: 0.16.0(svelte@5.0.0-next.193)
+      svelte: 5.0.0-next.210
+      svelte-hmr: 0.16.0(svelte@5.0.0-next.210)
       vite: 5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1)
       vitefu: 0.2.5(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1)(terser@5.31.1))
     transitivePeerDependencies:
@@ -5504,8 +5499,6 @@ snapshots:
   acorn-typescript@1.4.13(acorn@8.12.1):
     dependencies:
       acorn: 8.12.1
-
-  acorn@8.11.3: {}
 
   acorn@8.12.1: {}
 
@@ -8406,18 +8399,18 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-hmr@0.16.0(svelte@5.0.0-next.193):
+  svelte-hmr@0.16.0(svelte@5.0.0-next.210):
     dependencies:
-      svelte: 5.0.0-next.193
+      svelte: 5.0.0-next.210
 
-  svelte2tsx@0.7.13(svelte@5.0.0-next.193)(typescript@5.5.3):
+  svelte2tsx@0.7.13(svelte@5.0.0-next.210)(typescript@5.5.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.0.0-next.193
+      svelte: 5.0.0-next.210
       typescript: 5.5.3
 
-  svelte@5.0.0-next.193:
+  svelte@5.0.0-next.210:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -8502,7 +8495,7 @@ snapshots:
   terser@5.31.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
+      acorn: 8.12.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
