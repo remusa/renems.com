@@ -44,21 +44,21 @@
 		"@astrojs/sitemap": "^3.1.6",
 		"@astrojs/tailwind": "^5.1.0",
 		"@biomejs/biome": "^1.8.3",
-		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.2.2",
-		"@divriots/jampack": "^0.25.0",
-		"@tailwindcss/typography": "^0.5.14",
-		"@types/node": "^22.5.0",
-		"@types/react": "^18.3.4",
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
+		"@divriots/jampack": "^0.26.0",
+		"@tailwindcss/typography": "^0.5.15",
+		"@types/node": "^22.5.2",
+		"@types/react": "^18.3.5",
 		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"knip": "^5.27.3",
-		"lefthook": "^1.7.14",
+		"knip": "^5.29.2",
+		"lefthook": "^1.7.15",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"rimraf": "5.0.10",
 		"svelte": "5.0.0-next.238",
-		"taze": "^0.16.6",
+		"taze": "^0.16.7",
 		"typescript": "^5.5.4"
 	},
 	"config": {
@@ -72,13 +72,13 @@
 	"engineStrict": true,
 	"pnpm": {
 		"overrides": {
+			"fast-xml-parser@<4.4.1": ">=4.4.1",
 			"ip@=2.0.0": ">=2.0.1",
+			"micromatch@<4.0.8": ">=4.0.8",
 			"tar@<6.2.1": ">=7.4.0",
 			"undici@<=5.28.2": ">=6.19.2",
 			"undici@>=6.0.0 <6.11.1": ">=6.11.1",
-			"vite@>=5.1.0 <=5.1.6": ">=5.1.7",
-			"fast-xml-parser@<4.4.1": ">=4.4.1",
-			"micromatch@<4.0.8": ">=4.0.8"
+			"vite@>=5.1.0 <=5.1.6": ">=5.1.7"
 		}
 	}
 }
