@@ -56,7 +56,7 @@
 		"lefthook": "^1.7.15",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"svelte": "5.0.0-next.243",
+		"svelte": "5.0.0-next.244",
 		"taze": "^0.16.7",
 		"typescript": "^5.5.4"
 	},
