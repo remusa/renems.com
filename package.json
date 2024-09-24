@@ -28,7 +28,7 @@
 		"@fontsource-variable/assistant": "^5.0.19",
 		"@fontsource/inter": "^5.0.20",
 		"@resvg/resvg-js": "^2.6.2",
-		"@unpic/astro": "^0.0.46",
+		"@unpic/astro": "^0.0.47",
 		"astro": "^4.15.2",
 		"fuse.js": "^7.0.0",
 		"github-slugger": "^2.0.0",
@@ -36,7 +36,7 @@
 		"reading-time": "^1.5.0",
 		"remark-collapse": "^0.1.2",
 		"remark-toc": "^9.0.0",
-		"satori": "^0.10.14",
+		"satori": "^0.11.0",
 		"tailwindcss": "^3.4.10"
 	},
 	"devDependencies": {
@@ -46,7 +46,7 @@
 		"@biomejs/biome": "^1.8.3",
 		"@commitlint/cli": "^19.4.1",
 		"@commitlint/config-conventional": "^19.4.1",
-		"@divriots/jampack": "^0.26.0",
+		"@divriots/jampack": "^0.28.0",
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/node": "^22.5.2",
 		"@types/react": "^18.3.5",
@@ -56,7 +56,7 @@
 		"lefthook": "^1.7.15",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"svelte": "5.0.0-next.244",
+		"svelte": "5.0.0-next.258",
 		"taze": "^0.16.7",
 		"typescript": "^5.5.4"
 	},
