@@ -35,10 +35,10 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))(svelte@5.1.9)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(lightningcss@1.25.1)(terser@5.31.1))
       '@fontsource-variable/assistant':
-        specifier: ^5.0.19
+        specifier: ^5.1.0
         version: 5.1.0
       '@fontsource/inter':
-        specifier: ^5.0.20
+        specifier: ^5.1.0
         version: 5.1.0
       '@resvg/resvg-js':
         specifier: ^2.6.2
@@ -68,10 +68,10 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       satori:
-        specifier: ^0.11.0
+        specifier: ^0.11.2
         version: 0.11.2
       tailwindcss:
-        specifier: ^3.4.10
+        specifier: ^3.4.14
         version: 3.4.14
     devDependencies:
       '@astrojs/react':
@@ -84,13 +84,13 @@ importers:
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))(tailwindcss@3.4.14)
       '@biomejs/biome':
-        specifier: ^1.8.3
+        specifier: ^1.9.4
         version: 1.9.4
       '@commitlint/cli':
-        specifier: ^19.4.1
+        specifier: ^19.5.0
         version: 19.5.0(@types/node@22.8.6)(typescript@5.6.3)
       '@commitlint/config-conventional':
-        specifier: ^19.4.1
+        specifier: ^19.5.0
         version: 19.5.0
       '@divriots/jampack':
         specifier: ^0.30.0
@@ -99,22 +99,22 @@ importers:
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.14)
       '@types/node':
-        specifier: ^22.5.2
+        specifier: ^22.8.6
         version: 22.8.6
       '@types/react':
-        specifier: ^18.3.5
+        specifier: ^18.3.12
         version: 18.3.12
       commitizen:
-        specifier: ^4.3.0
+        specifier: ^4.3.1
         version: 4.3.1(@types/node@22.8.6)(typescript@5.6.3)
       cz-conventional-changelog:
         specifier: ^3.3.0
         version: 3.3.0(@types/node@22.8.6)(typescript@5.6.3)
       knip:
-        specifier: ^5.29.2
+        specifier: ^5.36.1
         version: 5.36.1(@types/node@22.8.6)(typescript@5.6.3)
       lefthook:
-        specifier: ^1.7.15
+        specifier: ^1.8.2
         version: 1.8.2
       react:
         specifier: ^18.3.1
@@ -129,7 +129,7 @@ importers:
         specifier: ^0.18.0
         version: 0.18.0
       typescript:
-        specifier: ^5.5.4
+        specifier: ^5.6.3
         version: 5.6.3
 
 packages:
@@ -3934,9 +3934,6 @@ packages:
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
 
-  tinyexec@0.3.0:
-    resolution: {integrity: sha512-tVGE0mVJPGb0chKhqmsoosjsS+qUnJVGJpZgsHYQcGoPlG3B51R3PouqTgEGH2Dc9jjFyOqOpix6ZHNMXp1FZg==}
-
   tinyexec@0.3.1:
     resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
 
@@ -4810,7 +4807,7 @@ snapshots:
       '@commitlint/load': 19.5.0(@types/node@22.8.6)(typescript@5.6.3)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
-      tinyexec: 0.3.0
+      tinyexec: 0.3.1
       yargs: 17.7.2
     transitivePeerDependencies:
       - '@types/node'
@@ -4910,7 +4907,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       git-raw-commits: 4.0.0
       minimist: 1.2.8
-      tinyexec: 0.3.0
+      tinyexec: 0.3.1
 
   '@commitlint/resolve-extends@19.1.0':
     dependencies:
@@ -8442,7 +8439,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   safe-buffer@5.2.1: {}
 
@@ -8759,8 +8756,6 @@ snapshots:
 
   tiny-inflate@1.0.3: {}
 
-  tinyexec@0.3.0: {}
-
   tinyexec@0.3.1: {}
 
   tmp@0.0.33:
@@ -8790,8 +8785,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tslib@2.8.1:
-    optional: true
+  tslib@2.8.1: {}
 
   tsx@4.19.1:
     dependencies:
