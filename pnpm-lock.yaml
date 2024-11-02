@@ -23,16 +23,16 @@ importers:
   .:
     dependencies:
       '@astrojs/check':
-        specifier: ^0.9.3
+        specifier: ^0.9.4
         version: 0.9.4(typescript@5.6.3)
       '@astrojs/mdx':
-        specifier: ^3.1.5
+        specifier: ^3.1.9
         version: 3.1.9(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))
       '@astrojs/rss':
-        specifier: ^4.0.7
+        specifier: ^4.0.9
         version: 4.0.9
       '@astrojs/svelte':
-        specifier: ^5.7.0
+        specifier: ^5.7.2
         version: 5.7.2(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))(svelte@5.1.9)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(lightningcss@1.25.1)(terser@5.31.1))
       '@fontsource-variable/assistant':
         specifier: ^5.0.19
@@ -47,7 +47,7 @@ importers:
         specifier: ^0.0.47
         version: 0.0.47(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))
       astro:
-        specifier: ^4.15.2
+        specifier: ^4.16.8
         version: 4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3)
       fuse.js:
         specifier: ^7.0.0
@@ -78,10 +78,10 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.10(@types/node@22.8.6)(lightningcss@1.25.1)(terser@5.31.1))
       '@astrojs/sitemap':
-        specifier: ^3.1.6
+        specifier: ^3.2.1
         version: 3.2.1
       '@astrojs/tailwind':
-        specifier: ^5.1.0
+        specifier: ^5.1.2
         version: 5.1.2(astro@4.16.8(@types/node@22.8.6)(lightningcss@1.25.1)(rollup@4.24.3)(terser@5.31.1)(typescript@5.6.3))(tailwindcss@3.4.14)
       '@biomejs/biome':
         specifier: ^1.8.3
