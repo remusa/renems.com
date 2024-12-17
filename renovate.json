@@ -6,7 +6,8 @@
 	"groupName": "all dependencies",
 	"groupSlug": "all",
 	"lockFileMaintenance": {
-		"enabled": false
+		"enabled": true,
+		"automerge": true
 	},
 	"packageRules": [
 		{
@@ -15,6 +16,11 @@
 			"matchPackageNames": [
 				"*"
 			]
+		},
+		{
+			"matchUpdateTypes": ["minor", "patch"],
+			"matchCurrentVersion": "!/^0/",
+			"automerge": true
 		}
 	],
 	"separateMajorMinor": false,
